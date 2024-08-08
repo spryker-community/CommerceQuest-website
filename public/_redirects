@@ -3,3 +3,5 @@
 /categories/*       https://forum.commercequest.space/categories/:splat     301
 /events/*           https://forum.commercequest.space/events/:splat         301
 /events/            https://forum.commercequest.space/events/               301
+/discussions/       https://forum.commercequest.space/discussions/          301
+/profile/*          https://forum.commercequest.space/profile/:splat        301
