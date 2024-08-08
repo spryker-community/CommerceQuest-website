@@ -13,7 +13,7 @@ import keystatic from '@keystatic/astro'
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://site.commercequest.space/",
+  site: "https://commercequest.space/",
   image: {
     domains: ["images.unsplash.com"]
   },
@@ -21,7 +21,7 @@ export default defineConfig({
   integrations: [tailwind(), sitemap(), starlight({
     title: "CommerceQuest Docs",
     editLink: {
-      baseUrl: 'https://github.com/spryker-community/spryker-community.github.io/edit/main'
+      baseUrl: 'https://github.com/spryker-community/CommerceQuest-website/edit/main'
     },
     logo: {
       src: './src/images/starlight/CQ_logo.svg',
