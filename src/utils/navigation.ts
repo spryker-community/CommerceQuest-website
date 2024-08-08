@@ -29,6 +29,7 @@ const footerLinks = [
       { name: "Code of Conduct", url: "https://commercequest.space/discussion/27749/community-guidelines-code-of-conduct" },
       { name: "Help improve this site", url: "https://github.com/spryker-community/spryker-community.github.io?tab=readme-ov-file#landingpage--docs" },
       { name: "Contact", url: "/contact" },
+      { name: "Imprint", url: "https://spryker.com/imprint/" },
     ],
   },
 ];
