@@ -1,0 +1,51 @@
+---
+import type { Props } from '../../node_modules/@astrojs/starlight/props';
+
+// Built-in CSS styles.
+import '../../node_modules/@astrojs/starlight/style/props.css';
+import '../assets/styles/starlight/reset.css';
+import '../../node_modules/@astrojs/starlight/style/shiki.css';
+import '../../node_modules/@astrojs/starlight/style/util.css';
+
+import MainLayout from "@/layouts/MainLayout.astro";
+import ContentPanel from "@astrojs/starlight/components/ContentPanel.astro";
+import DraftContentNotice from "@astrojs/starlight/components/DraftContentNotice.astro";
+import FallbackContentNotice from "@astrojs/starlight/components/FallbackContentNotice.astro";
+import Footer from "@astrojs/starlight/components/Footer.astro";
+import MarkdownContent from '@astrojs/starlight/components/MarkdownContent.astro';
+import PageTitle from "@astrojs/starlight/components/PageTitle.astro";
+
+
+// Remark component CSS (needs to override `MarkdownContent.astro`)
+import '../../node_modules/@astrojs/starlight/style/asides.css';
+
+// Important that this is the last import so it can override built-in styles.
+import 'virtual:starlight/user-css';
+
+import Hero from "@astrojs/starlight/components/Hero.astro";
+import Banner from "@astrojs/starlight/components/Banner.astro";
+import TwoColumnContent from "@astrojs/starlight/components/TwoColumnContent.astro";
+---
+
+<MainLayout>
+
+
+  <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+    <TwoColumnContent {...Astro.props }>
+      <main
+      >
+        {/* TODO: Revisit how this logic flows. */}
+        <!--<ContentPanel {...Astro.props}>
+          <PageTitle {...Astro.props} />
+        </ContentPanel>-->
+        <ContentPanel {...Astro.props}>
+          <MarkdownContent {...Astro.props}>
+            <slot />
+          </MarkdownContent>
+          <!--<Footer {...Astro.props} />-->
+        </ContentPanel>
+      </main>
+    </TwoColumnContent>
+  </div>
+
+</MainLayout>
