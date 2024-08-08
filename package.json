@@ -25,7 +25,7 @@
     "@preline/collapse": "^2.3.0",
     "@preline/dropdown": "^2.3.0",
     "@preline/overlay": "^2.3.0",
-    "@preline/tabs": "^2.3.0",
+    "@preline/tabs": "^2.4.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.13.1",
