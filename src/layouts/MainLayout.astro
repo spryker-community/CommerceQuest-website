@@ -34,17 +34,17 @@ We set the language of the page to English and add classes for scrollbar and scr
     <script is:inline>
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
       if (
-        localStorage.getItem("hs_theme") === "dark" ||
+        localStorage.getItem("hs_theme") === "light"/* ||
         (!("hs_theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
+          window.matchMedia("(prefers-color-scheme: light)").matches)*/
       ) {
-        document.documentElement.classList.add("dark");
-        // proxy for starlight
-        document.documentElement.dataset.theme = 'dark';
-      } else {
         document.documentElement.classList.remove("dark");
         // proxy for starlight
         document.documentElement.dataset.theme = 'light';
+      } else {
+        document.documentElement.classList.add("dark");
+        // proxy for starlight
+        document.documentElement.dataset.theme = 'dark';
       }
     </script>
     <script>

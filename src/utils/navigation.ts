@@ -26,8 +26,8 @@ const footerLinks = [
     section: "CommerceQuest",
     links: [
       { name: "About us", url: "/about" },
-      { name: "Code of Conduct", url: "https://commercequest.space/discussion/27749/community-guidelines-code-of-conduct" },
-      { name: "Help improve this site", url: "https://github.com/spryker-community/spryker-community.github.io?tab=readme-ov-file#landingpage--docs" },
+      { name: "Code of Conduct", url: "https://forum.commercequest.space/discussion/27749/community-guidelines-code-of-conduct" },
+      { name: "Help improve this site", url: "https://github.com/spryker-community/CommerceQuest-website?tab=readme-ov-file#landingpage--docs" },
       { name: "Contact", url: "/contact" },
       { name: "Imprint", url: "https://spryker.com/imprint/" },
     ],
@@ -49,30 +49,30 @@ const mainNavigation: NavEntry[] = [
   },
   {
     label: "Forum Topics",
-    href: "https://commercequest.space/",
+    href: "https://forum.commercequest.space/",
     submenu: [
       {
         label: 'General topics',
         submenu: [
           {
             label: "All Posts",
-            href: "https://commercequest.space/discussions",
+            href: "https://forum.commercequest.space/discussions",
           },
           {
             label: "All Categories",
-            href: "https://commercequest.space/categories",
+            href: "https://forum.commercequest.space/categories",
           },
           {
             label: "Developer Corner",
-            href: "https://commercequest.space/categories/spryker-developers",
+            href: "https://forum.commercequest.space/categories/spryker-developers",
           },
           {
             label: "Product & Business",
-            href: "https://commercequest.space/categories/business-user-questions",
+            href: "https://forum.commercequest.space/categories/business-user-questions",
           },
           {
             label: "Spryker Safari",
-            href: "https://commercequest.space/categories/safari-questions",
+            href: "https://forum.commercequest.space/categories/safari-questions",
           },
         ],
       },
@@ -81,15 +81,15 @@ const mainNavigation: NavEntry[] = [
         submenu: [
           {
             label: "Spryker",
-            href: "https://commercequest.space/categories/spryker-development",
+            href: "https://forum.commercequest.space/categories/spryker-development",
           },
           {
             label: "Oryx",
-            href: "https://commercequest.space/categories/oryx",
+            href: "https://forum.commercequest.space/categories/oryx",
           },
           {
             label: "Propel",
-            href: "https://commercequest.space/categories/propel-orm",
+            href: "https://forum.commercequest.space/categories/propel-orm",
           },
         ],
       },
@@ -98,15 +98,15 @@ const mainNavigation: NavEntry[] = [
         submenu: [
           {
             label: "News",
-            href: "https://commercequest.space/categories/spryker-news",
+            href: "https://forum.commercequest.space/categories/spryker-news",
           },
           {
             label: "Ideation Board",
-            href: "https://commercequest.space/categories/community-ideation-board",
+            href: "https://forum.commercequest.space/categories/community-ideation-board",
           },
           {
             label: "Hackathons",
-            href: "https://commercequest.space/categories/hackathons",
+            href: "https://forum.commercequest.space/categories/hackathons",
           },
         ],
       },
@@ -115,19 +115,19 @@ const mainNavigation: NavEntry[] = [
         submenu: [
           {
             label: "Help & Guidelines",
-            href: "https://commercequest.space/categories/help-and-guidelines",
+            href: "https://forum.commercequest.space/categories/help-and-guidelines",
           },
           {
             label: "Your CQ Suggestions",
-            href: "https://commercequest.space/categories/community-ideas-and-feedback",
+            href: "https://forum.commercequest.space/categories/community-ideas-and-feedback",
           },
           {
             label: "Random",
-            href: "https://commercequest.space/categories/Random/",
+            href: "https://forum.commercequest.space/categories/Random/",
           },
           {
             label: "Jobs",
-            href: "https://commercequest.space/categories/jobs",
+            href: "https://forum.commercequest.space/categories/jobs",
           },
         ],
       },
@@ -145,7 +145,7 @@ const mainNavigation: NavEntry[] = [
         submenu: [
           {
             label: "Upcoming Events",
-            href: "https://commercequest.space/events/category",
+            href: "https://forum.commercequest.space/events/category",
           },
           {
             label: "Event Recaps",
