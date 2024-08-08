@@ -15,7 +15,6 @@ import Footer from "@astrojs/starlight/components/Footer.astro";
 import MarkdownContent from '@astrojs/starlight/components/MarkdownContent.astro';
 import PageTitle from "@astrojs/starlight/components/PageTitle.astro";
 
-
 // Remark component CSS (needs to override `MarkdownContent.astro`)
 import '../../node_modules/@astrojs/starlight/style/asides.css';
 
@@ -37,8 +36,6 @@ const pagefindEnabled =
 {/* NOTE: Do not use any "id" attribute since it hangs up the application (keeps websocket connection open) */}
 
 <MainLayout>
-
-
   <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
     <TwoColumnContent {...Astro.props }>
       <main
