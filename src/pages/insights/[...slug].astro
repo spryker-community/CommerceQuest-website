@@ -19,7 +19,7 @@ const { post } = Astro.props;
 
 const { Content } = await post.render();
 
-const pageTitle: string = `${post.data.title} | ${SITE.title}`;
+const pageTitle: string = `${post.data.title} — ${SITE.title}`;
 ---
 
 <MainLayout title={pageTitle}>
