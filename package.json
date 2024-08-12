@@ -49,7 +49,7 @@
     "astro-vtbot": "^1.7.26",
     "prettier": "^3.3.2",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.5",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "typescript": "^5.5.4"
   }
 }
