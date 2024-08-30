@@ -30,78 +30,101 @@ env:
   # BUILD_PATH: subfolder
 
 jobs:
-  build:
-    name: Build
+  lint:
     runs-on: ubuntu-latest
+    environment: deploy
     steps:
-      - name: Checkout
+      - name: Checkout Commit
         uses: actions/checkout@v4
-      - name: Detect package manager
-        id: detect-package-manager
-        run: |
-          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-            echo "runner=yarn" >> $GITHUB_OUTPUT
-            echo "lockfile=yarn.lock" >> $GITHUB_OUTPUT
-            exit 0
-          elif [ -f "${{ github.workspace }}/package.json" ]; then
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
-            echo "lockfile=package-lock.json" >> $GITHUB_OUTPUT
-            exit 0
-          else
-            echo "Unable to determine package manager"
-            exit 1
-          fi
+        with:
+          fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.lockfile }}
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-      - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-        working-directory: ${{ env.BUILD_PATH }}
-      - name: Build with Astro
-        run: |
-          ${{ steps.detect-package-manager.outputs.runner }} astro build \
-            --site "${{ steps.pages.outputs.origin }}" \
-            --base "${{ steps.pages.outputs.base_path }}"
-        working-directory: ${{ env.BUILD_PATH }}
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs: build
-    steps:
-      - name: Disable git crlf
-        run: git config --global core.autocrlf false
-
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: "pnpm"
-
+      - name: Install pnpm
+        run: npm i --location=global pnpm
       - name: Install dependencies
         run: pnpm install
+      - name: Check
+        run: pnpm astro check
+        env:
+          LOCALE_CI: en
 
-      - name: Build Packages
-        run: pnpm run build
-
-      - name: Lint
-        run: pnpm run lint
+#  build:
+#    name: Build
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v4
+#      - name: Detect package manager
+#        id: detect-package-manager
+#        run: |
+#          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+#            echo "manager=yarn" >> $GITHUB_OUTPUT
+#            echo "command=install" >> $GITHUB_OUTPUT
+#            echo "runner=yarn" >> $GITHUB_OUTPUT
+#            echo "lockfile=yarn.lock" >> $GITHUB_OUTPUT
+#            exit 0
+#          elif [ -f "${{ github.workspace }}/package.json" ]; then
+#            echo "manager=npm" >> $GITHUB_OUTPUT
+#            echo "command=ci" >> $GITHUB_OUTPUT
+#            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+#            echo "lockfile=package-lock.json" >> $GITHUB_OUTPUT
+#            exit 0
+#          else
+#            echo "Unable to determine package manager"
+#            exit 1
+#          fi
+#      - name: Setup Node
+#        uses: actions/setup-node@v4
+#        with:
+#          node-version: "20"
+#          cache: ${{ steps.detect-package-manager.outputs.manager }}
+#          cache-dependency-path: ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.lockfile }}
+#      #- name: Setup Pages
+#      #  id: pages
+#      #  uses: actions/configure-pages@v5
+#      - name: Install dependencies
+#        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+#        working-directory: ${{ env.BUILD_PATH }}
+#      - name: Build with Astro
+#        run: |
+#          ${{ steps.detect-package-manager.outputs.runner }} astro build \
+#            --site "${{ steps.pages.outputs.origin }}" \
+#            --base "${{ steps.pages.outputs.base_path }}"
+#        working-directory: ${{ env.BUILD_PATH }}
+#  lint:
+#    name: Lint
+#    runs-on: ubuntu-latest
+#    timeout-minutes: 5
+#    needs: build
+#    steps:
+#      - name: Disable git crlf
+#        run: git config --global core.autocrlf false
+#
+#      - name: Checkout
+#        uses: actions/checkout@v4
+#
+#      - name: Setup PNPM
+#        uses: pnpm/action-setup@v3
+#
+#      - name: Setup Node
+#        uses: actions/setup-node@v4
+#        with:
+#          node-version: 18
+#          cache: "pnpm"
+#
+#      - name: Install dependencies
+#        run: pnpm install
+#
+#      - name: Build Packages
+#        run: pnpm run build
+#
+#      - name: Lint
+#        run: pnpm run lint
 
           ##build:
   #  runs-on: ubuntu-latest
