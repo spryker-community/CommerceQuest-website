@@ -69,11 +69,14 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
       - name: Status
         run: git status
+      - name: Astro Info
+        run: |
+          ${{ steps.detect-package-manager.outputs.runner }} astro info
       - name: Astro Check
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro check \
-            --minimumFailingSeverity hint \
-            --minimumSeverity hint
+            --minimumFailingSeverity error \
+            --minimumSeverity error
 
 #
 #
