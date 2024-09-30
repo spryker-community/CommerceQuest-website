@@ -21,7 +21,7 @@
     "@astrojs/starlight-tailwind": "^2.0.3",
     "@astrojs/tailwind": "^5.1.1",
     "@keystatic/astro": "^5.0.0",
-    "@keystatic/core": "^0.5.26",
+    "@keystatic/core": "^0.5.36",
     "@preline/accordion": "^2.4.1",
     "@preline/collapse": "^2.4.1",
     "@preline/dropdown": "^2.4.1",
