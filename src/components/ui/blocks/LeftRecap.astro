@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 // Destructure the props passed to the Astro component
-const { title, description, organizer, github, location, btnExists, btnTitle, btnURL, img, imgAlt, logo, logoAlt, githubExists, youtubeExists, youtube } =
+const { title, description, organizer, github, location, btnExists, btnTitle, btnURL, img, imgAlt, logo, logoAlt, githubExists, youtubeExists, youtube, photoExists, photoURL} =
   Astro.props;
 // Define TypeScript interface for props
 interface Props {
@@ -23,6 +23,8 @@ interface Props {
   githubExists?: boolean;
   youtubeExists?: boolean;
   youtube?: string;
+  photoExists?: boolean;
+  photoURL?: string;
 }
 ---
 
@@ -31,13 +33,15 @@ interface Props {
   class="mx-auto max-w-[85rem] items-center gap-8 px-4 py-10 sm:px-6 sm:py-16 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 lg:px-8 lg:py-14 xl:gap-16 2xl:max-w-full"
 >
   <!-- The Image component which renders the image -->
+    <!-- Link to photo album -->
+    <a href={photoURL} target="_blank" rel="noopener noreferrer">
   <Image
     class="w-full rounded-xl"
     src={img}
     alt={imgAlt}
     draggable={"false"}
     format={"avif"}
-  />
+  /></a>
   <!-- The container for title, subtitle, and optional CTA button -->
   <div class="mt-4 md:mt-0">
     <!-- The title of the section -->
@@ -64,6 +68,11 @@ interface Props {
   >
     {description}
   </p>
+      <!-- Conditional rendering of the photo image -->
+      {photoExists ?  <p
+        class="mb-4 max-w-prose text-pretty underline font-light text-neutral-600 dark:text-neutral-200 sm:text-lg"
+      ><a href={photoURL} target="_blank" rel="noopener noreferrer">Check out the photos</a></p> : null}
+
   <!-- Conditional rendering of GitHub & YouTube links -->
   <p class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-blue-100 sm:text-lg">
     {githubExists ? <PrimaryCTA title="View team repositories" url={github} /> : null}

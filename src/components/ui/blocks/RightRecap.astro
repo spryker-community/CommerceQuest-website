@@ -19,7 +19,7 @@ const {
   location,
   imgTwoAlt,
   logo,
-  logoAlt, githubExists, youtubeExists, youtube
+  logoAlt, githubExists, youtubeExists, youtube, photoExists, photoURL,
 } = Astro.props;
 // Define TypeScript interface for the properties
 interface Props {
@@ -41,6 +41,8 @@ interface Props {
   githubExists?: boolean;
   youtubeExists?: boolean;
   youtube?: string;
+  photoExists?: boolean;
+  photoURL?: string;
 }
 ---
 <!-- Root section of the component -->
@@ -73,6 +75,10 @@ interface Props {
     >
       {description}
     </p>
+      <!-- Conditional rendering of the photo image -->
+  {photoExists ?  <p
+    class="mb-4 max-w-prose text-pretty underline font-light text-neutral-600 dark:text-neutral-200 sm:text-lg"
+  ><a href={photoURL} target="_blank" rel="noopener noreferrer">Check out the photos</a></p> : null}
     <!-- Conditional rendering of GitHub & YouTube links -->
     {githubExists ? <PrimaryCTA title="View team repositories" url={github} /> : null}
     {youtubeExists ? <SecondaryCTA title="View team presentations" url={youtube} /> : null}
@@ -85,31 +91,37 @@ interface Props {
     single ? (
       <div class="mt-8">
         <!-- Single image -->
-        <Image
+        <!-- Link to photo album -->
+    <a href={photoURL} target="_blank" rel="noopener noreferrer">
+      <Image
           class="w-full rounded-lg"
           src={imgOne}
           alt={imgOneAlt}
           format={"avif"}
-        />
+        /></a>
       </div>
     ) : (
       <div class="mt-8 grid grid-cols-2 gap-4">
         <!-- First image in a two-image layout -->
-        <Image
+        <!-- Link to photo album -->
+    <a href={photoURL} target="_blank" rel="noopener noreferrer">
+      <Image
           class="w-full rounded-xl"
           src={imgOne}
           alt={imgOneAlt}
           draggable={"false"}
           format={"avif"}
-        />
+        /></a>
         <!-- Second image in a two-image layout -->
-        <Image
+        <!-- Link to photo album -->
+    <a href={photoURL} target="_blank" rel="noopener noreferrer">
+      <Image
           class="mt-4 w-full rounded-xl lg:mt-10"
           src={imgTwo}
           alt={imgTwoAlt}
           draggable={"false"}
           format={"avif"}
-        />
+        /></a>
       </div>
     )
   }
