@@ -13,6 +13,8 @@ import hack2023 from "@images/recaps/hack2023.jpg";
 import ready from "@images/SPRYKER_EXCITE_2023-77.jpg";
 import denis from "@images/recaps/denis.jpg";
 import nagarro from "@images/recaps/nagarro.png";
+import shs from "@images/recaps/shs.png";
+import siemens from "@images/recaps/siemens.jpg";
 import spryker from "@images/recaps/spryker.png";
 import turbine from "@images/recaps/turbine.png";
 import delhi1 from "@images/recaps/nagarro-demo.jpg";
@@ -46,10 +48,35 @@ interface Event {
   githubExists?: boolean;
   youtubeExists?: boolean;
   youtube?: string;
+  photoExists?: boolean;
+  photoURL?: string;
+
 }
 
 const events: Event[] = [
 {
+    isRightRecap: false,
+    title: "Hackathon Siemens (internal)",
+    description:
+      "Two teams strived to improve the Spryker Back End user experience! One team worked on improved backend table filtering, while the other team focused on creating fancier back office tables.",
+    theme: "Smart Retail: Enhancing Customer Journeys through Innovation",
+    location: "Košice, Slovakia",
+    organizer: "Siemens Healthineers",
+    img: siemens,
+    imgAlt: "EXCITE Hackathon, team Oryx Vision Pro",
+    btnExists: false,
+    btnTitle: "/",
+    btnURL: "/",
+    logo: shs,
+    logoAlt: "siemens",
+    githubExists: true,
+    github: "https://github.com/orgs/spryker-community/repositories?q=siemens-2024",
+    youtubeExists: false,
+    youtube: "/",
+    photoExists: false,
+    photoURL: "/"
+
+  },{
     isRightRecap: true,
     title: "EXCITE Developer Stage 2024",
     description:
@@ -70,27 +97,32 @@ const events: Event[] = [
     githubExists: false,
     github: "https://github.com/orgs/spryker-community/repositories?q=nagarro",
     youtubeExists: false,
-    youtube: "https://www.youtube.com/watch?v=8YcPl5hjV2Y&list=PLJooqCSo73SiCupw9Xtj8-6vUERAxpdk_"
+    youtube: "https://www.youtube.com/watch?v=8YcPl5hjV2Y&list=PLJooqCSo73SiCupw9Xtj8-6vUERAxpdk_",
+    photoExists: true,
+    photoURL: "https://photos.google.com/share/AF1QipN_CKfFXeg-rX-8zzv3CHOCwpXl6lREtIw0ppWvSYQWvmXlBkB1DlMxvy1nUZWsQw?key=eGUxNUFPU2JqaWhlckxCaFFTajhKb1ZXZ3RlR3Rn"
   },
   {
     isRightRecap: false,
     title: "Hackathon September 2024",
     description:
-      "Two teams strived to improve Spryker security! One team worked on building a tool for extended auditing capabilities, while the other team built a POC for a Multifactor authentication tool for the Spryker backend.",
+      "Six teams strived to enhance the Customer Journey and team \"AI Pathfinder\" came out on top with their multilingual semantic search, ensuring precise matches across languages.",
     theme: "Smart Retail: Enhancing Customer Journeys through Innovation",
     location: "Berlin, Germany",
     organizer: "Spryker",
     img: EXCITE24,
     imgAlt: "EXCITE Hackathon, team Oryx Vision Pro",
     btnExists: false,
-    btnTitle: "Propel Documentation on PropelORM.org",
+    btnTitle: "/",
     btnURL: "/",
     logo: spryker,
     logoAlt: "Spryker",
     githubExists: true,
-    github: "https://github.com/orgs/spryker-community/repositories?q=hackathon-may-2024",
+    github: "https://github.com/orgs/spryker-community/repositories?q=hackathon-september-2024",
     youtubeExists: false,
-    youtube: "/"
+    youtube: "/",
+    photoExists: true,
+    photoURL: "https://photos.google.com/share/AF1QipNfPkZYk9h-dVc0RTgb80C4V22q3vrg9kDy-IM22R8aHpBjQWdixwB8XoVNz_qJpQ?key=S3JXZ3BmYmxRZE50YmRnMGwxWHB6ZHRXNXdIYXpn"
+
   },
   {
     isRightRecap: true,
@@ -110,7 +142,10 @@ const events: Event[] = [
     githubExists: true,
     github: "https://github.com/orgs/spryker-community/repositories?q=nagarro",
     youtubeExists: true,
-    youtube: "https://www.youtube.com/watch?v=8YcPl5hjV2Y&list=PLJooqCSo73SiCupw9Xtj8-6vUERAxpdk_"
+    youtube: "https://www.youtube.com/watch?v=8YcPl5hjV2Y&list=PLJooqCSo73SiCupw9Xtj8-6vUERAxpdk_",
+    photoExists: true,
+    photoURL: "https://photos.app.goo.gl/5vKkwa9qHZchRVZU8"
+
   },
   {
     isRightRecap: false,
@@ -130,7 +165,9 @@ const events: Event[] = [
     githubExists: true,
     github: "https://github.com/orgs/spryker-community/repositories?q=hackathon-may-2024",
     youtubeExists: false,
-    youtube: "/"
+    youtube: "/",
+    photoExists: true,
+    photoURL: "https://photos.app.goo.gl/7LfmGDwXKzmvsGJt8"
   },
   {
     isRightRecap: true,
@@ -150,7 +187,9 @@ const events: Event[] = [
     githubExists: true,
     github: "https://github.com/orgs/spryker-community/repositories?q=march-2024",
     youtubeExists: true,
-    youtube: "https://www.youtube.com/playlist?list=PLJooqCSo73SjaajuYUupPOMitm_nHf8VY"
+    youtube: "https://www.youtube.com/playlist?list=PLJooqCSo73SjaajuYUupPOMitm_nHf8VY",
+    photoExists: true,
+    photoURL: "https://photos.app.goo.gl/qrcpz9A8pcdbRuAD6"
   },
   {
     isRightRecap: false,
@@ -167,7 +206,9 @@ const events: Event[] = [
     githubExists: true,
     github: "https://github.com/orgs/spryker-community/repositories?q=sept-2023",
     youtubeExists: true,
-    youtube: "https://www.youtube.com/watch?v=hXUtS80N6Ro&list=PLJooqCSo73SgU6eSkCDv1_a6pLyUGyewW"
+    youtube: "https://www.youtube.com/watch?v=hXUtS80N6Ro&list=PLJooqCSo73SgU6eSkCDv1_a6pLyUGyewW",
+    photoExists: true,
+    photoURL: "https://photos.app.goo.gl/DccxW1QxEaMR8DfU7"
   },
   {
     isRightRecap: true,
@@ -183,14 +224,16 @@ const events: Event[] = [
     imgTwo: denis,
     imgTwoAlt: "Denis presenting at the EXCITE Developer Stage",
     btnExists: true,
-    btnTitle: "Register for upcoming events",
-    btnURL: "https://spryker.com/excite",
+    btnTitle: "Check out the video recordings",
+    btnURL: "https://www.youtube.com/playlist?list=PLJooqCSo73SjHwFTTcHnyKJ4fK8kvrmCA",
     logo: spryker,
     logoAlt: "Spryker",
     githubExists: false,
     github: "/",
     youtubeExists: false,
-    youtube: "/"
+    youtube: "/",
+    photoExists: true,
+    photoURL: "https://photos.app.goo.gl/9VtoLTsyvfyHDhX47"
   },
 ];
 
@@ -253,6 +296,8 @@ const pageTitle: string = `Event Recaps — ${SITE.title}`;
           githubExists={event.githubExists}
           youtubeExists={event.youtubeExists}
           youtube={event.youtube}
+          photoExists={event.photoExists}
+          photoURL={event.photoURL}
         />
       ) : (
         <LeftRecap
@@ -271,6 +316,8 @@ const pageTitle: string = `Event Recaps — ${SITE.title}`;
           githubExists={event.githubExists}
           youtubeExists={event.youtubeExists}
           youtube={event.youtube}
+          photoExists={event.photoExists}
+          photoURL={event.photoURL}
         />
       );
     })
