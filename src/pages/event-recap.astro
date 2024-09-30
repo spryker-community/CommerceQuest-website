@@ -7,9 +7,6 @@ import RightRecap from "@components/ui/blocks/RightRecap.astro";
 import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
 
 // Import necessary images
-import blueprints from "@images/blueprints-image.avif";
-import personWorking from "@images/person-working.avif";
-import beforeAfter from "@images/before-after.avif";
 import marchWinners from "@images/recaps/march-winners.jpg";
 import marchPaperplane from "@images/recaps/march-paperplane.jpg";
 import hack2023 from "@images/recaps/hack2023.jpg";
@@ -20,8 +17,10 @@ import spryker from "@images/recaps/spryker.png";
 import turbine from "@images/recaps/turbine.png";
 import delhi1 from "@images/recaps/nagarro-demo.jpg";
 import delhi2 from "@images/recaps/nagarro-4.jpg";
+import devstage241 from "@images/recaps/SPRYKER_Donnerstag-1311.jpg";
+import devstage242 from "@images/recaps/SPRYKER_Donnerstag-7890.jpg";
+import EXCITE24 from "@images/recaps/Hackathon-09-2024-535A3605.jpg";
 import tk1 from "@images/recaps/20240514_110027.jpg";
-import propelAutocompletion from "@images/propelAutocompletion.png";
 import { SITE } from "@data/constants";
 
 interface Event {
@@ -50,6 +49,49 @@ interface Event {
 }
 
 const events: Event[] = [
+{
+    isRightRecap: true,
+    title: "EXCITE Developer Stage 2024",
+    description:
+      "In 2024 we had our second Developer Stage at EXCITE! The program was again managed by our VP Architecture Denis Turkov and hosted by him and Guido during a full afternoon of technical insighst and live demo's of which some were more successful than others 😉. To be repeated in 2025 in the main room? 😇",
+    theme: "Turn Volatility in Value",
+    location: "Berlin, Germany",
+    organizer: "Spryker",
+    single: false,
+    imgOne: devstage241,
+    imgOneAlt: "Team demos at the Nagarro hackathon",
+    imgTwo: devstage242,
+    imgTwoAlt: "Guido together with Nagarro leadership at the Nagarro hackathon",
+    logo: spryker,
+    logoAlt: "Spryker",
+    btnExists: true,
+    btnTitle: "Register for upcoming events",
+    btnURL: "https://forum.commercequest.space/events/category",
+    githubExists: false,
+    github: "https://github.com/orgs/spryker-community/repositories?q=nagarro",
+    youtubeExists: false,
+    youtube: "https://www.youtube.com/watch?v=8YcPl5hjV2Y&list=PLJooqCSo73SiCupw9Xtj8-6vUERAxpdk_"
+  },
+  {
+    isRightRecap: false,
+    title: "Hackathon September 2024",
+    description:
+      "Two teams strived to improve Spryker security! One team worked on building a tool for extended auditing capabilities, while the other team built a POC for a Multifactor authentication tool for the Spryker backend.",
+    theme: "Smart Retail: Enhancing Customer Journeys through Innovation",
+    location: "Berlin, Germany",
+    organizer: "Spryker",
+    img: EXCITE24,
+    imgAlt: "EXCITE Hackathon, team Oryx Vision Pro",
+    btnExists: false,
+    btnTitle: "Propel Documentation on PropelORM.org",
+    btnURL: "/",
+    logo: spryker,
+    logoAlt: "Spryker",
+    githubExists: true,
+    github: "https://github.com/orgs/spryker-community/repositories?q=hackathon-may-2024",
+    youtubeExists: false,
+    youtube: "/"
+  },
   {
     isRightRecap: true,
     title: "Hackathon August 2024",
@@ -141,8 +183,8 @@ const events: Event[] = [
     imgTwo: denis,
     imgTwoAlt: "Denis presenting at the EXCITE Developer Stage",
     btnExists: true,
-    btnTitle: "Register for EXCITE 2024",
-    btnURL: "https://spryker.com/events/excite-2024/",
+    btnTitle: "Register for upcoming events",
+    btnURL: "https://spryker.com/excite",
     logo: spryker,
     logoAlt: "Spryker",
     githubExists: false,
