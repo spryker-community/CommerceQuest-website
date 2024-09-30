@@ -4,6 +4,9 @@ import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
+import slack from "@images/homepage/slack.png";
+import discord from "@images/homepage/discord.png";
+
 
 // Define props from Astro
 const {
@@ -68,6 +71,23 @@ interface Props {
       {secondaryBtn && 
       <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />
       }
+    </div>
+    <!-- Social Icons -->
+    <div class="mt-4 ml-1 grid w-full gap-3 sm:inline-flex">
+      <a href="https://join.slack.com/t/sprykercommunity/shared_invite/zt-2r8nyxl84-SFMyKuJ8IjFBtk0~BvWX~w" target="_blank" rel="noopener noreferrer">
+        <Image
+        class="w-6 h-6"
+        src={slack}
+        alt="Join our community on Slack"
+        />
+      </a>
+      <a href="https://discord.gg/kjrdurASgX" target="_blank" rel="noopener noreferrer">
+        <Image
+          class="w-8 h-6"
+          src={discord}
+          alt="Join our community on Discord"
+        />
+      </a>
     </div>
 
     <!-- Review Section: This section presents avatars, review ratings and the number of reviews -->
