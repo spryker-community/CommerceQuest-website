@@ -40,6 +40,8 @@ const socialLinks = {
   github: "https://github.com/spryker-community",
   youtube: "https://www.youtube.com/channel/UC6lVOEbqXxUh0W5FMTvlPDQ",
   linkedin: "https://www.linkedin.com/company/spryker-systems-gmbh",
+  discord: "https://discord.gg/kjrdurASgX",
+  slack: "https://join.slack.com/t/sprykercommunity/shared_invite/zt-2r8nyxl84-SFMyKuJ8IjFBtk0~BvWX~w",
 };
 
 const mainNavigation: NavEntry[] = [
