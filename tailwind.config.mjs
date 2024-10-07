@@ -48,6 +48,9 @@ export default {
         500: "#9D0861",
         600: "#4E0F36",
       },
+      green: {
+        500: "#1EBEA0",
+      },
       orange: {
         100: "#ed77be",
         200: "#ED4FAD",

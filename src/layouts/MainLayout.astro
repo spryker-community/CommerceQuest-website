@@ -4,6 +4,7 @@ import Meta from "@components/Meta.astro";
 import Navbar from "@components/sections/navbar&footer/Navbar.astro";
 import FooterSection from "@components/sections/navbar&footer/FooterSection.astro";
 import { SITE } from "@data/constants";
+import AnnouncementBannerHackWeek from "../components/ui/banners/AnnouncementBannerHackWeek.astro";
 
 // Setting expected props
 const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
@@ -59,6 +60,9 @@ We set the language of the page to English and add classes for scrollbar and scr
     The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
     -->
     <Navbar />
+    <AnnouncementBannerHackWeek
+      url="https://forum.commercequest.space/events/33"
+    />
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
       <main>
         <slot />
