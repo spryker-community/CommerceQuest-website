@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import hackWeek from '/src/images/banner/HackWeek-Banner_1200x90.jpg';
+const { url } = Astro.props;
+
+interface Props {
+  url: string;
+}
+---
+
+<astro-banner>
+  <div
+    class="z-50 w-full transform"
+    role="region"
+    aria-label="Informational Banner"
+  >
+    <div
+      class="py-8 text-center shadow-sm"
+    >
+      <div class="inline-flex items-center mx-auto max-w-screen-xl px-4 sm:px-8 lg:px-10">
+        <a
+          class="cursor-pointer"
+          href={url}
+          target="_blank"
+        ><Image class="rounded" src={hackWeek} alt="HackWeek" width="1152" height="86" loading="eager" /></a>
+      </div>
+
+    </div>
+  </div>
+</astro-banner>
+
