@@ -1,0 +1,67 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import MainSection from "../components/ui/blocks/MainSection.astro";
+import FreelancerCard from '../components/FreelancerCard.astro';
+import freelancers from '../data_files/freelancers.json';
+import Image from "../spryker_horizontal_grey.png";
+// Import PrimaryCTA component
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+
+const pageTitle = "Available Freelancers";
+
+// Filter out invisible freelancers
+const visibleFreelancers = freelancers.filter(freelancer => freelancer.isVisible);
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://commercequest.space/jobs/",
+    "url": "https://commercequest.space/jobs/",
+    "name": "Available Freelancers | CommerceQuest",
+    "description": "Find skilled freelancers for your Spryker, Propel & Oryx projects.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://commercequest.space/",
+      "name": "CommerceQuest",
+      "description": "Commerce Resources for the driven Spryker, Propel & Oryx developer."
+    },
+    "inLanguage": "en-US"
+  }}
+>
+  <MainSection
+    title={pageTitle}
+    description="Connect with skilled freelancers specializing in Spryker, Propel & Oryx development. Browse through our list of community professionals ready to contribute to your projects."
+  />
+   <!-- Announcement Block -->
+   <div class="bg-yellow-100 text-yellow-800 p-4 rounded-md mb-10">
+    📢 <strong>Note:</strong> This list and the information within is provided as-is. Being listed here is <strong>NOT</strong> an endorsement from Spryker.
+  </div>
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {visibleFreelancers.map((freelancer) => (
+        <FreelancerCard freelancer={freelancer} />
+      ))}
+    </div>
+    <h2 class="text-2xl font-semibold mt-10 mb-4 text-neutral-800 dark:text-neutral-200">Interested in being listed?</h2>
+    <div class="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 mb-10">
+      <PrimaryCTA title="Send us your information" url="https://form.asana.com/?k=1IiJkdbe9fJwCPnSRihpuQ&d=21158181759478"/>
+    </div>
+  </div>    <!-- Additional Information Block -->
+    <div class="bg-yellow-100 text-yellow-800 p-4 rounded-md mb-10">
+      <strong>Wondering how to get certified by Spryker?</strong>
+      <p>Spryker offers developer certifications through Safari:
+        <ol>
+          <li>A) Backend Developer (2 exams)</li>
+          <li>B) Solution Architect (1 exam)</li>
+      </ol><br/>
+        <p>Each certification costs €250 and is valid for one year. To access:</p>
+        <ol>
+          <li>1) Visit <a href="https://safari.spryker.com/" target="_blank">safari.spryker.com</a></li>
+          <li>2) Register/login</li>
+          <li>3) Non-customers/partners (e.g. freelancers) fill out an Asana form for eligibility review</li>
+      </ol>
+    </div>
+</MainLayout>

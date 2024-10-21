@@ -1,0 +1,90 @@
+---
+const { freelancer } = Astro.props;
+
+// Import social icons
+import { Icon } from 'astro-icon/components';
+
+import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+
+// Define the type for a skill
+type Skill = string;
+
+// Define a boolean to check if any certification is true
+const hasSprykerCertifications = freelancer.sprykerCertifications.backEndDeveloper || freelancer.sprykerCertifications.solutionArchitect;
+
+// Function to convert country code to flag emoji
+function getFlagEmoji(countryCode: string) {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split('')
+    .map(char => 127397 + char.charCodeAt(0));
+  return String.fromCodePoint(...codePoints);
+}
+---
+<style>
+.short-pitch {
+  display: -webkit-box;         /* Required for the clamping */
+  -webkit-line-clamp: 6;        /* Limits to 3 lines; change the number to adjust */
+  -webkit-box-orient: vertical; /* Required for the clamping */
+  overflow: hidden;             /* Hides the overflow */
+  text-overflow: ellipsis;      /* Adds an ellipsis (...) at the end */
+  max-height: 9em;              /* Approximate height for 3 lines (tune as needed) */
+  line-height: 2em;             /* Set line-height to help calculate max-height */
+}
+</style>
+
+<div class="bg-neutral-100 dark:bg-white/[.075] rounded-xl shadow-md overflow-hidden mb-10">
+  <a href={`/jobs/${freelancer.id}`}>
+    <img 
+      src={`/src/images/freelancers/${freelancer.photo}`} 
+      alt={freelancer.name} 
+      class="w-full h-48 object-cover"
+    />
+    </a>
+  <div class="p-6">
+    <h2 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-blue-400">{`${freelancer.firstName} ${freelancer.lastName}`}</h2>
+    <p class="text-pink-500 dark:text-pink-400 mb-2">{freelancer.headline}</p>
+    <p class="text-sm text-neutral-500 dark:text-neutral-500 mb-2">
+      📍 {freelancer.location} {getFlagEmoji(freelancer.countryCode)}
+    </p>
+    <p class="text-sm text-neutral-500 dark:text-neutral-500 mb-2">🗣️ {freelancer.language}</p>
+    <p class="text-sm text-neutral-500 dark:text-neutral-500 mb-6">Availability: {freelancer.availability}</p>
+    <div class="short-pitch mb-6">
+      <p class="text-sm text-neutral-800 dark:text-neutral-100 mb-4">{freelancer.shortPitch}</p>
+    </div>
+    <div class="mb-4">
+      <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-2">Role / Expertise</h3>
+      <div class="flex flex-wrap gap-2">
+        {freelancer.skills.map((skill: Skill) => (
+            <span class="bg-gray-200 rounded-full px-3 py-1 text-sm">{skill}</span>
+          ))}
+      </div>
+    </div>
+    {hasSprykerCertifications && (
+    <div class="mb-4">
+      <h3 class="text-lg font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Spryker Certifications</h3>
+      {freelancer.sprykerCertifications.backEndDeveloper && (
+        <p class="text-sm text-neutral-500 dark:text-neutral-500">✓ Certified Spryker Back End Developer</p>
+      )}
+      {freelancer.sprykerCertifications.solutionArchitect && (
+        <p class="text-sm text-neutral-500 dark:text-neutral-500">✓ Certified Spryker Solution Architect</p>
+      )}
+    </div>
+    )}
+    <div class="flex left items-center mb-4">
+      {freelancer.linkedIn && (
+      <a href={freelancer.linkedIn} target="_blank" rel="noopener noreferrer" class="text-neutral-800 dark:text-neutral-100">
+        <Icon name="mdi:linkedin" class="w-6 h-6 mr-1" />
+      </a>
+      )}
+      {freelancer.github && (
+      <a href={freelancer.github} target="_blank" rel="noopener noreferrer" class="text-neutral-800 dark:text-neutral-100">
+        <Icon name="mdi:github" class="w-6 h-6 mr-1" />
+      </a>
+      )}
+    </div>
+    <div class="mt-0 grid w-full gap-3 sm:inline-flex">
+      <SecondaryCTA title={`View ${freelancer.firstName}'s profile`} url={`/jobs/${freelancer.id}`}  />
+    </div>
+  </div>
+</div>

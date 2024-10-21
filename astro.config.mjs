@@ -6,6 +6,7 @@ import starlight from "@astrojs/starlight";
 import { fileURLToPath } from 'node:url';
 import mdx from '@astrojs/mdx';
 import netlify from "@astrojs/netlify";
+import icon from "astro-icon";
 
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
@@ -20,6 +21,11 @@ export default defineConfig({
   },
   prefetch: true,
   integrations: [
+    icon({
+      include: {
+        mdi: ["linkedin", "github"],  // Add any other icon names you need
+      },
+    }),
     tailwind(),
     sitemap(),
     starlight({

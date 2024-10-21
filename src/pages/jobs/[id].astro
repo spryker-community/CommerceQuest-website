@@ -1,0 +1,171 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import MainSection from "../../components/ui/blocks/MainSection.astro";
+import freelancers from '../../data_files/freelancers.json';
+import { Icon } from 'astro-icon/components';
+// Import PrimaryCTA component
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+
+export function getStaticPaths() {
+  // Only generate pages for visible freelancers
+  return freelancers.filter(freelancer => freelancer.isVisible).map((freelancer) => ({
+    params: { id: freelancer.id.toString() },
+    props: { freelancer },
+  }));
+}
+
+const { freelancer } = Astro.props;
+const pageTitle = `${`${freelancer.firstName} ${freelancer.lastName}`} - Freelancer Profile`;
+
+// Define a boolean to check if any certification is true
+const hasSprykerCertifications = freelancer.sprykerCertifications.backEndDeveloper || freelancer.sprykerCertifications.solutionArchitect;
+
+// Function to convert country code to flag emoji
+function getFlagEmoji(countryCode: string) {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split('')
+    .map(char => 127397 + char.charCodeAt(0));
+  return String.fromCodePoint(...codePoints);
+}
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `https://commercequest.space/jobs/${freelancer.id}/`,
+    "url": `https://commercequest.space/jobs/${freelancer.id}/`,
+    "name": `${`${freelancer.firstName} ${freelancer.lastName}`} - Freelancer Profile | CommerceQuest`,
+    "description": `${freelancer.shortPitch}`,
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://commercequest.space/",
+      "name": "CommerceQuest",
+      "description": "Commerce Resources for the driven Spryker, Propel & Oryx developer."
+    },
+    "inLanguage": "en-US"
+  }}
+>
+<!-- Back to Job Overview Link -->
+<div class="container mx-auto px-4 my-8">
+  <a href="/jobs" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200 flex items-center">
+    <span class="mr-2" aria-hidden="true">&larr;</span>
+    Back to Job Overview
+  </a>
+</div>
+  <MainSection
+    title={`${freelancer.firstName} ${freelancer.lastName}`}
+    description={freelancer.shortPitch}
+  />
+  <div class="container mx-auto px-4 mb-10">
+    <div class="bg-neutral-100 dark:bg-white/[.075] rounded-xl shadow-md overflow-hidden">
+      <div class="md:flex">
+        <div class="md:flex-shrink-0">
+          <img 
+            src={`/src/images/freelancers/${freelancer.photo}`} 
+            alt={`${freelancer.firstName} ${freelancer.lastName}`}
+            class="h-48 w-full object-cover md:w-48"
+          />
+          <div class="flex space-x-4 m-4 text-center">
+            {freelancer.linkedIn && (
+              <a href={freelancer.linkedIn} target="_blank" rel="noopener noreferrer" class="text-neutral-800 dark:text-neutral-100">
+                <Icon name="mdi:linkedin" class="w-8 h-8 mr-1" />
+              </a>
+            )}
+            {freelancer.github && (
+              <a href={freelancer.github} target="_blank" rel="noopener noreferrer" class="text-neutral-800 dark:text-neutral-100">
+                <Icon name="mdi:github" class="w-8 h-8 mr-1" />
+              </a>
+            )}
+          </div>
+          <div class="space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 m-2">
+            <PrimaryCTA title={`Contact ${freelancer.firstName}`} url={`mailto:${freelancer.contact}`}/>
+          </div>
+        </div>
+        <div class="p-8">
+          <h2 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-blue-400">{`Who's ${freelancer.firstName}`}?</h2>
+          <p class="text-pink-500 dark:text-pink-400 mb-2">{freelancer.headline}</p>
+          <p class="text-neutral-500 dark:text-neutral-500 mb-2">
+            📍 {freelancer.location} {getFlagEmoji(freelancer.countryCode)}
+          </p>
+          <p class="text-neutral-500 dark:text-neutral-500 mb-2">🗣️ {freelancer.language}</p>
+          <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+            <p>Started web development in {freelancer.yearStartedWebDev}</p>
+          </div>
+          <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+            <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Expertise / potential roles</h2>
+            <div class="flex flex-wrap gap-2">
+              {freelancer.skills.map((skill) => (
+                <span class="bg-gray-200 rounded-full px-3 py-1 text-sm">{skill}</span>
+              ))}
+            </div>
+          </div>
+          <h2 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-blue-400">Relevant Spryker experience</h2>
+          <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+            <p>Started with Spryker in {freelancer.yearStartedSpryker}</p>
+          </div>
+          {hasSprykerCertifications && (
+          <div class="mb-4 text-neutral-800 dark:text-neutral-100">
+            <h3 class="font-semibold mb-2 ">{`${freelancer.firstName}'s `}Spryker Certifications</h3>
+            {freelancer.sprykerCertifications.backEndDeveloper && (
+              <p class="text-neutral-500 dark:text-neutral-500">✓ Certified Spryker Back End Developer</p>
+            )}
+            {freelancer.sprykerCertifications.solutionArchitect && (
+              <p class="text-neutral-500 dark:text-neutral-500">✓ Certified Spryker Solution Architect</p>
+            )}
+          </div>
+          )}
+          {freelancer.otherCertifications && (
+            <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+              <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Other Certifications</h2>
+              <p>{freelancer.otherCertifications}</p>
+            </div>
+          )}
+
+          {freelancer.references && (
+            <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+              <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Spryker References</h2>
+              <div class="references" set:html={freelancer.references}></div>
+            </div>
+          )}
+          <h2 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-blue-400">Your project with {freelancer.firstName}</h2>
+            <p class="text-neutral-500 dark:text-neutral-500 mb-4">Potential start: {freelancer.availability}</p>
+            {freelancer.timezoneRange && (
+              <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+                <p>Working hour availability: {freelancer.timezoneRange}</p>
+              </div>
+            )}
+            {freelancer.locationFlexibility && (
+              <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+                <p>Location Flexibility: {freelancer.locationFlexibility}</p>
+              </div>
+            )}
+          
+            {freelancer.employmentType && (
+              <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+                <p>Employment Type: {freelancer.employmentType}</p>
+              </div>
+            )}
+            {freelancer.idealCustomer && (
+              <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+                <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Ideal Customer</h2>
+                <div class="ideal-customer" set:html={freelancer.idealCustomer}></div>
+              </div>
+            )}
+          {freelancer.contact && (
+            <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+              <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Eager to get started?</h2>
+              <p>Let's reach out: <a href={`mailto:${freelancer.contact}`}>{freelancer.contact}</a></p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+       <!-- Announcement Block -->
+   <div class="bg-yellow-100 text-yellow-800 p-4 rounded-md mt-5 mb-10">
+    <strong>⚠️ Note:</strong> The information above is provided by the person listed and - aside from possible Spryker Certifications - is not validated by CommerceQuest and/or Spryker. A listing on this page is NOT an endorsement from CommerceQuest and/or Spryker. Make sure to always do your own due dilligence when you hire someone.
+  </div>
+  </div>
+</MainLayout>
