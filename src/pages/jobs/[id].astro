@@ -15,7 +15,7 @@ export function getStaticPaths() {
 }
 
 const { freelancer } = Astro.props;
-const pageTitle = `${`${freelancer.firstName} ${freelancer.lastName}`} - Freelancer Profile`;
+const pageTitle = `${`${freelancer.firstName} ${freelancer.lastName}`} - Spryker Developer Profile`;
 
 // Define a boolean to check if any certification is true
 const hasSprykerCertifications = freelancer.sprykerCertifications.backEndDeveloper || freelancer.sprykerCertifications.solutionArchitect;
@@ -37,7 +37,7 @@ function getFlagEmoji(countryCode: string) {
     "@type": "ProfilePage",
     "@id": `https://commercequest.space/jobs/${freelancer.id}/`,
     "url": `https://commercequest.space/jobs/${freelancer.id}/`,
-    "name": `${`${freelancer.firstName} ${freelancer.lastName}`} - Freelancer Profile | CommerceQuest`,
+    "name": `${`${freelancer.firstName} ${freelancer.lastName}`} - Spryker Developer Profile | CommerceQuest`,
     "description": `${freelancer.shortPitch}`,
     "isPartOf": {
       "@type": "WebSite",
