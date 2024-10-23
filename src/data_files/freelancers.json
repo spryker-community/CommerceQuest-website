@@ -267,5 +267,35 @@
         "otherCertifications": "",
         "forumProfile": "https://forum.commercequest.space/profile/9068/javier",
         "isVisible": true
+      },
+      {
+        "id": 9,
+        "firstName": "Ivan",
+        "lastName": "Jurisic",
+        "photo": "ivan-jurisic.jpg",
+        "contact": "jurisic.ivan10@gmail.com",
+        "headline": "Spryker developer",
+        "language": "English, Croatian",
+        "location": "Makarska, Croatia",
+        "countryCode": "HR",
+        "linkedIn": "https://www.linkedin.com/in/ivan-jurisic/",
+        "github": "",
+        "shortPitch": "With six years of hands-on experience in Spryker, I bring deep expertise in full-stack development, particularly in backend solutions. I have successfully worked on more than five diverse projects, spanning both B2B and B2C models. My experience covers everything from building shops from the ground up to optimizing and scaling existing systems. I am comfortable with both older versions of Spryker and the latest cloud-based versions, ensuring adaptability and up-to-date skills in the evolving e-commerce landscape. My proven ability to deliver high-quality results makes me a strong candidate for Spryker development roles.",
+        "yearStartedWebDev": 2018,
+        "yearStartedSpryker": 2018,
+        "sprykerCertifications": {
+          "backEndDeveloper": true,
+          "solutionArchitect": true
+        },
+        "references": "<p>https://drive.google.com/file/d/1I2EYW9yoVTUhKgWtCUwOpwd1RadRW3X-/view?usp=sharing</p><p>https://drive.google.com/file/d/15bGOHFf5XOT6hh6meYwNloYYjM0wcQ1m/view?usp=sharing</p><p>https://drive.google.com/file/d/1CAgTvpoWsRDT_xNJGnfmiRg0ROUYgW5z/view?usp=sharing</p>",
+        "employmentType": "Freelance - open to permanent employment",
+        "locationFlexibility": "Remote, can travel",
+        "timezoneRange": "GMT-3 to GMT+4",
+        "availability": "Immediately",
+        "skills": ["Frontend (HTML, CSS, JS)", "Backend", "Project Management", "Team Lead"],
+        "idealCustomer": "",
+        "otherCertifications": "",
+        "forumProfile": "https://forum.commercequest.space/profile/9068/javier",
+        "isVisible": true
       }
   ]
