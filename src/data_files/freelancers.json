@@ -25,6 +25,7 @@
         "otherCertifications": "AWS Certified Solutions Architect",
         "employmentType": "Freelance - open to permanent employment",
         "contact": "evgeny@nekhamkin.de",
+        "forumProfile": "",
         "isVisible": false
       },
       {
@@ -54,6 +55,7 @@
         "otherCertifications": "",
         "employmentType": "Freelance, open to permanent employment",
         "contact": "evgeny@nekhamkin.de",
+        "forumProfile": "",
         "isVisible": true
       },
       {
@@ -83,6 +85,7 @@
         "otherCertifications": "",
         "employmentType": "Freelance, open to permanent employment",
         "contact": "hallo@davidgreiner.de",
+        "forumProfile": "https://forum.commercequest.space/profile/8590/DavidGreiner",
         "isVisible": true
       },
       {
@@ -112,6 +115,7 @@
         "otherCertifications": "",
         "employmentType": "Freelance, open to permanent employment",
         "contact": "costi.iordan@gmail.com",
+        "forumProfile": "",
         "isVisible": true
       },
       {
@@ -141,6 +145,7 @@
         "skills": ["Backend", "Architecture", "Team Lead", "Tech Lead"],
         "idealCustomer": "",
         "otherCertifications": "",
+        "forumProfile": "",
         "isVisible": true
       },
       {
@@ -170,6 +175,7 @@
         "skills": ["Backend", "Architecture", "Fullstack", "Tech Lead"],
         "idealCustomer": "B2B or Marketplace project, mid/large size, challenging features, international team",
         "otherCertifications": "",
+        "forumProfile": "https://forum.commercequest.space/profile/vasily.rodin",
         "isVisible": true
       },
       {
@@ -199,6 +205,7 @@
         "skills": ["Backend", "Fullstack", "Team Lead", "Tech Lead"],
         "idealCustomer": "",
         "otherCertifications": "",
+        "forumProfile": "",
         "isVisible": true
       },
       {
@@ -228,6 +235,7 @@
         "skills": ["Frontend (HTML, CSS, JS)", "Backend", "Architecture", "Fullstack"],
         "idealCustomer": "",
         "otherCertifications": "",
+        "forumProfile": "https://forum.commercequest.space/profile/9068/javier",
         "isVisible": true
       }
   ]

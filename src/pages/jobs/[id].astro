@@ -14,6 +14,14 @@ const imageFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/
   import: 'default'
 });
 
+const forumIconFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/cq.png', {
+  eager: true,
+  import: 'default'
+});
+
+// Get the forum icon image
+const forumIcon = Object.values(forumIconFiles)[0];
+
 export function getStaticPaths() {
   return freelancers.filter(freelancer => freelancer.isVisible).map((freelancer) => ({
     params: { id: freelancer.id.toString() },
@@ -91,6 +99,17 @@ const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];
             </div>
           )}
           <div class="flex space-x-4 m-4 text-center">
+            {freelancer.forumProfile && (
+              <a href={freelancer.forumProfile} target="_blank" rel="noopener noreferrer" class="text-neutral-800 dark:text-neutral-100">
+                <Image 
+                  src={forumIcon}
+                  alt="CommerceQuest Forum Profile"
+                  width={32}
+                  height={32}
+                  class="w-8 h-8"
+                />
+              </a>
+            )}
             {freelancer.linkedIn && (
               <a href={freelancer.linkedIn} target="_blank" rel="noopener noreferrer" class="text-neutral-800 dark:text-neutral-100">
                 <Icon name="mdi:linkedin" class="w-8 h-8 mr-1" />
