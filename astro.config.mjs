@@ -17,7 +17,9 @@ export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://commercequest.space/",
   image: {
-    domains: ["images.unsplash.com"]
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    }
   },
   prefetch: true,
   integrations: [

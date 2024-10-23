@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 const { freelancer } = Astro.props;
 
 // Import social icons
@@ -20,6 +21,19 @@ function getFlagEmoji(countryCode: string) {
     .map(char => 127397 + char.charCodeAt(0));
   return String.fromCodePoint(...codePoints);
 }
+// Add image import utility function
+async function getFreelancerImage(photoPath: string) {
+  try {
+    const imageModule = await import(`../images/freelancers/${photoPath}`);
+    return imageModule.default;
+  } catch (error) {
+    console.error(`Error loading image for ${photoPath}:`, error);
+    return null;
+  }
+}
+
+// Get the image for this freelancer
+const freelancerImage = await getFreelancerImage(freelancer.photo);
 ---
 <style>
 .short-pitch {
@@ -35,11 +49,13 @@ function getFlagEmoji(countryCode: string) {
 
 <div class="bg-neutral-100 dark:bg-white/[.075] rounded-xl shadow-md overflow-hidden mb-10">
   <a href={`/jobs/${freelancer.id}`}>
-    <img 
-      src={`/src/images/freelancers/${freelancer.photo}`} 
-      alt={freelancer.name} 
-      class="w-full h-48 object-cover"
-    />
+    <Image 
+        src={freelancerImage}
+        alt={`${freelancer.firstName} ${freelancer.lastName}`}
+        width={400}
+        height={192}
+        class="w-full h-48 object-cover"
+      />
     </a>
   <div class="p-6">
     <h2 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-blue-400">{`${freelancer.firstName} ${freelancer.lastName}`}</h2>

@@ -2,6 +2,7 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import MainSection from "../../components/ui/blocks/MainSection.astro";
 import freelancers from '../../data_files/freelancers.json';
+import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 // Import PrimaryCTA component
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
@@ -28,6 +29,22 @@ function getFlagEmoji(countryCode: string) {
     .map(char => 127397 + char.charCodeAt(0));
   return String.fromCodePoint(...codePoints);
 }
+
+// Utility function to get image path
+async function getFreelancerImage(photoPath: string) {
+  try {
+    // Dynamic import of the image from the freelancers directory
+    const imageModule = await import(`../../images/freelancers/${photoPath}`);
+    return imageModule.default;
+  } catch (error) {
+    console.error(`Error loading image for ${photoPath}:`, error);
+    // You might want to return a default/fallback image here
+    return null;
+  }
+}
+
+// Get the image for the current freelancer
+const freelancerImage = await getFreelancerImage(freelancer.photo);
 ---
 
 <MainLayout
@@ -63,11 +80,19 @@ function getFlagEmoji(countryCode: string) {
     <div class="bg-neutral-100 dark:bg-white/[.075] rounded-xl shadow-md overflow-hidden">
       <div class="md:flex">
         <div class="md:flex-shrink-0">
-          <img 
-            src={`/src/images/freelancers/${freelancer.photo}`} 
-            alt={`${freelancer.firstName} ${freelancer.lastName}`}
-            class="h-48 w-full object-cover md:w-48"
-          />
+          {freelancerImage ? (
+            <Image 
+              src={freelancerImage}
+              alt={`${freelancer.firstName} ${freelancer.lastName}`}
+              width={192} // 48px * 4 for higher resolution
+              height={192}
+              class="h-48 w-full object-cover md:w-48"
+            />
+          ) : (
+            <div class="h-48 w-full md:w-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+              <span class="text-gray-500 dark:text-gray-400">Image not available</span>
+            </div>
+          )}
           <div class="flex space-x-4 m-4 text-center">
             {freelancer.linkedIn && (
               <a href={freelancer.linkedIn} target="_blank" rel="noopener noreferrer" class="text-neutral-800 dark:text-neutral-100">
