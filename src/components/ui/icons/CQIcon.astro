@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  profileUrl: string | undefined;
+  size?: 'sm' | 'lg';  // sm for FreelancerCard, lg for detail page
+}
+
+const { profileUrl, size = 'sm' } = Astro.props;
+
+// Import CQ icon
+const cqIconFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/cq.png', {
+  eager: true,
+  import: 'default'
+});
+
+// Get the CQ icon image
+const cqIcon = Object.values(cqIconFiles)[0];
+
+// Define sizes based on the size prop to match other icons exactly
+const dimensions = {
+  sm: { 
+    width: 24, 
+    height: 24, 
+    class: 'w-6 h-6 align-left' // Added align-middle for better vertical alignment
+  },
+  lg: { 
+    width: 32, 
+    height: 32, 
+    class: 'w-8 h-8 align-left'
+  }
+};
+
+const { width, height, class: sizeClass } = dimensions[size];
+---
+
+{profileUrl && (
+  <a 
+    href={profileUrl} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="text-neutral-800 dark:text-neutral-100 mr-2 inline-flex items-center" 
+    title="CommerceQuest Forum Profile"
+  >
+    <Image 
+      src={cqIcon}
+      alt="CommerceQuest Forum Profile"
+      width={width}
+      height={height}
+      class={sizeClass}
+    />
+  </a>
+)}

@@ -4,42 +4,10 @@ import MainLayout from '../layouts/MainLayout.astro';
 import MainSection from "../components/ui/blocks/MainSection.astro";
 import FreelancerCard from '../components/FreelancerCard.astro';
 import freelancers from '../data_files/freelancers.json';
-// Import PrimaryCTA component
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import type { Freelancer } from '../types.ts';
 
 const pageTitle = "Available Spryker Developers";
-
-// Type definitions for the Freelancer object
-type Freelancer = {
-  id: number;
-  firstName: string;
-  lastName: string;
-  photo: string;
-  headline?: string; // Optional
-  availability: string;
-  location: string;
-  countryCode: string; // ISO Country Code, e.g., "US"
-  language: string;
-  shortPitch: string;
-  linkedIn?: string; // Optional as not all freelancers may have LinkedIn
-  github?: string; // Optional as not all freelancers may have GitHub
-  sprykerCertifications: {
-    backEndDeveloper: boolean;
-    solutionArchitect: boolean;
-  };
-  skills: string[];
-  timezoneRange: string;
-  yearStartedWebDev: number;
-  yearStartedSpryker: number;
-  references?: string; // Optional, could include HTML markup
-  idealCustomer?: string; // Optional, could include HTML markup
-  locationFlexibility: string;
-  otherCertifications?: string; // Optional
-  employmentType: string;
-  contact: string;
-  forumProfile?: string; 
-  isVisible: boolean;
-};
 
 // Function to shuffle the freelancers array
 function shuffle(array: Freelancer[]): Freelancer[] {
