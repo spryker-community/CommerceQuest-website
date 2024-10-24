@@ -83,7 +83,9 @@ const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];
             </div>
           )}
           <div class="flex items-center mb-4 mt-4 ml-3 gap-2">
+            {freelancer.forumProfile && (
             <CQIcon profileUrl={freelancer.forumProfile} size="sm" />
+            )}
             {freelancer.linkedIn && (
               <a href={freelancer.linkedIn} target="_blank" rel="noopener noreferrer" class="text-neutral-800 dark:text-neutral-100 inline-flex items-center">
                 <Icon name="mdi:linkedin" class="w-6 h-6 mr-2" /> 

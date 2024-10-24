@@ -1,8 +1,4 @@
-// Add the interface for Spryker certifications
-interface SprykerCertifications {
-  backEndDeveloper: boolean;
-  solutionArchitect: boolean;
-}
+import type { SprykerCertifications } from '.././types';
 
 // Format the date to a string
 function formatDate(date: Date): string {
@@ -39,6 +35,5 @@ export {
   formatDate, 
   capitalize, 
   getFlagEmoji, 
-  hasSprykerCertifications,
-  type SprykerCertifications // Export the interface as well
+  hasSprykerCertifications 
 };
