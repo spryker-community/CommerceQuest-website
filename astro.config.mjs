@@ -6,6 +6,7 @@ import starlight from "@astrojs/starlight";
 import { fileURLToPath } from 'node:url';
 import mdx from '@astrojs/mdx';
 import netlify from "@astrojs/netlify";
+import icon from "astro-icon";
 
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
@@ -16,10 +17,17 @@ export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://commercequest.space/",
   image: {
-    domains: ["images.unsplash.com"]
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    }
   },
   prefetch: true,
   integrations: [
+    icon({
+      include: {
+        mdi: ["linkedin", "github"],  // Add any other icon names you need
+      },
+    }),
     tailwind(),
     sitemap(),
     starlight({

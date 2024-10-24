@@ -140,6 +140,10 @@ const mainNavigation: NavEntry[] = [
     href: "/community-tools",
   },
   {
+    label: "Jobs",
+    href: "/jobs",
+  },
+  {
     label: "Events",
     href: "/",
     submenu: [

@@ -26,10 +26,9 @@ interface Props {
       {title}
     </h1>
     <!-- Section subtitle -->
-    <p
+    <p set:html={description}
       class="mb-8 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-xl"
     >
-      {description}
     </p>
     <!-- Conditional rendering of PrimaryCTA component if 'btnExists' property is truthy -->
     {
