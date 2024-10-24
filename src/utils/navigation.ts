@@ -17,6 +17,7 @@ const footerLinks = [
     links: [
       { name: "Forum", url: "/" },
       { name: "Extensions & Tools", url: "/community-tools" },
+      { name: "Jobs", url: "/jobs" },
       { name: "Upcoming Events", url: "https://forum.commercequest.space/events/category" },
       { name: "Event Recaps", url: "/event-recap" },
       { name: "Guides", url: "/guides/intro" },
@@ -126,10 +127,6 @@ const mainNavigation: NavEntry[] = [
           {
             label: "Random",
             href: "https://forum.commercequest.space/categories/Random/",
-          },
-          {
-            label: "Jobs",
-            href: "https://forum.commercequest.space/categories/jobs",
           },
         ],
       },
