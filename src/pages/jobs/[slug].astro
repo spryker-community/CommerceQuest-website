@@ -2,6 +2,7 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import MainSection from "../../components/ui/blocks/MainSection.astro";
 import freelancers from '../../data_files/freelancers.json';
+import { generateNameSlug } from '../../utils/utils.js';
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { getFlagEmoji, hasSprykerCertifications } from '../../utils/utils.js';
@@ -16,10 +17,16 @@ const imageFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/
 });
 
 export function getStaticPaths() {
-  return freelancers.filter(freelancer => freelancer.isVisible).map((freelancer) => ({
-    params: { id: freelancer.id.toString() },
-    props: { freelancer }
-  }));
+  return freelancers
+    .filter(freelancer => freelancer.isVisible)
+    .map((freelancer) => {
+      // Generate slug from name
+      const slug = generateNameSlug(freelancer.firstName, freelancer.lastName);
+      return {
+        params: { slug }, // Use slug instead of id
+        props: { freelancer }
+      };
+    });
 }
 
 const { freelancer } = Astro.props;
@@ -34,6 +41,10 @@ const imagePath = `/src/images/freelancers/${freelancer.photo}`;
 // Get the image from our glob
 const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];
 
+//Get slug
+const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastName);
+
+
 ---
 
 <MainLayout
@@ -41,8 +52,8 @@ const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];
   structuredData={{
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    "@id": `https://commercequest.space/jobs/${freelancer.id}/`,
-    "url": `https://commercequest.space/jobs/${freelancer.id}/`,
+    "@id": `https://commercequest.space/jobs/${freelancerSlug}/`,
+    "url": `https://commercequest.space/jobs/${freelancerSlug}/`,
     "name": `${`${freelancer.firstName} ${freelancer.lastName}`} - Spryker Developer Profile | CommerceQuest`,
     "description": `${freelancer.shortPitch}`,
     "isPartOf": {

@@ -31,9 +31,26 @@ function hasSprykerCertifications(certifications: SprykerCertifications): boolea
   return certifications.backEndDeveloper || certifications.solutionArchitect;
 }
 
+// Generate URL-friendly slug from first and last name
+function generateNameSlug(firstName: string, lastName: string): string {
+  // Combine first and last name, convert to lowercase, replace spaces with hyphens
+  // Remove special characters and normalize to basic Latin characters
+  const normalizedName = `${firstName} ${lastName}`
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+    .trim()
+    .replace(/\s+/g, '-'); // Replace spaces with hyphens
+  
+  return normalizedName;
+}
+
+// Export the new function along with existing ones
 export { 
   formatDate, 
   capitalize, 
   getFlagEmoji, 
-  hasSprykerCertifications 
+  hasSprykerCertifications,
+  generateNameSlug 
 };

@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import { getFlagEmoji, hasSprykerCertifications } from '../utils/utils.js';
+import { getFlagEmoji, hasSprykerCertifications, generateNameSlug } from '../utils/utils.js';
 const { freelancer } = Astro.props;
 import { Icon } from 'astro-icon/components'; // social icons
 import CQIcon from '@components/ui/icons/CQIcon.astro';
@@ -35,6 +35,9 @@ async function getFreelancerImage(photoPath: string) {
   }
 }
 
+// Generate the URL-friendly slug for the freelancer
+const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastName);
+
 // Construct the correct image path
 const imagePath = `/src/images/freelancers/${freelancer.photo}`;
 
@@ -54,7 +57,7 @@ const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];
 </style>
 
 <div class="bg-neutral-100 dark:bg-white/[.075] rounded-xl shadow-md overflow-hidden mb-10">
-  <a href={`/jobs/${freelancer.id}`}>
+  <a href={`/jobs/${freelancerSlug}`}>
     {freelancerImage ? (
       <Image 
         src={freelancerImage}
@@ -70,7 +73,7 @@ const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];
     )}
   </a>
   <div class="p-6">
-    <a href={`/jobs/${freelancer.id}`} class="group"> <!-- Added group for hover effect -->
+    <a href={`/jobs/${freelancerSlug}`} class="group"> <!-- Added group for hover effect -->
       <h2 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">
         {`${freelancer.firstName} ${freelancer.lastName}`}
       </h2>
@@ -116,7 +119,7 @@ const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];
       </div>
     )}
     <div class="mt-0 grid w-full gap-3 sm:inline-flex">
-      <SecondaryCTA title={`View ${freelancer.firstName}'s job profile`} url={`/jobs/${freelancer.id}`}  />
+      <SecondaryCTA title={`View ${freelancer.firstName}'s job profile`} url={`/jobs/${freelancerSlug}`}  />
     </div>
   </div>
 </div>
