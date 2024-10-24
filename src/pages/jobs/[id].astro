@@ -15,14 +15,6 @@ const imageFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/
   import: 'default'
 });
 
-const forumIconFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/cq.png', {
-  eager: true,
-  import: 'default'
-});
-
-// Get the forum icon image
-const forumIcon = Object.values(forumIconFiles)[0];
-
 export function getStaticPaths() {
   return freelancers.filter(freelancer => freelancer.isVisible).map((freelancer) => ({
     params: { id: freelancer.id.toString() },
