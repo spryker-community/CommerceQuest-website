@@ -6,6 +6,7 @@ import FreelancerCard from '../components/FreelancerCard.astro';
 import freelancers from '../data_files/freelancers.json';
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import type { Freelancer } from '../types.ts';
+import { generateNameSlug } from '../utils/utils.js';
 
 const pageTitle = "Available Spryker Developers";
 
