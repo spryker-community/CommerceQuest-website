@@ -27,7 +27,7 @@
     "@preline/dropdown": "^2.4.1",
     "@preline/overlay": "^2.4.1",
     "@preline/tabs": "^2.4.1",
-    "@types/react": "^18.3.11",
+    "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.16.7",
     "astro-compressor": "^0.4.1",
