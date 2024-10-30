@@ -25,7 +25,7 @@ export default defineConfig({
   integrations: [
     icon({
       include: {
-        mdi: ["linkedin", "github"],  // Add any other icon names you need
+        mdi: ["linkedin", "github", "facebook", "twitter", "instagram"],  // Added more common social icons
       },
     }),
     tailwind(),
