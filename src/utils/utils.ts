@@ -14,18 +14,6 @@ function capitalize(str:string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// Convert country code to flag emoji
-function getFlagEmoji(countryCode: string): string {
-  if (typeof countryCode !== 'string' || countryCode.length !== 2) {
-    return '';
-  }
-  const codePoints = countryCode
-    .toUpperCase()
-    .split('')
-    .map(char => 127397 + char.charCodeAt(0));
-  return String.fromCodePoint(...codePoints);
-}
-
 // Check if user has any Spryker certifications
 function hasSprykerCertifications(certifications: SprykerCertifications): boolean {
   return certifications.backEndDeveloper || certifications.solutionArchitect;
@@ -50,7 +38,6 @@ function generateNameSlug(firstName: string, lastName: string): string {
 export { 
   formatDate, 
   capitalize, 
-  getFlagEmoji, 
   hasSprykerCertifications,
   generateNameSlug 
 };

@@ -5,10 +5,11 @@ import freelancers from '../../data_files/freelancers.json';
 import { generateNameSlug } from '../../utils/utils.js';
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import { getFlagEmoji, hasSprykerCertifications } from '../../utils/utils.js';
+import { hasSprykerCertifications } from '../../utils/utils.js';
 import { Icon } from 'astro-icon/components'; // social icons
 import CQIcon from '@components/ui/icons/CQIcon.astro';
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import Flag from '@components/ui/Flag.astro';
 
 // Import all images at build time with proper typing
 const imageFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/freelancers/*.{jpeg,jpg,png,gif}', {
@@ -43,8 +44,6 @@ const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];
 
 //Get slug
 const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastName);
-
-
 ---
 
 <MainLayout
@@ -116,7 +115,7 @@ const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastNam
           <h2 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-blue-400">{`Who's ${freelancer.firstName}`}?</h2>
           <p class="text-pink-500 dark:text-pink-400 mb-2">{freelancer.headline}</p>
           <p class="text-neutral-500 dark:text-neutral-500 mb-2">
-            📍 {freelancer.location} {getFlagEmoji(freelancer.countryCode)}
+            📍 {freelancer.location} <Flag countryCode={freelancer.countryCode} size="sm" class="ml-1" />
           </p>
           <p class="text-neutral-500 dark:text-neutral-500 mb-2">🗣️ {freelancer.language}</p>
           <div class="mb-4 text-neutral-500 dark:text-neutral-500">
