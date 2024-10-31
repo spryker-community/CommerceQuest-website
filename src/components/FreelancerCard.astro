@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import { getFlagEmoji, hasSprykerCertifications, generateNameSlug } from '../utils/utils.js';
+import { hasSprykerCertifications, generateNameSlug } from '../utils/utils.js';
 const { freelancer } = Astro.props;
 import { Icon } from 'astro-icon/components'; // social icons
 import CQIcon from '@components/ui/icons/CQIcon.astro';
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+import Flag from '@components/ui/Flag.astro';
 import type { Freelancer } from '../types';
 
 interface Props {
@@ -79,7 +80,7 @@ const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];
       </h2>
     </a>    <p class="text-pink-500 dark:text-pink-400 mb-2">{freelancer.headline}</p>
     <p class="text-sm text-neutral-500 dark:text-neutral-500 mb-2">
-      📍 {freelancer.location} {getFlagEmoji(freelancer.countryCode)}
+      📍 {freelancer.location} <Flag countryCode={freelancer.countryCode} size="sm" class="ml-1" />
     </p>
     <p class="text-sm text-neutral-500 dark:text-neutral-500 mb-2">🗣️ {freelancer.language}</p>
     <p class="text-sm text-neutral-500 dark:text-neutral-500 mb-6">Availability: {freelancer.availability}</p>
