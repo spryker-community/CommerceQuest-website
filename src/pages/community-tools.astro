@@ -1,5 +1,5 @@
 ---
-import MainLayout from "@/layouts/MainLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import { SITE } from "@data/constants";
 import MainSection from "../components/ui/blocks/MainSection.astro";
 import CommunityToolsTable from "../components/ui/tables/CommunityToolsTable.astro";
@@ -31,4 +31,18 @@ const pageTitle: string = `Community Tools — ${SITE.title}`;
     description=" We are lucky to have a community that doesn't only build with Spryker, but also contributes back to the ecosystem! Below you'll find a list of - non-official - resources that have been created by our community that can help you work better and faster with our products. In no particular order:"
   />
   <CommunityToolsTable tools={communityTools} />
+  <MainSection
+    title="Want more?"
+    description="The extensions & tools above are - more or less - being used in production. We also have a lot of MVP/POC projects (often coming from the Hackathons we organize) that migth not be production ready (yet), but could provide a perfect starting point for your next project."
+    btnExists={true}
+    btnTitle="Check out community repositories"
+    btnURL="https://github.com/orgs/spryker-community/repositories"
+  />
+  <MainSection
+    title="Share Your Project"
+    description="Have you built something amazing that could benefit the community? We'd love to help you share it! To get started, reach out to Florian on our forum to request a new repository in the Spryker Community organization. Once approved, you can contribute your code following our <a href='https://github.com/spryker-community/docs/blob/main/CONTRIBUTE.md' class='text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400'>contribution guidelines</a>. Your project could be the next valuable addition to our growing ecosystem!"
+    btnExists={true}
+    btnTitle="Request Repository on Forum"
+    btnURL="https://forum.commercequest.space/categories/spryker-community-projects"
+  />
 </MainLayout>
