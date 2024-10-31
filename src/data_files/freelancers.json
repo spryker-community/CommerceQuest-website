@@ -297,5 +297,35 @@
         "otherCertifications": "",
         "forumProfile": "https://forum.commercequest.space/profile/9068/javier",
         "isVisible": true
+      },
+      {
+        "id": 10,
+        "firstName": "Andrey",
+        "lastName": "Lidokhover",
+        "photo": "andrey-lidokhover.jpg",
+        "contact": "lidokhover@gmail.com",
+        "headline": "Senior Spryker Backend Developer",
+        "language": "German, English, Russian",
+        "location": "Hamburg",
+        "countryCode": "DE",
+        "linkedIn": "https://www.linkedin.com/in/andrej-lidokhover-553b07137/",
+        "github": "",
+        "shortPitch": "I am a seasoned Lead Backend Developer with a strong background in Spryker projects. I have deep experience implementing Spryker B2B, B2C & Marketplace projects, and developing software architecture for e-commerce enterprise solutions.",
+        "yearStartedWebDev": 1999,
+        "yearStartedSpryker": 2016,
+        "sprykerCertifications": {
+          "backEndDeveloper": true,
+          "solutionArchitect": false
+        },
+        "references": "<p>* TOWA GmbH, Spryker Backend Developer, Consultant (Freelance) 2022 - 2023 Hands-on backend development in the large B2B Spryker Project. Consulting the client on state-of-the-art technologies, best practices and feasibility.</p><p>* Dept Agency, Tech Lead  Enterprise E-Commerce 2022 Leading of two B2B spryker projects (Scrum, Kanban). Consulting Enterprise E-commerce clients in the assigned projects on state-of-the-art technologies, best practices and feasibility. Hands-on spryker backend development.</p><p>* Dept Agency, Lead Developer Backend 2020 - 2022 Technical leading of different Spryker B2B, B2C and Marketplace Projects Hands-on spryker backend development.</p><p>* Dept Agency, Senior Backend Developer, Project Lead Developer 2016 - 2020 Spryker backend development.  Technical project leading (Spryker B2C)</p>",
+        "employmentType": "Freelance",
+        "locationFlexibility": "Remote, can travel",
+        "timezoneRange": "GMT+4 to GMT-4",
+        "availability": "November 2024, fulltime",
+        "skills": ["Backend", "Architecture", "Fullstack", "Tech Lead", "Team Lead"],
+        "idealCustomer": "",
+        "otherCertifications": "",
+        "forumProfile": "https://forum.commercequest.space/profile/9068/javier",
+        "isVisible": true
       }
   ]
