@@ -1,5 +1,4 @@
 ---
-// Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
@@ -17,8 +16,8 @@ import network from "@images/community-3.jpg";
 import customerday from "@images/community-1.jpg";
 import cteam from "@images/community-2.jpg";
 import maher from "@images/blog/maher.jpg";
+import VanillaForumPosts from '../components/VanillaForumPosts.astro';
 ---
-
 <MainLayout>
 
   <HeroSection
@@ -48,6 +47,10 @@ import maher from "@images/blog/maher.jpg";
   subTitle="Join engineers, architects and commerce experts from all over the world."
   />
 
+  <section>
+    <VanillaForumPosts />
+  </section>
+
   <FeaturesGeneral
     title="Igniting Community. Celebrating Contributors."
     subTitle="We’re excited to kickstart a new era of collaborative development with our wider community! Follow our contributions process, send in your PRs and you'll get a fast reply from our core team."
@@ -55,8 +58,6 @@ import maher from "@images/blog/maher.jpg";
     alt="Products in floating boxes"
     features={features}
   />
-
-
 
   <FeaturesNavs
     title=`Why attend community <span class="text-blue-500 dark:text-blue-400">events</span>?`
