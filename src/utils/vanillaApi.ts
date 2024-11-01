@@ -34,7 +34,8 @@ export interface FormattedDiscussion {
 
 export async function getDiscussions(): Promise<FormattedDiscussion[]> {
   try {
-    const response = await fetch('https://forum.commercequest.space/api/v2/discussions');
+    // Use local endpoint instead of direct API call
+    const response = await fetch('/api/forum/discussions.json');
     if (!response.ok) {
       console.error('Failed to fetch forum posts:', response.status, response.statusText);
       throw new Error('Failed to fetch forum posts');
@@ -44,14 +45,14 @@ export async function getDiscussions(): Promise<FormattedDiscussion[]> {
     return data.map((discussion: Discussion) => formatDiscussion(discussion));
   } catch (error) {
     console.error('Error fetching discussions:', error);
-    return [];
+    throw error; // Re-throw to handle in component
   }
 }
 
 export async function getPopularDiscussions(): Promise<FormattedDiscussion[]> {
   try {
-    // Get all discussions from the API
-    const response = await fetch('https://forum.commercequest.space/api/v2/discussions');
+    // Use local endpoint instead of direct API call
+    const response = await fetch('/api/forum/discussions.json');
     if (!response.ok) {
       console.error('Failed to fetch forum posts:', response.status, response.statusText);
       throw new Error('Failed to fetch forum posts');
@@ -72,7 +73,7 @@ export async function getPopularDiscussions(): Promise<FormattedDiscussion[]> {
     return recentPopularDiscussions;
   } catch (error) {
     console.error('Error fetching popular discussions:', error);
-    return [];
+    throw error; // Re-throw to handle in component
   }
 }
 
