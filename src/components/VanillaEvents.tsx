@@ -3,21 +3,64 @@ import { getUpcomingEvents, getPastEvents } from '../utils/vanillaApi';
 import type { FormattedEvent } from '../utils/vanillaApi';
 
 const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: boolean }) => {
-  const formatDate = (date: Date) => {
-    return date.toLocaleDateString('en-US', {
-      weekday: 'short',
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
+  // Get the user's timezone using Intl.DateTimeFormat
+  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  
+  // Format time with abbreviated timezone and IANA identifier
+  const formatTimeWithTimezone = (date: Date) => {
+    // Get just the time
+    const time = new Intl.DateTimeFormat('en-US', {
       hour: '2-digit',
-      minute: '2-digit'
-    });
+      minute: '2-digit',
+      timeZone: userTimeZone,
+    }).format(date);
+
+    // Get abbreviated timezone name
+    const timeZoneName = new Intl.DateTimeFormat('en-US', {
+      timeZoneName: 'short',
+      timeZone: userTimeZone,
+    }).formatToParts(date).find(part => part.type === 'timeZoneName')?.value || '';
+
+    return `${time} ${timeZoneName} (${userTimeZone})`;
   };
 
-  const formatCalendarDate = (date: Date) => {
-    const month = date.toLocaleString('en-US', { month: 'short' });
-    const day = date.getDate();
-    return { month, day };
+  // Enhanced calendar date formatting for multi-day events
+  const formatCalendarDate = (startDate: Date, endDate: Date) => {
+    const startMonth = startDate.toLocaleString('en-US', { month: 'short' });
+    const startDay = startDate.getDate();
+    const endMonth = endDate.toLocaleString('en-US', { month: 'short' });
+    const endDay = endDate.getDate();
+    
+    // Check if dates are in different months or years
+    const startYear = startDate.getFullYear();
+    const endYear = endDate.getFullYear();
+    
+    // Check if it's a multi-day event
+    const isMultiDay = startDay !== endDay || startMonth !== endMonth || startYear !== endYear;
+    
+    // For single-day events
+    if (!isMultiDay) {
+      return {
+        isMultiDay: false,
+        display: {
+          topLine: startMonth,
+          bottomLine: startDay.toString()
+        }
+      };
+    }
+    
+    // For multi-day events
+    return {
+      isMultiDay: true,
+      display: {
+        // Show month range if different months
+        topLine: startMonth === endMonth ? startMonth : `${startMonth}-${endMonth}`,
+        // Show day range
+        bottomLine: `${startDay}-${endDay}`,
+        // If different years, show years
+        yearDisplay: startYear !== endYear ? `${startYear}-${endYear}` : undefined
+      }
+    };
   };
 
   const calculateDuration = (startDate: Date, endDate: Date) => {
@@ -41,8 +84,9 @@ const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: b
     }
   };
 
-  const startDateFormatted = formatCalendarDate(event.startDate);
+  const dateInfo = formatCalendarDate(event.startDate, event.endDate);
   const duration = calculateDuration(event.startDate, event.endDate);
+  const startTime = formatTimeWithTimezone(event.startDate);
 
   // Determine the link for RSVP/More Info
   const rsvpLink = event.ctaUrl || event.url;
@@ -53,11 +97,17 @@ const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: b
         <div className="flex-shrink-0 w-16">
           <div className="text-center bg-neutral-200 dark:bg-[#1A2942] rounded-lg overflow-hidden">
             <div className="bg-blue-500 dark:bg-blue-600 text-white text-xs uppercase py-1">
-              {startDateFormatted.month}
+              {dateInfo.display.topLine}
             </div>
             <div className="text-xl font-bold py-2 text-gray-900 dark:text-white">
-              {startDateFormatted.day}
+              {dateInfo.display.bottomLine}
             </div>
+            {/* Show year range for multi-year events */}
+            {dateInfo.isMultiDay && dateInfo.display.yearDisplay && (
+              <div className="text-xs text-gray-600 dark:text-gray-400 pb-1">
+                {dateInfo.display.yearDisplay}
+              </div>
+            )}
           </div>
         </div>
         <div className="flex-grow min-w-0">
@@ -65,10 +115,8 @@ const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: b
             <a href={event.url} className="hover:underline">{event.name}</a>
           </h3>
 
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3 text-sm text-gray-500 dark:text-gray-400">
-            <span>{formatDate(event.startDate)}</span>
-            <span className="text-gray-300 dark:text-gray-600">•</span>
-            <span>{duration}</span>
+          <div className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+            <span className="font-medium">Start:</span> {startTime} <span className="text-gray-300 dark:text-gray-600 mx-2">•</span> {duration}
           </div>
 
           {/* RSVP/More Info Button for Upcoming Events */}
