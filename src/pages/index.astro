@@ -17,6 +17,7 @@ import customerday from "@images/community-1.jpg";
 import cteam from "@images/community-2.jpg";
 import maher from "@images/blog/maher.jpg";
 import VanillaForumPosts from '../components/VanillaForumPosts.astro';
+import VanillaEvents from '../components/VanillaEvents.astro';
 ---
 <MainLayout>
 
@@ -47,8 +48,17 @@ import VanillaForumPosts from '../components/VanillaForumPosts.astro';
   subTitle="Join engineers, architects and commerce experts from all over the world."
   />
 
+  <div class="mx-auto mt-10 mb-6 w-full space-y-1 text-center sm:w-1/2 lg:w-1/2">
+    <h2
+      class="text-balance text-2xl font-bold leading-tight text-neutral-800 dark:text-neutral-200 sm:text-3xl"
+    >Community activity dashboard</h2></div>
+
   <section>
     <VanillaForumPosts />
+  </section>
+
+  <section>
+    <VanillaEvents />
   </section>
 
   <FeaturesGeneral

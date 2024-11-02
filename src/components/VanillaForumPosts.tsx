@@ -83,7 +83,7 @@ const VanillaForumPosts = () => {
           </div>
         )}
 
-        {!isLoading && !error && recentDiscussions.slice(0, 5).map((discussion) => (
+        {!isLoading && !error && recentDiscussions.slice(0, 3).map((discussion) => (
           <DiscussionCard key={discussion.id} discussion={discussion} />
         ))}
       </div>
@@ -106,9 +106,9 @@ const VanillaForumPosts = () => {
           </div>
         )}
 
-        {!isLoading && !error && popularDiscussions.map((discussion) => (
-          <DiscussionCard key={discussion.id} discussion={discussion} />
-        ))}
+{!isLoading && !error && popularDiscussions.slice(0, 3).map((discussion) => (
+  <DiscussionCard key={discussion.id} discussion={discussion} />
+))}
       </div>
     </div>
   );
