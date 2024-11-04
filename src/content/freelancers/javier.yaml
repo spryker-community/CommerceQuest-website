@@ -17,12 +17,10 @@ shortPitch: >-
   committed to driving innovation and achieving results.
 linkedIn: https://www.linkedin.com/in/jbenitosantoni/
 github: ''
-sprykerCertifications:
-  backEndDeveloper: true
-  solutionArchitect: true
+sprykerCertifications: "Backend Developer Certified, Solution Architect Certified"
 skills:
-  - Frontend (HTML, CSS, JS)
-  - Backend
+  - Frontend
+  - Back End
   - Architecture
   - Fullstack
 timezoneRange: 7.00 - 18.00 (GMT+2)

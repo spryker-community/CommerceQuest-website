@@ -16,9 +16,7 @@ shortPitch: >-
   challenges!
 linkedIn: https://www.linkedin.com/in/david-greiner-752b2a63/
 github: https://github.com/greinerdavid
-sprykerCertifications:
-  backEndDeveloper: false
-  solutionArchitect: false
+sprykerCertifications: "None"
 skills:
   - Back End
   - Tech Lead

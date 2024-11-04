@@ -12,11 +12,9 @@ shortPitch: >-
   out with team management from technical and people leadership view.
 linkedIn: https://www.linkedin.com/in/jan-v-kovacs/
 github: ''
-sprykerCertifications:
-  backEndDeveloper: true
-  solutionArchitect: false
+sprykerCertifications: "Backend Developer Certified"
 skills:
-  - Backend
+  - Back End
   - Fullstack
   - Team Lead
   - Tech Lead

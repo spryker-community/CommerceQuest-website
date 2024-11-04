@@ -22,12 +22,10 @@ shortPitch: >-
   genuine love for building innovative web solutions, let's connect!
 linkedIn: https://www.linkedin.com/in/constantiniordan/
 github: ''
-sprykerCertifications:
-  backEndDeveloper: true
-  solutionArchitect: true
+sprykerCertifications: "Backend Developer Certified, Solution Architect Certified"
 skills:
-  - Frontend (HTML, CSS, JS)
-  - Backend
+  - Frontend
+  - Back End
   - Fullstack
   - Tech Lead
 timezoneRange: GMT+3 to GMT-2

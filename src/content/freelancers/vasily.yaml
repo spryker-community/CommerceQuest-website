@@ -11,9 +11,7 @@ shortPitch: >-
   dozens of projects!
 linkedIn: https://www.linkedin.com/in/rodinv/
 github: https://github.com/RodinVasily
-sprykerCertifications:
-  backEndDeveloper: true
-  solutionArchitect: false
+sprykerCertifications: "Backend Developer Certified"
 skills:
   - Backend
   - Architecture

@@ -18,12 +18,10 @@ shortPitch: >-
   development roles.
 linkedIn: https://www.linkedin.com/in/ivan-jurisic/
 github: ''
-sprykerCertifications:
-  backEndDeveloper: true
-  solutionArchitect: true
+sprykerCertifications: "Backend Developer Certified, Solution Architect Certified"
 skills:
-  - Frontend (HTML, CSS, JS)
-  - Backend
+  - Frontend
+  - Back End
   - Project Management
   - Team Lead
 timezoneRange: GMT-3 to GMT+4

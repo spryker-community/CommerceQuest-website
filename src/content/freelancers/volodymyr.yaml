@@ -18,11 +18,9 @@ shortPitch: >-
   testing, deployment, and maintenance.
 linkedIn: https://www.linkedin.com/in/volodymyr-hrychenko-a03aa6a8/
 github: ''
-sprykerCertifications:
-  backEndDeveloper: true
-  solutionArchitect: false
+sprykerCertifications: "Backend Developer Certified"
 skills:
-  - Backend
+  - Back End
   - Architecture
   - Team Lead
   - Tech Lead

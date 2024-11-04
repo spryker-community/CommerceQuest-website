@@ -15,11 +15,9 @@ shortPitch: >-
   scale, reach out to me.
 linkedIn: https://www.linkedin.com/in/filip-galic-8250a988
 github: https://github.com/galion96
-sprykerCertifications:
-  backEndDeveloper: true
-  solutionArchitect: true
+sprykerCertifications: "Backend Developer Certified, Solution Architect Certified"
 skills:
-  - Backend
+  - Back End
   - Architecture
   - Team Lead
   - Tech Lead

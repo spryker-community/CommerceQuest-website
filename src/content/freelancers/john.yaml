@@ -11,15 +11,9 @@ shortPitch: >-
   solutions.
 linkedIn: https://www.linkedin.com/in/johndoe
 github: https://github.com/johndoe
-sprykerCertifications:
-  backEndDeveloper: true
-  solutionArchitect: false
+sprykerCertifications: "Backend Developer Certified"
 skills:
-  - Spryker
-  - PHP
-  - JavaScript
-  - Docker
-  - AWS
+  - Frontend
 timezoneRange: UTC-5 to UTC-4
 yearStartedWebDev: 2010
 yearStartedSpryker: 2018

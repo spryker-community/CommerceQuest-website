@@ -13,11 +13,9 @@ shortPitch: >-
   solutions.
 linkedIn: https://www.linkedin.com/in/andrej-lidokhover-553b07137/
 github: ''
-sprykerCertifications:
-  backEndDeveloper: true
-  solutionArchitect: false
+sprykerCertifications: "Backend Developer Certified"
 skills:
-  - Backend
+  - Back End
   - Architecture
   - Fullstack
   - Tech Lead

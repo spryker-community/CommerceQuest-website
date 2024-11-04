@@ -12,12 +12,10 @@ shortPitch: >-
   experience.
 linkedIn: https://www.linkedin.com/in/evgeny-nekhamkin-b63312247/
 github: https://github.com/EvgenyNekhamkin
-sprykerCertifications:
-  backEndDeveloper: false
-  solutionArchitect: false
+sprykerCertifications: "None"
 skills:
-  - Frontend (HTML, CSS, JS)
-  - Backend
+  - Frontend
+  - Back End
   - Architecture
   - Project Management
 timezoneRange: GMT to GMT+4

@@ -3,7 +3,7 @@ import { config, fields, collection } from '@keystatic/core';
 
 const keystaticConfig: Config = {
   storage: {
-    kind: 'cloud',
+    kind: 'local',
   },
   cloud: {
     project: 'commercequest/cq-astro',
@@ -17,18 +17,25 @@ const keystaticConfig: Config = {
     freelancers: collection({
       label: 'Freelancers',
       path: 'src/content/freelancers/*',
-      slugField: 'firstName',
+      slugField: 'slug',
       schema: {
-        firstName: fields.slug({
-          name: { label: "First Name" },
+        firstName: fields.text({
+          label: "First Name",
+          validation: { length: { min: 1 } }
         }),
         lastName: fields.text({
           label: "Last Name",
           validation: { length: { min: 1 } }
         }),
-        photo: fields.text({
-          label: "Photo filename",
+        slug: fields.text({
+          label: "Slug",
           validation: { length: { min: 1 } }
+        }),
+        photo: fields.image({
+          label: "Photo",
+          directory: "src/images/freelancers",
+          publicPath: "/src/images/freelancers",
+          validation: { isRequired: true }
         }),
         headline: fields.text({
           label: "Headline",
@@ -51,37 +58,45 @@ const keystaticConfig: Config = {
           label: "Short Pitch",
           multiline: true,
         }),
-        linkedIn: fields.text({
+        linkedIn: fields.url({
           label: "LinkedIn URL",
         }),
-        github: fields.text({
+        github: fields.url({
           label: "GitHub URL",
         }),
-        sprykerCertifications: fields.object({
-          backEndDeveloper: fields.checkbox({
-            label: "Backend Developer Certified",
-            defaultValue: false,
-          }),
-          solutionArchitect: fields.checkbox({
-            label: "Solution Architect Certified",
-            defaultValue: false,
-          }),
+        certifications: fields.multiselect({
+          label: "Certifications",
+          options: [
+            { label: "Backend Developer Certified", value: "Backend Developer" },
+            { label: "Solution Architect Certified", value: "Solution Architect" }
+          ],
         }),
-        skills: fields.array(
-          fields.text({ label: "Skill" }),
-          {
-            label: "Skills",
-            itemLabel: (props) => props.value,
-          }
-        ),
+        sprykerCertifications: fields.text({
+          label: "Spryker Certifications",
+          multiline: true,
+        }),
+        skills: fields.multiselect({
+          label: "Skills",
+          options: [
+            { label: "Frontend", value: "Frontend" },
+            { label: "Back End", value: "Back End" },
+            { label: "Architecture", value: "Architecture" },
+            { label: "Project Management", value: "Project Management" },
+            { label: "Fullstack", value: "Fullstack" },
+            { label: "Team Lead", value: "Team Lead" },
+            { label: "Tech Lead", value: "Tech Lead" }
+          ],
+        }),
         timezoneRange: fields.text({
           label: "Timezone Range",
         }),
         yearStartedWebDev: fields.integer({
           label: "Year Started Web Development",
+          validation: { min: 1980, max: 2050 }
         }),
         yearStartedSpryker: fields.integer({
           label: "Year Started with Spryker",
+          validation: { min: 2014, max: 2050 }
         }),
         references: fields.text({
           label: "References",
@@ -104,7 +119,7 @@ const keystaticConfig: Config = {
           label: "Contact Email",
           validation: { length: { min: 1 } }
         }),
-        forumProfile: fields.text({
+        forumProfile: fields.url({
           label: "Forum Profile URL",
         }),
         isVisible: fields.checkbox({
