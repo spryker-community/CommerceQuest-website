@@ -1,0 +1,48 @@
+firstName: Volodymyr
+lastName: Hrychenko
+photo: volodymyr-rychenko.jpg
+headline: Spryker Developer & Solution Architect
+availability: Fulltime
+location: Warsaw
+countryCode: PL
+language: English, Ukrainian, Polish
+shortPitch: >-
+  I am a PHP developer with 10 years of experience in web development. My
+  technical skills combined with my ability to lead and architect solutions make
+  me a valuable addition to any team. I am proficient in various back-end
+  technologies such as PHP, MySQL, PostgreSQL, Redis, Elasticsearch, and various
+  ORMs.As a technical lead and solution architect, I have successfully delivered
+  complex web applications across various industries, including e-commerce,
+  healthcare, and education. My expertise extends to all phases of the software
+  development lifecycle, including requirements gathering, design, development,
+  testing, deployment, and maintenance.
+linkedIn: https://www.linkedin.com/in/volodymyr-hrychenko-a03aa6a8/
+github: ''
+sprykerCertifications:
+  backEndDeveloper: true
+  solutionArchitect: false
+skills:
+  - Backend
+  - Architecture
+  - Team Lead
+  - Tech Lead
+timezoneRange: Any timezone
+yearStartedWebDev: 2014
+yearStartedSpryker: 2017
+references: >-
+  <p>SHOPFLIX.gr Lead Software Engineer August 2023 - May 2024 (10
+  months)</p><p>ALDI S&Uuml;D Solution Architect July 2022 - June 2023 (1
+  year)</p><p>FarmTiger Lead Software Developer October 2021 - June 2023 (1 year
+  9 months)</p><p>APOLLOBASE GmbH Senior Spryker Developer December 2020 - June
+  2022 (1 year 7 months)</p><p>AutoDoc Senior Back-End Software Developer June
+  2020 - September 2021 (1 year 4 months)</p><p>Spryker Systems GmbH PHP
+  Developer March 2018 - May 2020 (2 years 3 months)</p><p>Rallyware PHP
+  Developer March 2016 - March 2018 (2 years 1 month)</p><p>Devico Solutions
+  Junior PHP Developer October 2014 - March 2016 (1 year 6 months)</p>
+idealCustomer: ''
+locationFlexibility: Remote, can travel
+otherCertifications: ''
+employmentType: Freelance, open to permanent employment
+contact: volodymyr.hrychenko@gmail.com
+forumProfile: ''
+isVisible: true

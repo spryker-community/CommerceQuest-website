@@ -1,0 +1,51 @@
+firstName: Javier
+lastName: Benito
+photo: javier-benito.jpg
+headline: Senior Software Engineer
+availability: Immediately
+location: Madrid
+countryCode: ES
+language: Spanish, English
+shortPitch: >-
+  With over six years of experience as a Senior Software Engineer specializing
+  in e-commerce, PHP and Spryker development, I bring a unique blend of
+  technical expertise and creative problem-solving skills. My ability to
+  collaborate effectively with cross-functional teams ensures that I deliver
+  high-quality solutions tailored to meet business needs. I thrive in fast-paced
+  environments and am dedicated to continuous learning, making me adaptable to
+  new challenges. Hiring me means investing in a passionate developer who is
+  committed to driving innovation and achieving results.
+linkedIn: https://www.linkedin.com/in/jbenitosantoni/
+github: ''
+sprykerCertifications:
+  backEndDeveloper: true
+  solutionArchitect: true
+skills:
+  - Frontend (HTML, CSS, JS)
+  - Backend
+  - Architecture
+  - Fullstack
+timezoneRange: 7.00 - 18.00 (GMT+2)
+yearStartedWebDev: 2019
+yearStartedSpryker: 2020
+references: >-
+  <p>European B2B Marketplace (diva-e) Role: Senior Software Engineer (Spryker)
+  Description: As part of diva-e, I worked on a high-profile B2B/B2C marketplace
+  project for a European client in the manufacturing sector. My responsibilities
+  included leading backend development with Spryker and integrating complex
+  business logic to meet the customer&rsquo;s specific needs.</p><p>Atida
+  &ndash; Digital Health Platform Role: Senior Software Engineer (Spryker and
+  GO) Description: At diva-e, I collaborated with a global team to upgrade the
+  backend infrastructure of a leading European health platform. My role involved
+  backend optimization, improving system architecture, and implementing new
+  features that aligned with business objectives.</p><p>Global E-commerce
+  Retailer Role: Spryker Developer Description: I contributed to the digital
+  transformation of a leading e-commerce retailer, focusing on integrating
+  third-party services to streamline their inventory and checkout processes.</p>
+idealCustomer: ''
+locationFlexibility: Remote, can travel
+otherCertifications: ''
+employmentType: Freelance - open to permanent employment
+contact: javier@javierbenito.me
+forumProfile: https://forum.commercequest.space/profile/9068/javier
+isVisible: true

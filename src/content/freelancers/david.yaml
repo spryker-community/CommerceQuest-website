@@ -1,0 +1,51 @@
+firstName: David
+lastName: Greiner
+photo: david_greiner_spryker_freelancer.jpg
+headline: Senior Spryker Backend Developer
+availability: Immediate
+location: Germany
+countryCode: DE
+language: English, German
+shortPitch: >-
+  After studying business informatics, I started my professional journey at
+  Turbine Kreuzberg, where I gained experience with shop systems like Magento
+  and OXID while working on various projects.<br/> In 2015, I decided to go
+  freelance, and since 2017, I have focused exclusively on the Spryker Commerce
+  OS. As a freelancer, I've had the opportunity to deepen my knowledge and
+  skills across a range of Spryker projects. I’m now excited to take on new
+  challenges!
+linkedIn: https://www.linkedin.com/in/david-greiner-752b2a63/
+github: https://github.com/greinerdavid
+sprykerCertifications:
+  backEndDeveloper: false
+  solutionArchitect: false
+skills:
+  - Back End
+  - Tech Lead
+timezoneRange: UTC+2 to UTC-2
+yearStartedWebDev: 2008
+yearStartedSpryker: 2017
+references: >-
+  <p>I have worked as a Senior Spryker Backend Developer for clients such as
+  ALDI Süd, Lekkerland, Ratioform, Overkill, Winterhalter/ Fenner (Sonepar),
+  Intersport, and more. My experience includes direct work with clients as well
+  as through agencies like Turbine Kreuzberg, Brandung, MediaWave, Valantic, and
+  Antiloop. For the past year, I’ve been with Lekkerland SE, and in the 24
+  months prior, I was involved in developing the shop solution for ALDI Süd's
+  American market.</p><p> More information about me can be found on my websites
+  https://spryker-freelancer.de and https://davidgreiner.de.</p>
+idealCustomer: >-
+  <p>I have no specific preferences and I am also open to anything in this
+  regard. It is always exciting to explore new industries and immerse myself in
+  them. I am open to any project that is morally acceptable.</p><p> I have
+  worked on projects (not just Spryker) from various sectors, including pet
+  food, water pumps, women's fashion, sports goods, electronics, food suppliers,
+  the photovoltaic industry, mechanical engineering, and real estate.</p><p> I
+  have handled projects related to the healthcare sector as well as those in
+  retail, covering both B2C and B2B contexts.</p>
+locationFlexibility: Remote Only
+otherCertifications: ''
+employmentType: Freelance, open to permanent employment
+contact: hallo@davidgreiner.de
+forumProfile: https://forum.commercequest.space/profile/8590/DavidGreiner
+isVisible: true

@@ -1,0 +1,40 @@
+firstName: Evgeny
+lastName: Nekhamkin
+photo: evgeny-nekhamkin.jpg
+headline: Senior Webdeveloper & Architect
+availability: Mid October / 36-40 Hours
+location: Hamburg
+countryCode: DE
+language: English, German
+shortPitch: >-
+  I am a Freelance Senior Spryker Developer (mainly backend) and consultant with
+  a focus on code quality. I have more than 7 years of Spryker hands-on project
+  experience.
+linkedIn: https://www.linkedin.com/in/evgeny-nekhamkin-b63312247/
+github: https://github.com/EvgenyNekhamkin
+sprykerCertifications:
+  backEndDeveloper: false
+  solutionArchitect: false
+skills:
+  - Frontend (HTML, CSS, JS)
+  - Backend
+  - Architecture
+  - Project Management
+timezoneRange: GMT to GMT+4
+yearStartedWebDev: 2008
+yearStartedSpryker: 2017
+references: >-
+  <p>Here is a selection of my former clients:</p> <ol><li>* Mobilezone
+  GmbH</li><li>* Mediawave Commerce GmbH</li><li>* Team Business IT
+  GmbH</li><li>* DEPT Design & Technology GmbH</li><li>* Tom Tailor
+  GmbH</li><li>* Etribes Connect GmbH</li><li>* Closed GmbH</li></o><p>My role
+  in those projects was primarily as a backend developer. Additionally, I also
+  acted as a consultant, and in some projects, I worked as an architect and tech
+  lead.</p>
+idealCustomer: ''
+locationFlexibility: Remote Only
+otherCertifications: ''
+employmentType: Freelance, open to permanent employment
+contact: evgeny@nekhamkin.de
+forumProfile: ''
+isVisible: true

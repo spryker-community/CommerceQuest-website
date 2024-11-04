@@ -1,0 +1,43 @@
+firstName: Jan
+lastName: Kovács
+photo: jan-kovacs.jpg
+headline: Experienced Software Engineer & Leader
+availability: November 2024, 40 hours/week
+location: Hamburg
+countryCode: DE
+language: English, German (B1), Ukrainian, Hungarian and Russian
+shortPitch: >-
+  Beyond my strong technical background, with 5 years of Spryker experience, I
+  have also engineer manager experience and skills, therefore I can also help
+  out with team management from technical and people leadership view.
+linkedIn: https://www.linkedin.com/in/jan-v-kovacs/
+github: ''
+sprykerCertifications:
+  backEndDeveloper: true
+  solutionArchitect: false
+skills:
+  - Backend
+  - Fullstack
+  - Team Lead
+  - Tech Lead
+timezoneRange: GMT+2
+yearStartedWebDev: 2010
+yearStartedSpryker: 2017
+references: >-
+  <p>In 2017 I have joined Tom Tailor E-commerce GmbH as Senior Software
+  Engineer for the project based on Spryker platform, and we have worked closely
+  together with Spryker to replatform the TT B2C & B2B plaftorms in half a year
+  - during this time some of the solutions we have chosen at TT were also
+  adapted by the core Spryker product. After the support of Spryker has been
+  finished, I took over the leadership of the B2C development team and we
+  further developed our Spryker based B2C platform, by adopting new Spryker
+  features and standards also, as well customizing as much as possible to meet
+  the needs of Tom Tailor.</p><p>I worked in this role until mid of summer
+  2022.</p>
+idealCustomer: ''
+locationFlexibility: Remote, can travel
+otherCertifications: ''
+employmentType: Freelance - open to permanent employment
+contact: jan.v.kovacs@gmail.com
+forumProfile: ''
+isVisible: true

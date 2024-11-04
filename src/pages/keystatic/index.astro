@@ -1,6 +1,6 @@
 ---
 import { Keystatic } from '@keystatic/core/ui';
-import config from '../../../keystatic.config';
+import keystaticConfig from '../../../keystatic.config';
 ---
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ import config from '../../../keystatic.config';
   </head>
   <body>
     <div style="height: 100vh;">
-      <Keystatic client:only="react" config={config} />
+      <Keystatic client:only="react" config={keystaticConfig} />
     </div>
   </body>
 </html>

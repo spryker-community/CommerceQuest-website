@@ -3,12 +3,37 @@ import { Image } from 'astro:assets';
 import MainLayout from '../layouts/MainLayout.astro';
 import MainSection from "../components/ui/blocks/MainSection.astro";
 import FreelancerCard from '../components/FreelancerCard.astro';
-import freelancers from '../data_files/freelancers.json';
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
-import type { Freelancer } from '../types.ts';
+import { createReader } from '@keystatic/core/reader';
+import keystaticConfig from '../../keystatic.config';
+import type { Freelancer, KeystaticFreelancer } from '../types.ts';
 import { generateNameSlug } from '../utils/utils.js';
 
 const pageTitle = "Available Spryker Developers";
+
+// Initialize Keystatic reader
+const reader = createReader(process.cwd(), keystaticConfig);
+
+// Get all freelancers from Keystatic
+const freelancerEntries = await reader.collections.freelancers.all();
+
+// Convert Keystatic entries to Freelancer type
+const freelancers: Freelancer[] = await Promise.all(
+  freelancerEntries.map(async (entry) => {
+    const content = await reader.collections.freelancers.readOrThrow(entry.slug) as unknown as KeystaticFreelancer;
+    return {
+      id: entry.slug,
+      ...content,
+      linkedIn: content.linkedIn || null,
+      github: content.github || null,
+      headline: content.headline || '',
+      otherCertifications: content.otherCertifications || '',
+      forumProfile: content.forumProfile || '',
+      idealCustomer: content.idealCustomer || '',
+      references: content.references || '',
+    };
+  })
+);
 
 // Function to shuffle the freelancers array
 function shuffle(array: Freelancer[]): Freelancer[] {
@@ -23,7 +48,6 @@ function shuffle(array: Freelancer[]): Freelancer[] {
 const visibleFreelancers: Freelancer[] = shuffle(
   freelancers.filter(freelancer => freelancer.isVisible)
 );
-
 ---
 
 <MainLayout
