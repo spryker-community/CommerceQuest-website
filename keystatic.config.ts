@@ -42,10 +42,11 @@ const keystaticConfig: Config = {
         }),
         availability: fields.text({
           label: "Availability",
+          validation: { isRequired: true }
         }),
         location: fields.text({
           label: "Location",
-          validation: { length: { min: 1 } }
+          validation: { isRequired: true, length: { min: 1 } }
         }),
         countryCode: fields.text({
           label: "Country Code",
@@ -53,6 +54,7 @@ const keystaticConfig: Config = {
         }),
         language: fields.text({
           label: "Languages",
+          validation: { isRequired: true }
         }),
         shortPitch: fields.text({
           label: "Short Pitch",
@@ -85,7 +87,7 @@ const keystaticConfig: Config = {
             { label: "Fullstack", value: "Fullstack" },
             { label: "Team Lead", value: "Team Lead" },
             { label: "Tech Lead", value: "Tech Lead" }
-          ],
+          ]
         }),
         timezoneRange: fields.text({
           label: "Timezone Range",
@@ -96,7 +98,7 @@ const keystaticConfig: Config = {
         }),
         yearStartedSpryker: fields.integer({
           label: "Year Started with Spryker",
-          validation: { min: 2014, max: 2050 }
+          validation: { min: 1980, max: 2050 }
         }),
         references: fields.text({
           label: "References",
