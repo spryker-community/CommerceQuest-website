@@ -3,7 +3,7 @@ import { config, fields, collection } from '@keystatic/core';
 
 const keystaticConfig: Config = {
   storage: {
-    kind: 'local',
+    kind: 'cloud',
   },
   cloud: {
     project: 'commercequest/cq-astro',
