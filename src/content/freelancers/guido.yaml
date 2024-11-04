@@ -4,8 +4,10 @@ photo: guido.jpg
 location: Amsterdam
 countryCode: NL
 sprykerCertifications:
-  backEndDeveloper: false
-  solutionArchitect: false
+  backEndDeveloper: true
+  solutionArchitect: true
 skills: []
+yearStartedWebDev: 0
+yearStartedSpryker: 2
 contact: test@gui.do
 isVisible: true
