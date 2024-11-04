@@ -33,3 +33,38 @@ export interface KeystaticFreelancer {
 export interface Freelancer extends KeystaticFreelancer {
   id: string;
 }
+
+export interface NavSubmenuEntry {
+  label: string;
+  href?: string;
+  submenu?: NavSubmenuEntry[];
+}
+
+export interface NavEntry {
+  label: string;
+  href?: string;
+  submenu?: NavSubmenuEntry[];
+}
+
+export interface CommunityToolCreator {
+  name: string;
+  url: string;
+}
+
+export interface CommunityToolLink {
+  url: string;
+  label: string;
+}
+
+export interface CommunityTool {
+  title: string;
+  subtitle: string;
+  description: string;
+  license: string;
+  creators: CommunityToolCreator[];
+  links: CommunityToolLink[];
+  tags?: string[];
+  contributors?: string[];
+}
+
+export type CommunityToolCollection = CommunityTool[];

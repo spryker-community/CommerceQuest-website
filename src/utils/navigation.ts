@@ -145,6 +145,7 @@ const mainNavigation: NavEntry[] = [
     href: "/",
     submenu: [
       {
+        label: "Event Options",  // Added missing label
         submenu: [
           {
             label: "Upcoming Events",
