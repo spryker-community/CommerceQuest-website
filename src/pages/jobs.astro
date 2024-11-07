@@ -7,6 +7,7 @@ import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '../../keystatic.config';
 import type { Freelancer, KeystaticFreelancer } from '../types.ts';
+import { ensureFreelancerSlug } from '../utils/slugUtils';
 
 const pageTitle = "Available Spryker Developers";
 
@@ -16,12 +17,16 @@ const reader = createReader(process.cwd(), keystaticConfig);
 // Get all freelancers from Keystatic
 const freelancerEntries = await reader.collections.freelancers.all();
 
-// Convert Keystatic entries to Freelancer type
+// Convert Keystatic entries to Freelancer type and ensure correct slugs
 const freelancers: Freelancer[] = await Promise.all(
   freelancerEntries.map(async (entry) => {
     const content = await reader.collections.freelancers.readOrThrow(entry.slug) as unknown as KeystaticFreelancer;
+    
+    // Ensure the slug matches the expected format
+    const correctSlug = ensureFreelancerSlug(content.firstName, content.lastName, entry.slug);
+    
     return {
-      id: entry.slug,
+      id: correctSlug, // Use the correct slug as ID
       ...content,
       linkedIn: content.linkedIn || null,
       github: content.github || null,

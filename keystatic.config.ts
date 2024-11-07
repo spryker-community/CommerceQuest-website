@@ -18,6 +18,7 @@ const keystaticConfig: Config = {
       label: 'Freelancers',
       path: 'src/content/freelancers/*',
       slugField: 'slug',
+      format: 'yaml',
       schema: {
         firstName: fields.text({
           label: "First Name",
@@ -27,9 +28,12 @@ const keystaticConfig: Config = {
           label: "Last Name",
           validation: { length: { min: 1 } }
         }),
-        slug: fields.text({
-          label: "Slug",
-          validation: { length: { min: 1 } }
+        // Use fields.slug() for proper slug handling
+        slug: fields.slug({
+          name: {
+            label: "Slug",
+            validation: { length: { min: 1 } }
+          }
         }),
         photo: fields.image({
           label: "Photo",
