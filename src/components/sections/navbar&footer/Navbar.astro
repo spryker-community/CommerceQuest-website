@@ -11,11 +11,11 @@ import BrandLogo from "@components/BrandLogo.astro";
   class="sticky inset-x-0 top-0 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start border-b-2 bg-blue-50/100 dark:border-cqDarkPrimary-100/40 dark:bg-cqDarkPrimary-300/100"
 >
   <!-- Navigation container -->
-  <nav class="flex flex-col box-border w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8"
+  <nav class="flex flex-col box-border w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-16"
     aria-label="Global"
   >
-    <div class="flex justify-between items-center flex-wrap lg:flex-nowrap w-full py-2 lg:py-0" >
-      <div class="inline-flex items-center">
+    <div class="flex justify-start items-center flex-wrap lg:flex-nowrap w-full py-2 lg:py-0" >
+      <div class="inline-flex items-center w-full lg:w-auto">
         <!-- Brand logo -->
         <a
           class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
@@ -24,48 +24,52 @@ import BrandLogo from "@components/BrandLogo.astro";
         >
           <BrandLogo class="h-auto w-32 lg:w-44" />
         </a>
-      </div>
-      <!-- Collapse toggle for smaller screens -->
-      <div class="lg:hidden flex items-center">
-        <button
-          type="button"
-          class="hs-collapse-toggle flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition duration-300
-          disabled:pointer-events-none disabled:opacity-50
-          text-neutral-600 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:outline-none"
-          data-hs-collapse="#navbar-collapse-with-animation"
-          aria-controls="navbar-collapse-with-animation"
-          aria-label="Toggle navigation"
-        >
-          <svg
-            class="h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:hidden"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+        <!-- Collapse toggle for smaller screens -->
+        <div class="ml-auto lg:hidden flex-initial flex-wrap justify-end items-center">
+          <button
+            type="button"
+            class="hs-collapse-toggle flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition duration-300
+            disabled:pointer-events-none disabled:opacity-50
+            text-neutral-600 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:outline-none"
+            data-hs-collapse="#navbar-collapse-with-animation"
+            aria-controls="navbar-collapse-with-animation"
+            aria-label="Toggle navigation"
           >
-            <line x1="3" x2="21" y1="6" y2="6"></line>
-            <line x1="3" x2="21" y1="12" y2="12"></line>
-            <line x1="3" x2="21" y1="18" y2="18"></line>
-          </svg>
-          <svg
-            class="hidden h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:block"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M18 6 6 18"></path>
-            <path d="m6 6 12 12"></path>
-          </svg>
-        </button>
+            <svg
+              class="h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:hidden"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" x2="21" y1="6" y2="6"></line>
+              <line x1="3" x2="21" y1="12" y2="12"></line>
+              <line x1="3" x2="21" y1="18" y2="18"></line>
+            </svg>
+            <svg
+              class="hidden h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:block"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <!-- ThemeIcon component specifically for smaller screens -->
+        <!--<span class="inline-block lg:hidden">
+          <ThemeIcon />
+        </span>-->
       </div>
       <!-- Contains navigation links -->
       <div
@@ -84,10 +88,13 @@ import BrandLogo from "@components/BrandLogo.astro";
           }
         </div>
       </div>
+      <!-- ThemeIcon component specifically for larger screens -->
+      <!--<span class="hidden lg:flex flex-initial flex-wrap grow justify-end items-center">
+        <ThemeIcon />
+      </span>-->
     </div>
   </nav>
 </header>
-
 <!-- Theme Appearance script to manage light/dark modes -->
 <script is:inline>
   const HSThemeAppearance = {
@@ -196,7 +203,6 @@ import BrandLogo from "@components/BrandLogo.astro";
     });
   });
 </script>
-
 <!--Import the necessary Collapse and Overlay plugins-->
 <!--https://preline.co/plugins/html/collapse.html-->
 <!--https://preline.co/plugins/html/overlay.html-->
