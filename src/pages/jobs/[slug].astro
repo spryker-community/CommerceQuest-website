@@ -3,8 +3,9 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import MainSection from "../../components/ui/blocks/MainSection.astro";
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import { hasSprykerCertifications, generateNameSlug } from '../../utils/utils.js';
-import { Icon } from 'astro-icon/components'; // social icons
+import { hasSprykerCertifications } from '../../utils/utils';
+import { generateFreelancerSlug } from '../../utils/slugUtils';
+import { Icon } from 'astro-icon/components';
 import CQIcon from '@components/ui/icons/CQIcon.astro';
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import Flag from '@components/ui/Flag.astro';
@@ -13,9 +14,8 @@ import keystaticConfig from '../../../keystatic.config';
 import type { Freelancer, KeystaticFreelancer } from '../../types';
 
 // Import all images at build time with proper typing
-const imageFiles = import.meta.glob<ImageMetadata>('/src/images/freelancers/*.{jpeg,jpg,png,gif}', {
-  eager: true,
-  import: 'default'
+const imageFiles = import.meta.glob<{ default: ImageMetadata }>('/src/images/freelancers/*.{jpeg,jpg,png,gif}', {
+  eager: true
 });
 
 export async function getStaticPaths() {
@@ -33,7 +33,25 @@ export async function getStaticPaths() {
           const content = await reader.collections.freelancers.readOrThrow(entry.slug) as unknown as KeystaticFreelancer;
           const freelancer: Freelancer = {
             id: entry.slug,
-            ...content,
+            firstName: content.firstName,
+            lastName: content.lastName,
+            photo: content.photo,
+            availability: content.availability,
+            location: content.location,
+            countryCode: content.countryCode,
+            language: content.language,
+            shortPitch: content.shortPitch,
+            sprykerCertifications: {
+              backEndDeveloper: content.backEndDeveloper,
+              solutionArchitect: content.solutionArchitect
+            },
+            skills: content.skills,
+            timezoneRange: content.timezoneRange,
+            yearStartedWebDev: content.yearStartedWebDev,
+            yearStartedSpryker: content.yearStartedSpryker,
+            contact: content.contact,
+            isVisible: content.isVisible,
+            // Optional fields with defaults
             linkedIn: content.linkedIn || null,
             github: content.github || null,
             headline: content.headline || '',
@@ -41,6 +59,8 @@ export async function getStaticPaths() {
             forumProfile: content.forumProfile || '',
             idealCustomer: content.idealCustomer || '',
             references: content.references || '',
+            locationFlexibility: content.locationFlexibility || '',
+            employmentType: content.employmentType || ''
           };
           return freelancer;
         } catch (error) {
@@ -56,7 +76,7 @@ export async function getStaticPaths() {
     );
 
     return freelancers.map((freelancer) => {
-      const slug = generateNameSlug(freelancer.firstName, freelancer.lastName);
+      const slug = generateFreelancerSlug(freelancer.firstName, freelancer.lastName);
       return {
         params: { slug },
         props: { freelancer }
@@ -70,7 +90,7 @@ export async function getStaticPaths() {
   }
 }
 
-interface Props {
+type Props = {
   freelancer: Freelancer;
 }
 
@@ -84,10 +104,10 @@ const hasCertifications = hasSprykerCertifications(freelancer.sprykerCertificati
 const imagePath = `/src/images/freelancers/${freelancer.photo}`;
 
 // Get the image from our glob
-const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];
+const freelancerImage = imageFiles[imagePath]?.default;
 
 // Get slug
-const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastName);
+const freelancerSlug = generateFreelancerSlug(freelancer.firstName, freelancer.lastName);
 ---
 
 <MainLayout

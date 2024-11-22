@@ -6,7 +6,7 @@ import FreelancerCard from '../components/FreelancerCard.astro';
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '../../keystatic.config';
-import type { Freelancer, KeystaticFreelancer } from '../types.ts';
+import type { Freelancer, KeystaticFreelancer } from '../types';
 import { ensureFreelancerSlug } from '../utils/slugUtils';
 
 const pageTitle = "Available Spryker Developers";
@@ -49,7 +49,10 @@ const freelancersWithErrors = await Promise.all(
         countryCode: content.countryCode,
         language: content.language,
         shortPitch: content.shortPitch,
-        sprykerCertifications: content.sprykerCertifications,
+        sprykerCertifications: {
+          backEndDeveloper: content.backEndDeveloper,
+          solutionArchitect: content.solutionArchitect
+        },
         skills: content.skills,
         timezoneRange: content.timezoneRange,
         yearStartedWebDev: content.yearStartedWebDev,
