@@ -18,38 +18,79 @@ const reader = createReader(process.cwd(), keystaticConfig);
 const freelancerEntries = await reader.collections.freelancers.all();
 
 // Convert Keystatic entries to Freelancer type and ensure correct slugs
-const freelancers: Freelancer[] = await Promise.all(
+const freelancersWithErrors = await Promise.all(
   freelancerEntries.map(async (entry) => {
-    const content = await reader.collections.freelancers.readOrThrow(entry.slug) as unknown as KeystaticFreelancer;
-    
-    // Ensure the slug matches the expected format
-    const correctSlug = ensureFreelancerSlug(content.firstName, content.lastName, entry.slug);
-    
-    return {
-      id: correctSlug, // Use the correct slug as ID
-      ...content,
-      linkedIn: content.linkedIn || null,
-      github: content.github || null,
-      headline: content.headline || '',
-      otherCertifications: content.otherCertifications || '',
-      forumProfile: content.forumProfile || '',
-      idealCustomer: content.idealCustomer || '',
-      references: content.references || '',
-    };
+    try {
+      const content = await reader.collections.freelancers.readOrThrow(entry.slug) as unknown as KeystaticFreelancer;
+      
+      // Validate required fields
+      if (!content.firstName || !content.lastName) {
+        console.error(`Invalid freelancer data for ${entry.slug}: Missing first name or last name`);
+        return null;
+      }
+
+      // Generate and validate slug
+      let slug: string;
+      try {
+        slug = ensureFreelancerSlug(content.firstName, content.lastName, entry.slug);
+      } catch (error) {
+        console.error(`Invalid slug for freelancer ${content.firstName} ${content.lastName}:`, error);
+        return null;
+      }
+
+      // Create the freelancer object with all required fields
+      const freelancer: Freelancer = {
+        id: slug,
+        firstName: content.firstName,
+        lastName: content.lastName,
+        photo: content.photo,
+        availability: content.availability,
+        location: content.location,
+        countryCode: content.countryCode,
+        language: content.language,
+        shortPitch: content.shortPitch,
+        sprykerCertifications: content.sprykerCertifications,
+        skills: content.skills,
+        timezoneRange: content.timezoneRange,
+        yearStartedWebDev: content.yearStartedWebDev,
+        yearStartedSpryker: content.yearStartedSpryker,
+        contact: content.contact,
+        isVisible: content.isVisible,
+        // Optional fields with defaults
+        linkedIn: content.linkedIn || null,
+        github: content.github || null,
+        headline: content.headline || '',
+        otherCertifications: content.otherCertifications || '',
+        forumProfile: content.forumProfile || '',
+        idealCustomer: content.idealCustomer || '',
+        references: content.references || '',
+        locationFlexibility: content.locationFlexibility || '',
+        employmentType: content.employmentType || ''
+      };
+      
+      return freelancer;
+    } catch (error) {
+      console.error(`Error processing freelancer ${entry.slug}:`, error);
+      return null;
+    }
   })
 );
 
+// Filter out any null entries from errors
+const freelancers = freelancersWithErrors.filter((entry): entry is Freelancer => entry !== null);
+
 // Function to shuffle the freelancers array
-function shuffle(array: Freelancer[]): Freelancer[] {
-  for (let i = array.length - 1; i > 0; i--) {
+function shuffle<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
-  return array;
+  return shuffled;
 }
 
 // Filter and shuffle visible freelancers
-const visibleFreelancers: Freelancer[] = shuffle(
+const visibleFreelancers = shuffle(
   freelancers.filter(freelancer => freelancer.isVisible)
 );
 ---
@@ -76,8 +117,8 @@ const visibleFreelancers: Freelancer[] = shuffle(
     title={pageTitle}
     description="Connect with skilled freelancers specializing in Spryker, Propel & Oryx development. Browse through our list of community professionals ready to contribute to your projects."
   />
-   <!-- Announcement Block -->
-   <div class="bg-yellow-100 text-yellow-800 p-4 rounded-md mb-10">
+  <!-- Announcement Block -->
+  <div class="bg-yellow-100 text-yellow-800 p-4 rounded-md mb-10">
     📢 <strong>Note:</strong> This list and the information within is provided as-is. Being listed here is <strong>NOT</strong> an endorsement from Spryker.
   </div>
   <div class="container mx-auto px-4">
@@ -90,19 +131,22 @@ const visibleFreelancers: Freelancer[] = shuffle(
     <div class="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 mb-10">
       <PrimaryCTA title="Send us your information" url="https://form.asana.com/?k=1IiJkdbe9fJwCPnSRihpuQ&d=21158181759478"/>
     </div>
-  </div>    <!-- Additional Information Block -->
-    <div class="bg-yellow-100 text-yellow-800 p-4 rounded-md mb-10">
-      <strong>Wondering how to get certified by Spryker?</strong>
-      <p>Spryker offers developer certifications through Safari:
-        <ol>
-          <li>A) Backend Developer (2 exams)</li>
-          <li>B) Solution Architect (1 exam)</li>
-      </ol><br/>
-        <p>Each certification costs €250 and is valid for one year. To access:</p>
-        <ol>
-          <li>1) Visit <a href="https://safari.spryker.com/" target="_blank">safari.spryker.com</a></li>
-          <li>2) Register/login</li>
-          <li>3) Non-customers/partners (e.g. freelancers) fill out an Asana form for eligibility review</li>
+  </div>
+  <!-- Additional Information Block -->
+  <div class="bg-yellow-100 text-yellow-800 p-4 rounded-md mb-10">
+    <strong>Wondering how to get certified by Spryker?</strong>
+    <p>Spryker offers developer certifications through Safari:
+      <ol>
+        <li>A) Backend Developer (2 exams)</li>
+        <li>B) Solution Architect (1 exam)</li>
       </ol>
-    </div>
+    </p>
+    <br/>
+    <p>Each certification costs €250 and is valid for one year. To access:</p>
+    <ol>
+      <li>1) Visit <a href="https://safari.spryker.com/" target="_blank">safari.spryker.com</a></li>
+      <li>2) Register/login</li>
+      <li>3) Non-customers/partners (e.g. freelancers) fill out an Asana form for eligibility review</li>
+    </ol>
+  </div>
 </MainLayout>
