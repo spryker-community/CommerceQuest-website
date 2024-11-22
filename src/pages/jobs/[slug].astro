@@ -10,52 +10,72 @@ import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import Flag from '@components/ui/Flag.astro';
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '../../../keystatic.config';
-import type { Freelancer, KeystaticFreelancer } from '../../types.ts';
+import type { Freelancer, KeystaticFreelancer } from '../../types';
 
 // Import all images at build time with proper typing
-const imageFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/freelancers/*.{jpeg,jpg,png,gif}', {
+const imageFiles = import.meta.glob<ImageMetadata>('/src/images/freelancers/*.{jpeg,jpg,png,gif}', {
   eager: true,
   import: 'default'
 });
 
 export async function getStaticPaths() {
-  // Initialize Keystatic reader
-  const reader = createReader(process.cwd(), keystaticConfig);
+  try {
+    // Initialize Keystatic reader
+    const reader = createReader(process.cwd(), keystaticConfig);
 
-  // Get all freelancers from Keystatic
-  const freelancerEntries = await reader.collections.freelancers.all();
+    // Get all freelancers from Keystatic
+    const freelancerEntries = await reader.collections.freelancers.all();
 
-  // Convert Keystatic entries to Freelancer type
-  const freelancers: Freelancer[] = await Promise.all(
-    freelancerEntries.map(async (entry) => {
-      const content = await reader.collections.freelancers.readOrThrow(entry.slug) as unknown as KeystaticFreelancer;
-      return {
-        id: entry.slug,
-        ...content,
-        linkedIn: content.linkedIn || null,
-        github: content.github || null,
-        headline: content.headline || '',
-        otherCertifications: content.otherCertifications || '',
-        forumProfile: content.forumProfile || '',
-        idealCustomer: content.idealCustomer || '',
-        references: content.references || '',
-      };
-    })
-  );
+    // Convert Keystatic entries to Freelancer type with error handling
+    const freelancersWithNull = await Promise.all(
+      freelancerEntries.map(async (entry) => {
+        try {
+          const content = await reader.collections.freelancers.readOrThrow(entry.slug) as unknown as KeystaticFreelancer;
+          const freelancer: Freelancer = {
+            id: entry.slug,
+            ...content,
+            linkedIn: content.linkedIn || null,
+            github: content.github || null,
+            headline: content.headline || '',
+            otherCertifications: content.otherCertifications || '',
+            forumProfile: content.forumProfile || '',
+            idealCustomer: content.idealCustomer || '',
+            references: content.references || '',
+          };
+          return freelancer;
+        } catch (error) {
+          console.error(`Error reading freelancer ${entry.slug}:`, error);
+          return null;
+        }
+      })
+    );
 
-  return freelancers
-    .filter(freelancer => freelancer.isVisible)
-    .map((freelancer) => {
+    // Filter out any null entries from failed reads and non-visible freelancers
+    const freelancers = freelancersWithNull.filter((freelancer): freelancer is Freelancer => 
+      freelancer !== null && freelancer.isVisible
+    );
+
+    return freelancers.map((freelancer) => {
       const slug = generateNameSlug(freelancer.firstName, freelancer.lastName);
       return {
         params: { slug },
         props: { freelancer }
       };
     });
+  } catch (error) {
+    console.error('Error in getStaticPaths:', error);
+    // Return empty array if we can't read the freelancers
+    // This prevents build failure while still showing an error in logs
+    return [];
+  }
+}
+
+interface Props {
+  freelancer: Freelancer;
 }
 
 const { freelancer } = Astro.props;
-const pageTitle = `${`${freelancer.firstName} ${freelancer.lastName}`} - Spryker Developer Profile`;
+const pageTitle = `${freelancer.firstName} ${freelancer.lastName} - Spryker Developer Profile`;
 
 // Get certification status using the utility function
 const hasCertifications = hasSprykerCertifications(freelancer.sprykerCertifications);
@@ -66,7 +86,7 @@ const imagePath = `/src/images/freelancers/${freelancer.photo}`;
 // Get the image from our glob
 const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];
 
-//Get slug
+// Get slug
 const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastName);
 ---
 
@@ -77,8 +97,8 @@ const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastNam
     "@type": "ProfilePage",
     "@id": `https://commercequest.space/jobs/${freelancerSlug}/`,
     "url": `https://commercequest.space/jobs/${freelancerSlug}/`,
-    "name": `${`${freelancer.firstName} ${freelancer.lastName}`} - Spryker Developer Profile | CommerceQuest`,
-    "description": `${freelancer.shortPitch}`,
+    "name": `${freelancer.firstName} ${freelancer.lastName} - Spryker Developer Profile | CommerceQuest`,
+    "description": freelancer.shortPitch,
     "isPartOf": {
       "@type": "WebSite",
       "url": "https://commercequest.space/",
@@ -88,17 +108,18 @@ const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastNam
     "inLanguage": "en-US"
   }}
 >
-<!-- Back to Job Overview Link -->
-<div class="container mx-auto px-4 my-8">
-  <a href="/jobs" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200 flex items-center">
-    <span class="mr-2" aria-hidden="true">&larr;</span>
-    Back to Job Overview
-  </a>
-</div>
+  <div class="container mx-auto px-4 my-8">
+    <a href="/jobs" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200 flex items-center">
+      <span class="mr-2" aria-hidden="true">&larr;</span>
+      Back to Job Overview
+    </a>
+  </div>
+  
   <MainSection
     title={`${freelancer.firstName} ${freelancer.lastName}`}
     description={freelancer.shortPitch}
   />
+  
   <div class="container mx-auto px-4 mb-10">
     <div class="bg-neutral-100 dark:bg-white/[.075] rounded-xl shadow-md overflow-hidden">
       <div class="md:flex">
@@ -118,7 +139,7 @@ const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastNam
           )}
           <div class="flex items-center mb-4 mt-4 ml-3 gap-2">
             {freelancer.forumProfile && (
-            <CQIcon profileUrl={freelancer.forumProfile} size="sm" />
+              <CQIcon profileUrl={freelancer.forumProfile} size="sm" />
             )}
             {freelancer.linkedIn && (
               <a href={freelancer.linkedIn} target="_blank" rel="noopener noreferrer" class="text-neutral-800 dark:text-neutral-100 inline-flex items-center">
@@ -132,11 +153,12 @@ const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastNam
             )}
           </div>
           <div class="space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 m-2">
-            <PrimaryCTA title={`Contact ${freelancer.firstName}`} url={`mailto:${freelancer.contact}`}/>
+            <PrimaryCTA title={`Contact ${freelancer.firstName}`} url={`mailto:${freelancer.contact}`} />
           </div>
         </div>
+        
         <div class="p-8">
-          <h2 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-blue-400">{`Who's ${freelancer.firstName}`}?</h2>
+          <h2 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-blue-400">{`Who's ${freelancer.firstName}?`}</h2>
           <p class="text-pink-500 dark:text-pink-400 mb-2">{freelancer.headline}</p>
           <p class="text-neutral-500 dark:text-neutral-500 mb-2">
             📍 {freelancer.location} <Flag countryCode={freelancer.countryCode} size="sm" class="ml-1" />
@@ -145,18 +167,21 @@ const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastNam
           <div class="mb-4 text-neutral-500 dark:text-neutral-500">
             <p>Started web development in {freelancer.yearStartedWebDev}</p>
           </div>
+          
           <div class="mb-4 text-neutral-500 dark:text-neutral-500">
-            <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Expertise / potential roles</h2>
+            <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Expertise / potential roles</h3>
             <div class="flex flex-wrap gap-2">
-              {freelancer.skills.map((skill) => (
+              {freelancer.skills.map((skill: string) => (
                 <span class="bg-gray-200 rounded-full px-3 py-1 text-sm">{skill}</span>
               ))}
             </div>
           </div>
+          
           <h2 class="text-2xl font-semibold mt-8 mb-2 text-blue-500 dark:text-blue-400">Relevant Spryker experience</h2>
           <div class="mb-4 text-neutral-500 dark:text-neutral-500">
             <p>Started with Spryker in {freelancer.yearStartedSpryker}</p>
           </div>
+          
           {hasCertifications && (
             <div class="mb-4">
               <h3 class="text-lg font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Spryker Certifications</h3>
@@ -168,55 +193,61 @@ const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastNam
               )}
             </div>
           )}
+          
           {freelancer.otherCertifications && (
             <div class="mb-4 text-neutral-500 dark:text-neutral-500">
-              <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Other Certifications</h2>
+              <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Other Certifications</h3>
               <p>{freelancer.otherCertifications}</p>
             </div>
           )}
 
           {freelancer.references && (
             <div class="mb-4 text-neutral-500 dark:text-neutral-500">
-              <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Spryker References</h2>
+              <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Spryker References</h3>
               <div class="references" set:html={freelancer.references}></div>
             </div>
           )}
-          <h2 class="text-2xl font-semibold mt-8 mb-2 text-blue-500 dark:text-blue-400">Your project with {freelancer.firstName}</h2>
-            <p class="text-neutral-500 dark:text-neutral-500 mb-4">Potential start: {freelancer.availability}</p>
-            {freelancer.timezoneRange && (
-              <div class="mb-4 text-neutral-500 dark:text-neutral-500">
-                <p>Working hour availability: {freelancer.timezoneRange}</p>
-              </div>
-            )}
-            {freelancer.locationFlexibility && (
-              <div class="mb-4 text-neutral-500 dark:text-neutral-500">
-                <p>Location Flexibility: {freelancer.locationFlexibility}</p>
-              </div>
-            )}
           
-            {freelancer.employmentType && (
-              <div class="mb-4 text-neutral-500 dark:text-neutral-500">
-                <p>Employment Type: {freelancer.employmentType}</p>
-              </div>
-            )}
-            {freelancer.idealCustomer && (
-              <div class="mb-4 text-neutral-500 dark:text-neutral-500">
-                <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Ideal Customer</h2>
-                <div class="ideal-customer" set:html={freelancer.idealCustomer}></div>
-              </div>
-            )}
+          <h2 class="text-2xl font-semibold mt-8 mb-2 text-blue-500 dark:text-blue-400">Your project with {freelancer.firstName}</h2>
+          <p class="text-neutral-500 dark:text-neutral-500 mb-4">Potential start: {freelancer.availability}</p>
+          
+          {freelancer.timezoneRange && (
+            <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+              <p>Working hour availability: {freelancer.timezoneRange}</p>
+            </div>
+          )}
+          
+          {freelancer.locationFlexibility && (
+            <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+              <p>Location Flexibility: {freelancer.locationFlexibility}</p>
+            </div>
+          )}
+          
+          {freelancer.employmentType && (
+            <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+              <p>Employment Type: {freelancer.employmentType}</p>
+            </div>
+          )}
+          
+          {freelancer.idealCustomer && (
+            <div class="mb-4 text-neutral-500 dark:text-neutral-500">
+              <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Ideal Customer</h3>
+              <div class="ideal-customer" set:html={freelancer.idealCustomer}></div>
+            </div>
+          )}
+          
           {freelancer.contact && (
             <div class="mb-4 mt-8 text-neutral-500 dark:text-neutral-500">
-              <h3 class="text-lg font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Eager to get started?</h2>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Eager to get started?</h3>
               <p>Let's reach out: <a href={`mailto:${freelancer.contact}`}>{freelancer.contact}</a></p>
             </div>
           )}
         </div>
       </div>
     </div>
-       <!-- Announcement Block -->
-   <div class="bg-yellow-100 text-yellow-800 p-4 rounded-md mt-5 mb-10">
-    <strong>⚠️ Note:</strong> The information above is provided by the person listed and - aside from possible Spryker Certifications - is not validated by CommerceQuest and/or Spryker. A listing on this page is NOT an endorsement from CommerceQuest and/or Spryker. Make sure to always do your own due dilligence when you hire someone.
-  </div>
+    
+    <div class="bg-yellow-100 text-yellow-800 p-4 rounded-md mt-5 mb-10">
+      <strong>⚠️ Note:</strong> The information above is provided by the person listed and - aside from possible Spryker Certifications - is not validated by CommerceQuest and/or Spryker. A listing on this page is NOT an endorsement from CommerceQuest and/or Spryker. Make sure to always do your own due dilligence when you hire someone.
+    </div>
   </div>
 </MainLayout>

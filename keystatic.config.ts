@@ -1,13 +1,20 @@
 import type { Config } from '@keystatic/core';
 import { config, fields, collection } from '@keystatic/core';
 
+// Determine if we're in a local development environment
+const localDev = process.env.NODE_ENV === 'development';
+
 const keystaticConfig: Config = {
+  // Use local storage during builds, cloud storage during development
   storage: {
-    kind: 'cloud',
+    kind: localDev ? 'cloud' : 'local',
   },
-  cloud: {
-    project: 'commercequest/cq-astro',
-  },
+  // Only include cloud config during development
+  ...(localDev && {
+    cloud: {
+      project: 'commercequest/cq-astro',
+    },
+  }),
   ui: {
     brand: {
       name: 'CommerceQuest Admin',      
@@ -28,7 +35,6 @@ const keystaticConfig: Config = {
           label: "Last Name",
           validation: { length: { min: 1 } }
         }),
-        // Use fields.slug() for proper slug handling
         slug: fields.slug({
           name: {
             label: "Slug",
@@ -42,7 +48,7 @@ const keystaticConfig: Config = {
           validation: { isRequired: true }
         }),
         headline: fields.text({
-          label: "Headline",
+          label: "Headline"
         }),
         availability: fields.text({
           label: "Availability",
@@ -62,24 +68,24 @@ const keystaticConfig: Config = {
         }),
         shortPitch: fields.text({
           label: "Short Pitch",
-          multiline: true,
+          multiline: true
         }),
         linkedIn: fields.url({
-          label: "LinkedIn URL",
+          label: "LinkedIn URL"
         }),
         github: fields.url({
-          label: "GitHub URL",
+          label: "GitHub URL"
         }),
         certifications: fields.multiselect({
           label: "Certifications",
           options: [
             { label: "Backend Developer Certified", value: "Backend Developer" },
             { label: "Solution Architect Certified", value: "Solution Architect" }
-          ],
+          ]
         }),
         sprykerCertifications: fields.text({
           label: "Spryker Certifications",
-          multiline: true,
+          multiline: true
         }),
         skills: fields.multiselect({
           label: "Skills",
@@ -94,7 +100,7 @@ const keystaticConfig: Config = {
           ]
         }),
         timezoneRange: fields.text({
-          label: "Timezone Range",
+          label: "Timezone Range"
         }),
         yearStartedWebDev: fields.integer({
           label: "Year Started Web Development",
@@ -106,35 +112,35 @@ const keystaticConfig: Config = {
         }),
         references: fields.text({
           label: "References",
-          multiline: true,
+          multiline: true
         }),
         idealCustomer: fields.text({
           label: "Ideal Customer",
-          multiline: true,
+          multiline: true
         }),
         locationFlexibility: fields.text({
-          label: "Location Flexibility",
+          label: "Location Flexibility"
         }),
         otherCertifications: fields.text({
-          label: "Other Certifications",
+          label: "Other Certifications"
         }),
         employmentType: fields.text({
-          label: "Employment Type",
+          label: "Employment Type"
         }),
         contact: fields.text({
           label: "Contact Email",
           validation: { length: { min: 1 } }
         }),
         forumProfile: fields.url({
-          label: "Forum Profile URL",
+          label: "Forum Profile URL"
         }),
         isVisible: fields.checkbox({
           label: "Is Visible",
-          defaultValue: true,
-        }),
-      },
-    }),
-  },
+          defaultValue: true
+        })
+      }
+    })
+  }
 };
 
 export default keystaticConfig;
