@@ -1,20 +1,16 @@
 import type { Config } from '@keystatic/core';
 import { config, fields, collection } from '@keystatic/core';
 
-// Determine if we're in a local development environment
-const localDev = process.env.NODE_ENV === 'development';
-
 const keystaticConfig: Config = {
-  // Use local storage during builds, cloud storage during development
-  storage: {
-    kind: localDev ? 'cloud' : 'local',
-  },
-  // Only include cloud config during development
-  ...(localDev && {
-    cloud: {
-      project: 'commercequest/cq-astro',
-    },
-  }),
+  storage: process.env.NETLIFY === 'true'
+    ? { kind: 'local' }
+    : { 
+        kind: 'github',
+        repo: {
+          owner: 'commercequest',
+          name: 'cq-astro'
+        }
+      },
   ui: {
     brand: {
       name: 'CommerceQuest Admin',      
@@ -52,11 +48,11 @@ const keystaticConfig: Config = {
         }),
         availability: fields.text({
           label: "Availability",
-          validation: { isRequired: true }
+          validation: { length: { min: 1 } }
         }),
         location: fields.text({
           label: "Location",
-          validation: { isRequired: true, length: { min: 1 } }
+          validation: { length: { min: 1 } }
         }),
         countryCode: fields.text({
           label: "Country Code",
@@ -64,7 +60,7 @@ const keystaticConfig: Config = {
         }),
         language: fields.text({
           label: "Languages",
-          validation: { isRequired: true }
+          validation: { length: { min: 1 } }
         }),
         shortPitch: fields.text({
           label: "Short Pitch",
@@ -83,12 +79,17 @@ const keystaticConfig: Config = {
             { label: "Solution Architect Certified", value: "Solution Architect" }
           ]
         }),
-        sprykerCertifications: fields.text({
-          label: "Spryker Certifications",
-          multiline: true
+        backEndDeveloper: fields.checkbox({
+          label: "Certified Spryker Back End Developer",
+          defaultValue: false
+        }),
+        solutionArchitect: fields.checkbox({
+          label: "Certified Spryker Solution Architect",
+          defaultValue: false
         }),
         skills: fields.multiselect({
           label: "Skills",
+          defaultValue: [],
           options: [
             { label: "Frontend", value: "Frontend" },
             { label: "Back End", value: "Back End" },

@@ -1,8 +1,3 @@
-export interface SprykerCertifications {
-  backEndDeveloper: boolean;
-  solutionArchitect: boolean;
-}
-
 export interface KeystaticFreelancer {
   firstName: string;
   lastName: string;
@@ -15,7 +10,9 @@ export interface KeystaticFreelancer {
   shortPitch: string;
   linkedIn: string | null;
   github: string | null;
-  sprykerCertifications: SprykerCertifications;
+  certifications: string[];
+  backEndDeveloper: boolean;
+  solutionArchitect: boolean;
   skills: string[];
   timezoneRange: string;
   yearStartedWebDev: number;
