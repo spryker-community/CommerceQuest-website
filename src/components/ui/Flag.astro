@@ -1,7 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
-
 interface Props {
   countryCode: string;
   size?: 'sm' | 'md' | 'lg';
@@ -12,32 +9,28 @@ const { countryCode, size = 'md', class: className = '' } = Astro.props;
 
 // Size mappings
 const sizes = {
-  sm: { width: 16, height: 12 },
-  md: { width: 24, height: 18 },
-  lg: { width: 32, height: 24 },
+  sm: 'w-4 h-3',
+  md: 'w-6 h-4.5',
+  lg: 'w-8 h-6',
 };
 
-const { width, height } = sizes[size];
+const sizeClass = sizes[size];
 
-// Import all flag SVGs
-const flags: Record<string, { default: ImageMetadata }> = import.meta.glob('/public/flags/*.svg', { eager: true });
-const flagPath = `/public/flags/${countryCode.toLowerCase()}.svg`;
-const flagSrc = flags[flagPath];
-
-if (!flagSrc) {
-  throw new Error(`Flag not found for country code: ${countryCode}`);
-}
+// Convert country code to lowercase for the flag-icons class
+const code = countryCode.toLowerCase();
 ---
 
-<span 
-  class={`inline-flex items-center ${className}`}
-  style={`width: ${width}px; height: ${height}px;`}
->
-  <Image
-    src={flagSrc.default}
-    alt={`Flag of ${countryCode}`}
-    width={width}
-    height={height}
-    class="w-full h-full object-contain"
-  />
-</span>
+<span class={`fi fi-${code} ${sizeClass} ${className}`}></span>
+
+<style>
+  /* Custom height classes to match width-to-height ratio */
+  .h-3 {
+    height: 0.75rem;
+  }
+  .h-4\.5 {
+    height: 1.125rem;
+  }
+  .h-6 {
+    height: 1.5rem;
+  }
+</style>
