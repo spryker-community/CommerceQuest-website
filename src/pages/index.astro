@@ -1,5 +1,5 @@
 ---
-import MainLayout from "@/layouts/MainLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import PartnersSection from "@components/sections/landing/PartnersSection.astro";
@@ -17,7 +17,7 @@ import customerday from "@images/community-1.jpg";
 import cteam from "@images/community-2.jpg";
 import maher from "@images/blog/maher.jpg";
 import VanillaForumPosts from '../components/VanillaForumPosts.astro';
-import VanillaEvents from '../components/VanillaEvents.astro';
+import VanillaEvents from '../components/VanillaEvents';
 ---
 <MainLayout>
 
@@ -58,12 +58,12 @@ import VanillaEvents from '../components/VanillaEvents.astro';
   </section>
 
   <section>
-    <VanillaEvents />
+    <VanillaEvents client:load />
   </section>
 
   <FeaturesGeneral
     title="Igniting Community. Celebrating Contributors."
-    subTitle="We’re excited to kickstart a new era of collaborative development with our wider community! Follow our contributions process, send in your PRs and you'll get a fast reply from our core team."
+    subTitle="We're excited to kickstart a new era of collaborative development with our wider community! Follow our contributions process, send in your PRs and you'll get a fast reply from our core team."
     src={featureImage}
     alt="Products in floating boxes"
     features={features}
