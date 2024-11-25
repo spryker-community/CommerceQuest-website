@@ -1,3 +1,10 @@
+// API endpoint configuration
+const API_ENDPOINTS = {
+  DISCUSSIONS: '/api/forum/discussions.json',
+  EVENTS: '/api/forum/events.json',
+  FORUM_BASE_URL: 'https://forum.commercequest.space',
+} as const;
+
 // Define TypeScript interfaces for better type safety
 interface Discussion {
   discussionID: number;
@@ -57,7 +64,7 @@ export interface FormattedEvent {
 
 export async function getDiscussions(): Promise<FormattedDiscussion[]> {
   try {
-    const response = await fetch('/api/forum/discussions.json');
+    const response = await fetch(API_ENDPOINTS.DISCUSSIONS);
     if (!response.ok) {
       throw new Error('Failed to fetch forum posts');
     }
@@ -71,7 +78,7 @@ export async function getDiscussions(): Promise<FormattedDiscussion[]> {
 
 export async function getPopularDiscussions(): Promise<FormattedDiscussion[]> {
   try {
-    const response = await fetch('/api/forum/discussions.json');
+    const response = await fetch(API_ENDPOINTS.DISCUSSIONS);
     if (!response.ok) {
       throw new Error('Failed to fetch forum posts');
     }
@@ -96,7 +103,7 @@ export async function getPopularDiscussions(): Promise<FormattedDiscussion[]> {
 export async function getEvents(): Promise<FormattedEvent[]> {
   try {
     console.log('Fetching events from API...');
-    const response = await fetch('/api/forum/events.json');
+    const response = await fetch(API_ENDPOINTS.EVENTS);
     if (!response.ok) {
       throw new Error('Failed to fetch events');
     }
@@ -182,7 +189,7 @@ function formatDiscussion(discussion: Discussion): FormattedDiscussion {
     id: discussion.discussionID,
     name: truncateText(discussion.name, 75),  // Increased from 50 to 75
     description: truncateText(stripHtmlTags(discussion.body), 100),
-    url: `https://forum.commercequest.space/discussion/${discussion.discussionID}`,
+    url: `${API_ENDPOINTS.FORUM_BASE_URL}/discussion/${discussion.discussionID}`,
     author: {
       userID: discussion.insertUser.userID,
       name: truncateText(discussion.insertUser.name, 30),
@@ -214,7 +221,7 @@ function formatEvent(event: Event): FormattedEvent {
     id: event.eventID,
     name: truncateText(event.name, 100),  // Increased from 50 to 100
     description: truncateText(stripHtmlTags(event.body), 100),
-    url: event.url || `https://forum.commercequest.space/event/${event.eventID}`,
+    url: event.url || `${API_ENDPOINTS.FORUM_BASE_URL}/event/${event.eventID}`,
     startDate: startDate,
     endDate: endDate,
     dateInserted: event.dateInserted,
