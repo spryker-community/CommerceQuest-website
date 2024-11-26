@@ -17,118 +17,113 @@ export default config({
     freelancers: collection({
       label: 'Freelancers',
       path: 'src/content/freelancers/*',
-      slugField: 'slug',
+      slugField: 'firstName',
+      format: 'yaml',
       schema: {
-        firstName: fields.text({
+        firstName: fields.text({ 
           label: "First Name",
           validation: { length: { min: 1 } }
         }),
-        lastName: fields.text({
+        lastName: fields.text({ 
           label: "Last Name",
           validation: { length: { min: 1 } }
         }),
-        slug: fields.text({
-          label: "Slug",
+        photo: fields.text({ 
+          label: "Photo",
           validation: { length: { min: 1 } }
         }),
-        photo: fields.image({
-          label: "Photo",
-          directory: "src/images/freelancers",
-          publicPath: "/src/images/freelancers",
-          validation: { isRequired: true }
+        headline: fields.text({ 
+          label: "Headline"
         }),
-        headline: fields.text({
-          label: "Headline",
-        }),
-        availability: fields.text({
+        availability: fields.text({ 
           label: "Availability",
-          validation: { isRequired: true }
+          validation: { length: { min: 1 } }
         }),
-        location: fields.text({
+        location: fields.text({ 
           label: "Location",
-          validation: { isRequired: true, length: { min: 1 } }
+          validation: { length: { min: 1 } }
         }),
-        countryCode: fields.text({
+        countryCode: fields.text({ 
           label: "Country Code",
           validation: { length: { min: 2, max: 2 } }
         }),
-        language: fields.text({
+        language: fields.text({ 
           label: "Languages",
-          validation: { isRequired: true }
+          validation: { length: { min: 1 } }
         }),
-        shortPitch: fields.text({
+        shortPitch: fields.text({ 
           label: "Short Pitch",
-          multiline: true,
+          multiline: true
         }),
-        linkedIn: fields.url({
-          label: "LinkedIn URL",
+        linkedIn: fields.url({ 
+          label: "LinkedIn URL"
         }),
-        github: fields.url({
-          label: "GitHub URL",
+        github: fields.url({ 
+          label: "GitHub URL"
         }),
-        certifications: fields.multiselect({
-          label: "Certifications",
-          options: [
-            { label: "Backend Developer Certified", value: "Backend Developer" },
-            { label: "Solution Architect Certified", value: "Solution Architect" }
-          ],
-        }),
-        sprykerCertifications: fields.text({
+        sprykerCertifications: fields.text({ 
           label: "Spryker Certifications",
-          multiline: true,
+          multiline: true
         }),
-        skills: fields.multiselect({
-          label: "Skills",
-          options: [
-            { label: "Frontend", value: "Frontend" },
-            { label: "Back End", value: "Back End" },
-            { label: "Architecture", value: "Architecture" },
-            { label: "Project Management", value: "Project Management" },
-            { label: "Fullstack", value: "Fullstack" },
-            { label: "Team Lead", value: "Team Lead" },
-            { label: "Tech Lead", value: "Tech Lead" }
-          ]
+        skills: fields.array(
+          fields.select({
+            label: "Skill",
+            options: [
+              { label: "Frontend", value: "Frontend" },
+              { label: "Back End", value: "Back End" },
+              { label: "Architecture", value: "Architecture" },
+              { label: "Project Management", value: "Project Management" },
+              { label: "Fullstack", value: "Fullstack" },
+              { label: "Team Lead", value: "Team Lead" },
+              { label: "Tech Lead", value: "Tech Lead" }
+            ],
+            defaultValue: "Back End"
+          }),
+          { 
+            label: "Skills",
+            itemLabel: props => props.value
+          }
+        ),
+        timezoneRange: fields.text({ 
+          label: "Timezone Range"
         }),
-        timezoneRange: fields.text({
-          label: "Timezone Range",
-        }),
-        yearStartedWebDev: fields.integer({
+        yearStartedWebDev: fields.integer({ 
           label: "Year Started Web Development",
           validation: { min: 1980, max: 2050 }
         }),
-        yearStartedSpryker: fields.integer({
+        yearStartedSpryker: fields.integer({ 
           label: "Year Started with Spryker",
           validation: { min: 1980, max: 2050 }
         }),
-        references: fields.text({
+        references: fields.text({ 
           label: "References",
-          multiline: true,
+          multiline: true
         }),
-        idealCustomer: fields.text({
+        idealCustomer: fields.text({ 
           label: "Ideal Customer",
-          multiline: true,
+          multiline: true
         }),
-        locationFlexibility: fields.text({
-          label: "Location Flexibility",
+        locationFlexibility: fields.text({ 
+          label: "Location Flexibility"
         }),
-        otherCertifications: fields.text({
-          label: "Other Certifications",
+        otherCertifications: fields.text({ 
+          label: "Other Certifications"
         }),
-        employmentType: fields.text({
-          label: "Employment Type",
+        employmentType: fields.text({ 
+          label: "Employment Type"
         }),
-        contact: fields.text({
+        contact: fields.text({ 
           label: "Contact Email",
           validation: { length: { min: 1 } }
         }),
-        forumProfile: fields.url({
-          label: "Forum Profile URL",
+        forumProfile: fields.url({ 
+          label: "Forum Profile URL"
         }),
-        isVisible: fields.checkbox({
+        isVisible: fields.checkbox({ 
           label: "Is Visible",
-          defaultValue: true,
-        }),
-      },
-    }),
-  },
+          defaultValue: true
+        })
+      }
+    })
+  }
 });
