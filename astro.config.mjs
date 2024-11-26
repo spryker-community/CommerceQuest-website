@@ -13,7 +13,7 @@ import keystatic from '@keystatic/astro'
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://commercequest.space",  // Removed trailing slash
+  site: "https://commercequest.space",
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp'
@@ -103,14 +103,19 @@ export default defineConfig({
     react(),
     markdoc(),
     mdx(),
-    keystatic()  // Make sure this is after react()
+    keystatic()
   ],
-  output: "hybrid",  // Changed from server to hybrid to match reference project
+  output: "hybrid",
   experimental: {
     clientPrerender: true,
     directRenderScript: true
   },
   adapter: netlify({
-    functionPerRoute: true  // Enable function per route for better API handling
-  })
+    functionPerRoute: true
+  }),
+  vite: {
+    ssr: {
+      noExternal: ['@keystatic/core']
+    }
+  }
 });
