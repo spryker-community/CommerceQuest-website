@@ -3,19 +3,28 @@
   publish = "dist"
 
 [[redirects]]
+  from = "/api/keystatic/github/oauth/callback"
+  to = "/.netlify/functions/entry"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/api/keystatic/*"
   to = "/.netlify/functions/entry"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/keystatic"
   to = "/.netlify/functions/entry"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/keystatic/*"
   to = "/.netlify/functions/entry"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/*"
