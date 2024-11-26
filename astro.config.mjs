@@ -111,7 +111,11 @@ export default defineConfig({
     directRenderScript: true
   },
   adapter: netlify({
-    functionPerRoute: true,
-    edgeMiddleware: true  // Enable edge middleware for better API routing
-  })
+    functionPerRoute: true
+  }),
+  vite: {
+    ssr: {
+      noExternal: ['@keystatic/core']
+    }
+  }
 });
