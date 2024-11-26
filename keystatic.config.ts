@@ -1,7 +1,6 @@
-import type { Config } from '@keystatic/core';
 import { config, fields, collection } from '@keystatic/core';
 
-const keystaticConfig: Config = {
+export default config({
   storage: {
     kind: 'cloud',
   },
@@ -131,6 +130,4 @@ const keystaticConfig: Config = {
       },
     }),
   },
-};
-
-export default keystaticConfig;
+});
