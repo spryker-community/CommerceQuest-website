@@ -5,7 +5,8 @@ export default config({
     kind: 'github',
     repo: {
       owner: 'spryker-community',
-      name: 'commercequest-website'
+      name: 'commercequest-website',
+      branch: 'main'  // Explicitly set the branch
     },
   },
   ui: {
