@@ -2,11 +2,10 @@ import { config, fields, collection } from '@keystatic/core';
 
 export default config({
   storage: {
-    kind: 'github',
-    repo: {
-      owner: 'spryker-community',
-      name: 'commercequest-website'
-    },
+    kind: 'cloud',
+  },
+  cloud: {
+    project: 'commercequest/cq-astro',
   },
   ui: {
     brand: {
