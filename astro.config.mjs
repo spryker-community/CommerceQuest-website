@@ -7,15 +7,13 @@ import { fileURLToPath } from 'node:url';
 import mdx from '@astrojs/mdx';
 import netlify from "@astrojs/netlify";
 import icon from "astro-icon";
-
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from '@keystatic/astro'
 
 // https://astro.build/config
 export default defineConfig({
-  // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://commercequest.space/",
+  site: "https://commercequest.space",  // Removed trailing slash
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp'
@@ -25,7 +23,7 @@ export default defineConfig({
   integrations: [
     icon({
       include: {
-        mdi: ["linkedin", "github"],  // Add any other icon names you need
+        mdi: ["linkedin", "github"],
       },
     }),
     tailwind(),
@@ -47,7 +45,6 @@ export default defineConfig({
         }
       },
       lastUpdated: true,
-      // https://starlight.astro.build/guides/sidebar/
       sidebar: [{
         label: "Community Guides",
         autogenerate: {
@@ -73,11 +70,7 @@ export default defineConfig({
         autogenerate: {
           directory: "other"
         }
-      }
-      /*         {
-                label: "[Templates]]",
-                autogenerate: { directory: "templates" },
-              }, */],
+      }],
       social: {
         github: "https://github.com/spryker-community"
       },
@@ -93,13 +86,13 @@ export default defineConfig({
         tag: "meta",
         attrs: {
           property: "og:image",
-          content: "https://commercequest.space/" + "/social.webp"
+          content: "https://commercequest.space/social.webp"
         }
       }, {
         tag: "meta",
         attrs: {
           property: "twitter:image",
-          content: "https://commercequest.space/" + "/social.webp"
+          content: "https://commercequest.space/social.webp"
         }
       }]
     }),
@@ -110,27 +103,14 @@ export default defineConfig({
     react(),
     markdoc(),
     mdx(),
-    keystatic()
+    keystatic()  // Make sure this is after react()
   ],
-  output: "hybrid",
+  output: "server",  // Changed from hybrid to server for Keystatic
   experimental: {
     clientPrerender: true,
     directRenderScript: true
   },
-  outdir: "dist",
-  // Add the default astro outdir path
-  vite: {
-    server: {
-      watch: {
-        usePolling: true
-      }
-    },
-    resolve: {
-      alias: [{
-        find: /^.*\/Page\.astro$/,
-        replacement: fileURLToPath(new URL('./src/components/ui/starlight/Page.astro', import.meta.url))
-      }]
-    }
-  },
-  adapter: netlify()
+  adapter: netlify({
+    functionPerRoute: true  // Enable function per route for better API handling
+  })
 });
