@@ -1,8 +1,10 @@
 import { config, fields, collection } from '@keystatic/core';
+import type { Config } from '@keystatic/core';
 
-export default config({
+// Create the configuration object with proper typing
+const keystaticConfig = {
   storage: {
-    kind: 'cloud',
+    kind: 'cloud' as const,
   },
   cloud: {
     project: 'commercequest/cq-astro',
@@ -130,4 +132,9 @@ export default config({
       },
     }),
   },
-});
+} satisfies Config;
+
+// Export both the typed config and the config function result
+export default config(keystaticConfig);
+export type { Config };
+export { keystaticConfig };
