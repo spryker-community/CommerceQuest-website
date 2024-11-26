@@ -5,3 +5,7 @@
 /events/            https://forum.commercequest.space/events/               301
 /discussions/       https://forum.commercequest.space/discussions/          301
 /profile/*          https://forum.commercequest.space/profile/:splat        301
+
+# Keystatic routes
+/keystatic/*        /keystatic/:splat        200
+/admin             /keystatic               301

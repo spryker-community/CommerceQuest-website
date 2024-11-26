@@ -105,7 +105,7 @@ export default defineConfig({
     mdx(),
     keystatic()  // Make sure this is after react()
   ],
-  output: "server",  // Changed from hybrid to server for Keystatic
+  output: "hybrid",  // Changed from server to hybrid to match reference project
   experimental: {
     clientPrerender: true,
     directRenderScript: true
