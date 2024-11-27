@@ -112,10 +112,5 @@ export default defineConfig({
   },
   adapter: netlify({
     functionPerRoute: true
-  }),
-  vite: {
-    ssr: {
-      noExternal: ['@keystatic/core']
-    }
-  }
+  })
 });
