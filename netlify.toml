@@ -3,30 +3,6 @@
   publish = "dist"
 
 [[redirects]]
-  from = "/api/keystatic/github/oauth/callback"
-  to = "/.netlify/functions/entry"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/api/keystatic/github/login"
-  to = "/.netlify/functions/entry"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/keystatic/github/oauth/callback"
-  to = "/.netlify/functions/entry"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/api/keystatic/*"
-  to = "/.netlify/functions/entry"
-  status = 200
-  force = true
-
-[[redirects]]
   from = "/keystatic"
   to = "/.netlify/functions/entry"
   status = 200
@@ -34,6 +10,12 @@
 
 [[redirects]]
   from = "/keystatic/*"
+  to = "/.netlify/functions/entry"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/keystatic/*"
   to = "/.netlify/functions/entry"
   status = 200
   force = true
@@ -47,3 +29,6 @@
 [functions]
   directory = ".netlify/functions/"
   node_bundler = "esbuild"
+
+[build.environment]
+  ASTRO_ADAPTER = "netlify"
