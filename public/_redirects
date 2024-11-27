@@ -1,10 +1,13 @@
 # Redirects from what the browser requests to what we serve
 /discussion/*       https://forum.commercequest.space/discussion/:splat     301
 /categories/*       https://forum.commercequest.space/categories/:splat     301
-/events/*           https://forum.commercequest.space/events/:splat         301
-/events/            https://forum.commercequest.space/events/               301
 /discussions/       https://forum.commercequest.space/discussions/          301
 /profile/*          https://forum.commercequest.space/profile/:splat        301
+
+# Forum events (but not documentation events)
+/events/category/*  https://forum.commercequest.space/events/category/:splat 301
+/events/upcoming/*  https://forum.commercequest.space/events/upcoming/:splat 301
+/events/past/*      https://forum.commercequest.space/events/past/:splat     301
 
 # Keystatic routes
 /keystatic/*                           /.netlify/functions/entry    200
