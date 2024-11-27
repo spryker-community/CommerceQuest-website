@@ -6,9 +6,12 @@
 /discussions/       https://forum.commercequest.space/discussions/          301
 /profile/*          https://forum.commercequest.space/profile/:splat        301
 
-# Keystatic routes - ensure OAuth callback is handled
-/keystatic/cloud/oauth/callback    /keystatic/cloud/oauth/callback    200
-/keystatic/*                      /keystatic/:splat                  200
-/admin                           /keystatic                         301
+# Keystatic GitHub OAuth routes
+/api/keystatic/github/oauth/callback    /.netlify/functions/entry    200
+/api/keystatic/github/login            /.netlify/functions/entry    200
+/api/keystatic/*                       /.netlify/functions/entry    200
+/keystatic/*                           /.netlify/functions/entry    200
+/keystatic                             /.netlify/functions/entry    200
+/admin                                 /keystatic                   301
 
 /* /index.html 200
