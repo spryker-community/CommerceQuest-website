@@ -9,6 +9,18 @@
   force = true
 
 [[redirects]]
+  from = "/api/keystatic/github/login"
+  to = "/.netlify/functions/entry"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/keystatic/github/oauth/callback"
+  to = "/.netlify/functions/entry"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/api/keystatic/*"
   to = "/.netlify/functions/entry"
   status = 200
