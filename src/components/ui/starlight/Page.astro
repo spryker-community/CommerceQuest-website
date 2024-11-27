@@ -1,10 +1,8 @@
 ---
-import type { Props } from '../../../../node_modules/@astrojs/starlight/props';
-
-import StarlightLayoutWrapper from "@/layouts/StarlightLayoutWrapper.astro";
+import type { Props } from '@astrojs/starlight/props';
+import StarlightLayoutWrapper from '../../../layouts/StarlightLayoutWrapper.astro';
 ---
 
 <StarlightLayoutWrapper {...Astro.props}>
     <slot />
 </StarlightLayoutWrapper>
-

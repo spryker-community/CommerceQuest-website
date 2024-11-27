@@ -1,29 +1,28 @@
 ---
-import type { Props } from '../../node_modules/@astrojs/starlight/props';
+import type { Props } from '@astrojs/starlight/props';
 
 // Built-in CSS styles.
-import '../../node_modules/@astrojs/starlight/style/props.css';
+import '@astrojs/starlight/style/props.css';
 import '../assets/styles/starlight/reset.css';
-import '../../node_modules/@astrojs/starlight/style/shiki.css';
-import '../../node_modules/@astrojs/starlight/style/util.css';
+import '@astrojs/starlight/style/shiki.css';
+import '@astrojs/starlight/style/util.css';
 
-import MainLayout from "@/layouts/MainLayout.astro";
-import ContentPanel from "@astrojs/starlight/components/ContentPanel.astro";
-import DraftContentNotice from "@astrojs/starlight/components/DraftContentNotice.astro";
-import FallbackContentNotice from "@astrojs/starlight/components/FallbackContentNotice.astro";
-import Footer from "@astrojs/starlight/components/Footer.astro";
+import MainLayout from '../layouts/MainLayout.astro';
+import ContentPanel from '@astrojs/starlight/components/ContentPanel.astro';
+import DraftContentNotice from '@astrojs/starlight/components/DraftContentNotice.astro';
+import FallbackContentNotice from '@astrojs/starlight/components/FallbackContentNotice.astro';
+import Footer from '@astrojs/starlight/components/Footer.astro';
 import MarkdownContent from '@astrojs/starlight/components/MarkdownContent.astro';
-import PageTitle from "@astrojs/starlight/components/PageTitle.astro";
+import PageTitle from '@astrojs/starlight/components/PageTitle.astro';
+import Hero from '@astrojs/starlight/components/Hero.astro';
+import Banner from '@astrojs/starlight/components/Banner.astro';
+import TwoColumnContent from '@astrojs/starlight/components/TwoColumnContent.astro';
 
 // Remark component CSS (needs to override `MarkdownContent.astro`)
-import '../../node_modules/@astrojs/starlight/style/asides.css';
+import '@astrojs/starlight/style/asides.css';
 
 // Important that this is the last import so it can override built-in styles.
 import 'virtual:starlight/user-css';
-
-import Hero from "@astrojs/starlight/components/Hero.astro";
-import Banner from "@astrojs/starlight/components/Banner.astro";
-import TwoColumnContent from "@astrojs/starlight/components/TwoColumnContent.astro";
 
 // disables page-sidebar (the right-side one)
 Astro.props.toc = undefined;
@@ -37,7 +36,7 @@ const pagefindEnabled =
 
 <MainLayout>
   <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-    <TwoColumnContent {...Astro.props }>
+    <TwoColumnContent {...Astro.props}>
       <main
         data-pagefind-body={pagefindEnabled}
         lang={Astro.props.entryMeta.lang}
@@ -73,5 +72,4 @@ const pagefindEnabled =
       </main>
     </TwoColumnContent>
   </div>
-
 </MainLayout>
