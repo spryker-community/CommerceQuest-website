@@ -110,6 +110,21 @@ export default defineConfig({
     clientPrerender: true,
     directRenderScript: true
   },
+  outdir: "dist",
+  // Add the default astro outdir path
+  vite: {
+    server: {
+      watch: {
+        usePolling: true
+      }
+    },
+    resolve: {
+      alias: [{
+        find: /^.*\/Page\.astro$/,
+        replacement: fileURLToPath(new URL('./src/components/ui/starlight/Page.astro', import.meta.url))
+      }]
+    }
+  },
   adapter: netlify({
     functionPerRoute: true
   })
