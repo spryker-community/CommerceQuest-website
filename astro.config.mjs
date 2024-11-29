@@ -7,13 +7,15 @@ import { fileURLToPath } from 'node:url';
 import mdx from '@astrojs/mdx';
 import netlify from "@astrojs/netlify";
 import icon from "astro-icon";
+
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from '@keystatic/astro'
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://commercequest.space",
+  // https://docs.astro.build/en/guides/images/#authorizing-remote-images
+  site: "https://commercequest.space/",
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp'
@@ -23,7 +25,7 @@ export default defineConfig({
   integrations: [
     icon({
       include: {
-        mdi: ["linkedin", "github"],
+        mdi: ["linkedin", "github"],  // Add any other icon names you need
       },
     }),
     tailwind(),
@@ -45,6 +47,7 @@ export default defineConfig({
         }
       },
       lastUpdated: true,
+      // https://starlight.astro.build/guides/sidebar/
       sidebar: [{
         label: "Community Guides",
         autogenerate: {
@@ -70,7 +73,11 @@ export default defineConfig({
         autogenerate: {
           directory: "other"
         }
-      }],
+      }
+      /*         {
+                label: "[Templates]]",
+                autogenerate: { directory: "templates" },
+              }, */],
       social: {
         github: "https://github.com/spryker-community"
       },
@@ -86,13 +93,13 @@ export default defineConfig({
         tag: "meta",
         attrs: {
           property: "og:image",
-          content: "https://commercequest.space/social.webp"
+          content: "https://commercequest.space/" + "/social.webp"
         }
       }, {
         tag: "meta",
         attrs: {
           property: "twitter:image",
-          content: "https://commercequest.space/social.webp"
+          content: "https://commercequest.space/" + "/social.webp"
         }
       }]
     }),
@@ -125,7 +132,5 @@ export default defineConfig({
       }]
     }
   },
-  adapter: netlify({
-    functionPerRoute: true
-  })
+  adapter: netlify()
 });

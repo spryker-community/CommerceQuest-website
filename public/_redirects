@@ -5,11 +5,3 @@
 /events/            https://forum.commercequest.space/events/               301
 /discussions/       https://forum.commercequest.space/discussions/          301
 /profile/*          https://forum.commercequest.space/profile/:splat        301
-
-# Keystatic routes
-/keystatic/*                           /.netlify/functions/entry    200
-/keystatic                             /.netlify/functions/entry    200
-/api/keystatic/*                       /.netlify/functions/entry    200
-/admin                                 /keystatic                   301
-
-/* /index.html 200

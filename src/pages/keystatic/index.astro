@@ -1,7 +1,25 @@
 ---
-import keystatic from '@keystatic/astro';
-
-export const prerender = false;
+import { Keystatic } from '@keystatic/core/ui';
+import keystaticConfig from '../../../keystatic.config';
 ---
 
-<keystatic />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | CommerceQuest</title>
+    <style>
+      body { 
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="height: 100vh;">
+      <Keystatic client:only="react" config={keystaticConfig} />
+    </div>
+  </body>
+</html>
