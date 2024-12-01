@@ -1,17 +1,18 @@
 ---
-import StarlightHead from "@astrojs/starlight/components/Head.astro";
-import {
-  default as VtbotStarlight,
-  type Props,
-} from "astro-vtbot/components/starlight/Base.astro";
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Head.astro';
 
-// https://docs.astro.build/en/guides/view-transitions/#fallback-control
-Astro.props.viewTransitionsFallback = "animate";
+// Get site-level title and description from starlight config
+const { data } = Astro.props.entry;
+const title = data.title
+  ? `${data.title} | CommerceQuest`
+  : 'CommerceQuest';
 ---
 
-<VtbotStarlight {...Astro.props}>
-  <StarlightHead {...Astro.props} />
-</VtbotStarlight>
+<Default {...Astro.props}>
+  <title>{title}</title>
+  <slot />
+</Default>
 
 <style is:global>
   /* Slow down Chrome's default animation */
