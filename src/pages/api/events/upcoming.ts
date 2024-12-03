@@ -5,8 +5,8 @@ export const GET: APIRoute = async () => {
     // Get the current date in 'YYYY-MM-DD' format
     const nowDate = new Date().toISOString().split('T')[0];
 
-    // Construct the API URL with dateStarts parameter and limit to 2 items
-    const apiUrl = `https://forum.commercequest.space/api/v2/events?page=1&limit=2&sort=dateStarts&dateStarts=>=${nowDate}`;
+    // Construct the API URL with dateStarts parameter and limit to 3 items
+    const apiUrl = `https://forum.commercequest.space/api/v2/events?page=1&limit=3&sort=dateStarts&dateStarts=>=${nowDate}`;
 
     // Fetch events from the Vanilla API with authorization headers
     const response = await fetch(apiUrl, {

@@ -92,8 +92,9 @@ const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: b
   const rsvpLink = event.ctaUrl || event.url;
 
   return (
-    <div className="mb-8 pb-8 border-b border-gray-700/20 last:border-b-0 last:mb-0 last:pb-0">
-      <div className="flex gap-4">
+    <div className="h-[180px] mb-8 last:mb-0">
+      <div className="flex h-full">
+        {/* Date Column */}
         <div className="flex-shrink-0 w-16">
           <div className="text-center bg-neutral-200 dark:bg-[#1A2942] rounded-lg overflow-hidden">
             <div className="bg-blue-500 dark:bg-blue-600 text-white text-xs uppercase py-1">
@@ -110,23 +111,39 @@ const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: b
             )}
           </div>
         </div>
-        <div className="flex-grow min-w-0">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight">
-            <a href={event.url} className="hover:underline">{event.name}</a>
-          </h3>
 
-          <div className="mt-3 text-sm text-gray-500 dark:text-gray-400">
-            <span className="font-medium">Start:</span> {startTime} <span className="text-gray-300 dark:text-gray-600 mx-2">•</span> {duration}
-          </div>
+        {/* Content Column */}
+        <div className="flex-grow min-w-0 ml-4">
+          <div className="h-full flex flex-col">
+            {/* Title */}
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight mb-3">
+              <a href={event.url} className="hover:underline">{event.name}</a>
+            </h3>
 
-          {/* RSVP/More Info Button for Upcoming Events */}
-          {isUpcoming && (
-            <div className="mt-4">
-              <a href={rsvpLink} className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                RSVP / More Info
-              </a>
+            {/* Time and Duration */}
+            <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+              <span className="font-medium">Start:</span> {startTime} <span className="text-gray-300 dark:text-gray-600 mx-2">•</span> {duration}
             </div>
-          )}
+
+            {/* Description - with line clamp for consistent height */}
+            {event.description && (
+              <div className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-3">
+                {event.description}
+              </div>
+            )}
+
+            {/* Spacer to push button to bottom */}
+            <div className="flex-grow"></div>
+
+            {/* RSVP Button */}
+            {isUpcoming && (
+              <div>
+                <a href={rsvpLink} className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                  RSVP / More Info
+                </a>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
