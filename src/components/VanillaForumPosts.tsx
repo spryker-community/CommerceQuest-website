@@ -91,7 +91,7 @@ const VanillaForumPosts = () => {
       {/* Popular Discussions */}
       <div className="bg-neutral-100 dark:bg-[#0A1628] rounded-xl shadow-md overflow-hidden mb-10 p-8">
         <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl mb-5">
-          <span className="text-pink-500 dark:text-pink-400">Recently Popular</span> Posts
+          <span className="text-pink-500 dark:text-pink-400">Recent Popular</span> Posts
         </h2>
 
         {isLoading && (

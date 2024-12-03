@@ -122,7 +122,7 @@ const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: b
           {/* RSVP/More Info Button for Upcoming Events */}
           {isUpcoming && (
             <div className="mt-4">
-              <a href={rsvpLink} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+              <a href={rsvpLink} className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 RSVP / More Info
               </a>
             </div>
@@ -165,14 +165,24 @@ const VanillaEvents = () => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {/* Past Events */}
-      <div className="bg-neutral-100 dark:bg-[#0A1628] rounded-xl shadow-md overflow-hidden mb-10 p-8">
-        <h3 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl mb-5">
-          <span className="text-pink-500 dark:text-pink-400">Past</span> Events
-        </h3>
+      {/* Recent Events */}
+      <div className="bg-neutral-100 dark:bg-[#0A1628] rounded-xl shadow-md overflow-hidden p-8">
+        <div className="flex justify-between items-center mb-6">
+          <h3 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl">
+            <span className="text-pink-500 dark:text-pink-400">Recent</span> Events
+          </h3>
+          <div className="flex gap-4">
+            <a href="/event-recap" className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-3 rounded">
+              Event Recaps
+            </a>
+            <a href="https://www.youtube.com/@SprykerSystems/videos" className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-3 rounded">
+              Watch Recordings
+            </a>
+          </div>
+        </div>
 
         {isLoading && (
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center py-8">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-gray-400"></div>
           </div>
         )}
@@ -184,34 +194,22 @@ const VanillaEvents = () => {
         )}
 
         {!isLoading && !error && pastEvents.length === 0 && (
-          <p className="text-gray-600 dark:text-gray-400">No past events found</p>
+          <p className="text-gray-600 dark:text-gray-400 py-8">No recent events found</p>
         )}
 
         {!isLoading && !error && pastEvents.map((event) => (
           <EventCard key={event.id} event={event} isUpcoming={false} />
         ))}
-
-        {/* Follow-up Options */}
-        <div className="mt-8">
-          <div className="flex space-x-4">
-            <a href="/event-recap" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Event Recaps
-            </a>
-            <a href="https://www.youtube.com/@SprykerSystems/videos" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Watch Recordings
-            </a>
-          </div>
-        </div>
       </div>
 
       {/* Upcoming Events */}
-      <div className="bg-neutral-100 dark:bg-[#0A1628] rounded-xl shadow-md overflow-hidden mb-10 p-8">
-        <h3 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl mb-5">
+      <div className="bg-neutral-100 dark:bg-[#0A1628] rounded-xl shadow-md overflow-hidden p-8">
+        <h3 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl mb-6">
           <span className="text-blue-500 dark:text-blue-400">Upcoming</span> Events
         </h3>
 
         {isLoading && (
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center py-8">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-gray-400"></div>
           </div>
         )}
@@ -223,7 +221,7 @@ const VanillaEvents = () => {
         )}
 
         {!isLoading && !error && upcomingEvents.length === 0 && (
-          <p className="text-gray-600 dark:text-gray-400">No upcoming events scheduled</p>
+          <p className="text-gray-600 dark:text-gray-400 py-8">No upcoming events scheduled</p>
         )}
 
         {!isLoading && !error && upcomingEvents.map((event) => (
