@@ -218,7 +218,7 @@ function formatEvent(event: Event): FormattedEvent {
   return {
     id: event.eventID,
     name: truncateText(event.name, 100),
-    description: truncateText(stripHtmlTags(event.body), 100),
+    description: stripHtmlTags(event.body),
     url: event.url || `${API_ENDPOINTS.FORUM_BASE_URL}/event/${event.eventID}`,
     startDate: startDate,
     endDate: endDate,

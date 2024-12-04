@@ -92,7 +92,7 @@ const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: b
   const rsvpLink = event.ctaUrl || event.url;
 
   return (
-    <div className="h-[180px] mb-8 last:mb-0">
+    <div className="h-[200px] mb-8 last:mb-0">
       <div className="flex h-full">
         {/* Date Column */}
         <div className="flex-shrink-0 w-16">
@@ -127,19 +127,16 @@ const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: b
 
             {/* Description - with line clamp for consistent height */}
             {event.description && (
-              <div className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-3">
+              <div className={`text-sm text-gray-600 dark:text-gray-400 leading-relaxed ${isUpcoming ? 'line-clamp-2' : 'line-clamp-3'} mb-1`}>
                 {event.description}
               </div>
             )}
 
-            {/* Spacer to push button to bottom */}
-            <div className="flex-grow"></div>
-
-            {/* RSVP Button */}
+            {/* RSVP Link */}
             {isUpcoming && (
-              <div>
-                <a href={rsvpLink} className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                  RSVP / More Info
+              <div className="text-right mt-1">
+                <a href={rsvpLink} className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 font-medium">
+                  RSVP / More Info →
                 </a>
               </div>
             )}

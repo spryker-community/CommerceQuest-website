@@ -67,48 +67,68 @@ const VanillaForumPosts = () => {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {/* Recent Discussions */}
       <div className="bg-neutral-100 dark:bg-[#0A1628] rounded-xl shadow-md overflow-hidden mb-10 p-8">
-        <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl mb-5">
-          <span className="text-blue-500 dark:text-blue-400">Latest</span> Posts
-        </h2>
+        <div className="flex flex-col h-full">
+          <div className="flex-grow">
+            <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl mb-5">
+              <span className="text-blue-500 dark:text-blue-400">Latest</span> Posts
+            </h2>
 
-        {isLoading && (
-          <div className="flex justify-center items-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-gray-400"></div>
+            {isLoading && (
+              <div className="flex justify-center items-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-gray-400"></div>
+              </div>
+            )}
+
+            {error && (
+              <div className="text-red-500 font-bold p-4 rounded bg-red-100">
+                <p>Error: {error}</p>
+              </div>
+            )}
+
+            {!isLoading && !error && recentDiscussions.slice(0, 3).map((discussion) => (
+              <DiscussionCard key={discussion.id} discussion={discussion} />
+            ))}
           </div>
-        )}
-
-        {error && (
-          <div className="text-red-500 font-bold p-4 rounded bg-red-100">
-            <p>Error: {error}</p>
+          
+          <div className="mt-6 text-right">
+            <a href="https://forum.commercequest.space/discussions?type%5B0%5D=Discussion" className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 font-medium">
+              View more posts →
+            </a>
           </div>
-        )}
-
-        {!isLoading && !error && recentDiscussions.slice(0, 3).map((discussion) => (
-          <DiscussionCard key={discussion.id} discussion={discussion} />
-        ))}
+        </div>
       </div>
 
       {/* Popular Discussions */}
       <div className="bg-neutral-100 dark:bg-[#0A1628] rounded-xl shadow-md overflow-hidden mb-10 p-8">
-        <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl mb-5">
-          <span className="text-pink-500 dark:text-pink-400">Recent Popular</span> Posts
-        </h2>
+        <div className="flex flex-col h-full">
+          <div className="flex-grow">
+            <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl mb-5">
+              <span className="text-pink-500 dark:text-pink-400">Recent Popular</span> Posts
+            </h2>
 
-        {isLoading && (
-          <div className="flex justify-center items-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-gray-400"></div>
+            {isLoading && (
+              <div className="flex justify-center items-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-gray-400"></div>
+              </div>
+            )}
+
+            {error && (
+              <div className="text-red-500 font-bold p-4 rounded bg-red-100">
+                <p>Error: {error}</p>
+              </div>
+            )}
+
+            {!isLoading && !error && popularDiscussions.slice(0, 3).map((discussion) => (
+              <DiscussionCard key={discussion.id} discussion={discussion} />
+            ))}
           </div>
-        )}
-
-        {error && (
-          <div className="text-red-500 font-bold p-4 rounded bg-red-100">
-            <p>Error: {error}</p>
+          
+          <div className="mt-6 text-right">
+            <a href="https://forum.commercequest.space/discussions?type%5B0%5D=Discussion&internalStatusID%5B0%5D=7&hasComments=true&sort=-hot" className="text-pink-500 hover:text-pink-600 dark:text-pink-400 dark:hover:text-pink-500 font-medium">
+              View more popular posts →
+            </a>
           </div>
-        )}
-
-{!isLoading && !error && popularDiscussions.slice(0, 3).map((discussion) => (
-  <DiscussionCard key={discussion.id} discussion={discussion} />
-))}
+        </div>
       </div>
     </div>
   );
