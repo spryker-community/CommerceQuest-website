@@ -1,6 +1,5 @@
 ---
-// Import the necessary components
-import MainLayout from "@/layouts/MainLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import PartnersSection from "@components/sections/landing/PartnersSection.astro";
@@ -17,8 +16,9 @@ import network from "@images/community-3.jpg";
 import customerday from "@images/community-1.jpg";
 import cteam from "@images/community-2.jpg";
 import maher from "@images/blog/maher.jpg";
+import VanillaForumPosts from '../components/VanillaForumPosts.astro';
+import VanillaEvents from '../components/VanillaEvents';
 ---
-
 <MainLayout>
 
   <HeroSection
@@ -48,15 +48,26 @@ import maher from "@images/blog/maher.jpg";
   subTitle="Join engineers, architects and commerce experts from all over the world."
   />
 
+  <div class="mx-auto mt-10 mb-6 w-full space-y-1 text-center sm:w-1/2 lg:w-1/2">
+    <h2
+      class="text-balance text-2xl font-bold leading-tight text-neutral-800 dark:text-neutral-200 sm:text-3xl"
+    >Community activity dashboard</h2></div>
+
+  <section>
+    <VanillaForumPosts />
+  </section>
+
+  <section>
+    <VanillaEvents client:load />
+  </section>
+
   <FeaturesGeneral
     title="Igniting Community. Celebrating Contributors."
-    subTitle="We’re excited to kickstart a new era of collaborative development with our wider community! Follow our contributions process, send in your PRs and you'll get a fast reply from our core team."
+    subTitle="We're excited to kickstart a new era of collaborative development with our wider community! Follow our contributions process, send in your PRs and you'll get a fast reply from our core team."
     src={featureImage}
     alt="Products in floating boxes"
     features={features}
   />
-
-
 
   <FeaturesNavs
     title=`Why attend community <span class="text-blue-500 dark:text-blue-400">events</span>?`
