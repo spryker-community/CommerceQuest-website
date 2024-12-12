@@ -3,14 +3,15 @@ import { config, fields, collection } from '@keystatic/core';
 
 const keystaticConfig: Config = {
   storage: {
-    kind: 'cloud',
-  },
-  cloud: {
-    project: 'commercequest/cq-astro',
+    kind: 'github',
+    repo: {
+      owner: 'spryker-community',
+      name: 'commercequest-website'
+    }
   },
   ui: {
     brand: {
-      name: 'CommerceQuest Admin',      
+      name: 'CommerceQuest Admin',
     },
   },
   collections: {
