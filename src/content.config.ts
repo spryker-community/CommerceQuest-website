@@ -2,6 +2,7 @@
 
 import { z, defineCollection } from 'astro:content';
 import { docsSchema } from '@astrojs/starlight/schema';
+import { glob } from 'astro/loaders';
 
 const productsCollection = defineCollection({
   type: 'content',
@@ -60,7 +61,7 @@ const productsCollection = defineCollection({
 });
 
 const blogCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: '**/[^_]*.md', base: "./src/content/blog" }),
   schema: ({ image }) => z.object ({
   title: z.string(),
   description: z.string(),
@@ -76,38 +77,8 @@ const blogCollection = defineCollection({
   }),
 });
 
-// KEYSTATIC TEST
-// const blogCollection = defineCollection({
-//   type: "content",
-//   schema: ({ image }) => z.object ({
-//   title: z.string(),
-//   description: z.string(),
-//   authors: z.array(z.string()).optional(),
-//   role: z.string().optional(),
-//   authorImage: image().optional(),
-//   authorImageAlt: z.string().optional(),
-//   pubDate: z.date(),
-//   cardImage: image(),
-//   cardImageAlt: z.string(),
-//   tags: z.array(z.string()).optional(),
-//   content: z.array(z.string()),
-//   }),
-// });
-
-const insightsCollection = defineCollection({
-  type: "content",
-  schema: ({ image }) => z.object ({
-  title: z.string(),
-  description: z.string(),
-  // contents: z.array(z.string()),
-  cardImage: image(),
-  cardImageAlt: z.string(),
-  }),
-});
-
 export const collections = {
   docs: defineCollection({ schema: docsSchema() }),
   'products': productsCollection,
   'blog': blogCollection,
-  'insights': insightsCollection,
 };

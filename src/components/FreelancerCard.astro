@@ -28,7 +28,7 @@ const imageFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/
 // Add image import utility function
 async function getFreelancerImage(photoPath: string) {
   try {
-    const imageModule = await import(`../images/freelancers/${photoPath}`);
+    const imageModule = await import(/* @vite-ignore */ `../images/freelancers/${photoPath}`);
     return imageModule.default;
   } catch (error) {
     console.error(`Error loading image for ${photoPath}:`, error);
