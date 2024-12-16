@@ -61,7 +61,7 @@ const productsCollection = defineCollection({
 });
 
 const blogCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: "./src/data/blog" }),
+  loader: glob({ pattern: '**/[^_]*.md', base: "./src/content/blog" }),
   schema: ({ image }) => z.object ({
   title: z.string(),
   description: z.string(),
@@ -77,20 +77,8 @@ const blogCollection = defineCollection({
   }),
 });
 
-const insightsCollection = defineCollection({
-  type: "content",
-  schema: ({ image }) => z.object ({
-  title: z.string(),
-  description: z.string(),
-  // contents: z.array(z.string()),
-  cardImage: image(),
-  cardImageAlt: z.string(),
-  }),
-});
-
 export const collections = {
   docs: defineCollection({ schema: docsSchema() }),
   'products': productsCollection,
   'blog': blogCollection,
-  'insights': insightsCollection,
 };
