@@ -3,6 +3,7 @@ services:
     build:  .
     ports:
       - "4321:4321"
+      - "4322:4322"
     volumes:
       - "./:/app"
       - "/app/.tscache"

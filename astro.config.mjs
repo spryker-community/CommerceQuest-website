@@ -123,15 +123,14 @@ export default defineConfig({
       gzip: false,
       brotli: true
     }),
+    mdx(),
     react(),
     markdoc(),
-    mdx(),
     keystatic()
   ],
-  output: "hybrid",
+  output: "static",
   experimental: {
     clientPrerender: true,
-    directRenderScript: true
   },
   outdir: "dist",
   adapter: netlify()
