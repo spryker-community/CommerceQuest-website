@@ -1,8 +1,14 @@
 // https://docs.astro.build/en/guides/content-collections/#defining-collections
 
 import { z, defineCollection } from 'astro:content';
+import { docsLoader } from "@astrojs/starlight/loaders";
 import { docsSchema } from '@astrojs/starlight/schema';
 import { glob } from 'astro/loaders';
+
+const docs = defineCollection({
+  loader: docsLoader(),
+  schema: docsSchema()
+});
 
 const productsCollection = defineCollection({
   type: 'content',
@@ -78,7 +84,7 @@ const blogCollection = defineCollection({
 });
 
 export const collections = {
-  docs: defineCollection({ schema: docsSchema() }),
+  'docs': docs,
   'products': productsCollection,
   'blog': blogCollection,
 };

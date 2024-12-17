@@ -24,18 +24,21 @@ import 'virtual:starlight/user-css';
 import Hero from "@astrojs/starlight/components/Hero.astro";
 import Banner from "@astrojs/starlight/components/Banner.astro";
 import TwoColumnContent from "@astrojs/starlight/components/TwoColumnContent.astro";
+import { SITE } from "@data/constants";
 
 // disables page-sidebar (the right-side one)
 Astro.props.toc = undefined;
 
+const pageTitle: string | undefined = Astro.props.entry.data.title
+  ? `${Astro.props.entry.data.title} — ${SITE.title}`
+  : undefined;
 const pagefindEnabled =
   Astro.props.entry.slug !== '404' &&
   !Astro.props.entry.slug.endsWith('/404') &&
   Astro.props.entry.data.pagefind !== false;
 ---
 {/* NOTE: Do not use any "id" attribute since it hangs up the application (keeps websocket connection open) */}
-
-<MainLayout>
+<MainLayout title={pageTitle}>
   <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
     <TwoColumnContent {...Astro.props }>
       <main
