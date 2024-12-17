@@ -1,0 +1,36 @@
+---
+interface Props {
+  countryCode: string;
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+}
+
+const { countryCode, size = 'md', class: className = '' } = Astro.props;
+
+// Size mappings
+const sizes = {
+  sm: 'w-4 h-3',
+  md: 'w-6 h-4.5',
+  lg: 'w-8 h-6',
+};
+
+const sizeClass = sizes[size];
+
+// Convert country code to lowercase for the flag-icons class
+const code = countryCode.toLowerCase();
+---
+
+<span class={`fi fi-${code} ${sizeClass} ${className}`}></span>
+
+<style>
+  /* Custom height classes to match width-to-height ratio */
+  .h-3 {
+    height: 0.75rem;
+  }
+  .h-4\.5 {
+    height: 1.125rem;
+  }
+  .h-6 {
+    height: 1.5rem;
+  }
+</style>

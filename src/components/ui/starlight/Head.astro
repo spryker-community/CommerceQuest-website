@@ -1,18 +1,17 @@
 ---
-import type { Props } from '@astrojs/starlight/props';
-import Default from '@astrojs/starlight/components/Head.astro';
+import type { Props as StarlightProps } from '@astrojs/starlight/props';
+import StarlightHead from "@astrojs/starlight/components/Head.astro";
+import VtbotStarlight from "astro-vtbot/components/starlight/Base.astro";
 
-// Get site-level title and description from starlight config
-const { data } = Astro.props.entry;
-const title = data.title
-  ? `${data.title} | CommerceQuest`
-  : 'CommerceQuest';
+type Props = StarlightProps;
+
+const props = Astro.props as Props;
+props.viewTransitionsFallback = "animate";
 ---
 
-<Default {...Astro.props}>
-  <title>{title}</title>
-  <slot />
-</Default>
+<VtbotStarlight {...props}>
+  <StarlightHead {...props} />
+</VtbotStarlight>
 
 <style is:global>
   /* Slow down Chrome's default animation */

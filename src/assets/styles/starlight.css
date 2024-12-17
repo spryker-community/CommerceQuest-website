@@ -101,6 +101,7 @@ footer .pagination-links a {
     background-color: var(--sl-color-bg-box);
 }
 
+/* Lists */
 .sl-markdown-content ul:not(:where(.not-content *)) {
     list-style-type: none;
     padding-left: 0;
@@ -112,7 +113,7 @@ footer .pagination-links a {
 }
 
 .sl-markdown-content li:not(:where(.not-content *)) > ul,
-.sl-markdown-content li + li:not(:where(.not-content *)) {
+.sl-markdown-content ul li + li:not(:where(.not-content *)) {
     margin-top: 0.625rem;
 }
 
@@ -125,6 +126,87 @@ footer .pagination-links a {
     position: absolute;
     top: 13px;
     width: 0.875rem;
+}
+
+/* Ordered Lists */
+.sl-markdown-content ol:not(:where(.not-content *), .sl-steps) {
+    --bullet-size: calc(var(--sl-line-height) * 1rem - 1px);
+    --bullet-margin: 0.375rem;
+
+    list-style: none;
+    counter-reset: steps-counter 0;
+    padding-inline-start: 0;
+}
+
+.sl-markdown-content ol:not(:where(.not-content *), .sl-steps) > li {
+    counter-increment: steps-counter;
+    position: relative;
+    padding-inline-start: calc(var(--bullet-size) + 1rem);
+    /* HACK: Keeps any `margin-bottom` inside the `<li>`’s padding box to avoid gaps in the hairline border. */
+    padding-bottom: 1px;
+    /* Prevent bullets from touching in short list items. */
+    min-height: calc(var(--bullet-size) + var(--bullet-margin));
+}
+
+.sl-markdown-content ol li + li:not(:where(.not-content *)) {
+    /* Remove margin between steps. */
+    margin-top: 0;
+}
+
+.sl-markdown-content li:not(:where(.not-content *)) > ol {
+    margin-top: 0.625rem;
+}
+
+.sl-markdown-content ol:not(:where(.not-content *), .sl-steps) > li:before {
+    content: counter(steps-counter);
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    width: var(--bullet-size);
+    height: var(--bullet-size);
+    line-height: var(--bullet-size);
+
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    text-align: center;
+    color: var(--list-marker-color);
+    border: 1px solid var(--list-marker-color);
+    border-radius: 99rem;
+    box-shadow: none;
+}
+
+/* Vertical guideline linking list numbers. */
+.sl-markdown-content ol:not(:where(.not-content *), .sl-steps) > li:after {
+    --guide-width: 1px;
+    content: '';
+    position: absolute;
+    top: calc(var(--bullet-size) + var(--bullet-margin));
+    bottom: var(--bullet-margin);
+    inset-inline-start: calc((var(--bullet-size) - var(--guide-width)) / 2);
+    width: var(--guide-width);
+    background-color: var(--sl-color-hairline-light);
+}
+
+/* Adjust first item inside a step so that it aligns vertically with the number
+        even if using a larger font size (e.g. a heading) */
+.sl-markdown-content ol:not(:where(.not-content *), .sl-steps) > li > :first-child {
+    /*
+    The `lh` unit is not yet supported by all browsers in our support matrix
+    — see https://caniuse.com/mdn-css_types_length_lh
+    In unsupported browsers we approximate this using our known line-heights.
+    */
+    --lh: calc(1em * var(--sl-line-height));
+    --shift-y: calc(0.5 * (var(--bullet-size) - var(--lh)));
+    transform: translateY(var(--shift-y));
+    margin-bottom: var(--shift-y);
+}
+.sl-markdown-content ol:not(:where(.not-content *), .sl-steps) > li > :first-child:where(h1, h2, h3, h4, h5, h6) {
+    --lh: calc(1em * var(--sl-line-height-headings));
+}
+@supports (--prop: 1lh) {
+    .sl-markdown-content ol:not(:where(.not-content *), .sl-steps) > li > :first-child {
+        --lh: 1lh;
+    }
 }
 
 /* TODO: move to sth else later */

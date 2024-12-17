@@ -22,6 +22,22 @@ export default defineConfig({
     }
   },
   prefetch: true,
+  // Add environment variables that should be exposed to the client
+  vite: {
+    server: {
+      watch: {
+        usePolling: true
+      }
+    },
+    resolve: {
+      alias: [{
+        find: /^.*\/Page\.astro$/,
+        replacement: fileURLToPath(new URL('./src/components/ui/starlight/Page.astro', import.meta.url))
+      }]
+    },
+    // Expose environment variables to the client
+    envPrefix: ['PUBLIC_', 'VANILLA_']
+  },
   integrations: [
     icon({
       include: {
@@ -118,19 +134,5 @@ export default defineConfig({
     directRenderScript: true
   },
   outdir: "dist",
-  // Add the default astro outdir path
-  vite: {
-    server: {
-      watch: {
-        usePolling: true
-      }
-    },
-    resolve: {
-      alias: [{
-        find: /^.*\/Page\.astro$/,
-        replacement: fileURLToPath(new URL('./src/components/ui/starlight/Page.astro', import.meta.url))
-      }]
-    }
-  },
   adapter: netlify()
 });

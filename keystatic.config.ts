@@ -1,158 +1,136 @@
+import type { Config } from '@keystatic/core';
 import { config, fields, collection } from '@keystatic/core';
-export default config({
+
+const keystaticConfig: Config = {
   storage: {
-    kind: 'local',
+    kind: 'cloud',
+  },
+  cloud: {
+    project: 'commercequest/cq-astro',
   },
   ui: {
     brand: {
       name: 'CommerceQuest Admin',      
-      // mark: ({ colorScheme }) => {
-      //   let path = colorScheme === 'dark'
-      //     ? '/icon.svg'
-      //     : '/icon.svg';
-        
-      //   return <img src={path} height={24} />
-      // },
     },
   },
   collections: {
-    posts: collection({
-      label: 'Blogs',
-      slugField: 'title',
-      path: 'src/content/blog/*',
-      format: { contentField: 'content' },
+    freelancers: collection({
+      label: 'Freelancers',
+      path: 'src/content/freelancers/*',
+      slugField: 'slug',
       schema: {
-        title: fields.slug({
-          name: { label: "Title" },
-          slug: {
-            label: "SEO-friendly slug",
-            description: "Don't change the slug once a file is published!",
-          },
+        firstName: fields.text({
+          label: "First Name",
+          validation: { length: { min: 1 } }
         }),
-        description: fields.text({
-          label: "Description",
-          description: "A short description of the post.",
-          validation: { isRequired: true },
+        lastName: fields.text({
+          label: "Last Name",
+          validation: { length: { min: 1 } }
         }),
-        notes: fields.mdx({
-          label: "Notes",
-          description: "Internal notes for this post.",
+        slug: fields.text({
+          label: "Slug",
+          validation: { length: { min: 1 } }
         }),
-        content: fields.text({
-          label: 'Main content',
-          // formatting: true,
-          // dividers: true,
-          // links: true,
-          // images: true,
+        photo: fields.image({
+          label: "Photo",
+          directory: "src/images/freelancers",
+          publicPath: "/src/images/freelancers",
+          validation: { isRequired: true }
         }),
-        // draft: fields.checkbox({
-        //   label: "Draft",
-        //   description:
-        //     "Set this post as draft to prevent it from being published.",
-        // }),
-        authors: fields.array(
-          fields.relationship({
-            label: "Post author",
-            collection: `authors`,
-          }),
-          {
-            label: "Authors",
-            validation: { length: { min: 1 } },
-            itemLabel: (props) => props.value || "Please select an author",
-          },
-        ),
-        pubDate: fields.date({ label: "Publish Date" }),
-        updatedDate: fields.date({
-          label: "Updated Date",
-          validation: { isRequired: true },
-          description:
-            "If you update this post at a later date, put that date here.",
+        headline: fields.text({
+          label: "Headline",
         }),
-        cardImage: fields.image({
-          label: "Hero Image",
-          publicPath: "../",
-          validation: { isRequired: true },
+        availability: fields.text({
+          label: "Availability",
+          validation: { isRequired: true }
         }),
-        cardImageAlt: fields.text({
-          label: "Hero Image Alt Text",
-          description: "Describe the image for screen readers.",
-          validation: { isRequired: true },
+        location: fields.text({
+          label: "Location",
+          validation: { isRequired: true, length: { min: 1 } }
         }),
-        tags: fields.array(fields.text({ label: "Tags" }), {
-          label: "Tags",
-          description: "This is NOT case sensitive.",
-          itemLabel: (props) => props.value,
-          validation: { length: { min: 1 } },
+        countryCode: fields.text({
+          label: "Country Code",
+          validation: { length: { min: 2, max: 2 } }
+        }),
+        language: fields.text({
+          label: "Languages",
+          validation: { isRequired: true }
+        }),
+        shortPitch: fields.text({
+          label: "Short Pitch",
+          multiline: true,
+        }),
+        linkedIn: fields.url({
+          label: "LinkedIn URL",
+        }),
+        github: fields.url({
+          label: "GitHub URL",
+        }),
+        certifications: fields.multiselect({
+          label: "Certifications",
+          options: [
+            { label: "Backend Developer Certified", value: "Backend Developer" },
+            { label: "Solution Architect Certified", value: "Solution Architect" }
+          ],
+        }),
+        sprykerCertifications: fields.text({
+          label: "Spryker Certifications",
+          multiline: true,
+        }),
+        skills: fields.multiselect({
+          label: "Skills",
+          options: [
+            { label: "Frontend", value: "Frontend" },
+            { label: "Back End", value: "Back End" },
+            { label: "Architecture", value: "Architecture" },
+            { label: "Project Management", value: "Project Management" },
+            { label: "Fullstack", value: "Fullstack" },
+            { label: "Team Lead", value: "Team Lead" },
+            { label: "Tech Lead", value: "Tech Lead" }
+          ]
+        }),
+        timezoneRange: fields.text({
+          label: "Timezone Range",
+        }),
+        yearStartedWebDev: fields.integer({
+          label: "Year Started Web Development",
+          validation: { min: 1980, max: 2050 }
+        }),
+        yearStartedSpryker: fields.integer({
+          label: "Year Started with Spryker",
+          validation: { min: 1980, max: 2050 }
+        }),
+        references: fields.text({
+          label: "References",
+          multiline: true,
+        }),
+        idealCustomer: fields.text({
+          label: "Ideal Customer",
+          multiline: true,
+        }),
+        locationFlexibility: fields.text({
+          label: "Location Flexibility",
+        }),
+        otherCertifications: fields.text({
+          label: "Other Certifications",
+        }),
+        employmentType: fields.text({
+          label: "Employment Type",
+        }),
+        contact: fields.text({
+          label: "Contact Email",
+          validation: { length: { min: 1 } }
+        }),
+        forumProfile: fields.url({
+          label: "Forum Profile URL",
+        }),
+        isVisible: fields.checkbox({
+          label: "Is Visible",
+          defaultValue: true,
         }),
       },
     }),
-    authors: collection({
-      label: `Authors`,
-    slugField: "name",
-    path: `src/content/authors/*/`,
-    columns: ["name"],
-    entryLayout: "content",
-    format: { contentField: "bio" },
-    schema: {
-      name: fields.slug({
-        name: {
-          label: "Name",
-          validation: {
-            isRequired: true,
-          },
-        },
-        slug: {
-          label: "SEO-friendly slug",
-          description: "Never change the slug once this file is published!",
-        },
-      }),
-      authorImage: fields.image({
-        label: "Author avatar",
-        publicPath: "../",
-        validation: { isRequired: true },
-      }),
-      authorImageAlt: fields.text({
-        label: "Author avatar alt text",
-        description: "Describe the image for screen readers.",
-        validation: { isRequired: true },
-      }),
-      role: fields.text({
-        label: "Role",
-        description: "Job + Company",
-        validation: { isRequired: true },
-      }),
-      email: fields.text({
-        label: "The author's email",
-        description: "This must look something like `you@email.com`",
-        validation: { isRequired: true },
-      }),
-      authorLink: fields.url({
-        label: "Author Website or Social Media Link",
-        validation: { isRequired: true },
-      }),
-      bio: fields.mdx({
-        label: "Full Bio",
-        description: "The author's full bio",
-        options: {
-          bold: true,
-          italic: true,
-          strikethrough: true,
-          code: true,
-          heading: [2, 3, 4],
-          blockquote: true,
-          orderedList: true,
-          unorderedList: true,
-          table: false,
-          link: true,
-          image: {
-            directory: "src/content/authors/",
-            publicPath: "../",
-          },
-          divider: true,
-          codeBlock: false,
-        },
-      }),
-    },
-  })
   },
-});
+};
+
+export default keystaticConfig;

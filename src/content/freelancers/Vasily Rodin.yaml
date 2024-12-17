@@ -1,0 +1,35 @@
+firstName: Vasily
+lastName: Rodin
+photo: vasily-rodin.jpg
+headline: Senior Spryker Developer & Tech Lead
+availability: 2025, usually 8h per day
+location: Berlin
+countryCode: DE
+language: English, German, Russian
+shortPitch: >-
+  I've been with Spryker since 2017. I have a successful track record with
+  dozens of projects!
+linkedIn: https://www.linkedin.com/in/rodinv/
+github: https://github.com/RodinVasily
+sprykerCertifications: "Backend Developer Certified"
+skills:
+  - Back End
+  - Architecture
+  - Fullstack
+  - Tech Lead
+timezoneRange: CET
+yearStartedWebDev: 2008
+yearStartedSpryker: 2017
+references: >-
+  B2C / B2B / Marketplace projects from 2017 to 2024 with customers from
+  Germany, Austria, Poland, Croatia and other countries. Mainly in the role of
+  Senior Backend Developer and Tech Lead.
+idealCustomer: >-
+  B2B or Marketplace project, mid/large size, challenging features,
+  international team
+locationFlexibility: Remote, can travel
+otherCertifications: ''
+employmentType: Freelance
+contact: me@vasilyrodin.de
+forumProfile: https://forum.commercequest.space/profile/vasily.rodin
+isVisible: true
