@@ -156,19 +156,15 @@ const VanillaEvents = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log('Fetching events data...');
         const [upcoming, past] = await Promise.all([
           getUpcomingEvents(),
           getPastEvents()
         ]);
-        console.log('Upcoming events:', upcoming);
-        console.log('Past events:', past);
 
         setUpcomingEvents(upcoming);
         setPastEvents(past);
         setIsLoading(false);
       } catch (err) {
-        console.error('Error fetching events:', err);
         setError('Failed to fetch events');
         setIsLoading(false);
       }

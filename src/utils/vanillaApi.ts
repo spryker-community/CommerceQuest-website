@@ -112,33 +112,23 @@ export async function getPopularDiscussions(): Promise<FormattedDiscussion[]> {
 
 export async function getUpcomingEvents(): Promise<FormattedEvent[]> {
   try {
-    console.log('Fetching upcoming events...');
     const response = await fetch(API_ENDPOINTS.EVENTS.UPCOMING);
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('API Error Response:', errorText);
       throw new Error(`Failed to fetch upcoming events: ${response.status} ${response.statusText}`);
     }
     
     const data = await response.json();
-    console.log('Raw upcoming events data:', data);
 
     // Check if we have the expected data structure
     if (!data || !Array.isArray(data.data)) {
-      console.error('Unexpected data structure:', data);
       return [];
     }
 
     // Filter out any events without required fields
     const validEvents = data.data.filter((event: any) => {
-      const hasRequired = event && event.eventID && event.name && event.dateStarts && event.dateEnds;
-      if (!hasRequired) {
-        console.log('Skipping invalid upcoming event:', event);
-      }
-      return hasRequired;
+      return event && event.eventID && event.name && event.dateStarts && event.dateEnds;
     });
 
-    console.log('Valid upcoming events:', validEvents);
     return validEvents.map((event: Event) => formatEvent(event));
   } catch (error) {
     console.error('Error fetching upcoming events:', error);
@@ -148,33 +138,23 @@ export async function getUpcomingEvents(): Promise<FormattedEvent[]> {
 
 export async function getPastEvents(): Promise<FormattedEvent[]> {
   try {
-    console.log('Fetching past events...');
     const response = await fetch(API_ENDPOINTS.EVENTS.PAST);
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('API Error Response:', errorText);
       throw new Error(`Failed to fetch past events: ${response.status} ${response.statusText}`);
     }
     
     const data = await response.json();
-    console.log('Raw past events data:', data);
 
     // Check if we have the expected data structure
     if (!data || !Array.isArray(data.data)) {
-      console.error('Unexpected data structure:', data);
       return [];
     }
 
     // Filter out any events without required fields
     const validEvents = data.data.filter((event: any) => {
-      const hasRequired = event && event.eventID && event.name && event.dateStarts && event.dateEnds;
-      if (!hasRequired) {
-        console.log('Skipping invalid past event:', event);
-      }
-      return hasRequired;
+      return event && event.eventID && event.name && event.dateStarts && event.dateEnds;
     });
 
-    console.log('Valid past events:', validEvents);
     return validEvents.map((event: Event) => formatEvent(event));
   } catch (error) {
     console.error('Error fetching past events:', error);
@@ -202,18 +182,8 @@ function formatDiscussion(discussion: Discussion): FormattedDiscussion {
 }
 
 function formatEvent(event: Event): FormattedEvent {
-  console.log('Formatting event:', event);
-  
   const startDate = new Date(event.dateStarts);
   const endDate = new Date(event.dateEnds);
-
-  console.log('Parsed dates:', {
-    name: event.name,
-    dateStarts: event.dateStarts,
-    startDate: startDate,
-    dateEnds: event.dateEnds,
-    endDate: endDate
-  });
 
   return {
     id: event.eventID,
