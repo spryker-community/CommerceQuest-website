@@ -1,9 +1,10 @@
 ---
 // Import PrimaryCTA component
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 
 // Destructure the props passed to the Astro component
-const { title, description, btnExists, btnTitle, btnURL } = Astro.props;
+const { title, description, btnExists, btnTitle, btnURL, secondaryBtnTitle, secondaryBtnURL } = Astro.props;
 // Define TypeScript interface for props
 interface Props {
   title: string;
@@ -11,6 +12,8 @@ interface Props {
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
+  secondaryBtnTitle?: string;
+  secondaryBtnURL?: string;
 }
 ---
 
@@ -30,11 +33,14 @@ interface Props {
       class="mb-8 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-xl [&_a]:underline [&_a]:decoration-primary-600 [&_a:hover]:decoration-primary-700 dark:[&_a]:decoration-primary-500 dark:[&_a:hover]:decoration-primary-400"
     >
     </p>
-    <!-- Conditional rendering of PrimaryCTA component if 'btnExists' property is truthy -->
+    <!-- Conditional rendering of buttons if 'btnExists' property is truthy -->
     {
       btnExists ? (
         <div class="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
           <PrimaryCTA title={btnTitle} url={btnURL} />
+          {secondaryBtnTitle && secondaryBtnURL && (
+            <SecondaryCTA title={secondaryBtnTitle} url={secondaryBtnURL} />
+          )}
         </div>
       ) : null
     }
