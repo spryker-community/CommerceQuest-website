@@ -1,0 +1,12 @@
+title: "i18n Translations"
+subtitle: ""
+description: "Adds support for multiple languages to Spryker OS"
+tags: []
+license: "MIT"
+creators:
+  - name: "Community"
+    url: "https://forum.commercequest.space/categories/spryker-community-projects"
+contributors: []
+links:
+  - label: "Github"
+    url: "https://github.com/spryker-community/spryker-translations"

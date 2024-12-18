@@ -218,7 +218,7 @@ const { creatorNames, tags, licenses } = getUniqueAttributes(tools);
         return `
           <div>
             <h2 class="font-semibold text-gray-800 dark:text-white ">${title}</h2>
-            <p class="text-sm font-normal text-gray-600 dark:text-gray-400">${subtitle}</p>
+            ${subtitle ? `<p class="text-sm font-normal text-gray-600 dark:text-gray-400">${subtitle}</p>` : ''}
           </div>
         `;
       },
@@ -229,11 +229,19 @@ const { creatorNames, tags, licenses } = getUniqueAttributes(tools);
         thClassList: ['min-w-96'],
       },
       enableSorting: false,
-      cell: (props) => (
-        `<div class="prose inline py-1 text-sm font-normal rounded-full text-gray-500 gap-x-2 dark:text-gray-400 prose-a:cursor-pointer prose-a:transition-colors prose-a:duration-200 dark:hover:prose-a:text-gray-500 dark:prose-a:text-gray-300 hover:prose-a:text-gray-500 focus:prose-a:outline-none">
-          ${props.getValue()}
-        </div>`
-      ),
+      cell: (props) => {
+        const { description } = props.row.original;
+
+        if (!description) {
+          return '';
+        }
+
+        return `
+          <div class="prose inline py-1 text-sm font-normal rounded-full text-gray-500 gap-x-2 dark:text-gray-400 prose-a:cursor-pointer prose-a:transition-colors prose-a:duration-200 dark:hover:prose-a:text-gray-500 dark:prose-a:text-gray-300 hover:prose-a:text-gray-500 focus:prose-a:outline-none">
+            ${description}
+          </div>
+        `;
+      }
     }),
     columnHelper.accessor('license', {
       header: () => 'License',

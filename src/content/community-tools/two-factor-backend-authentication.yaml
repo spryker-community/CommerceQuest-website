@@ -1,0 +1,11 @@
+title: "Two-factor Backend Authentication"
+subtitle: ""
+description: "Second Factor Authentication for the Spryker Administration Interface"
+tags: []
+license: "MIT"
+creators:
+  - name: "UFirst Group"
+contributors: []
+links:
+  - label: "Github"
+    url: "https://github.com/ufirstgroup/spryker-second-factor-auth"

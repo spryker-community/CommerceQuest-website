@@ -1,0 +1,12 @@
+title: "Novalnet B2C Marketplace Payment Integration"
+subtitle: ""
+description: "Novalnet payment module for Spryker simplifies your daily work by automating the entire payment process, from checkout till collection. This module is designed to help you increase your sales by offering various payment methods on a one-page checkout. The module which is perfectly adjusted to the Spryker shop with top-quality range of services of the payment provider."
+tags: []
+license: "Custom"
+creators:
+  - name: "Novalnet"
+    url: "https://github.com/Novalnet-AG/"
+contributors: []
+links:
+  - label: "Github"
+    url: "https://github.com/Novalnet-AG/sprykerb2c-Marketplace-payment-integration-novalnet"

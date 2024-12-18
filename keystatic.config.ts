@@ -1,13 +1,14 @@
 import type { Config } from '@keystatic/core';
-import { config, fields, collection } from '@keystatic/core';
+import { fields, collection } from '@keystatic/core';
 
 const keystaticConfig: Config = {
   storage: {
     kind: 'github',
     repo: {
       owner: 'spryker-community',
-      name: 'commercequest-website'
-    }
+      name: 'commercequest-website',
+    },
+    branchPrefix: 'keystatic/'
   },
   ui: {
     brand: {
@@ -15,7 +16,7 @@ const keystaticConfig: Config = {
     },
   },
   collections: {
-    freelancers: collection({
+    'freelancers': collection({
       label: 'Freelancers',
       path: 'src/content/freelancers/*',
       slugField: 'slug',
@@ -131,7 +132,120 @@ const keystaticConfig: Config = {
         }),
       },
     }),
+    'community-tools': collection({
+      label: 'Community Tools',
+      path: 'src/content/community-tools/*',
+      slugField: 'title',
+      schema: {
+        title: fields.slug({
+          name: {
+            label: 'Title',
+            validation: {
+              isRequired: true,
+              length: { min: 6 }
+            }
+          },
+          slug: {
+            label: 'SEO-friendly title',
+            description: 'This will define the file name for this entry'
+          }
+        }),
+        subtitle: fields.text({
+          label: "Subtitle",
+          description: 'Optional subtitle to support the title',
+        }),
+        description: fields.text({
+          label: "Description",
+          multiline: true,
+        }),
+        tags: fields.array(
+          fields.text({
+            label: 'Tag',
+            validation: {
+              isRequired: true,
+              length: { min: 3 }
+            }
+          }),
+          {
+            label: 'Tags',
+            itemLabel: props => props.value
+          }
+        ),
+        license: fields.text({
+          label: "License",
+          validation: {
+            isRequired: true,
+          }
+        }),
+        creators: fields.array(
+          fields.object({
+            name: fields.text({
+              label: 'Name',
+              validation: {
+                isRequired: true,
+              }
+            }),
+            url: fields.url({ label: 'URL' }),
+          }),
+          {
+            label: 'Creators',
+            itemLabel: (props) => `${props.fields.name.value} -> ${props.fields.url.value}`,
+            validation: { length: { min: 1 } }
+          }
+        ),
+        contributors: fields.array(
+          fields.object({
+            name: fields.text({
+              label: 'Name',
+              validation: {
+                isRequired: true,
+              }
+            }),
+            url: fields.url({ label: 'URL' }),
+          }),
+          {
+            label: 'Contributors',
+            itemLabel: (props) => `${props.fields.name.value} -> ${props.fields.url.value}`,
+          }
+        ),
+        links: fields.array(
+          fields.object({
+            label: fields.text({
+              label: 'Label',
+              validation: {
+                isRequired: true,
+              }
+            }),
+            url: fields.url({
+              label: 'URL',
+              validation: {
+                isRequired: true,
+              }
+            }),
+          }),
+          {
+            label: 'Links',
+            itemLabel: (props) => `${props.fields.label.value} -> ${props.fields.url.value}`,
+            validation: { length: { min: 1 } }
+          }
+        ),
+      },
+    }),
   },
 };
+/*
 
+    "creators": [{"name": "Valantic", "url": "https://github.com/valantic-CEC-Deutschland-GmbH"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "JetBrains marketplace",
+        "url": "https://plugins.jetbrains.com/plugin/18766-sprykerkit"
+      },
+      {
+        "label": "Github",
+        "url": "https://github.com/valantic-CEC-Deutschland-GmbH/spryker-kit-intellij-plugin"
+      }
+    ]
+*/
 export default keystaticConfig;

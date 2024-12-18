@@ -83,8 +83,13 @@ const blogCollection = defineCollection({
   }),
 });
 
+const communityToolCollection = defineCollection({
+  loader: glob({ pattern: '*.yaml', base: "./src/content/community-tools" }),
+});
+
 export const collections = {
   'docs': docs,
   'products': productsCollection,
   'blog': blogCollection,
+  'community-tools': communityToolCollection,
 };

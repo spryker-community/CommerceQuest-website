@@ -28,8 +28,8 @@ export type CommunityToolLink = {
 
 export type CommunityTool = {
   title: string;
-  subtitle: string | undefined;
-  description: string;
+  subtitle?: string;
+  description?: string;
   tags?: string[];
   license: string;
   creators: CommunityToolCreator[];

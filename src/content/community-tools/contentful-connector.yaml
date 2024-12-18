@@ -1,0 +1,12 @@
+title: "Contentful connector"
+subtitle: ""
+description: "A Spryker-Contentful connector. Import content from Contentful to storage and updates it via cronjob."
+tags: []
+license: "MIT"
+creators:
+  - name: "Fond Of"
+    url: "https://github.com/fond-of/"
+contributors: []
+links:
+  - label: "Github"
+    url: "https://github.com/fond-of/spryker-contentful"
