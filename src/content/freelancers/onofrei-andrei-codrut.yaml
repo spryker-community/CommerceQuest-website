@@ -1,0 +1,33 @@
+firstName: Codrut
+lastName: 'Andre Onofrei '
+photo: /src/images/freelancers/onofrei-andrei-codrut/photo.jpeg
+headline: Spryker Developer
+availability: Immediately
+location: Laşi
+countryCode: RO
+language: English
+shortPitch: >-
+  As a Spryker developer I really enjoy getting my hands dirty and finding the
+  needle in the haystack when it comes to bugs and topics to resolve. My motto
+  is to find the best solutions to the issues in hand. To be proactive in
+  delivering stable, tested and working solutions for my customers. 
+linkedIn: https://www.linkedin.com/in/codrut-onofrei-4136a062/
+certifications:
+  - Backend Developer
+skills:
+  - Back End
+  - Frontend
+  - Fullstack
+  - Team Lead
+timezoneRange: GMT+1
+yearStartedWebDev: 2014
+yearStartedSpryker: 2020
+references: >-
+  B2C / B2B / Marketplace projects with customers like Wentronic, Prym, Windeln,
+  Krones and Ratioform. 
+
+  Worked in Agile setups but also Kanban and Waterfall methodologies. I adapt to
+  every environment and work to get the best results everytime. 
+employmentType: Freelance - open to permanent position
+contact: codrut.onofrei@gmail.com
+isVisible: true
