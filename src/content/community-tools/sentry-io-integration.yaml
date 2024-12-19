@@ -1,0 +1,13 @@
+title: "Sentry.io integration"
+subtitle: ""
+description: |
+  This package enables <a href="https://sentry.io" rel="nofollow" target="_blank">Sentry.io</a> to work with your <a href="https://spryker.com" target="_blank">Spryker</a> shop by extending the Monitoring Module of Spryker and adding other hooks to here and there to enhance the data in Sentry.
+tags: []
+license: "MIT"
+creators:
+  - name: "Turbine Kreuzberg"
+    url: "https://github.com/turbine-kreuzberg/"
+contributors: []
+links:
+  - label: "Github"
+    url: "https://github.com/turbine-kreuzberg/spryker-sentry"

@@ -1,0 +1,12 @@
+title: "Codeception Module"
+subtitle: ""
+description: "This module allows developers to test Spryker modules isolated."
+tags: []
+license: "MIT"
+creators:
+  - name: "Fond Of"
+    url: "https://github.com/fond-of/"
+contributors: []
+links:
+  - label: "Github"
+    url: "https://github.com/fond-of/codeception-spryker"

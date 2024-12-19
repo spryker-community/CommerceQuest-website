@@ -1,0 +1,12 @@
+title: "Spryker Debug"
+subtitle: ""
+description: "Collection of Spryker-compatible debug and development tools."
+tags: []
+license: "MIT"
+creators:
+  - name: "Inviqa"
+    url: "https://github.com/inviqa/"
+contributors: []
+links:
+  - label: "Github"
+    url: "https://github.com/inviqa/spryker-debug"

@@ -1,0 +1,12 @@
+title: "CLI Toolkit"
+subtitle: "Spryker Community CLI Toolkit"
+description: "A suite of utilities designed to enhance performance in your day-to-day operations with Spryker Commerce OS."
+tags: []
+license: "MIT"
+creators:
+  - name: "Community"
+    url: "https://forum.commercequest.space/categories/spryker-community-projects"
+contributors: []
+links:
+  - label: "Github"
+    url: "https://github.com/spryker-community/cli-toolkit"

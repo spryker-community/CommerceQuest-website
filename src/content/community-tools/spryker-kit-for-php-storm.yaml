@@ -1,0 +1,22 @@
+title: "SprykerKit for PhpStorm"
+subtitle: ""
+description: |
+  Supports the development of <a href="https://www.spryker.com" target="_blank">Spryker</a> applications with Intellij IDEA.
+  <br /><br />Features:
+  <ul>
+    <li>Create Spryker Module boilerplate based on your current context</li>
+    <li>Create Spryker Files and Folders based on your current context</li>
+    <li>Supported Layers Client, Glue, Service, Shared, Yves, Zed</li>
+    <li>Configure desired project namespace</li>
+  </ul>
+tags: []
+license: "MIT"
+creators:
+  - name: "Valantic"
+    url: "https://github.com/valantic-CEC-Deutschland-GmbH"
+contributors: []
+links:
+  - label: "JetBrains marketplace"
+    url: "https://plugins.jetbrains.com/plugin/18766-sprykerkit"
+  - label: "Github"
+    url: "https://github.com/valantic-CEC-Deutschland-GmbH/spryker-kit-intellij-plugin"

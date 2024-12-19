@@ -1,0 +1,20 @@
+title: PYZ for PhpStorm
+description: >
+  This plugin was created during the <i>Turbine Kreuzberg Breakout Week</i> as a
+  learning project by a bunch of PHP developers.
+
+  <ul>
+    <li>Extend Spryker core classes, interfaces and xml files on project level (right-click -> Extend in PYZ / CTRL-ALT-E)</li>
+    <li>Open Spryker files on github.com (right-click -> View on GitHub / CTRL-ALT-G)</li>
+    <li>Goto-handling for Zed stub calls and their gateway controller actions (URLs are clickable)</li>
+    <li>Resolve usages of gateway controller actions in Zed stub calls</li>
+  </ul>
+tags: []
+license: MIT
+creators:
+  - name: Turbine Kreuzberg
+    url: https://github.com/turbine-kreuzberg/
+contributors: []
+links:
+  - label: Github
+    url: https://github.com/turbine-kreuzberg/spryker-idea-plugin
