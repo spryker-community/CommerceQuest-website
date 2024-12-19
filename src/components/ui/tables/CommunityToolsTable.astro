@@ -12,6 +12,9 @@ function getUniqueAttributes(tools: CommunityToolCollection) {
   const licenses = new Set<string>();
 
   for (const tool of tools) {
+    if (!tool.creators) {
+      continue;
+    }
     tool.creators.forEach(creator => creatorNames.add(creator.name));
     (tool.tags || []).forEach(tag => tags.add(tag));
     licenses.add(tool.license);
