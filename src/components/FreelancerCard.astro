@@ -20,7 +20,7 @@ type Skill = string;
 const hasCertifications = hasSprykerCertifications(freelancer.sprykerCertifications);
 
 // Import all images at build time with proper typing
-const imageFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/freelancers/*.{jpeg,jpg,png,gif}', {
+const imageFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/freelancers/**/*.{jpeg,jpg,png,gif}', {
   eager: true,
   import: 'default'
 });
@@ -40,7 +40,7 @@ async function getFreelancerImage(photoPath: string) {
 const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastName);
 
 // Construct the correct image path
-const imagePath = `/src/images/freelancers/${freelancer.photo}`;
+const imagePath = freelancer.photo;
 
 // Get the image from our glob with type checking
 const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];

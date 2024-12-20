@@ -13,7 +13,7 @@ import keystaticConfig from '../../../keystatic.config';
 import type { Freelancer, KeystaticFreelancer } from '../../types.ts';
 
 // Import all images at build time with proper typing
-const imageFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/freelancers/*.{jpeg,jpg,png,gif}', {
+const imageFiles: Record<string, ImageMetadata> = import.meta.glob('/src/images/freelancers/**/*.{jpeg,jpg,png,gif}', {
   eager: true,
   import: 'default'
 });
@@ -61,7 +61,7 @@ const pageTitle = `${`${freelancer.firstName} ${freelancer.lastName}`} - Spryker
 const hasCertifications = hasSprykerCertifications(freelancer.sprykerCertifications);
 
 // Construct the correct image path
-const imagePath = `/src/images/freelancers/${freelancer.photo}`;
+const imagePath = freelancer.photo;
 
 // Get the image from our glob
 const freelancerImage: ImageMetadata | undefined = imageFiles[imagePath];
