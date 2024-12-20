@@ -1,7 +1,7 @@
 title: "Codeception Module"
 subtitle: ""
 description: "This module allows developers to test Spryker modules isolated."
-tags: []
+tags: ["testing", "dev"]
 license: "MIT"
 creators:
   - name: "Fond Of"

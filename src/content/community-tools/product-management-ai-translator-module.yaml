@@ -1,7 +1,7 @@
 title: "ProductManagementAiTranslator Module"
 subtitle: ""
 description: "This module provides product-related AI translation functionality."
-tags: []
+tags: ["translation", "ai"]
 license: "MIT"
 creators:
   - name: "Community"

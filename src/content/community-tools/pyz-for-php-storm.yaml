@@ -9,7 +9,7 @@ description: >
     <li>Goto-handling for Zed stub calls and their gateway controller actions (URLs are clickable)</li>
     <li>Resolve usages of gateway controller actions in Zed stub calls</li>
   </ul>
-tags: []
+tags: ["phpstorm", "dev", "ide"]
 license: MIT
 creators:
   - name: Turbine Kreuzberg

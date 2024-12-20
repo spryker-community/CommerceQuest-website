@@ -3,7 +3,7 @@ subtitle: Spryker Community CLI Toolkit
 description: >-
   A suite of utilities designed to enhance performance in your day-to-day
   operations with Spryker Cloud Commerce OS.
-tags: []
+tags: ["dev", "cli"]
 license: MIT
 creators:
   - name: Community
