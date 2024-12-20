@@ -7,28 +7,41 @@ interface Props {
 }
 
 function getUniqueAttributes(tools: CommunityToolCollection) {
-  const creatorNames = new Set<string>();
-  const tags = new Set<string>();
-  const licenses = new Set<string>();
+  const creatorNames = new Map<string, true>();
+  const tags = new Map<string, true>();
+  const licenses = new Map<string, true>();
 
   for (const tool of tools) {
-    if (!tool.creators) {
-      continue;
+    if (tool.creators) {
+      for (const creator of tool.creators) {
+        creatorNames.set(creator.name, true);
+      }
     }
-    tool.creators.forEach(creator => creatorNames.add(creator.name));
-    (tool.tags || []).forEach(tag => tags.add(tag));
-    licenses.add(tool.license);
+    if (tool.tags) {
+      for (const tag of tool.tags) {
+        tags.set(tag.toLowerCase(), true);
+      }
+    }
+    licenses.set(tool.license, true);
   }
 
   return {
-    creatorNames: Array.from(creatorNames),
-    tags: Array.from(tags),
-    licenses: Array.from(licenses),
+    creatorNames: Array.from(creatorNames.keys()).sort((a, b) => a.localeCompare(b)),
+    tags: Array.from(tags.keys()).sort((a, b) => a.localeCompare(b)),
+    licenses: Array.from(licenses.keys()).sort((a, b) => a.localeCompare(b)),
   };
 }
 
 const { tools } = Astro.props;
 const { creatorNames, tags, licenses } = getUniqueAttributes(tools);
+
+// Process tools: lowercase and sort tags
+const processedTools = tools.map((tool) => ({
+  ...tool,
+  tags: tool.tags
+    ? tool.tags.map((tag) => tag.toLowerCase()).sort((a, b) => a.localeCompare(b))
+    : [],
+}));
 ---
 
 <div class="mx-auto max-w-[85rem] px-4 py-8 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full">
@@ -69,7 +82,7 @@ const { creatorNames, tags, licenses } = getUniqueAttributes(tools);
 
   </div>
   <div id="community-tools-table-wrapper"
-       data-community-tools={JSON.stringify(tools)}
+       data-community-tools={JSON.stringify(processedTools)}
        class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
   </div>
 </div>
@@ -233,18 +246,32 @@ const { creatorNames, tags, licenses } = getUniqueAttributes(tools);
       },
       enableSorting: false,
       cell: (props) => {
-        const { description } = props.row.original;
+        const { description, tags } = props.row.original;
 
-        if (!description) {
-          return '';
-        }
+        const tagsHtml = tags?.map((tag) => `
+          <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium text-gray-500 ring-1 ring-inset ring-pink-500/60">
+            ${tag}
+          </span>
+        `).join('') || '';
 
-        return `
+        const tagsWrapper = tagsHtml
+          ? `<div class="flex flex-wrap justify-start gap-1 mt-4 first:mt-0">${tagsHtml}</div>`
+          : '';
+
+        const descriptionHtml = description
+          ? `
           <div class="prose inline py-1 text-sm font-normal rounded-full text-gray-500 gap-x-2 dark:text-gray-400 prose-a:cursor-pointer prose-a:transition-colors prose-a:duration-200 dark:hover:prose-a:text-gray-500 dark:prose-a:text-gray-300 hover:prose-a:text-gray-500 focus:prose-a:outline-none">
             ${description}
           </div>
-        `;
+        `
+          : '';
+
+        return `${descriptionHtml}${tagsWrapper}`;
       }
+    }),
+    columnHelper.accessor('tags', {
+      cell: props => props.getValue(),
+      filterFn: 'arrIncludesSome',
     }),
     columnHelper.accessor('license', {
       header: () => 'License',
@@ -310,6 +337,9 @@ const { creatorNames, tags, licenses } = getUniqueAttributes(tools);
     getFilteredRowModel: getFilteredRowModel(),
     state: {
       columnPinning: {},
+      columnVisibility: {
+        tags: false,
+      },
       pagination: {
         pageIndex: 0,
         pageSize: 20,

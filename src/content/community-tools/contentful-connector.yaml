@@ -1,7 +1,7 @@
 title: "Contentful connector"
 subtitle: ""
 description: "A Spryker-Contentful connector. Import content from Contentful to storage and updates it via cronjob."
-tags: []
+tags: ["cms"]
 license: "MIT"
 creators:
   - name: "Fond Of"

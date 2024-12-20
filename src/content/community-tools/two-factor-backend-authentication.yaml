@@ -1,7 +1,7 @@
 title: "Two-factor Backend Authentication"
 subtitle: ""
 description: "Second Factor Authentication for the Spryker Administration Interface"
-tags: []
+tags: ["backoffice", "authentication", "2fa", "security"]
 license: "MIT"
 creators:
   - name: "UFirst Group"

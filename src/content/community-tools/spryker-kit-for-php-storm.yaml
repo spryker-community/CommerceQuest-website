@@ -9,7 +9,7 @@ description: |
     <li>Supported Layers Client, Glue, Service, Shared, Yves, Zed</li>
     <li>Configure desired project namespace</li>
   </ul>
-tags: []
+tags: ["phpstorm", "dev", "ide"]
 license: "MIT"
 creators:
   - name: "Valantic"

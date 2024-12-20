@@ -1,7 +1,7 @@
 title: "i18n Translations"
 subtitle: ""
 description: "Adds support for multiple languages to Spryker OS"
-tags: []
+tags: ["translation"]
 license: "MIT"
 creators:
   - name: "Community"
