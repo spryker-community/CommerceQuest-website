@@ -1,6 +1,7 @@
 firstName: Ivan
 lastName: Jurisic
-photo: /src/images/freelancers/ivan-jurisic/photo.jpg
+slug: ivan-jurisic
+photo: /src/images/freelancers/ivan-jurisic/photo.jpeg
 headline: Spryker developer
 availability: Immediately
 location: Makarska, Croatia

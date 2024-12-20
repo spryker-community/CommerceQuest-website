@@ -1,6 +1,7 @@
 firstName: David
 lastName: Greiner
-photo: /src/images/freelancers/david-greiner/photo.jpg
+slug: david-greiner
+photo: /src/images/freelancers/david-greiner/photo.jpeg
 headline: Senior Spryker Backend Developer
 availability: Immediate
 location: Germany

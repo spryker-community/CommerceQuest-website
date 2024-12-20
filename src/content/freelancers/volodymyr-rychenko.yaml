@@ -1,6 +1,7 @@
 firstName: Volodymyr
 lastName: Hrychenko
-photo: /src/images/freelancers/volodymyr-rychenko/photo.jpg
+slug: volodymyr-rychenko
+photo: /src/images/freelancers/volodymyr-rychenko/photo.jpeg
 headline: Spryker Developer & Solution Architect
 availability: Fulltime
 location: Warsaw

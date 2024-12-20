@@ -1,6 +1,7 @@
 firstName: Constantin
 lastName: Iordan
-photo: /src/images/freelancers/constantin-iordan/photo.jpg
+slug: constantin-iordan
+photo: /src/images/freelancers/constantin-iordan/photo.jpeg
 headline: Senior PHP Developer
 availability: January 2025, 8h/day, 5 days/week
 location: Brasov

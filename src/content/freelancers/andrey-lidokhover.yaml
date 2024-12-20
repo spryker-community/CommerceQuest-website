@@ -1,6 +1,7 @@
 firstName: Andrey
 lastName: Lidokhover
-photo: /src/images/freelancers/andrey-lidokhover/photo.jpg
+slug: andrey-lidokhover
+photo: /src/images/freelancers/andrey-lidokhover/photo.jpeg
 headline: Senior Spryker Backend Developer
 availability: November 2024, fulltime
 location: Hamburg

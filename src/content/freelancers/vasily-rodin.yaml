@@ -1,6 +1,7 @@
 firstName: Vasily
 lastName: Rodin
-photo: /src/images/freelancers/vasily-rodin/photo.jpg
+slug: vasily-rodin
+photo: /src/images/freelancers/vasily-rodin/photo.jpeg
 headline: Senior Spryker Developer & Tech Lead
 availability: 2025, usually 8h per day
 location: Berlin

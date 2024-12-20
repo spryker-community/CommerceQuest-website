@@ -1,6 +1,7 @@
 firstName: Javier
 lastName: Benito
-photo: /src/images/freelancers/javier-benito/photo.jpg
+slug: javier-benito
+photo: /src/images/freelancers/javier-benito/photo.jpeg
 headline: Senior Software Engineer
 availability: Immediately
 location: Madrid

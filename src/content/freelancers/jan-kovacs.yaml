@@ -1,6 +1,7 @@
 firstName: Jan
 lastName: Kovács
-photo: /src/images/freelancers/jan-kovacs/photo.jpg
+slug: jan-kovacs
+photo: /src/images/freelancers/jan-kovacs/photo.jpeg
 headline: Experienced Software Engineer & Leader
 availability: November 2024, 40 hours/week
 location: Hamburg
