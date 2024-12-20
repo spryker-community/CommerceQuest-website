@@ -31,7 +31,13 @@ const keystaticConfig: Config = {
         }),
         slug: fields.text({
           label: "Slug",
-          validation: { length: { min: 1 } }
+          validation: {
+            length: { min: 1 },
+            pattern: {
+              regex: /^[a-z0-9-]+$/,
+              message: 'Please provide alphanumeric characters in lowercase and `-`.',
+            }
+          }
         }),
         photo: fields.image({
           label: "Photo",
@@ -233,19 +239,4 @@ const keystaticConfig: Config = {
     }),
   },
 };
-/*
-
-    "creators": [{"name": "Valantic", "url": "https://github.com/valantic-CEC-Deutschland-GmbH"}],
-    "contributors": [],
-    "links": [
-      {
-        "label": "JetBrains marketplace",
-        "url": "https://plugins.jetbrains.com/plugin/18766-sprykerkit"
-      },
-      {
-        "label": "Github",
-        "url": "https://github.com/valantic-CEC-Deutschland-GmbH/spryker-kit-intellij-plugin"
-      }
-    ]
-*/
 export default keystaticConfig;
