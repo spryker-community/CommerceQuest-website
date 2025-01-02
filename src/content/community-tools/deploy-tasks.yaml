@@ -1,0 +1,14 @@
+title: Deploy Tasks
+description: >-
+  This package provides a functionality for Spryker to execute one-time tasks
+  after a deployment based on the environment and store.
+tags:
+  - dev
+license: MIT
+creators:
+  - name: Turbine Kreuzberg
+    url: https://github.com/turbine-kreuzberg/
+contributors: []
+links:
+  - label: Github
+    url: https://github.com/turbine-kreuzberg/spryker-deploy-tasks

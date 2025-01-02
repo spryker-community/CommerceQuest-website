@@ -1,0 +1,16 @@
+title: Http Request Recorder
+subtitle: Integration for php-vcr
+description: |-
+  A package to integrate <a
+    href="https://php-vcr.github.io/" rel="nofollow" target="_blank">php-vcr</a> by wrapping around <a
+    href="https://github.com/php-vcr/php-vcr" rel="nofollow" target="_blank">php-vcr/php-vcr</a> to record HTTP interactions in your tests.
+tags:
+  - testing
+license: MIT
+creators:
+  - name: Turbine Kreuzberg
+    url: https://github.com/turbine-kreuzberg/
+contributors: []
+links:
+  - label: Github
+    url: https://github.com/turbine-kreuzberg/spryker-http-recorder

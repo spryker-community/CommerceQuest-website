@@ -1,0 +1,15 @@
+title: ConfigCat Integration
+subtitle: Feature flags through ConfigCat
+description: >-
+  This package provides an integration for the feature flag service <a
+  href="https://configcat.com/" rel="nofollow" target="_blank">ConfigCat</a> in
+  Spryker.
+tags: []
+license: MIT
+creators:
+  - name: Turbine Kreuzberg
+    url: https://github.com/turbine-kreuzberg/
+contributors: []
+links:
+  - label: Github
+    url: https://github.com/turbine-kreuzberg/spryker-configcat
