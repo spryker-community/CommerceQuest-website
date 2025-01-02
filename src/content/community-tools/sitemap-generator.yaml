@@ -1,0 +1,15 @@
+title: Sitemap Generator
+description: >-
+  Module generates sitemap according to the <a
+  href="https://www.sitemaps.org/protocol.html" rel="nofollow"
+  target="_blank">sitemap protocol</a>.
+tags:
+  - seo
+license: MIT
+creators:
+  - name: Turbine Kreuzberg
+    url: https://github.com/turbine-kreuzberg/
+contributors: []
+links:
+  - label: Github
+    url: https://github.com/turbine-kreuzberg/spryker-sitemap
