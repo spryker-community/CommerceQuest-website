@@ -13,7 +13,7 @@
     "@astro-community/astro-embed-youtube": "^0.5.3",
     "@astrojs/check": "^0.9.4",
     "@astrojs/markdoc": "^0.12.4",
-    "@astrojs/mdx": "^4.0.3",
+    "@astrojs/mdx": "^4.0.5",
     "@astrojs/netlify": "^6.0.0",
     "@astrojs/react": "^4.1.2",
     "@astrojs/sitemap": "^3.2.1",
