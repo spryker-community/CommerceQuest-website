@@ -7,10 +7,10 @@ import { fileURLToPath } from 'node:url';
 import mdx from '@astrojs/mdx';
 import netlify from "@astrojs/netlify";
 import icon from "astro-icon";
-
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from '@keystatic/astro'
+import pagefind from "astro-pagefind";
 
 // https://astro.build/config
 export default defineConfig({
@@ -126,12 +126,12 @@ export default defineConfig({
     mdx(),
     react(),
     markdoc(),
+    pagefind(),
     keystatic()
   ],
   output: "static",
   experimental: {
     clientPrerender: true,
   },
-  outdir: "dist",
   adapter: netlify()
 });

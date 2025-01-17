@@ -6,7 +6,4 @@ services:
       - "4322:4322"
     volumes:
       - "./:/app"
-      - "/app/.tscache"
-      - "/app/dist"
-      - "/app/node_modules"
     container_name: astro-commercequest
