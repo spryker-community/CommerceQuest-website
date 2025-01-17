@@ -1,0 +1,88 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { default as PagefindSearch } from "astro-pagefind/components/Search";
+import { SITE } from "../data_files/constants";
+import MainSection from "../components/ui/blocks/MainSection.astro";
+
+const pageTitle: string = `Search — ${SITE.title}`;
+---
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://commercequest.space/",
+    "url": "https://commercequest.space/",
+    "name": "Hack, Build, Win. | CommerceQuest",
+    "description": "Commerce Resources for the driven Spryker, Propel & Oryx developer.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://commercequest.space/",
+      "name": "CommerceQuest",
+      "description": "Commerce Resources for the driven Spryker, Propel & Oryx developer."
+    },
+    "inLanguage": "en-US"
+  }}
+>
+  <MainSection
+    title="Search"
+    description=""
+  />
+  <div class="mx-auto max-w-[85rem] px-4 pb-2 sm:px-6 sm:pb-16 lg:px-8 lg:pb-14 2xl:max-w-full">
+    <PagefindSearch className="pagefind-ui" uiOptions={{ showImages: false }} />
+  </div>
+</MainLayout>
+<style>
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #393939;
+        --pagefind-ui-text: #9ca3af;
+        --pagefind-ui-background: #00070D;
+        --pagefind-ui-border: #374151;
+        --pagefind-ui-tag: #fe7200;
+        --pagefind-ui-border-width: 1px;
+        --pagefind-ui-border-radius: 0.5rem;
+        --pagefind-ui-image-border-radius: 8px;
+        --pagefind-ui-image-box-ratio: 3 / 2;
+        --pagefind-ui-font: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+    }
+
+    .pagefind-ui :global(.pagefind-ui__form::before) {
+        background-color: var(--pagefind-ui-text);
+        width: calc(16px* var(--pagefind-ui-scale));
+        height: calc(16px* var(--pagefind-ui-scale));
+        top: calc(11px* var(--pagefind-ui-scale));
+        left: calc(13px* var(--pagefind-ui-scale));
+    }
+
+    .pagefind-ui :global(.pagefind-ui__search-input) {
+        background-color: #00070D;
+        border-color: #374151;
+        border-width: 1px;
+        border-style: solid;
+        box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        line-height: 1.25rem;
+        padding: 0.5rem 0.75rem;
+        padding-inline-start: 2.25rem;
+        box-sizing: border-box;
+        font-size: 0.875rem;
+        font-weight: 400;
+        width: 100%;
+        position: relative;
+        display: block;
+        height: auto;
+    }
+
+    .pagefind-ui :global(.pagefind-ui__search-clear) {
+        height: calc(32px* var(--pagefind-ui-scale));
+        padding: 0 calc(15px* var(--pagefind-ui-scale)) 0 calc(2px* var(--pagefind-ui-scale));
+    }
+
+    .pagefind-ui :global(.pagefind-ui__result-inner mark) {
+        border-radius: 0.375rem;
+        background: none;
+        box-shadow: inset 0 0 0 0 #fff, inset 0 0 0 1px rgb(157 8 97 / 0.6), 0 0 #0000;
+        color: var(--pagefind-ui-text);
+        padding: 0.25rem;
+    }
+</style>
