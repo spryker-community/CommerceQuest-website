@@ -1,0 +1,14 @@
+title: "Sentry.io integration"
+subtitle: ""
+description: |
+  Sentry integration as a Spryker monitoring implementation.
+  A Sentry monitoring extension for Spryker, refer to <a href="https://sentry.io" rel="nofollow" target="_blank">Sentry.io</a>
+tags: ["monitoring"]
+license: "MIT"
+creators:
+  - name: Valantic
+    url: https://github.com/valantic-CEC-Deutschland-GmbH
+contributors: []
+links:
+  - label: "Github"
+    url: "https://github.com/valantic-CEC-Deutschland-GmbH/sentry"
