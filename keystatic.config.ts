@@ -3,7 +3,7 @@ import { fields, collection } from '@keystatic/core';
 
 const keystaticConfig: Config = {
   storage: {
-    kind: 'local',
+    kind: 'github',
     repo: {
       owner: 'spryker-community',
       name: 'commercequest-website',
