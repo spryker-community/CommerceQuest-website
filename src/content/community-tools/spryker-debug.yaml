@@ -1,12 +1,14 @@
-title: "Spryker Debug"
-subtitle: ""
-description: "Collection of Spryker-compatible debug and development tools."
-tags: ["dev"]
-license: "MIT"
+title: Spryker Debug
+description: Collection of Spryker-compatible debug and development tools.
+tags:
+  - dev
+license: MIT
 creators:
-  - name: "Inviqa"
-    url: "https://github.com/inviqa/"
+  - name: Inviqa
+    url: https://github.com/inviqa/
+  - name: Lautsprecher Teufel
+    url: https://github.com/teufelaudio/spryker-debug
 contributors: []
 links:
-  - label: "Github"
-    url: "https://github.com/inviqa/spryker-debug"
+  - label: Github
+    url: https://github.com/teufelaudio/spryker-debug

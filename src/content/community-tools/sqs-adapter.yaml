@@ -1,0 +1,13 @@
+title: "SQS Adapter"
+subtitle: ""
+description: |
+  SQS implementation as an adapter for spryker/queue.
+tags: ["queue"]
+license: "MIT"
+creators:
+  - name: Valantic
+    url: https://github.com/valantic-CEC-Deutschland-GmbH
+contributors: []
+links:
+  - label: "Github"
+    url: "https://github.com/valantic-CEC-Deutschland-GmbH/sqs-adapter"
