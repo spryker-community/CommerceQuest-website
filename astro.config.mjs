@@ -133,5 +133,11 @@ export default defineConfig({
   experimental: {
     clientPrerender: true,
   },
-  adapter: netlify()
+  adapter: netlify(),
+  image: {
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: '**.spryker.com',
+    }],
+  },
 });
