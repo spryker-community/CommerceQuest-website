@@ -1,2 +1,4 @@
 [dev]
   port = 4322
+[images]
+  remote_images = ["https://now.spryker.com/.*"]

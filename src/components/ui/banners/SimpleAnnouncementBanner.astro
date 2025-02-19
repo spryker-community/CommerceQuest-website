@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  url: string;
+  title: string;
+  width: number;
+  height: number;
+  image: string;
+}
+
+const {
+  url,
+  title,
+  width,
+  height,
+  image,
+} = Astro.props;
+---
+<astro-banner>
+  <div
+    class="z-50 w-full transform"
+    role="region"
+    aria-label="Informational Banner"
+  >
+    <div
+      class="py-8 text-center shadow-sm"
+    >
+      <div class="inline-flex items-center mx-auto max-w-screen-xl px-4 sm:px-8 lg:px-10">
+        <a
+          class="banner-link cursor-pointer"
+          href={url}
+          target="_blank"
+        ><Image class="rounded" src={image} alt={title} width={width} height={height} loading="eager" quality="max"/></a>
+      </div>
+    </div>
+  </div>
+</astro-banner>
+<style>
+    .banner-link {
+        position: relative;
+        display: block;
+        text-align: center;
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: sans-serif;
+        max-height:90px;
+        max-width: 728px;
+        margin:auto;
+    }
+
+    .banner-link:hover {
+        animation: animate 8s linear infinite;
+    }
+
+    @keyframes animate {
+        0% {
+            background-position: 0%;
+        }
+        100% {
+            background-position: 400%;
+        }
+    }
+
+    .banner-link:before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        z-index: -1;
+        border-radius: 0px;
+        background: linear-gradient(90deg, #4b8867, #ebda70, #011427, #4b8867);
+        background-size: 400%;
+        opacity: 0;
+        transition: .5s;
+    }
+
+    .banner-link:hover:before {
+        filter: blur(20px);
+        opacity: 1;
+        animation: animate 8s linear infinite;
+    }
+</style>
