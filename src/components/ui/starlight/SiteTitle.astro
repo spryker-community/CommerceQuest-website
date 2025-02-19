@@ -1,17 +1,14 @@
 ---
 import mainLogo from "@images/starlight/screwfast_logo_dark.svg?raw";
 import docsLogo from "@images/starlight/docs_logo.svg?raw";
-import type { Props } from "@astrojs/starlight/props";
-
+const { siteTitleHref } = Astro.locals.starlightRoute;
 
 const main = "/";
-const locale = Astro.props.locale ? Astro.props.locale + "/" : "";
-const docs = "/" + locale + "";
 ---
 
 <span class="site-title flex">
   <a class="main-logo" href={main} set:html={mainLogo} aria-label="CommerceQuest" />
-  <a class="docs-logo" href={docs} set:html={docsLogo} aria-label="CommerceQuest Docs" />
+  <a class="docs-logo" href={siteTitleHref} set:html={docsLogo} aria-label="CommerceQuest Docs" />
 </span>
 
 <style>

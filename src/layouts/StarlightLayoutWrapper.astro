@@ -1,19 +1,20 @@
 ---
-import type { Props } from '../../node_modules/@astrojs/starlight/props';
-
 // Built-in CSS styles.
 import '../../node_modules/@astrojs/starlight/style/props.css';
 import '../assets/styles/starlight/reset.css';
 import '../../node_modules/@astrojs/starlight/style/shiki.css';
 import '../../node_modules/@astrojs/starlight/style/util.css';
 
-import MainLayout from "@/layouts/MainLayout.astro";
+import Banner from "@astrojs/starlight/components/Banner.astro";
 import ContentPanel from "@astrojs/starlight/components/ContentPanel.astro";
 import DraftContentNotice from "@astrojs/starlight/components/DraftContentNotice.astro";
 import FallbackContentNotice from "@astrojs/starlight/components/FallbackContentNotice.astro";
 import Footer from "@astrojs/starlight/components/Footer.astro";
+import Hero from "@astrojs/starlight/components/Hero.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
 import MarkdownContent from '@astrojs/starlight/components/MarkdownContent.astro';
 import PageTitle from "@astrojs/starlight/components/PageTitle.astro";
+import TwoColumnContent from "@astrojs/starlight/components/TwoColumnContent.astro";
 
 // Remark component CSS (needs to override `MarkdownContent.astro`)
 import '../../node_modules/@astrojs/starlight/style/asides.css';
@@ -21,54 +22,61 @@ import '../../node_modules/@astrojs/starlight/style/asides.css';
 // Important that this is the last import so it can override built-in styles.
 import 'virtual:starlight/user-css';
 
-import Hero from "@astrojs/starlight/components/Hero.astro";
-import Banner from "@astrojs/starlight/components/Banner.astro";
-import TwoColumnContent from "@astrojs/starlight/components/TwoColumnContent.astro";
+const { starlightRoute } = Astro.locals;
 import { SITE } from "@data/constants";
 
 // disables page-sidebar (the right-side one)
-Astro.props.toc = undefined;
+starlightRoute.toc = undefined;
 
-const pageTitle: string | undefined = Astro.props.entry.data.title
-  ? `${Astro.props.entry.data.title} — ${SITE.title}`
+const pageTitle: string | undefined = starlightRoute.entry.data.title
+  ? `${starlightRoute.entry.data.title} — ${SITE.title}`
   : undefined;
+
 const pagefindEnabled =
-  Astro.props.entry.slug !== '404' &&
-  !Astro.props.entry.slug.endsWith('/404') &&
-  Astro.props.entry.data.pagefind !== false;
+  starlightRoute.entry.slug !== '404' &&
+  !starlightRoute.entry.slug.endsWith('/404') &&
+  starlightRoute.entry.data.pagefind !== false;
+
+const htmlDataAttributes: DOMStringMap = { 'data-theme': 'dark' };
+if (Boolean(starlightRoute.toc)) htmlDataAttributes['data-has-toc'] = '';
+if (starlightRoute.hasSidebar) htmlDataAttributes['data-has-sidebar'] = '';
+if (Boolean(starlightRoute.entry.data.hero)) htmlDataAttributes['data-has-hero'] = '';
+
+const mainDataAttributes: DOMStringMap = {};
+if (pagefindEnabled) mainDataAttributes['data-pagefind-body'] = '';
 ---
 {/* NOTE: Do not use any "id" attribute since it hangs up the application (keeps websocket connection open) */}
 <MainLayout title={pageTitle}>
   <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-    <TwoColumnContent {...Astro.props }>
+    <TwoColumnContent>
       <main
-        data-pagefind-body={pagefindEnabled}
-        lang={Astro.props.entryMeta.lang}
-        dir={Astro.props.entryMeta.dir}
+        {...mainDataAttributes}
+        lang={starlightRoute.entryMeta.lang}
+        dir={starlightRoute.entryMeta.dir}
       >
         {/* TODO: Revisit how this logic flows. */}
-        <Banner {...Astro.props} />
+        <Banner />
         {
-          Astro.props.entry.data.hero ? (
-            <ContentPanel {...Astro.props}>
-              <Hero {...Astro.props} />
-              <MarkdownContent {...Astro.props}>
+          starlightRoute.entry.data.hero ? (
+            <ContentPanel>
+              <Hero />
+              <MarkdownContent>
                 <slot />
               </MarkdownContent>
-              <Footer {...Astro.props} />
+              <Footer />
             </ContentPanel>
           ) : (
             <>
-              <ContentPanel {...Astro.props}>
-                <PageTitle {...Astro.props} />
-                {Astro.props.entry.data.draft && <DraftContentNotice {...Astro.props} />}
-                {Astro.props.isFallback && <FallbackContentNotice {...Astro.props} />}
+              <ContentPanel>
+                <PageTitle />
+                {starlightRoute.entry.data.draft && <DraftContentNotice />}
+                {starlightRoute.isFallback && <FallbackContentNotice />}
               </ContentPanel>
-              <ContentPanel {...Astro.props}>
-                <MarkdownContent {...Astro.props}>
+              <ContentPanel>
+                <MarkdownContent>
                   <slot />
                 </MarkdownContent>
-                <Footer {...Astro.props} />
+                <Footer />
               </ContentPanel>
             </>
           )

@@ -1,6 +1,7 @@
 // An array of links for navigation bar
 import type { NavEntry } from "../types";
-import { getSidebar as getStarlightSubmenu, type SidebarEntry } from '../../node_modules/@astrojs/starlight/utils/navigation.ts';
+import { type SidebarEntry } from '../../node_modules/@astrojs/starlight/utils/routing/types.ts';
+import { getSidebar as getStarlightSubmenu } from '../../node_modules/@astrojs/starlight/utils/navigation.ts';
 
 // An array of links for footer
 const footerLinks = [
