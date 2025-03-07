@@ -33,6 +33,24 @@ We set the language of the page to English and add classes for scrollbar and scr
     <link rel="stylesheet" href="/flag-icons/css/flag-icons.min.css">
     <!-- Define the title of the page -->
     <title>{title}</title>
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KDQ2GQV');
+    </script>
+    <!-- End Google Tag Manager -->
     <script is:inline>
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
       if (
@@ -56,6 +74,10 @@ We set the language of the page to English and add classes for scrollbar and scr
   <body
     class="bg-neutral-200 selection:bg-blue-400 selection:text-neutral-700 dark:bg-neutral-800"
   >
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDQ2GQV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
     <!--
     Setting up the main structure of the page.
     The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
