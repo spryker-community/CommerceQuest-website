@@ -34,11 +34,22 @@ We set the language of the page to English and add classes for scrollbar and scr
     <!-- Define the title of the page -->
     <title>{title}</title>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KDQ2GQV');</script>
+    <script is:inline>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KDQ2GQV');
+    </script>
     <!-- End Google Tag Manager -->
     <script is:inline>
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
@@ -72,6 +83,13 @@ We set the language of the page to English and add classes for scrollbar and scr
     The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
     -->
     <Navbar />
+    <SimpleAnnouncementBanner
+      url="https://event.spryker.com/hackathons#march"
+      title="Spryker Hackathon March 2025"
+      image="https://now.spryker.com/hubfs/98-images-used-outside-hubspot/01-Vanilla-Community/March_2025_Hackathon-Leaderboard%20728x90.jpg"
+      width={728}
+      height={90}
+    />
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 lg:min-h-96">
       <main>
         <slot />
