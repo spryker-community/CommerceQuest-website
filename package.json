@@ -28,7 +28,7 @@
     "@preline/dropdown": "^2.6.0",
     "@preline/overlay": "^2.6.0",
     "@preline/select": "^2.6.0",
-    "@preline/tabs": "^2.6.0",
+    "@preline/tabs": "^3.0.0",
     "@tanstack/table-core": "^8.21.2",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
