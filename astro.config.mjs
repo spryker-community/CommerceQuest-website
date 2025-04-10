@@ -90,13 +90,9 @@ export default defineConfig({
           directory: "other"
         }
       }],
-      social: [
-        {
-          icon: 'github',
-          label: 'GitHub',
-          href: 'https://github.com/spryker-community'
-        }
-      ],
+      social: {
+        github: "https://github.com/spryker-community"
+      },
       disable404Route: true,
       customCss: ["./src/assets/styles/starlight.css"],
       favicon: "/favicon.ico",
