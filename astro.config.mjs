@@ -16,6 +16,13 @@ import pagefind from "astro-pagefind";
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://commercequest.space/",
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp'
@@ -55,13 +62,6 @@ export default defineConfig({
         src: './src/images/starlight/CQ_logo.svg',
         replacesTitle: true
       },
-      defaultLocale: "root",
-      locales: {
-        root: {
-          label: "English",
-          lang: "en"
-        }
-      },
       lastUpdated: true,
       // https://starlight.astro.build/guides/sidebar/
       sidebar: [{
@@ -89,11 +89,7 @@ export default defineConfig({
         autogenerate: {
           directory: "other"
         }
-      }
-      /*         {
-                label: "[Templates]]",
-                autogenerate: { directory: "templates" },
-              }, */],
+      }],
       social: {
         github: "https://github.com/spryker-community"
       },
