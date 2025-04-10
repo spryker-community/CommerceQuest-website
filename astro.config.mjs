@@ -89,14 +89,14 @@ export default defineConfig({
         autogenerate: {
           directory: "other"
         }
-      }
-      /*         {
-                label: "[Templates]]",
-                autogenerate: { directory: "templates" },
-              }, */],
-      social: {
-        github: "https://github.com/spryker-community"
-      },
+      }],
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/spryker-community'
+        }
+      ],
       disable404Route: true,
       customCss: ["./src/assets/styles/starlight.css"],
       favicon: "/favicon.ico",
