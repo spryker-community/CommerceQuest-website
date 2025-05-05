@@ -110,6 +110,43 @@ export async function getPopularDiscussions(): Promise<FormattedDiscussion[]> {
   }
 }
 
+export async function getAllEvents(): Promise<FormattedEvent[]> {
+  try {
+    // Use a more generic endpoint that doesn't filter by date
+    const url = `https://forum.commercequest.space/api/v2/events?sort=dateStarts`;
+    
+    const response = await fetch(url, {
+      headers: {
+        'Authorization': `Bearer ${import.meta.env.VANILLA_API_TOKEN}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('API Error Response:', errorText);
+      throw new Error(`API responded with status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    
+    // Check if we have the expected data structure
+    if (!data || !Array.isArray(data)) {
+      return [];
+    }
+
+    // Filter out any events without required fields
+    const validEvents = data.filter((event: any) => {
+      return event && event.eventID && event.name && event.dateStarts && event.dateEnds;
+    });
+
+    return validEvents.map((event: Event) => formatEvent(event));
+  } catch (error) {
+    console.error('Error fetching all events:', error);
+    return [];
+  }
+}
+
 export async function getUpcomingEvents(): Promise<FormattedEvent[]> {
   try {
     const response = await fetch(API_ENDPOINTS.EVENTS.UPCOMING);

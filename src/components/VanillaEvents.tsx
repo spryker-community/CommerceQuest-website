@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getUpcomingEvents, getPastEvents } from '../utils/vanillaApi';
+import { getAllEvents } from '../utils/vanillaApi';
 import type { FormattedEvent } from '../utils/vanillaApi';
 
 const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: boolean }) => {
@@ -148,6 +148,7 @@ const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: b
 };
 
 const VanillaEvents = () => {
+  const [allEvents, setAllEvents] = useState<FormattedEvent[]>([]);
   const [upcomingEvents, setUpcomingEvents] = useState<FormattedEvent[]>([]);
   const [pastEvents, setPastEvents] = useState<FormattedEvent[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -156,11 +157,24 @@ const VanillaEvents = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [upcoming, past] = await Promise.all([
-          getUpcomingEvents(),
-          getPastEvents()
-        ]);
-
+        // Fetch all events
+        const events = await getAllEvents();
+        setAllEvents(events);
+        
+        // Get current date for client-side filtering
+        const now = new Date();
+        
+        // Filter events into upcoming and past based on the CURRENT date
+        const upcoming = events
+          .filter(event => new Date(event.startDate) >= now)
+          .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime())
+          .slice(0, 3); // Limit to 3 events
+        
+        const past = events
+          .filter(event => new Date(event.endDate) < now)
+          .sort((a, b) => new Date(b.endDate).getTime() - new Date(a.endDate).getTime())
+          .slice(0, 3); // Limit to 3 events
+        
         setUpcomingEvents(upcoming);
         setPastEvents(past);
         setIsLoading(false);
