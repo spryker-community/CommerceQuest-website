@@ -90,7 +90,7 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
       {/* Contains navigation links */}
       <div
         id="navbar-collapse-with-animation"
-        class="hs-collapse hidden lg:flex flex-wrap grow justify-start lg:h-20 overflow-hidden transition-all duration-300"
+        class="hs-collapse hidden w-full lg:flex flex-wrap grow justify-start lg:h-20 overflow-hidden transition-all duration-300"
       >
         {/* Navigation links container */}
         <div
@@ -98,7 +98,7 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
         >
           {/* Add mobile auth navigation at the top */}
           <div class="lg:hidden border-b border-neutral-200 dark:border-neutral-700 pb-4 mb-4">
-            <AuthNavigation className="flex-col space-x-0 space-y-2" client:load />
+            <AuthNavigation className="flex items-center space-x-3" client:load />
           </div>
           
           {/* Navigation links component */}
@@ -110,11 +110,11 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
         </div>
       </div>
       {/* ThemeIcon component specifically for larger screens */}
-      <span class="hidden lg:flex flex-initial flex-wrap grow justify-end items-center space-x-4">
+      <div class="hidden lg:flex items-center space-x-4 ml-auto">
        {/* <ThemeIcon */}
         <a
           href="/search"
-          class="text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white p-2 rounded"
+          class="text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white p-2 rounded flex-shrink-0"
         >
           {/* Search icon */}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -129,15 +129,23 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
         
         {/* Add the dynamic authentication component */}
         <AuthNavigation client:load />
-      </span>
+      </div>
     </div>
   </nav>
 </header>
 
 <script is:inline>
-  import HSCollapse from "@preline/collapse/index.js";
-  import HSOverlay from "@preline/overlay/index.js";
-  import HSDropdown from "@preline/dropdown/index.js";
+  // Simple mobile menu toggle without Preline dependencies
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.querySelector('[data-hs-collapse="#navbar-collapse-with-animation"]');
+    const mobileMenu = document.getElementById('navbar-collapse-with-animation');
+    
+    if (toggleButton && mobileMenu) {
+      toggleButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  });
 
   const HSThemeAppearance = {
     init() {
@@ -203,6 +211,11 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
     },
   };
   HSThemeAppearance.init();
+
+  // Initialize HSCollapse for mobile menu
+  window.addEventListener('load', () => {
+    HSCollapse.autoInit();
+  });
 
   window
     .matchMedia("(prefers-color-scheme: dark)")
