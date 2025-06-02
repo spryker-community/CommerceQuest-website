@@ -4,6 +4,9 @@ dist/
 # Netlify stuff
 .netlify/
 
+# project stuff
+.project/
+
 # VSCode stuff
 .vscode/
 .prettierrc
