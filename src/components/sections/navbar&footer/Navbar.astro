@@ -98,7 +98,7 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
         >
           {/* Add mobile auth navigation at the top */}
           <div class="lg:hidden border-b border-neutral-200 dark:border-neutral-700 pb-4 mb-4">
-            <AuthNavigation client:load />
+            <AuthNavigation className="flex items-center space-x-3" client:load />
           </div>
           
           {/* Navigation links component */}
@@ -111,6 +111,7 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
       </div>
       {/* ThemeIcon component specifically for larger screens */}
       <div class="hidden lg:flex items-center space-x-4 ml-auto">
+       {/* <ThemeIcon */}
         <a
           href="/search"
           class="text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white p-2 rounded flex-shrink-0"
