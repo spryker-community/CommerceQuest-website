@@ -1,3 +1,17 @@
+// TypeScript interfaces for authentication
+interface UserProfile {
+  userID: number;
+  name: string;
+  email: string;
+  photoUrl: string;
+  profileUrl: string;
+  roles?: string[];
+}
+
+export interface AuthStatus {
+  isAuthenticated: boolean;
+  user?: UserProfile;
+}
 // API endpoint configuration
 const API_ENDPOINTS = {
   DISCUSSIONS: '/api/forum/discussions.json',
@@ -6,8 +20,50 @@ const API_ENDPOINTS = {
   EVENTS: {
     UPCOMING: '/api/events/upcoming',
     PAST: '/api/events/past'
-  }
+  },
+  USER_PROFILE: '/api/v2/users/me', // Add this line
 } as const;
+
+/**
+ * Check if user is authenticated with the Vanilla forum
+ * This function attempts to fetch the current user's profile
+ * If successful, user is logged in; if 401/403, user is not logged in
+ */
+export async function checkAuthenticationStatus(): Promise<AuthStatus> {
+  try {
+    const response = await fetch(`${API_ENDPOINTS.FORUM_BASE_URL}${API_ENDPOINTS.USER_PROFILE}`, {
+      method: 'GET',
+      credentials: 'include', // Include cookies for cross-origin requests
+      headers: {
+        'Accept': 'application/json',
+      }
+    });
+
+    if (response.ok) {
+      const userData = await response.json();
+      return {
+        isAuthenticated: true,
+        user: {
+          userID: userData.userID,
+          name: userData.name,
+          email: userData.email,
+          photoUrl: userData.photoUrl,
+          profileUrl: userData.profileUrl,
+          roles: userData.roles
+        }
+      };
+    } else if (response.status === 401 || response.status === 403) {
+      // User not authenticated
+      return { isAuthenticated: false };
+    } else {
+      throw new Error(`Unexpected response: ${response.status}`);
+    }
+  } catch (error) {
+    console.error('Error checking authentication status:', error);
+    // Default to not authenticated on error
+    return { isAuthenticated: false };
+  }
+}
 
 // Define TypeScript interfaces for better type safety
 interface Discussion {
