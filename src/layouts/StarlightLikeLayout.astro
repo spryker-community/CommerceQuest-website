@@ -7,13 +7,18 @@ import {
 
 await attachRouteDataAndRunMiddleware(
   Astro,
-  await generateStarlightPageRouteData({ props: Astro.props, url: Astro.url })
+  await generateStarlightPageRouteData({ props: Astro.props, context: Astro })
 );
 
 // Built-in CSS styles.
+// Important that this is the first import so it can override cascade layers order.
+import 'virtual:starlight/user-css';
+// Starlight nested cascade layers definitions which specify the default order of internal layers.
+import '../../node_modules/@astrojs/starlight/style/layers.css';
+
 import '../../node_modules/@astrojs/starlight/style/props.css';
 import '../assets/styles/starlight/reset.css';
-import '../../node_modules/@astrojs/starlight/style/shiki.css';
+import '../../node_modules/@astrojs/starlight/style/asides.css';
 import '../../node_modules/@astrojs/starlight/style/util.css';
 
 import Banner from "@astrojs/starlight/components/Banner.astro";
@@ -26,12 +31,6 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import MarkdownContent from '@astrojs/starlight/components/MarkdownContent.astro';
 import PageTitle from "@astrojs/starlight/components/PageTitle.astro";
 import TwoColumnContent from "@astrojs/starlight/components/TwoColumnContent.astro";
-
-// Remark component CSS (needs to override `MarkdownContent.astro`)
-import '../../node_modules/@astrojs/starlight/style/asides.css';
-
-// Important that this is the last import so it can override built-in styles.
-import 'virtual:starlight/user-css';
 
 const { starlightRoute } = Astro.locals;
 
