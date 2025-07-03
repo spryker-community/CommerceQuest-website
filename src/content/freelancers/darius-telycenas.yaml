@@ -1,0 +1,55 @@
+firstName: Darius
+lastName: Telyčėnas
+photo: /src/images/freelancers/darius-telycenas/photo.jpg
+headline: Experienced Spryker Developer & Tech Lead
+availability: 40 hours/week
+location: Berlin, Germany
+countryCode: DE
+language: Lithuanian, English, Russian, German (B2)
+shortPitch: >-
+  With over a decade of experience in PHP and enterprise e-commerce, and eight
+  years working hands-on with Spryker, I’ve helped deliver complex B2B and B2C
+  solutions for major European brands. From core module extensions to full-scale
+  marketplace integrations and replatforming projects, my work bridges robust
+  architecture with pragmatic, maintainable code.
+
+
+  Career highlights include roles as Senior Developer, Tech Lead, and Team Lead,
+  where I’ve enjoyed guiding teams through legacy challenges, promoting best
+  practices, and fostering a culture of knowledge sharing. Certified as a
+  Spryker Foundations Developer and Marketplace Specialist, I combine deep
+  platform know-how with a results-focused approach that keeps business goals
+  and code quality aligned.
+
+
+  Collaboration, mentoring, and solving tricky problems are what keep me
+  motivated — especially in fast-paced environments where scalable systems
+  really make a difference.
+linkedIn: https://www.linkedin.com/in/vindur
+github: https://github.com/darius-telycenas
+certifications:
+  - Backend Developer
+sprykerCertifications: Spryker Backend Developer Certification
+skills:
+  - Back End
+  - Architecture
+  - Fullstack
+  - Team Lead
+  - Tech Lead
+timezoneRange: GMT ±2
+yearStartedWebDev: 1996
+yearStartedSpryker: 2016
+references: >-
+  Hands-on with Spryker since 2016, covering diverse B2B, B2C, and Marketplace
+  setups. Tackled a wide range of business cases, from marketplace rollouts to
+  legacy system replatforming. Contributed to architecture decisions, custom
+  module development, and API integrations, always balancing business goals with
+  sustainable code. Experienced with both greenfield builds and complex
+  migrations for large international brands.
+idealCustomer: >-
+  Ambitious B2B/B2C or marketplace projects seeking a senior Spryker expert with
+  a track record of technical leadership and delivery in international teams.
+locationFlexibility: Remote, can travel
+employmentType: Freelance - open to permanent employment
+contact: Darius.Telycenas@outlook.com
+isVisible: true
