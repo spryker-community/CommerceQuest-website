@@ -25,7 +25,7 @@ github: ''
 sprykerCertifications: "Backend Developer Certified, Solution Architect Certified"
 skills:
   - Frontend
-  - Back End
+  - Backend
   - Fullstack
   - Tech Lead
 timezoneRange: GMT+3 to GMT-2
