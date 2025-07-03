@@ -20,7 +20,7 @@ github: ''
 sprykerCertifications: "Backend Developer Certified, Solution Architect Certified"
 skills:
   - Frontend
-  - Back End
+  - Backend
   - Architecture
   - Fullstack
 timezoneRange: 7.00 - 18.00 (GMT+2)

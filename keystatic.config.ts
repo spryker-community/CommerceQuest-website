@@ -89,7 +89,7 @@ const keystaticConfig: Config = {
           label: "Skills",
           options: [
             { label: "Frontend", value: "Frontend" },
-            { label: "Back End", value: "Back End" },
+            { label: "Backend", value: "Backend" },
             { label: "Architecture", value: "Architecture" },
             { label: "Project Management", value: "Project Management" },
             { label: "Fullstack", value: "Fullstack" },
