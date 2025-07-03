@@ -8,16 +8,10 @@ countryCode: EG
 language: English, Arabic
 shortPitch: >-
   I am a senior Spryker backend developer with over 8 years of experience in PHP
-  and 3 years specifically in
-
-  developing and maintaining Spryker-based projects.
-
+  and 3 years specifically in developing and maintaining Spryker-based projects.
   In my previous role at Spryker GmbH (February 2022 - August 2023), I worked as
-  a backend developer in
-
-  the demo team, where I was responsible for developing and maintaining
+  a backend developer in the demo team, where I was responsible for developing and maintaining
   different projects
-
   to demonstrate our functionality for the new clients.
 linkedIn: https://www.linkedin.com/in/ahmedelattar73/
 github: https://github.com/ahmedelattar73
@@ -30,21 +24,21 @@ timezoneRange: GMT+2
 yearStartedWebDev: 2016
 yearStartedSpryker: 2022
 references: >-
-  - Manage and enhance Fibro Shop ( https://www.de.shop.fibro.com ) B2B
+  <ul class="list-disc">
+  <li>Manage and enhance Fibro Shop ( https://www.de.shop.fibro.com ) B2B
   e-commerce platform, leveraging Spryker Commerce OS to support robust
-  functionality and continuous system improvements.
+  functionality and continuous system improvements.</li>
 
-
-  - Freelance contract with Pivotree to build (https://www.zeptometrix.com), my
+  <li>Freelance contract with Pivotree to build (https://www.zeptometrix.com), my
   primary responsibilities included providing support to junior developers,
   resolving bugs in the codebase, and implementing new features to enhance the
-  functionality and user experience of e-commerce solutions.
+  functionality and user experience of e-commerce solutions.</li>
 
-
-  - As a member of the Spryker demo team, I am building B2B/B2C projects using
+  <li>As a member of the Spryker demo team, I am building B2B/B2C projects using
   PHP, MySQL, and Spryker OS. My main responsibility is supporting the pre-sales
   team by demonstrating Spryker OS functionality to clients. I work closely with
-  the pre-sales team to understand client needs and tailor demos accordingly.
+  the pre-sales team to understand client needs and tailor demos accordingly.</li>
+  </ul>
 locationFlexibility: Remote, can travel
 employmentType: Freelance
 contact: ahmedelattar73@gmail.com
