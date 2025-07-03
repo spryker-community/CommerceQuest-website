@@ -6,7 +6,7 @@ import type { FormattedDiscussion } from '../utils/vanillaApi';
 const DiscussionCard = ({ discussion }: { discussion: FormattedDiscussion }) => (
   <div className="mb-8 pb-8 border-b border-gray-700/20 last:border-b-0 last:mb-0 last:pb-0">
     <div className="flex gap-4">
-      <div className="flex-shrink-0">
+      <div className="shrink-0">
         <a href={`https://forum.commercequest.space/profile/${discussion.author.userID}`} className="block hover:opacity-90">
           <img src={discussion.author.photoUrl} alt={discussion.author.name} className="w-12 h-12 rounded-full" />
         </a>
@@ -80,7 +80,7 @@ const VanillaForumPosts = () => {
             )}
 
             {error && (
-              <div className="text-red-500 font-bold p-4 rounded bg-red-100">
+              <div className="text-red-500 font-bold p-4 rounded-sm bg-red-100">
                 <p>Error: {error}</p>
               </div>
             )}
@@ -113,7 +113,7 @@ const VanillaForumPosts = () => {
             )}
 
             {error && (
-              <div className="text-red-500 font-bold p-4 rounded bg-red-100">
+              <div className="text-red-500 font-bold p-4 rounded-sm bg-red-100">
                 <p>Error: {error}</p>
               </div>
             )}

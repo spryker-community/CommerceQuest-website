@@ -10,12 +10,12 @@ interface Props {
 const { navEntry } = Astro.props;
 ---
 
-<!--
+{/*
 Re-usable link component for navigation bar. Highlights the active link
 by comparing the current URL with the href of each link.
 We assign an ID matching the URL for easy reference in our script.
 If URL is '/' (home page), assign ID as 'home'
--->
+*/}
 {
   ('submenu' in navEntry && navEntry.submenu) ? (
   <div class="hs-dropdown [--strategy:static] lg:[--strategy:absolute] lg:[--trigger:hover] [--adaptive:none] lg:flex lg:h-full">
@@ -23,7 +23,7 @@ If URL is '/' (home page), assign ID as 'home'
        class="hs-dropdown-toggle
     flex relative select-none whitespace-nowrap items-center lg:justify-center lg:self-center min-h-9 px-2 text-sm no-underline rounded-md
     dark:text-neutral-300 hover:dark:bg-white/10
-    lg:after:absolute lg:after:w-full lg:after:max-w-10 lg:after:h-1 lg:after:top-[calc(50%-3px)] lg:after:left-2/4 lg:after:mx-0 lg:after:-translate-x-2/4 lg:after:translate-y-10 lg:after:content-[''] lg:hover:after:dark:bg-neutral-300
+    lg:after:absolute lg:after:w-full lg:after:max-w-10 lg:after:h-1 lg:after:top-[calc(50%-3px)] lg:after:left-2/4 lg:after:mx-0 lg:after:-translate-x-2/4 lg:after:translate-y-10 lg:after:content-[''] lg:dark:hover:after:bg-neutral-300
     ">
       {navEntry.label}
       <svg
@@ -50,7 +50,7 @@ If URL is '/' (home page), assign ID as 'home'
             <!-- BEGIN COLUMN -->
             <div class="flex flex-col mx-1 md:mx-0">
               {(!submenuEntry.href) && (
-                <span class="block py-2 px-2 text-sm font-bold dark:focus:outline-none
+                <span class="block py-2 px-2 text-sm font-bold dark:focus:outline-hidden
                 text-neutral-600 dark:text-neutral-300
                 ">
                   {submenuEntry.label}
@@ -60,7 +60,7 @@ If URL is '/' (home page), assign ID as 'home'
 
                 ('href' in entry) && (
                 <a
-                  class="flex items-center gap-x-3.5 py-2 px-3 lg:px-2 rounded-lg text-sm focus:outline-none
+                  class="flex items-center gap-x-3.5 py-2 px-3 lg:px-2 rounded-lg text-sm focus:outline-hidden
                   text-gray-800 hover:text-gray-800 focus:text-gray-800
                   dark:text-neutral-300 dark:hover:text-blue-100 dark:focus:text-blue-100"
                   href={entry.href || '#'}>
@@ -84,18 +84,12 @@ If URL is '/' (home page), assign ID as 'home'
         data-astro-prefetch
         class="
       flex relative select-none whitespace-nowrap items-center lg:justify-center lg:self-center min-h-9 px-2 text-sm no-underline rounded-md
-      dark:text-neutral-300 hover:dark:bg-white/10
-      lg:after:absolute lg:after:w-full lg:after:max-w-10 lg:after:h-1 lg:after:top-[calc(50%-3px)] lg:after:left-2/4 lg:after:mx-0 lg:after:-translate-x-2/4 lg:after:translate-y-10 lg:after:content-[''] lg:hover:after:dark:bg-neutral-300
+      dark:text-neutral-300 dark:hover:bg-white/10
+      lg:after:absolute lg:after:w-full lg:after:max-w-10 lg:after:h-1 lg:after:top-[calc(50%-3px)] lg:after:left-2/4 lg:after:mx-0 lg:after:-translate-x-2/4 lg:after:translate-y-10 lg:after:content-[''] lg:dark:hover:after:bg-neutral-300
       ">{navEntry.label}</a>
     )
   )
  }
-
-<!--Import the necessary Dropdown plugin-->
-<!--https://preline.co/plugins/html/dropdown.html-->
-<script>
-  import "@preline/dropdown/index.js";
-</script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -112,7 +106,7 @@ If URL is '/' (home page), assign ID as 'home'
     let nav = document.getElementById(navId);
 
     if (nav) {
-      let backgroundColorClass: string = "after:dark:bg-pink-500";
+      let backgroundColorClass: string = "dark:after:bg-pink-500";
       nav.classList.remove(backgroundColorClass);
 
       nav.classList.add(backgroundColorClass);

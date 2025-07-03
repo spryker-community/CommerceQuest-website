@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 /* Dark mode colors. */
 :root {
     --backdrop-color: #00070dcc;
@@ -238,19 +240,6 @@ main {
 .page {
     flex-direction: column;
     min-height: 100vh;
-}
-
-.header {
-    z-index: var(--sl-z-index-navbar);
-    position: fixed;
-    inset-inline-start: 0;
-    inset-block-start: 0;
-    width: 100%;
-    height: var(--sl-nav-height);
-    border-bottom: 1px solid var(--sl-color-hairline-shade);
-    padding: var(--sl-nav-pad-y) var(--sl-nav-pad-x);
-    padding-inline-end: var(--sl-nav-pad-x);
-    background-color: var(--sl-color-bg-nav);
 }
 
 :global([data-has-sidebar]) .header {

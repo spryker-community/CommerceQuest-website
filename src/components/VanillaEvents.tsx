@@ -95,7 +95,7 @@ const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: b
     <div className="h-[200px] mb-8 last:mb-0">
       <div className="flex h-full">
         {/* Date Column */}
-        <div className="flex-shrink-0 w-16">
+        <div className="shrink-0 w-16">
           <div className="text-center bg-neutral-200 dark:bg-[#1A2942] rounded-lg overflow-hidden">
             <div className="bg-blue-500 dark:bg-blue-600 text-white text-xs uppercase py-1">
               {dateInfo.display.topLine}
@@ -182,10 +182,10 @@ const VanillaEvents = () => {
             <span className="text-pink-500 dark:text-pink-400">Recent</span> Events
           </h3>
           <div className="flex gap-4">
-            <a href="/event-recap" className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-3 rounded">
+            <a href="/event-recap" className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-3 rounded-sm">
               Event Recaps
             </a>
-            <a href="https://www.youtube.com/@SprykerSystems/videos" className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-3 rounded">
+            <a href="https://www.youtube.com/@SprykerSystems/videos" className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-3 rounded-sm">
               Watch Recordings
             </a>
           </div>
@@ -198,7 +198,7 @@ const VanillaEvents = () => {
         )}
 
         {error && (
-          <div className="text-red-500 font-bold p-4 rounded bg-red-100">
+          <div className="text-red-500 font-bold p-4 rounded-sm bg-red-100">
             <p>Error: {error}</p>
           </div>
         )}
@@ -225,7 +225,7 @@ const VanillaEvents = () => {
         )}
 
         {error && (
-          <div className="text-red-500 font-bold p-4 rounded bg-red-100">
+          <div className="text-red-500 font-bold p-4 rounded-sm bg-red-100">
             <p>Error: {error}</p>
           </div>
         )}

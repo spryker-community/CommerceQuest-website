@@ -29,7 +29,7 @@ export default function AuthNavigation({ className = '' }: AuthNavigationProps) 
   if (isLoading) {
     return (
       <div className={className || "flex items-center space-x-2"}>
-        <div className="w-20 h-8 bg-neutral-200 dark:bg-neutral-700 rounded animate-pulse"></div>
+        <div className="w-20 h-8 bg-neutral-200 dark:bg-neutral-700 rounded-sm animate-pulse"></div>
       </div>
     );
   }

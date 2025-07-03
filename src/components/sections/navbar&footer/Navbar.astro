@@ -19,7 +19,7 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
       <div class="inline-flex items-center w-full lg:w-auto">
         {/* Brand logo */}
         <a
-          class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
+          class="flex-none rounded-lg text-xl font-bold outline-hidden ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-hidden"
           href="/"
           aria-label="Brand"
         >
@@ -28,7 +28,7 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
         {/* Collapse toggle for smaller screens */}
         <a
           href="/search"
-          class="ml-auto lg:hidden flex-initial flex-wrap justify-end items-center text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white p-2 rounded"
+          class="ml-auto lg:hidden flex-initial flex-wrap justify-end items-center text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white p-2 rounded-sm"
         >
           {/* Search icon */}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -46,13 +46,13 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
             type="button"
             class="hs-collapse-toggle flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition duration-300
             disabled:pointer-events-none disabled:opacity-50
-            text-neutral-600 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:outline-none"
+            text-neutral-600 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:outline-hidden"
             data-hs-collapse="#navbar-collapse-with-animation"
             aria-controls="navbar-collapse-with-animation"
             aria-label="Toggle navigation"
           >
             <svg
-              class="h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:hidden"
+              class="h-[1.25rem] w-[1.25rem] shrink-0 hs-collapse-open:hidden"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -67,7 +67,7 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
               <line x1="3" x2="21" y1="18" y2="18"></line>
             </svg>
             <svg
-              class="hidden h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:block"
+              class="hidden h-[1.25rem] w-[1.25rem] shrink-0 hs-collapse-open:block"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -110,11 +110,11 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
         </div>
       </div>
       {/* ThemeIcon component specifically for larger screens */}
-      <div class="hidden lg:flex items-center space-x-4 ml-auto">
+      <div class="hidden lg:flex lg:flex-row lg:gap-2 items-center ml-auto">
        {/* <ThemeIcon */}
         <a
           href="/search"
-          class="text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white p-2 rounded flex-shrink-0"
+          class="text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white p-2 rounded-sm shrink-0"
         >
           {/* Search icon */}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -211,11 +211,6 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
     },
   };
   HSThemeAppearance.init();
-
-  // Initialize HSCollapse for mobile menu
-  window.addEventListener('load', () => {
-    HSCollapse.autoInit();
-  });
 
   window
     .matchMedia("(prefers-color-scheme: dark)")

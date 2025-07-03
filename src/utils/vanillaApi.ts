@@ -21,7 +21,7 @@ const API_ENDPOINTS = {
     UPCOMING: '/api/events/upcoming',
     PAST: '/api/events/past'
   },
-  USER_PROFILE: '/api/v2/users/me', // Add this line
+  USER_PROFILE: '/api/v2/users/me',
 } as const;
 
 /**
@@ -59,7 +59,6 @@ export async function checkAuthenticationStatus(): Promise<AuthStatus> {
       throw new Error(`Unexpected response: ${response.status}`);
     }
   } catch (error) {
-    console.error('Error checking authentication status:', error);
     // Default to not authenticated on error
     return { isAuthenticated: false };
   }

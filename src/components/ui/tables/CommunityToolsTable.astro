@@ -53,7 +53,7 @@ const processedTools = tools.map((tool) => ({
              name="community-tools-table-search"
              id="community-tools-table-search"
              class="py-2 px-3 ps-9 block w-full
-             border-gray-200 shadow-sm rounded-lg text-sm
+             border-gray-200 shadow-xs rounded-lg text-sm
              focus:z-10 focus:border-blue-500 focus:ring-blue-500
              disabled:opacity-50 disabled:pointer-events-none
              dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
@@ -65,7 +65,7 @@ const processedTools = tools.map((tool) => ({
       </div>
     </div>
 
-    <div class="w-full lg:w-auto flex flex-col lg:flex-row space-y-2 lg:space-y-0 items-stretch lg:items-center justify-end lg:space-x-3 flex-shrink-0">
+    <div class="w-full lg:w-auto flex flex-col lg:flex-row space-y-2 lg:space-y-0 items-stretch lg:items-center justify-end lg:space-x-3 shrink-0">
       <div class="flex flex-wrap gap-y-2 gap-x-3 justify-between items-center w-full md:w-auto">
         {tags.length > 0 && <TableSelectFilter selectId="community-tools-table-filter-tags" placeholder="Filter by tags..." options={tags} />}
         {licenses.length > 0 && <TableSelectFilter selectId="community-tools-table-filter-licenses" placeholder="Filter by license..." options={licenses} />}
@@ -260,7 +260,7 @@ const processedTools = tools.map((tool) => ({
 
         const descriptionHtml = description
           ? `
-          <div class="prose inline py-1 text-sm font-normal rounded-full text-gray-500 gap-x-2 dark:text-gray-400 prose-a:cursor-pointer prose-a:transition-colors prose-a:duration-200 dark:hover:prose-a:text-gray-500 dark:prose-a:text-gray-300 hover:prose-a:text-gray-500 focus:prose-a:outline-none">
+          <div class="prose inline py-1 text-sm font-normal rounded-full text-gray-500 gap-x-2 dark:text-gray-400 prose-a:cursor-pointer prose-a:transition-colors prose-a:duration-200 dark:hover:prose-a:text-gray-500 dark:prose-a:text-gray-300 hover:prose-a:text-gray-500 focus:prose-a:outline-hidden">
             ${description}
           </div>
         `
@@ -306,7 +306,7 @@ const processedTools = tools.map((tool) => ({
         const creatorHtml = creators
           .map(
             (creator) =>
-              `<a href=${creator.url}  target="_blank" class="cursor-pointer mb-2 last:mb-0 inline-block underline transition-colors duration-200 dark:hover:text-gray-500 dark:text-gray-300 hover:text-gray-500 focus:outline-none">${creator.name}</a>`
+              `<a href=${creator.url}  target="_blank" class="cursor-pointer mb-2 last:mb-0 inline-block underline transition-colors duration-200 dark:hover:text-gray-500 dark:text-gray-300 hover:text-gray-500 focus:outline-hidden">${creator.name}</a>`
           )
           .join('');
         return `<div>${creatorHtml}</div>`;
@@ -320,7 +320,7 @@ const processedTools = tools.map((tool) => ({
         const linkHtml = links
           .map(
             (link) =>
-              `<a href=${link.url}  target="_blank" class="cursor-pointer mb-2 last:mb-0 inline-block underline transition-colors duration-200 dark:hover:text-gray-500 dark:text-gray-300 hover:text-gray-500 focus:outline-none">${link.label}</a>`
+              `<a href=${link.url}  target="_blank" class="cursor-pointer mb-2 last:mb-0 inline-block underline transition-colors duration-200 dark:hover:text-gray-500 dark:text-gray-300 hover:text-gray-500 focus:outline-hidden">${link.label}</a>`
           )
           .join('');
         return `<div>${linkHtml}</div>`;

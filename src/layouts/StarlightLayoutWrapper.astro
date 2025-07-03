@@ -47,7 +47,7 @@ if (pagefindEnabled) mainDataAttributes['data-pagefind-body'] = '';
 ---
 {/* NOTE: Do not use any "id" attribute since it hangs up the application (keeps websocket connection open) */}
 <MainLayout title={pageTitle}>
-  <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-(--breakpoint-2xl) px-4 sm:px-6 lg:px-8">
     <TwoColumnContent>
       <main
         {...mainDataAttributes}
