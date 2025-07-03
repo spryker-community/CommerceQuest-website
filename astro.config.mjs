@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
@@ -11,6 +10,7 @@ import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from '@keystatic/astro'
 import pagefind from "astro-pagefind";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,6 +31,9 @@ export default defineConfig({
   prefetch: true,
   // Add environment variables that should be exposed to the client
   vite: {
+    plugins: [
+      tailwindcss(),
+    ],
     server: {
       watch: {
         usePolling: true
@@ -51,7 +54,6 @@ export default defineConfig({
         mdi: ["linkedin", "github"],  // Add any other icon names you need
       },
     }),
-    tailwind(),
     sitemap(),
     starlight({
       title: "CommerceQuest Docs",
@@ -90,9 +92,9 @@ export default defineConfig({
           directory: "other"
         }
       }],
-      social: {
-        github: "https://github.com/spryker-community"
-      },
+      social: [
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/spryker-community' },
+      ],
       disable404Route: true,
       customCss: ["./src/assets/styles/starlight.css"],
       favicon: "/favicon.ico",
