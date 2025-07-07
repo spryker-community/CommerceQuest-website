@@ -1,0 +1,14 @@
+title: Queue CLI Commands
+subtitle: ""
+description: >-
+  Adds console commands for moving or copying messages between queues in a Spryker application. 
+  Useful for reprocessing, debugging, or manually managing queue contents.
+tags: ["debug", "cli", "queue", "dev"]
+license: MIT
+creators:
+  - name: Community
+    url: https://forum.commercequest.space/categories/spryker-community-projects
+contributors: []
+links:
+  - label: Github
+    url: https://github.com/spryker-community/queue-cli
