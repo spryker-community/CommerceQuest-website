@@ -1,0 +1,14 @@
+title: Database Configuration
+subtitle: ""
+description: >
+  This module allows Spryker projects to store specific configuration values in the database, enabling Back Office users to modify configuration without requiring a deployment. 
+  It integrates with the Spryker Back Office, supports navigation setup, and provides commands for database and cache preparation.
+tags: ["Back Office", "GUI"]
+license: MIT
+creators:
+  - name: Community
+    url: https://forum.commercequest.space/categories/spryker-community-projects
+contributors: []
+links:
+  - label: Github
+    url: https://github.com/spryker-community/database-configuration

@@ -1,0 +1,17 @@
+title: Spryker Package Search MCP
+subtitle: ""
+description: >
+  A command-line tool that runs a Model Context Protocol (MCP) server to provide natural language search capabilities for Spryker GitHub repositories.
+  It enables searching for Spryker packages, documentation, and code across multiple organizations, 
+  with support for organization-based filtering. 
+  The tool is designed for integration with AI agents and developer workflows, 
+  making it easier to discover and navigate Spryker modules and resources.
+tags: ["dev", "MCP", "AI", "cli"]
+license: MIT
+creators:
+  - name: Community
+    url: https://forum.commercequest.space/categories/spryker-community-projects
+contributors: []
+links:
+  - label: Github
+    url: https://github.com/spryker-community/package-search-mcp

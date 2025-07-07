@@ -1,0 +1,21 @@
+title: OMS Visualizer
+subtitle: ""
+description: >-
+  A modern visualization tool for Spryker OMS (Order Management System) process flows. This package provides an enhanced, user-friendly way to visualize and interact with OMS graphs in your Spryker application.
+
+  <ul>
+    <li>Modern, interactive visualization of OMS process flows</li>
+    <li>Easy integration with existing Spryker projects</li>
+    <li>Built on Mermaid JS for reliable and attractive graph rendering</li>
+    <li>Customizable background, font, and graph colors via config</li>
+    <li>Zoom in/out, highlight start/final/failed/dead states</li>
+  </ul>
+tags: ["GUI", "Back Office", "OMS"]
+license: MIT
+creators:
+  - name: Community
+    url: https://forum.commercequest.space/categories/spryker-community-projects
+contributors: []
+links:
+  - label: Github
+    url: https://github.com/spryker-community/oms-visualizer

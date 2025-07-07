@@ -1,0 +1,14 @@
+title: 3D Product Visualizer
+subtitle: ""
+description: >
+  This module provides a widget for Spryker shops to display interactive 3D product models on product detail pages.
+  It enables customers to view and interact with products in three dimensions, enhancing the online shopping experience and product presentation.
+tags: ["3d", "PDP", "GUI", "Yves", "widget"]
+license: MIT
+creators:
+  - name: Community
+    url: https://forum.commercequest.space/categories/spryker-community-projects
+contributors: []
+links:
+  - label: Github
+    url: https://github.com/spryker-community/3d-product-visualizer

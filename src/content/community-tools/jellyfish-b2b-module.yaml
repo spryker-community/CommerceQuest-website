@@ -1,4 +1,8 @@
 title: "Jellyfish B2B Module"
+description: >
+  The Jellyfish B2B module provides integrations and extensions for B2B processes within Spryker-based projects. 
+  It is designed to facilitate business-to-business workflows and data exchange, 
+  supporting advanced B2B scenarios and customizations in Spryker Commerce environments.
 license: "MIT"
 creators:
   - name: "Fond Of"

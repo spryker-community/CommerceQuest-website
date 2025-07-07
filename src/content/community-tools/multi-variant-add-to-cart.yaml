@@ -1,0 +1,15 @@
+title: Multi Variant Add-to-Cart
+subtitle: ""
+description: >
+  This module adds a Twig widget that allows customers to select quantities for multiple product variants and add them to the cart in a single action. 
+  It streamlines the shopping experience for products with variants by enabling bulk add-to-cart functionality, 
+  customizable display of variant attributes, and seamless integration with Spryker's cart system.
+tags: ["PDP", "GUI", "Yves", "widget"]
+license: MIT
+creators:
+  - name: Community
+    url: https://forum.commercequest.space/categories/spryker-community-projects
+contributors: []
+links:
+  - label: Github
+    url: https://github.com/spryker-community/multi-variant-add-to-cart

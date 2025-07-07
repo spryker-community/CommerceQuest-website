@@ -1,0 +1,19 @@
+title: Spryker Project Semantic Search Tool
+subtitle: ""
+description: >
+  This tool enables intelligent, 
+  context-aware search across Spryker projects using Large Language Model (LLM)-based embeddings 
+  and Chroma DB for efficient indexing and retrieval. 
+  It indexes key module APIs and configurations, supports semantic understanding of code, and provides fast, 
+  relevant search results to help developers navigate large or unfamiliar Spryker codebases. 
+  The tool operates locally for security, offers filtering and AI-powered matching, 
+  and is designed to accelerate onboarding and cross-team collaboration.
+tags: ["dev", "AI", "cli"]
+license: MIT
+creators:
+  - name: Community
+    url: https://forum.commercequest.space/categories/spryker-community-projects
+contributors: []
+links:
+  - label: Github
+    url: https://github.com/spryker-community/project-semantic-search
