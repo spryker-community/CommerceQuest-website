@@ -18,7 +18,7 @@
     "@astrojs/netlify": "^6.4.1",
     "@astrojs/react": "^4.3.0",
     "@astrojs/sitemap": "^3.4.1",
-    "@astrojs/starlight": "^0.34.4",
+    "@astrojs/starlight": "^0.34.5",
     "@astrojs/starlight-tailwind": "^4.0.1",
     "@keystatic/astro": "^5.0.6",
     "@keystatic/core": "^0.5.47",
