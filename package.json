@@ -55,7 +55,7 @@
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node-fetch": "^2.6.11",
-    "astro-vtbot": "^2.1.5",
+    "astro-vtbot": "^2.1.7",
     "netlify-cli": "^22.2.1",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
