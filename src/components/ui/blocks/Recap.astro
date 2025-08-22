@@ -1,8 +1,9 @@
 ---
-// Import the required modules
 import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+import RecapImageSection from "@components/ui/blocks/RecapImageSection.astro";
+
 // Extract properties from Astro.props
 const {
   title,
@@ -10,7 +11,7 @@ const {
   btnExists,
   btnTitle,
   btnURL,
-  single,
+  imagePosition = "right", // Default to right for backward compatibility
   imgOne,
   imgOneAlt,
   imgTwo,
@@ -19,8 +20,14 @@ const {
   location,
   imgTwoAlt,
   logo,
-  logoAlt, githubExists, youtubeExists, youtube, photoExists, photoURL,
+  logoAlt,
+  githubExists,
+  youtubeExists,
+  youtube,
+  photoExists,
+  photoURL,
 } = Astro.props;
+
 // Define TypeScript interface for the properties
 interface Props {
   title: string;
@@ -28,7 +35,7 @@ interface Props {
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
-  single?: boolean;
+  imagePosition?: "left" | "right";
   location: string;
   organizer: string;
   github?: string;
@@ -45,12 +52,20 @@ interface Props {
   photoURL?: string;
 }
 ---
-<!-- Root section of the component -->
+
 <section
   class="mx-auto max-w-[85rem] items-center gap-16 px-4 py-10 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8 lg:py-14 2xl:max-w-full"
 >
-  <div>
-    <!-- Title of the section -->
+  {imagePosition === "left" &&
+    <RecapImageSection
+      imgOne={imgOne}
+      imgOneAlt={imgOneAlt}
+      imgTwo={imgTwo}
+      imgTwoAlt={imgTwoAlt}
+      photoURL={photoURL}
+    />
+  }
+  <div class="mt-4 md:mt-0">
     <a name={logoAlt}></a>
     <h2
       class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200"
@@ -63,18 +78,17 @@ interface Props {
   >
     Hosted by {organizer} in {location}.
   </p>
-    <!-- The logo image -->
-    <Image
+  <!-- The logo image -->
+  <Image
     class="max-h-20 w-1/4 my-6"
     src={logo}
     alt={logoAlt}
   />
-      <!-- description of the section -->
   <p
-      class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg"
-    >
-      {description}
-    </p>
+    class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg"
+  >
+    {description}
+  </p>
       <!-- Conditional rendering of the photo image -->
   {photoExists ?  <p
     class="mb-4 max-w-prose text-pretty underline font-light text-neutral-600 dark:text-neutral-200 sm:text-lg"
@@ -82,47 +96,18 @@ interface Props {
     <!-- Conditional rendering of GitHub & YouTube links -->
     {githubExists ? <PrimaryCTA title="View team repositories" url={github} /> : null}
     {youtubeExists ? <SecondaryCTA title="View team presentations" url={youtube} /> : null}
-  
-    <!-- Conditional rendering of the Primary Call-To-Action button if 'btnExists' is true -->
-    {btnExists ? <PrimaryCTA title={btnTitle} url={btnURL} /> : null}
+
+  <!-- Conditionally render the Primary CTA button if btnExists is true -->
+  {btnExists ? <PrimaryCTA title={btnTitle} url={btnURL} /> : null}
   </div>
-  <!-- Conditionally render one or two images based on 'single' property -->
-  {
-    single ? (
-      <div class="mt-8">
-        <!-- Single image -->
-        <!-- Link to photo album -->
-    <a href={photoURL} target="_blank" rel="noopener noreferrer">
-      <Image
-          class="w-full rounded-lg"
-          src={imgOne}
-          alt={imgOneAlt}
-          format={"avif"}
-        /></a>
-      </div>
-    ) : (
-      <div class="mt-8 grid grid-cols-2 gap-4">
-        <!-- First image in a two-image layout -->
-        <!-- Link to photo album -->
-    <a href={photoURL} target="_blank" rel="noopener noreferrer">
-      <Image
-          class="w-full rounded-xl"
-          src={imgOne}
-          alt={imgOneAlt}
-          draggable={"false"}
-          format={"avif"}
-        /></a>
-        <!-- Second image in a two-image layout -->
-        <!-- Link to photo album -->
-    <a href={photoURL} target="_blank" rel="noopener noreferrer">
-      <Image
-          class="mt-4 w-full rounded-xl lg:mt-10"
-          src={imgTwo}
-          alt={imgTwoAlt}
-          draggable={"false"}
-          format={"avif"}
-        /></a>
-      </div>
-    )
+
+  {imagePosition === "right" &&
+    <RecapImageSection
+      imgOne={imgOne}
+      imgOneAlt={imgOneAlt}
+      imgTwo={imgTwo}
+      imgTwoAlt={imgTwoAlt}
+      photoURL={photoURL}
+    />
   }
 </section>

@@ -1,32 +1,30 @@
 ---
-// Import necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import MainSection from "@components/ui/blocks/MainSection.astro";
-import LeftRecap from "@components/ui/blocks/LeftRecap.astro";
-import RightRecap from "@components/ui/blocks/RightRecap.astro";
+import Recap from "@components/ui/blocks/Recap.astro";
 import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
 
 // Import necessary images
-import marchWinners from "@images/recaps/march-winners.jpg";
-import marchPaperplane from "@images/recaps/march-paperplane.jpg";
-import hack2023 from "@images/recaps/hack2023.jpg";
-import ready from "@images/SPRYKER_EXCITE_2023-77.jpg";
+import EXCITE24 from "@images/recaps/Hackathon-09-2024-535A3605.jpg";
+import delhi1 from "@images/recaps/nagarro-demo.jpg";
+import delhi2 from "@images/recaps/nagarro-4.jpg";
 import denis from "@images/recaps/denis.jpg";
+import devstage241 from "@images/recaps/SPRYKER_Donnerstag-1311.jpg";
+import devstage242 from "@images/recaps/SPRYKER_Donnerstag-7890.jpg";
+import elephpants from "@images/recaps/elephpants.jpg";
+import hack2023 from "@images/recaps/hack2023.jpg";
+import marchPaperplane from "@images/recaps/march-paperplane.jpg";
+import marchWinners from "@images/recaps/march-winners.jpg";
 import nagarro from "@images/recaps/nagarro.png";
+import ready from "@images/SPRYKER_EXCITE_2023-77.jpg";
 import shs from "@images/recaps/shs.png";
 import siemens from "@images/recaps/siemens.jpg";
 import spryker from "@images/recaps/spryker.png";
-import turbine from "@images/recaps/turbine.png";
-import delhi1 from "@images/recaps/nagarro-demo.jpg";
-import delhi2 from "@images/recaps/nagarro-4.jpg";
-import devstage241 from "@images/recaps/SPRYKER_Donnerstag-1311.jpg";
-import devstage242 from "@images/recaps/SPRYKER_Donnerstag-7890.jpg";
-import EXCITE24 from "@images/recaps/Hackathon-09-2024-535A3605.jpg";
 import tk1 from "@images/recaps/20240514_110027.jpg";
+import turbine from "@images/recaps/turbine.png";
 import { SITE } from "@data/constants";
 
 interface Event {
-  isRightRecap: boolean;
   title: string;
   description: string;
   theme: string;
@@ -50,23 +48,37 @@ interface Event {
   youtube?: string;
   photoExists?: boolean;
   photoURL?: string;
-
 }
 
 const events: Event[] = [
-{
-    isRightRecap: false,
+  {
+    title: "Hackathon June 2025",
+    description:
+      "Two day hackathon in Berlin to ship Composer‑installable Spryker modules in 48h. Four teams delivered MIT‑licensed packages — Multi‑Variant Quick Add to Cart, Queue CLI, Database Configuration, and 3D Product Visualizer — judged for production readiness and real‑world value.",
+    theme: "Prod‑Ready in 48h",
+    location: "Berlin, Germany",
+    organizer: "Spryker",
+    single: false,
+    imgOne: elephpants,
+    imgOneAlt: "Spryker elephpants at the June 2025 hackathon",
+    logo: spryker,
+    logoAlt: "Spryker",
+    githubExists: true,
+    github: "https://github.com/orgs/spryker-community/repositories?q=hackathon-june-2025",
+    youtubeExists: true,
+    youtube: "https://www.youtube.com/playlist?list=PLJooqCSo73SiVx8RcMg3rbEggXCs0WvnJ",
+    photoExists: true,
+    photoURL: "https://photos.app.goo.gl/Q6NaBqMfDiYqurJb9"
+  },
+  {
     title: "Hackathon Siemens (internal)",
     description:
       "Two teams strived to improve the Spryker Backend user experience, facilitated by expert Sprykees from our Solution Architect and User Experience teams! One team worked on improved backend table filtering, while the other team focused on creating fancier back office tables.",
     theme: "Smart Retail: Enhancing Customer Journeys through Innovation",
     location: "Košice, Slovakia",
     organizer: "Siemens Healthineers",
-    img: siemens,
-    imgAlt: "EXCITE Hackathon, team Oryx Vision Pro",
-    btnExists: false,
-    btnTitle: "/",
-    btnURL: "/",
+    imgOne: siemens,
+    imgOneAlt: "EXCITE Hackathon, team Oryx Vision Pro",
     logo: shs,
     logoAlt: "siemens",
     githubExists: true,
@@ -75,9 +87,8 @@ const events: Event[] = [
     youtube: "/",
     photoExists: false,
     photoURL: "/"
-
-  },{
-    isRightRecap: true,
+  },
+  {
     title: "EXCITE Developer Stage 2024",
     description:
       "In 2024 we had our second Developer Stage at EXCITE! The program was again managed by our VP Architecture Denis Turkov and hosted by him and Guido during a full afternoon of technical insighst and live demo's of which some were more successful than others 😉. To be repeated in 2025 in the main room? 😇",
@@ -102,18 +113,14 @@ const events: Event[] = [
     photoURL: "https://photos.google.com/share/AF1QipN_CKfFXeg-rX-8zzv3CHOCwpXl6lREtIw0ppWvSYQWvmXlBkB1DlMxvy1nUZWsQw?key=eGUxNUFPU2JqaWhlckxCaFFTajhKb1ZXZ3RlR3Rn"
   },
   {
-    isRightRecap: false,
     title: "Hackathon September 2024",
     description:
       "Six teams strived to enhance the Customer Journey and team \"AI Pathfinder\" came out on top with their multilingual semantic search, ensuring precise matches across languages.",
     theme: "Smart Retail: Enhancing Customer Journeys through Innovation",
     location: "Berlin, Germany",
     organizer: "Spryker",
-    img: EXCITE24,
-    imgAlt: "EXCITE Hackathon, team Oryx Vision Pro",
-    btnExists: false,
-    btnTitle: "/",
-    btnURL: "/",
+    imgOne: EXCITE24,
+    imgOneAlt: "EXCITE Hackathon, team Oryx Vision Pro",
     logo: spryker,
     logoAlt: "Spryker",
     githubExists: true,
@@ -122,10 +129,8 @@ const events: Event[] = [
     youtube: "/",
     photoExists: true,
     photoURL: "https://photos.google.com/share/AF1QipNfPkZYk9h-dVc0RTgb80C4V22q3vrg9kDy-IM22R8aHpBjQWdixwB8XoVNz_qJpQ?key=S3JXZ3BmYmxRZE50YmRnMGwxWHB6ZHRXNXdIYXpn"
-
   },
   {
-    isRightRecap: true,
     title: "Hackathon August 2024",
     description:
       "At the Nagarro hackathon, 5 teams worked on providing consumers with more sustainable options by incorporating CO² emission data into the product data, make search results sort on this data, suggest more sustainable products on the PDP and create a rewards system nudging customers to make better purchase decisions.",
@@ -145,21 +150,16 @@ const events: Event[] = [
     youtube: "https://www.youtube.com/watch?v=8YcPl5hjV2Y&list=PLJooqCSo73SiCupw9Xtj8-6vUERAxpdk_",
     photoExists: true,
     photoURL: "https://photos.app.goo.gl/5vKkwa9qHZchRVZU8"
-
   },
   {
-    isRightRecap: false,
     title: "Hackathon May 2024",
     description:
       "Two teams strived to improve Spryker security! One team worked on building a tool for extended auditing capabilities, while the other team built a POC for a Multifactor authentication tool for the Spryker backend.",
     theme: "Security",
     location: "Berlin, Germany",
     organizer: "Turbine Kreuzberg",
-    img: tk1,
-    imgAlt: "Turbine Kreuzberg Hackathon",
-    btnExists: false,
-    btnTitle: "Propel Documentation on PropelORM.org",
-    btnURL: "/",
+    imgOne: tk1,
+    imgOneAlt: "Turbine Kreuzberg Hackathon",
     logo: turbine,
     logoAlt: "Turbine Kreuzberg",
     githubExists: true,
@@ -170,7 +170,6 @@ const events: Event[] = [
     photoURL: "https://photos.app.goo.gl/7LfmGDwXKzmvsGJt8"
   },
   {
-    isRightRecap: true,
     title: "Hackathon March 2024",
     description:
       "Speeding up development was the theme of this Spryker hackathon. 5 teams worked on a mass data importer, a programmable maker bundle, localized developement setup and even making Spryker run on a Steamdeck gameconsole!",
@@ -192,15 +191,14 @@ const events: Event[] = [
     photoURL: "https://photos.app.goo.gl/qrcpz9A8pcdbRuAD6"
   },
   {
-    isRightRecap: false,
     title: "Hackathon September 2023",
     description:
       "6 teams strived for the big prizes during the first hackathon hosted by Spryker itself. The teams worked on various topics, from creating a desktop app, a dashboard inside Oryx, generating product content with AI and more.",
     theme: "Frontend development with Oryx",
     location: "Berlin, Germany",
     organizer: "Spryker",
-    img: hack2023,
-    imgAlt: "Hackathon September 2023 demo audience",
+    imgOne: hack2023,
+    imgOneAlt: "Hackathon September 2023 demo audience",
     logo: spryker,
     logoAlt: "Spryker",
     githubExists: true,
@@ -211,7 +209,6 @@ const events: Event[] = [
     photoURL: "https://photos.app.goo.gl/DccxW1QxEaMR8DfU7"
   },
   {
-    isRightRecap: true,
     title: "EXCITE Developer Stage 2023",
     description:
       "In 2023 we had our first ever Developer Stage at EXCITE! Our EVP Engineering & Technology Ulf Bonfert and VP Architecture Denis Turkov hosted a full afternoon of technical insighst and demo's. To be repeated in 2024 in a much bigger room!",
@@ -266,21 +263,15 @@ const pageTitle: string = `Event Recaps — ${SITE.title}`;
     btnTitle="Upcoming Events"
     btnURL="https://forum.commercequest.space/events/category"
   />
-  <!-- RightRecap and LeftRecap contain details about various services along with pertinent imagery.
-  They alternate for variety in design.
-  The 'btnExists' property is used to toggle the display of a button in these sections.
-  When btnExists={true}, a button is displayed.
-  This can be used to link to more detailed information or related resources.
-  RightRecap can also conditionally render one or two images based on the 'single' property.
-  If 'single' is true, it displays one image, otherwise it displays two.
-  -->
   {
-    events.map(event => {
-      return event.isRightRecap ? (
-        <RightRecap
+    events.map((event, index) => {
+      const imagePosition = index % 2 === 0 ? 'left' : 'right';
+
+      return (
+        <Recap
           title={event.title}
           description={event.description}
-          single={event.single}
+          imagePosition={imagePosition}
           imgOne={event.imgOne}
           imgOneAlt={event.imgOneAlt}
           imgTwo={event.imgTwo}
@@ -299,48 +290,7 @@ const pageTitle: string = `Event Recaps — ${SITE.title}`;
           photoExists={event.photoExists}
           photoURL={event.photoURL}
         />
-      ) : (
-        <LeftRecap
-          title={event.title}
-          description={event.description}
-          img={event.img}
-          imgAlt={event.imgAlt}
-          btnExists={event.btnExists}
-          btnTitle={event.btnTitle}
-          btnURL={event.btnURL}
-          organizer={event.organizer}
-          github={event.github}
-          location={event.location}
-          logo={event.logo}
-          logoAlt={event.logoAlt ?? ""}
-          githubExists={event.githubExists}
-          youtubeExists={event.youtubeExists}
-          youtube={event.youtube}
-          photoExists={event.photoExists}
-          photoURL={event.photoURL}
-        />
       );
     })
   }
-  <!--FeaturesStats section showcases essential stats valuable to users-->
-  <!-- <FeaturesStats
-    title="By the Numbers"
-    description="Our commitment to quality and reliability is evident in every project we undertake. At CommerceQuest, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
-    mainStatTitle="4.3 / 5"
-    mainStatSubTitle="Gartner Peer Insights rating"
-    stats={[
-      {
-        stat: "150+",
-        description: "global customers",
-      },
-      {
-        stat: "50+",
-        description: "nationalities in our talented global herd.",
-      },
-      {
-        stat: "Top 100",
-        description: "Flexible Employers 2023 by Jobgether",
-      },
-    ]}
-  /> -->
 </MainLayout>
