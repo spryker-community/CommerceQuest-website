@@ -1,0 +1,63 @@
+---
+// Import the required modules
+import { Image } from "astro:assets";
+
+// Extract properties from Astro.props
+const {
+  imgOne,
+  imgOneAlt,
+  imgTwo,
+  imgTwoAlt,
+  photoURL,
+} = Astro.props;
+
+// Define TypeScript interface for the properties
+interface Props {
+  imgOne: any;
+  imgOneAlt: string;
+  imgTwo?: any;
+  imgTwoAlt?: string;
+  photoURL?: string;
+}
+---
+
+<!-- Conditionally render one or two images based on whether imgTwo is defined -->
+{!imgTwo ? (
+  <div class="mt-8">
+    <!-- Single image -->
+    <!-- Link to photo album -->
+    <a href={photoURL} target="_blank" rel="noopener noreferrer">
+      <Image
+        class="w-full rounded-lg"
+        src={imgOne}
+        alt={imgOneAlt}
+        format={"avif"}
+      />
+    </a>
+  </div>
+) : (
+  <div class="mt-8 grid grid-cols-2 gap-4">
+    <!-- First image in a two-image layout -->
+    <!-- Link to photo album -->
+    <a href={photoURL} target="_blank" rel="noopener noreferrer">
+      <Image
+        class="w-full rounded-xl"
+        src={imgOne}
+        alt={imgOneAlt}
+        draggable={"false"}
+        format={"avif"}
+      />
+    </a>
+    <!-- Second image in a two-image layout -->
+    <!-- Link to photo album -->
+    <a href={photoURL} target="_blank" rel="noopener noreferrer">
+      <Image
+        class="mt-4 w-full rounded-xl lg:mt-10"
+        src={imgTwo}
+        alt={imgTwoAlt}
+        draggable={"false"}
+        format={"avif"}
+      />
+    </a>
+  </div>
+)}
