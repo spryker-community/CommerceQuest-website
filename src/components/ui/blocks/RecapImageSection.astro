@@ -2,13 +2,13 @@
 // Import the required modules
 import { Image } from "astro:assets";
 
-// Extract properties from Astro.props
+// Extract properties from Astro.props with default values
 const {
   imgOne,
   imgOneAlt,
   imgTwo,
-  imgTwoAlt,
-  photoURL,
+  imgTwoAlt = null,
+  photoURL = null,
 } = Astro.props;
 
 // Define TypeScript interface for the properties
@@ -16,8 +16,8 @@ interface Props {
   imgOne: any;
   imgOneAlt: string;
   imgTwo?: any;
-  imgTwoAlt?: string;
-  photoURL?: string;
+  imgTwoAlt?: string | null;
+  photoURL?: string | null;
 }
 ---
 
