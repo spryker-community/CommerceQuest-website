@@ -32,7 +32,7 @@
     "@tanstack/table-core": "^8.21.3",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
-    "astro": "^5.13.2",
+    "astro": "^5.13.3",
     "astro-compressor": "^1.0.0",
     "astro-icon": "^1.1.5",
     "astro-pagefind": "^1.8.3",
