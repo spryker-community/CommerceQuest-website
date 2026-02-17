@@ -6,7 +6,8 @@ import FooterSection from "@components/sections/navbar&footer/FooterSection.astr
 import SimpleAnnouncementBanner from "../components/ui/banners/SimpleAnnouncementBanner.astro";
 import { SITE } from "@data/constants";
 import "@styles/global.css";
-
+import CardBlog from '@components/ui/cards/CardBlog.astro';
+import { Card, CardGrid } from "@astrojs/starlight/components";
 // Setting expected props
 const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
 
@@ -84,6 +85,9 @@ We set the language of the page to English and add classes for scrollbar and scr
     The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
     -->
     <Navbar />
+
+
+
     <SimpleAnnouncementBanner
       url="https://www.youtube.com/watch?v=KYqQUgXh0ek&ab_channel=Spryker"
       title="No-AI LoFi Focus Beats for Developers 2025 | 4h Spryker Coding Session"
@@ -93,6 +97,13 @@ We set the language of the page to English and add classes for scrollbar and scr
     />
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 lg:min-h-96">
       <main>
+<!--
+        <CardGrid stagger>
+          <Card title="Spryker Engineer (Beta)">
+            {/* Content hidden */}
+          </Card>
+        </CardGrid>
+        -->
         <slot />
       </main>
     </div>

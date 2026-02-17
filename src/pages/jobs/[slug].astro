@@ -143,7 +143,7 @@ const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastNam
             <p>Started web development in {freelancer.yearStartedWebDev}</p>
           </div>
           <div class="mb-4 text-neutral-500 dark:text-neutral-500">
-            <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Expertise / potential roles</h2>
+            <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Expertise / potential roles</h3>
             <div class="flex flex-wrap gap-2">
               {freelancer.skills.map((skill) => (
                 <span class="bg-gray-200 rounded-full px-3 py-1 text-sm">{skill}</span>
@@ -167,14 +167,14 @@ const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastNam
           )}
           {freelancer.otherCertifications && (
             <div class="mb-4 text-neutral-500 dark:text-neutral-500">
-              <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Other Certifications</h2>
+              <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Other Certifications</h3>
               <p>{freelancer.otherCertifications}</p>
             </div>
           )}
 
           {freelancer.references && (
             <div class="mb-4 text-neutral-500 dark:text-neutral-500">
-              <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Spryker References</h2>
+              <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Spryker References</h3>
               <div class="references" set:html={freelancer.references}></div>
             </div>
           )}
@@ -198,13 +198,13 @@ const freelancerSlug = generateNameSlug(freelancer.firstName, freelancer.lastNam
             )}
             {freelancer.idealCustomer && (
               <div class="mb-4 text-neutral-500 dark:text-neutral-500">
-                <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Ideal Customer</h2>
+                <h3 class="font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Ideal Customer</h3>
                 <div class="ideal-customer" set:html={freelancer.idealCustomer}></div>
               </div>
             )}
           {freelancer.contact && (
             <div class="mb-4 mt-8 text-neutral-500 dark:text-neutral-500">
-              <h3 class="text-lg font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Eager to get started?</h2>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800 dark:text-neutral-100">Eager to get started?</h3>
               <p>Let's reach out: <a href={`mailto:${freelancer.contact}`}>{freelancer.contact}</a></p>
             </div>
           )}
