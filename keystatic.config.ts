@@ -138,6 +138,34 @@ const keystaticConfig: Config = {
         }),
       },
     }),
+    'videos': collection({
+      label: 'Video Categories',
+      path: 'src/content/videos/*',
+      slugField: 'category',
+      schema: {
+        category: fields.text({
+          label: 'Category Name',
+          validation: { isRequired: true }
+        }),
+        videos: fields.array(
+          fields.object({
+            youtubeId: fields.text({
+              label: 'YouTube Video ID',
+              validation: { isRequired: true }
+            }),
+            title: fields.text({
+              label: 'Video Title',
+              validation: { isRequired: true }
+            }),
+          }),
+          {
+            label: 'Videos',
+            itemLabel: (props) => props.fields.title.value,
+            validation: { length: { min: 1 } }
+          }
+        ),
+      },
+    }),
     'community-tools': collection({
       label: 'Community Tools',
       path: 'src/content/community-tools/*',
