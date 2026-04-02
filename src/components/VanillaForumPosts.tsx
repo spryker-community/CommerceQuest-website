@@ -1,5 +1,5 @@
 const VanillaForumPosts = () => (
-  <div className="flex justify-center">
+  <div className="flex justify-center mt-10">
     <a
       href="https://sprykercommunity.slack.com/"
       target="_blank"
