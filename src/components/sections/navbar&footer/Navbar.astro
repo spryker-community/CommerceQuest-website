@@ -111,22 +111,6 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
       </div>
       {/* ThemeIcon component specifically for larger screens */}
       <div class="hidden lg:flex lg:flex-row lg:gap-2 items-center ml-auto">
-       {/* <ThemeIcon */}
-        <a
-          href="/search"
-          class="text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white p-2 rounded-sm shrink-0"
-        >
-          {/* Search icon */}
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M11 5a7 7 0 00-4.95 11.95l-4.34 4.34a1 1 0 101.42 1.42l4.34-4.34A7 7 0 1011 5z"
-            />
-          </svg>
-        </a>
-        
         {/* Add the dynamic authentication component */}
         <AuthNavigation client:load />
       </div>
