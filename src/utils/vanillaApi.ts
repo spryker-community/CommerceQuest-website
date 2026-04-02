@@ -30,38 +30,8 @@ const API_ENDPOINTS = {
  * If successful, user is logged in; if 401/403, user is not logged in
  */
 export async function checkAuthenticationStatus(): Promise<AuthStatus> {
-  try {
-    const response = await fetch(`${API_ENDPOINTS.FORUM_BASE_URL}${API_ENDPOINTS.USER_PROFILE}`, {
-      method: 'GET',
-      credentials: 'include', // Include cookies for cross-origin requests
-      headers: {
-        'Accept': 'application/json',
-      }
-    });
-
-    if (response.ok) {
-      const userData = await response.json();
-      return {
-        isAuthenticated: true,
-        user: {
-          userID: userData.userID,
-          name: userData.name,
-          email: userData.email,
-          photoUrl: userData.photoUrl,
-          profileUrl: userData.profileUrl,
-          roles: userData.roles
-        }
-      };
-    } else if (response.status === 401 || response.status === 403) {
-      // User not authenticated
-      return { isAuthenticated: false };
-    } else {
-      throw new Error(`Unexpected response: ${response.status}`);
-    }
-  } catch (error) {
-    // Default to not authenticated on error
-    return { isAuthenticated: false };
-  }
+  // Forum API disabled - always return not authenticated
+  return { isAuthenticated: false };
 }
 
 // Define TypeScript interfaces for better type safety
