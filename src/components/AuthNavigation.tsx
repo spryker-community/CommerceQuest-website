@@ -38,14 +38,9 @@ export default function AuthNavigation({ className = '' }: AuthNavigationProps) 
   if (authStatus.isAuthenticated && authStatus.user) {
     return (
       <div className={className || "flex items-center"}>
-        <a
-          href="https://forum.commercequest.space/profile/account-privacy"
-          className="inline-flex items-center justify-center px-3 py-2 text-sm font-medium rounded-lg transition duration-300 bg-pink-400 hover:bg-pink-500 text-white border border-transparent"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <span className="inline-flex items-center justify-center px-3 py-2 text-sm font-medium rounded-lg bg-pink-400 text-white border border-transparent">
           My Account
-        </a>
+        </span>
       </div>
     );
   }
@@ -53,22 +48,12 @@ export default function AuthNavigation({ className = '' }: AuthNavigationProps) 
   // User is not authenticated - show sign up/login
   return (
     <div className={className || "flex items-center space-x-2"}>
-      <a
-        href="https://forum.commercequest.space/entry/signin"
-        className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition duration-300 text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white border border-neutral-300 hover:border-neutral-400 dark:border-neutral-600 dark:hover:border-neutral-500 whitespace-nowrap"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <span className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg text-neutral-600 dark:text-neutral-300 border border-neutral-300 dark:border-neutral-600 whitespace-nowrap">
         Log In
-      </a>
-      <a
-        href="https://forum.commercequest.space/entry/register"
-        className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition duration-300 bg-pink-400 hover:bg-pink-500 text-white border border-transparent whitespace-nowrap"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      </span>
+      <span className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg bg-pink-400 text-white border border-transparent whitespace-nowrap">
         Sign Up
-      </a>
+      </span>
     </div>
   );
 }

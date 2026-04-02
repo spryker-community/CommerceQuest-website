@@ -7,9 +7,9 @@ const DiscussionCard = ({ discussion }: { discussion: FormattedDiscussion }) => 
   <div className="mb-8 pb-8 border-b border-gray-700/20 last:border-b-0 last:mb-0 last:pb-0">
     <div className="flex gap-4">
       <div className="shrink-0">
-        <a href={`https://forum.commercequest.space/profile/${discussion.author.userID}`} className="block hover:opacity-90">
+        <div className="block">
           <img src={discussion.author.photoUrl} alt={discussion.author.name} className="w-12 h-12 rounded-full" />
-        </a>
+        </div>
       </div>
       <div className="flex-grow min-w-0">
         <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight">
@@ -21,7 +21,7 @@ const DiscussionCard = ({ discussion }: { discussion: FormattedDiscussion }) => 
         </p>
 
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3 text-sm text-gray-500 dark:text-gray-400">
-          <span>Started by <a href={`https://forum.commercequest.space/profile/${discussion.author.userID}`} className="hover:underline">{discussion.author.name}</a></span>
+          <span>Started by {discussion.author.name}</span>
           <span className="text-gray-300 dark:text-gray-600">•</span>
           <a href={discussion.url} className="hover:underline">{discussion.commentCount} comments</a>
           <span className="text-gray-300 dark:text-gray-600">•</span>
@@ -91,9 +91,9 @@ const VanillaForumPosts = () => {
           </div>
           
           <div className="mt-6 text-right">
-            <a href="https://forum.commercequest.space/discussions?type%5B0%5D=Discussion" className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 font-medium">
+            <span className="text-blue-500 dark:text-blue-400 font-medium">
               View more posts →
-            </a>
+            </span>
           </div>
         </div>
       </div>
@@ -124,9 +124,9 @@ const VanillaForumPosts = () => {
           </div>
           
           <div className="mt-6 text-right">
-            <a href="https://forum.commercequest.space/discussions?type%5B0%5D=Discussion&internalStatusID%5B0%5D=7&hasComments=true&sort=-hot" className="text-pink-500 hover:text-pink-600 dark:text-pink-400 dark:hover:text-pink-500 font-medium">
+            <span className="text-pink-500 dark:text-pink-400 font-medium">
               View more popular posts →
-            </a>
+            </span>
           </div>
         </div>
       </div>

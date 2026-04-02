@@ -19,7 +19,6 @@ const footerLinks = [
       { name: "Forum", url: "/" },
       { name: "Extensions & Tools", url: "/community-tools" },
       { name: "Jobs", url: "/jobs" },
-      { name: "Upcoming Events", url: "https://forum.commercequest.space/events/category" },
       { name: "Event Recaps", url: "/event-recap" },
       { name: "Guides", url: "/guides/intro" },
     ],
@@ -28,7 +27,7 @@ const footerLinks = [
     section: "CommerceQuest",
     links: [
       { name: "About us", url: "/about" },
-      { name: "Code of Conduct", url: "https://forum.commercequest.space/discussion/27749/community-guidelines-code-of-conduct" },
+      { name: "Code of Conduct", url: "/guides/intro" },
       { name: "Help improve this site", url: "https://github.com/spryker-community/CommerceQuest-website?tab=readme-ov-file#landingpage--docs" },
       { name: "Contact", url: "/contact" },
       { name: "Imprint", url: "https://spryker.com/imprint/" },
@@ -52,88 +51,6 @@ const mainNavigation: NavEntry[] = [
     href: "/"
   },
   {
-    label: "Forum Topics",
-    href: "https://forum.commercequest.space/",
-    submenu: [
-      {
-        label: 'General topics',
-        submenu: [
-          {
-            label: "All Posts",
-            href: "https://forum.commercequest.space/discussions",
-          },
-          {
-            label: "All Categories",
-            href: "https://forum.commercequest.space/categories",
-          },
-          {
-            label: "Developer Corner",
-            href: "https://forum.commercequest.space/categories/spryker-developers",
-          },
-          {
-            label: "Product & Business",
-            href: "https://forum.commercequest.space/categories/business-user-questions",
-          },
-          {
-            label: "Spryker Safari",
-            href: "https://forum.commercequest.space/categories/safari-questions",
-          },
-        ],
-      },
-      {
-        label: 'Technologies',
-        submenu: [
-          {
-            label: "Spryker",
-            href: "https://forum.commercequest.space/categories/spryker-development",
-          },
-          {
-            label: "Oryx",
-            href: "https://forum.commercequest.space/categories/oryx",
-          },
-          {
-            label: "Propel",
-            href: "https://forum.commercequest.space/categories/propel-orm",
-          },
-        ],
-      },
-      {
-        label: 'Community Projects',
-        submenu: [
-          {
-            label: "News",
-            href: "https://forum.commercequest.space/categories/spryker-news",
-          },
-          {
-            label: "Ideation Board",
-            href: "https://forum.commercequest.space/categories/community-ideation-board",
-          },
-          {
-            label: "Hackathons",
-            href: "https://forum.commercequest.space/categories/hackathons",
-          },
-        ],
-      },
-      {
-        label: 'Launchpad',
-        submenu: [
-          {
-            label: "Help & Guidelines",
-            href: "https://forum.commercequest.space/categories/help-and-guidelines",
-          },
-          {
-            label: "Your CQ Suggestions",
-            href: "https://forum.commercequest.space/categories/community-ideas-and-feedback",
-          },
-          {
-            label: "Random",
-            href: "https://forum.commercequest.space/categories/Random/",
-          },
-        ],
-      },
-    ]
-  },
-  {
     label: "Extensions & Tools",
     href: "/community-tools",
   },
@@ -148,10 +65,6 @@ const mainNavigation: NavEntry[] = [
       {
         label: "Event Options",  // Added missing label
         submenu: [
-          {
-            label: "Upcoming Events",
-            href: "https://forum.commercequest.space/events/category",
-          },
           {
             label: "Event Recaps",
             href: "/event-recap",
