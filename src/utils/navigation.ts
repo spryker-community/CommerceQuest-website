@@ -80,6 +80,14 @@ const mainNavigation: NavEntry[] = [
     label: "Guides",
     href: "/guides/intro",
   },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@SprykerSystems/playlists",
+  },
+  {
+    label: "Community Repos",
+    href: "https://github.com/spryker-community",
+  },
 ];
 
 function mapStarlightMenuToMainNavEntries(items: SidebarEntry[]): NavEntry[] {
