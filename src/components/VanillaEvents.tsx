@@ -117,7 +117,11 @@ const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: b
           <div className="h-full flex flex-col">
             {/* Title */}
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight mb-3">
-              <a href={event.url} className="hover:underline">{event.name}</a>
+              {isUpcoming ? (
+                <a href={event.url} className="hover:underline">{event.name}</a>
+              ) : (
+                <span>{event.name}</span>
+              )}
             </h3>
 
             {/* Time and Duration */}
