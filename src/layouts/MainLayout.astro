@@ -112,6 +112,14 @@ We set the language of the page to English and add classes for scrollbar and scr
       // https://preline.co
       import "preline/preline.js";
     </script>
+    <script is:inline>
+      document.querySelectorAll('a[href^="http://"], a[href^="https://"]').forEach(function(link) {
+        if (link.hostname !== window.location.hostname) {
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer');
+        }
+      });
+    </script>
     <style>
       /* CSS rules for the page scrollbar */
       .scrollbar-hide::-webkit-scrollbar {
