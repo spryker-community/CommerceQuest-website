@@ -2,120 +2,7 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import MainSection from "@components/ui/blocks/MainSection.astro";
 import { SITE } from "@data/constants";
-
-interface Video {
-  id: string;
-  title: string;
-  category: string;
-}
-
-const categories = [
-  {
-    name: "Hackathons",
-    videos: [
-      { id: "_swrUBM-I08", title: "Multi-Variant Product Quick Add to Cart - Spryker Hackathon June 2025" },
-      { id: "kTs394kyY14", title: "3D Product Visualizer - Spryker Hackathon June 2025" },
-      { id: "BevV1ynyWOk", title: "Database Configuration - Spryker Hackathon June 2025" },
-      { id: "g-bracfA26c", title: "Spryker Queue CLI Tool - Spryker Hackathon June 2025" },
-      { id: "Cx3U8CeNK44", title: "Spryker Excite Hackathon Winner Recap - September 2024" },
-      { id: "zYSGFeI0KlQ", title: "Tracer Titans EXCITE Hackathon" },
-      { id: "mFotwfPjcS8", title: "Team Triangle EXCITE Hackathon" },
-      { id: "hXUtS80N6Ro", title: "Base Goats - Spryker App EXCITE Hackathon" },
-      { id: "SPuhtFLVy84", title: "Big Safari Energy - EXCITE Hackathon" },
-      { id: "tkU0XW3FR7w", title: "Be Sharps - EXCITE Hackathon GTIN CRAFTOR" },
-      { id: "cFV6gbGCYqk", title: "Team Mining Dwarves EXCITE Hackathon" },
-      { id: "8SUEtlXLMDg", title: "Hackathon Presentation: Team Footprinter" },
-      { id: "pfCO_Q9Sw5U", title: "Hackathon Presentation: Team SprykerDeck" },
-      { id: "VFXsRfxYxzE", title: "Hackathon Presentation: Team Initiator" },
-      { id: "2CWFYVdhTf8", title: "Hackathon Presentation: Team Ceremony" },
-      { id: "NtZ0k2q-iB8", title: "Hackathon Presentation: Team Massive Data" },
-      { id: "sM8eXwwFUHM", title: "Nagarro hackathon: Demo Team #5: CodeCrafters" },
-      { id: "NwLKH8mhmTg", title: "Nagarro hackathon: Demo Team #4: Hack Sparrow" },
-      { id: "rpkTO-2L4IM", title: "Nagarro Hackathon: Demo Team #3: Hacktastic" },
-      { id: "dN0xixXFtgg", title: "Nagarro Hackathon: Demo Team #2: EcoMinds" },
-      { id: "8YcPl5hjV2Y", title: "Nagarro Hackathon: Demo Team #1: Nagarro Oryx" },
-      { id: "6mg7nHZezOM", title: "Spryker Hackathon March 2024 - Recap" },
-      { id: "8ax3ml6lFPQ", title: "Spryker x Nagarro Hackathon Recap - August 2024" },
-    ]
-  },
-  {
-    name: "User Groups",
-    videos: [
-      { id: "Vk_fji62cfk", title: "Spryker User Group June '25: Package Search Tool" },
-      { id: "NLk0OWr_MhQ", title: "Spryker User Group June '25: Project Semantic Search Tool" },
-      { id: "LXl3Tdd7VmY", title: "Spryker User Group April '25: Easier OMS Testing" },
-      { id: "kOTAWlhqGFk", title: "Spryker User Group April '25: Aggregated Modules" },
-      { id: "oHGb9eNvB-Q", title: "Spryker User Group May '25: Spryker Documentation Roadmap" },
-      { id: "7M_KiQ94170", title: "Spryker User Group May '25: S3 File Manager by Xiphias" },
-      { id: "z56VA3V9Wv0", title: "Spryker User Group March '25: Spryker Monitoring Integration" },
-      { id: "N7QBWdpwbkc", title: "Spryker User Group March '25: Spryker Fixathon #2 Recap" },
-      { id: "kyW3ujhIvIk", title: "Spryker User Group February '25: Spryker Fixathon #1 Recap" },
-      { id: "3350VjmTJ8E", title: "Spryker User Group February '25: Algolia - Spryker ACP" },
-      { id: "zGal_CaL6V4", title: "Spryker User Group November '24: Business Intelligence powered by Amazon Quicksight" },
-      { id: "lDi0tBE2uYc", title: "Spryker User Group November '24: Marketplace Commissions" },
-      { id: "cYXZ6hw-e0w", title: "Spryker User Group October '24: Spryker Product - Fall 2024 Release Preview" },
-      { id: "h5OcT8bfudk", title: "Spryker User Group October '24: Dynamic Multi Store" },
-      { id: "syiCyjQynH0", title: "Spryker User Group August '24: Stripe Showcase" },
-      { id: "NTAcra5qQFg", title: "Spryker User Group September '24: Spryker GPTs" },
-      { id: "IxCO5oUhlj4", title: "Spryker User Group September '24: Mistakes in Digital Commerce" },
-      { id: "lg1xEfJbmSA", title: "Spryker User Group - June 2024" },
-      { id: "8FoModwbvxM", title: "Spryker User Group June 2024" },
-      { id: "fTImvfYp2P4", title: "Spryker User Group May '24: Community Contribution Showcase" },
-      { id: "bzFiarT9VxY", title: "Spryker User Group May '24: Spryker Development Best Practices" },
-      { id: "qJ_-Qa3t95k", title: "Spryker User Group April '24: Product Release Spring 2024" },
-      { id: "f0Ep9Sr8X28", title: "Spryker User Group February '24: Dynamic Entity API" },
-      { id: "4Y0uoRcomdA", title: "Spryker User Group April '24: March Hackathon Recap" },
-      { id: "kFs4Gc8optc", title: "Spryker User Group March '24: Safari Evolution" },
-      { id: "z6aVOndQNhw", title: "Spryker User Group March '24: Community Contributors Update" },
-      { id: "Zd3lZBFYV9Q", title: "Spryker User Group January '24: Rebirth of Fulfillment" },
-      { id: "1PqTVcCa2LU", title: "Spryker User Group January '24: Restructuring Spryker Documentation" },
-      { id: "xxIyHtbBuFQ", title: "Spryker User Group November '23: Spryker Fall Release" },
-      { id: "OfvjLzshfHw", title: "Spryker User Group November '23: The rise of Spryker Safari" },
-      { id: "Z-4pm6F6gDY", title: "Spryker User Group October '23: Configurable OMS Process" },
-      { id: "xlj8PyusT00", title: "Spryker User Group October '23: NOS Decorators" },
-      { id: "L4V5Jve4-Fc", title: "Spryker User Group September '23: Properly Setting Up Multi-Stores" },
-      { id: "p6QosU16Xpk", title: "Spryker User Group September '23: Innovate & Differentiate Using Unified Commerce" },
-      { id: "3MQnKrTRNj0", title: "Spryker User Group August '23: Product Discovery Case Study" },
-      { id: "kFH_-SIUf0I", title: "Spryker User Group August '23: Marketplace - Persistence ACL" },
-      { id: "IbnKi1UGWIg", title: "Spryker User Group May '23: Deep Dive into the Message Queue" },
-      { id: "oM6CDyWz92o", title: "Spryker User Group March '23: The Gacela Project" },
-      { id: "6pxvrJlI0lk", title: "Spryker User Group March '23: The Product field" },
-      { id: "IQ_duhgT2EA", title: "Spryker User Group April '23: Non-Functional Requirements" },
-      { id: "zSZrNK_Vfmw", title: "Spryker User Group April '23: The future of certification with Spryker" },
-      { id: "SU2pNrhWlMw", title: "Spryker User Group April '23: Use case - Digital self-service portal" },
-    ]
-  },
-  {
-    name: "AI & Development",
-    videos: [
-      { id: "V3Z8CedHFBY", title: "Spryker + Symfony: DI, API Platform & Messenger Explained" },
-      { id: "-UK2K-5DIkI", title: "How to Build AI Features Fast with Spryker AI Foundation and AI Dev SDK" },
-      { id: "JIk-mBDruog", title: "AI Generated Code - Trust?" },
-      { id: "Q9c-QZ3zHT0", title: "Running an AI LAB" },
-      { id: "bMPXjoiM1R0", title: "Trust in AI? | AI in B2B/B2C Commerce | Efficiency Gains for Developers" },
-      { id: "UZYfHN-ZTBI", title: "Data Science is not UNIQUE knowledge anymore" },
-      { id: "1rLC7T05cV4", title: "Junior vs Senior Developer using AI" },
-      { id: "b9c2VtRGEFc", title: "AI's HIDDEN value in testing" },
-      { id: "smM5QLV3tzU", title: "Cloud changed EVERYTHING, so will AI" },
-      { id: "Rt3g_0MNsEo", title: "AI does NOT look into the FUTURE" },
-      { id: "GpD3yvXCyuQ", title: "Vibe Coding = Better Prototypes?" },
-      { id: "vzOxCdtB53U", title: "Vibe Coding & AI: What It Means for Developers & the Future of Coding" },
-    ]
-  },
-  {
-    name: "Community & Other",
-    videos: [
-      { id: "GvJib7e8Uac", title: "From Coding to Leading: A Developer's Journey" },
-      { id: "K1CrDERGl50", title: "Open Platform: Spryker's Community-Driven Development" },
-      { id: "cwQEHgu_OF4", title: "Innovation Unleashed: New Community Contributions program" },
-      { id: "SR8Qu3XpFaU", title: "Open Platform: Spryker's Community-Driven Development" },
-      { id: "F9C3q3lFHMk", title: "Community Contribution Showcase - Antonio Mansilla | Spryker" },
-      { id: "TiubGXYF8_E", title: "Unlocking the Power of AWS: Supercharge Your Software Vendor Journey" },
-      { id: "HMTem17XnXg", title: "Complying with Global Laws and Regulations: GDPR and Beyond" },
-      { id: "dK7SeH7t5MQ", title: "Why Spryker is Great for Developers" },
-    ]
-  }
-];
+import categories from "../data/videos.json";
 
 const pageTitle: string = `Videos — ${SITE.title}`;
 ---
@@ -145,6 +32,12 @@ const pageTitle: string = `Videos — ${SITE.title}`;
   />
 
   <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-full">
+    {categories.length === 0 && (
+      <p class="text-center text-neutral-600 dark:text-neutral-400 py-12">
+        Unable to load videos at the moment. Please check back later.
+      </p>
+    )}
+
     {categories.map((category) => (
       <div class="mb-16">
         <h2 class="mb-8 text-3xl font-bold text-neutral-800 dark:text-neutral-200">
@@ -160,7 +53,7 @@ const pageTitle: string = `Videos — ${SITE.title}`;
             >
               <div class="relative aspect-video w-full overflow-hidden">
                 <img
-                  src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                  src={video.thumbnail}
                   alt={video.title}
                   loading="lazy"
                   class="h-full w-full object-cover transition duration-300 group-hover:scale-105"

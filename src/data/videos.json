@@ -1,0 +1,587 @@
+[
+  {
+    "name": "Hackathons",
+    "videos": [
+      {
+        "id": "_swrUBM-I08",
+        "title": "Multi-Variant Product Quick Add to Cart - Spryker Hackathon June 2025 | Team Presentation",
+        "thumbnail": "https://i.ytimg.com/vi/_swrUBM-I08/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBz7ajhHuOa2mZwJjyH8HblDJR9gQ"
+      },
+      {
+        "id": "kTs394kyY14",
+        "title": "3D Product Visualizer - Spryker Hackathon June 2025 | Team Presentation",
+        "thumbnail": "https://i.ytimg.com/vi/kTs394kyY14/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD_9LooLq2g5FkIsGAJcQyxwWaWUg"
+      },
+      {
+        "id": "BevV1ynyWOk",
+        "title": "Database Configuration - Spryker Hackathon June 2025 | Team Presentation",
+        "thumbnail": "https://i.ytimg.com/vi/BevV1ynyWOk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTyaxqS_1sNXeNgLbjzcDIcIEPFg"
+      },
+      {
+        "id": "g-bracfA26c",
+        "title": "Spryker Queue CLI Tool - Spryker Hackathon June 2025 | Team Presentation",
+        "thumbnail": "https://i.ytimg.com/vi/g-bracfA26c/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDNcaq7u_jZ8JrMi-0C7Alvj9XwxQ"
+      },
+      {
+        "id": "8ax3ml6lFPQ",
+        "title": "Spryker User Group August '24: Spryker x Nagarro Hackathon Recap",
+        "thumbnail": "https://i.ytimg.com/vi/8ax3ml6lFPQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD75J5UzmYa9JhlAz3tCRNWG6GfKA"
+      },
+      {
+        "id": "Cx3U8CeNK44",
+        "title": "Spryker User Group September '24: Spryker Excite Hackathon Winner Recap",
+        "thumbnail": "https://i.ytimg.com/vi/Cx3U8CeNK44/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCKAroeF8nbyplqsLhs5FkoIxUeyw"
+      },
+      {
+        "id": "zYSGFeI0KlQ",
+        "title": "Tracer Titans EXCITE Hackathon",
+        "thumbnail": "https://i.ytimg.com/vi/zYSGFeI0KlQ/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhdIF0oXTAP&rs=AOn4CLBvQlrpdrjWRb06c21po5qVbFUtGQ"
+      },
+      {
+        "id": "mFotwfPjcS8",
+        "title": "Team Triangle EXCITE Hackathon",
+        "thumbnail": "https://i.ytimg.com/vi/mFotwfPjcS8/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB0giAAtAFigIMCAAQARgaIEkofzAP&rs=AOn4CLDd2j4JPxFRwPlPl4-V0p2zfwbFhw"
+      },
+      {
+        "id": "hXUtS80N6Ro",
+        "title": "Base Goats - Spryker App EXCITE Hackathon",
+        "thumbnail": "https://i.ytimg.com/vi/hXUtS80N6Ro/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhmIGYoZjAP&rs=AOn4CLCay8dXU-CLlvhMjPFaoEGpgqi8_w"
+      },
+      {
+        "id": "SPuhtFLVy84",
+        "title": "Big Safari Energy - EXCITE Hackathon",
+        "thumbnail": "https://i.ytimg.com/vi/SPuhtFLVy84/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnOdyOtYKLn5Tq54gx7_V2pa2QxA"
+      },
+      {
+        "id": "tkU0XW3FR7w",
+        "title": "Be Sharps - EXCITE Hackathon GTIN CRAFTOR",
+        "thumbnail": "https://i.ytimg.com/vi/tkU0XW3FR7w/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIFgoNzAP&rs=AOn4CLDM2kE-jz2YbuB7Wnd32PkdhdPQKA"
+      },
+      {
+        "id": "cFV6gbGCYqk",
+        "title": "Team Mining Dwarves EXCITE Hackathon",
+        "thumbnail": "https://i.ytimg.com/vi/cFV6gbGCYqk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDu-nIK5nt9ZQdMMx9K1FxmNbJrjw"
+      },
+      {
+        "id": "8SUEtlXLMDg",
+        "title": "Hackathon Presentation: Team Footprinter",
+        "thumbnail": "https://i.ytimg.com/vi/8SUEtlXLMDg/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIF0oUzAP&rs=AOn4CLBHnOJPAflZb1w0Z66SHeomBm73dQ"
+      },
+      {
+        "id": "pfCO_Q9Sw5U",
+        "title": "Hackathon Presentation: Team SprykerDeck",
+        "thumbnail": "https://i.ytimg.com/vi/pfCO_Q9Sw5U/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLAwHPAiP60gQwcQTEWgCXYtV2rZ8Q"
+      },
+      {
+        "id": "VFXsRfxYxzE",
+        "title": "Hackathon Presentation: Team Initiator",
+        "thumbnail": "https://i.ytimg.com/vi/VFXsRfxYxzE/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFcoSjAP&rs=AOn4CLBvDpfYs4Jwy2mCzg_I6KxWDbIs1w"
+      },
+      {
+        "id": "lzbQ8d05m3Y",
+        "title": "Hackathon: Footprint intro",
+        "thumbnail": "https://i.ytimg.com/vi/lzbQ8d05m3Y/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB0giAAtAFigIMCAAQARhfIF8oXzAP&rs=AOn4CLBOC9LEXylIknFw2Nc3r3dqNetk3A"
+      },
+      {
+        "id": "2CWFYVdhTf8",
+        "title": "Hackathon Presentation: Team Ceremony",
+        "thumbnail": "https://i.ytimg.com/vi/2CWFYVdhTf8/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhPIFYoZTAP&rs=AOn4CLCRPlnOSVQuPzF5-0n65PXO-YOlwQ"
+      },
+      {
+        "id": "NtZ0k2q-iB8",
+        "title": "Hackathon Presentation: Team Massive Data",
+        "thumbnail": "https://i.ytimg.com/vi/NtZ0k2q-iB8/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLBapSA3EDvXQF7R1_ynTgGGEX-uDQ"
+      },
+      {
+        "id": "HEo3Be0H6aQ",
+        "title": "Hackathon: Initiator intro",
+        "thumbnail": "https://i.ytimg.com/vi/HEo3Be0H6aQ/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB2AiAAtAFigIMCAAQARhyIFsoOTAP&rs=AOn4CLCmGoiQF8q49K7rHFx-GwjEeN_hPw"
+      },
+      {
+        "id": "sM8eXwwFUHM",
+        "title": "Nagarro hackathon: Demo Team #5: CodeCrafters",
+        "thumbnail": "https://i.ytimg.com/vi/sM8eXwwFUHM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCdFzr3XyvEdITOoNZjnytMFwh6aQ"
+      },
+      {
+        "id": "NwLKH8mhmTg",
+        "title": "Nagarro hackathon: Demo Team #4: Hack Sparrow",
+        "thumbnail": "https://i.ytimg.com/vi/NwLKH8mhmTg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCSAMtYEopZCQm5W2SQdS26MpdyAg"
+      },
+      {
+        "id": "rpkTO-2L4IM",
+        "title": "Nagarro Hackathon: Demo Team #3: Hacktastic",
+        "thumbnail": "https://i.ytimg.com/vi/rpkTO-2L4IM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCqR0zlb436teztDAg1U3WrWHTFIg"
+      },
+      {
+        "id": "dN0xixXFtgg",
+        "title": "Nagarro Hackathon: Demo Team #2: EcoMinds",
+        "thumbnail": "https://i.ytimg.com/vi/dN0xixXFtgg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBzQGsNZLMqqv72VZCe1zRzL7sj4Q"
+      },
+      {
+        "id": "8YcPl5hjV2Y",
+        "title": "Nagarro Hackathon: Demo Team #1: Nagarro Oryx",
+        "thumbnail": "https://i.ytimg.com/vi/8YcPl5hjV2Y/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAAoR-5Ta_3eOk_J27FJhmDW4Inqw"
+      },
+      {
+        "id": "mCfP_uzUwmA",
+        "title": "Upcoming Spryker Hackathon in India!",
+        "thumbnail": "https://i.ytimg.com/vi/mCfP_uzUwmA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDVWQTgU8Ygw-69Uy9hmE1Asf7kIw"
+      },
+      {
+        "id": "iSR3vgsGuRA",
+        "title": "Upcoming Hackathon with Nagarro in India! (UNPUBLISHED)",
+        "thumbnail": "https://i.ytimg.com/vi/iSR3vgsGuRA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDrp0vHHR93xFuDn3A6sOzd0nT8ew"
+      },
+      {
+        "id": "c0DXs7W6ESM",
+        "title": "Upcoming Hackathon with Nagarro in India!",
+        "thumbnail": "https://i.ytimg.com/vi/c0DXs7W6ESM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA0XQK1nXjv9sRXGVG4ehWRSH8UCA"
+      },
+      {
+        "id": "6mg7nHZezOM",
+        "title": "Spryker Hackathon March 2024 - Recap",
+        "thumbnail": "https://i.ytimg.com/vi/6mg7nHZezOM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD0cis9iHzXNbDzRsAyvxFOnoXU7Q"
+      },
+      {
+        "id": "4Y0uoRcomdA",
+        "title": "Spryker User Group April '24: March Hackathon Recap",
+        "thumbnail": "https://i.ytimg.com/vi/4Y0uoRcomdA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAw-c4dlQS3DxiTsKDrZxU_zklVkQ"
+      },
+      {
+        "id": "1qIry-do7Jo",
+        "title": "Save-the-date for the next Spryker Hackathon #developers",
+        "thumbnail": "https://i.ytimg.com/vi/1qIry-do7Jo/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhUIC8ofzAP&rs=AOn4CLA8OtstLXlyDvexuJCCB54YZJdQPw"
+      }
+    ]
+  },
+  {
+    "name": "User Groups",
+    "videos": [
+      {
+        "id": "Vk_fji62cfk",
+        "title": "Spryker User Group June '25: Package Search Tool",
+        "thumbnail": "https://i.ytimg.com/vi/Vk_fji62cfk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBegCVZ0QvMKXnOQo3KQJa0ymAJCA"
+      },
+      {
+        "id": "NLk0OWr_MhQ",
+        "title": "Spryker User Group June '25: Project Semantic Search Tool",
+        "thumbnail": "https://i.ytimg.com/vi/NLk0OWr_MhQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBi2ZQOx5yC0s3EIcoCLCbYAyrhVg"
+      },
+      {
+        "id": "LXl3Tdd7VmY",
+        "title": "Spryker User Group April '25: Easier OMS Testing",
+        "thumbnail": "https://i.ytimg.com/vi/LXl3Tdd7VmY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD2XToYTGh4bb8UNr-y8jqMBW3thQ"
+      },
+      {
+        "id": "kOTAWlhqGFk",
+        "title": "Spryker User Group April '25: Aggregated Modules",
+        "thumbnail": "https://i.ytimg.com/vi/kOTAWlhqGFk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBJX06PiB2SghUOump__7EPAjWl5w"
+      },
+      {
+        "id": "oHGb9eNvB-Q",
+        "title": "Spryker User Group May '25: Spryker Documentation Roadmap",
+        "thumbnail": "https://i.ytimg.com/vi/oHGb9eNvB-Q/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDrFEY8-1HWYI1Um4RwaY-TA5WtUA"
+      },
+      {
+        "id": "7M_KiQ94170",
+        "title": "Spryker User Group May '25: S3 File Manager by Xiphias",
+        "thumbnail": "https://i.ytimg.com/vi/7M_KiQ94170/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDK_okkurGqg_FciU-JehB67LGDiw"
+      },
+      {
+        "id": "z56VA3V9Wv0",
+        "title": "Spryker User Group March '25: Spryker Monitoring Integration",
+        "thumbnail": "https://i.ytimg.com/vi/z56VA3V9Wv0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBzBophxDrHiKxFQFrvslACJKmxug"
+      },
+      {
+        "id": "N7QBWdpwbkc",
+        "title": "Spryker User Group March '25: Spryker Fixathon #2 Recap",
+        "thumbnail": "https://i.ytimg.com/vi/N7QBWdpwbkc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCVZtyK6obGyyrMr6G_-mVJKmOvXA"
+      },
+      {
+        "id": "kyW3ujhIvIk",
+        "title": "Spryker User Group February '25: Spryker Fixathon #1 Recap",
+        "thumbnail": "https://i.ytimg.com/vi/kyW3ujhIvIk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDtjvmxvyRxOUE9CU21zuFZwH7ETQ"
+      },
+      {
+        "id": "3350VjmTJ8E",
+        "title": "Spryker User Group February '25: Algolia - Spryker ACP",
+        "thumbnail": "https://i.ytimg.com/vi/3350VjmTJ8E/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBQtX9HgMirCWd-2hjzGpF_r9ZYmg"
+      },
+      {
+        "id": "zGal_CaL6V4",
+        "title": "Spryker User Group November '24: Business Intelligence powered by Amazon Quicksight",
+        "thumbnail": "https://i.ytimg.com/vi/zGal_CaL6V4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBA5NaITblud1TQ6HKuYyg1tOnoJA"
+      },
+      {
+        "id": "lDi0tBE2uYc",
+        "title": "Spryker User Group November '24: Marketplace Comissions",
+        "thumbnail": "https://i.ytimg.com/vi/lDi0tBE2uYc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQ_U4XN6xwOgcv373vxTZSwRQkPw"
+      },
+      {
+        "id": "cYXZ6hw-e0w",
+        "title": "Spryker User Group October '24: Spryker Product - Fall 2024 Release Preview",
+        "thumbnail": "https://i.ytimg.com/vi/cYXZ6hw-e0w/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGuswcN8Da-ZveFVXG_tvTICNrqQ"
+      },
+      {
+        "id": "h5OcT8bfudk",
+        "title": "Spryker User Group October '24: Dynamic Multi Store",
+        "thumbnail": "https://i.ytimg.com/vi/h5OcT8bfudk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDgfpZzUkmy4Yl14vf-j69Jj-C9pA"
+      },
+      {
+        "id": "syiCyjQynH0",
+        "title": "Spryker User Group August '24: Stripe Showcase",
+        "thumbnail": "https://i.ytimg.com/vi/syiCyjQynH0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD0c5Mv2JeWPfcaklOfynQOvzHGtQ"
+      },
+      {
+        "id": "NTAcra5qQFg",
+        "title": "Spryker User Group September '24: Spryker GPTs",
+        "thumbnail": "https://i.ytimg.com/vi/NTAcra5qQFg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDcYmO3YbCUAFD0QQlBihgULyXRTQ"
+      },
+      {
+        "id": "IxCO5oUhlj4",
+        "title": "Spryker User Group September '24: Mistakes in Digital Commerce",
+        "thumbnail": "https://i.ytimg.com/vi/IxCO5oUhlj4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAKsSfnPYKW--LKliw-H07SFUPOkA"
+      },
+      {
+        "id": "lg1xEfJbmSA",
+        "title": "Spryker User Group - June 2024",
+        "thumbnail": "https://i.ytimg.com/vi/lg1xEfJbmSA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCUZes3CTAHNy2N4CB01llZ41QVOA"
+      },
+      {
+        "id": "8FoModwbvxM",
+        "title": "Spryker User Group June 2024",
+        "thumbnail": "https://i.ytimg.com/vi/8FoModwbvxM/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhyIEgoSzAP&rs=AOn4CLBOQb45qh8kQaLl8UyoLynLilyUaA"
+      },
+      {
+        "id": "fTImvfYp2P4",
+        "title": "Spryker User Group May '24: Community Contribution Showcase",
+        "thumbnail": "https://i.ytimg.com/vi/fTImvfYp2P4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAE3Vuvc8m1OTObvQgStMWQ2crT1w"
+      },
+      {
+        "id": "bzFiarT9VxY",
+        "title": "Spryker User Group May '24: Spryker Development Best Practices",
+        "thumbnail": "https://i.ytimg.com/vi/bzFiarT9VxY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBzDZntSEbhcMLyd8BqaF8utpnADA"
+      },
+      {
+        "id": "qJ_-Qa3t95k",
+        "title": "Spryker User Group April '24: Product Release Spring 2024",
+        "thumbnail": "https://i.ytimg.com/vi/qJ_-Qa3t95k/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBAcxpHh8awh16po9twcEkOLPSchg"
+      },
+      {
+        "id": "f0Ep9Sr8X28",
+        "title": "Spryker User Group February '24: Dynamic Entity API",
+        "thumbnail": "https://i.ytimg.com/vi/f0Ep9Sr8X28/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCxzl66Q7h5mbqU_dDeXsFNsQnsgA"
+      },
+      {
+        "id": "kFs4Gc8optc",
+        "title": "Spryker User Group March '24: Safari Evolution",
+        "thumbnail": "https://i.ytimg.com/vi/kFs4Gc8optc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAqQvI8YBzauOiqehrdFToz48-uIw"
+      },
+      {
+        "id": "z6aVOndQNhw",
+        "title": "Spryker User Group March '24: Community Contributors Update",
+        "thumbnail": "https://i.ytimg.com/vi/z6aVOndQNhw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDeVukq_u3_i0PQSP7UjNol8U8sFw"
+      },
+      {
+        "id": "Zd3lZBFYV9Q",
+        "title": "Spryker User Group January '24: Rebirth of Fulfillment",
+        "thumbnail": "https://i.ytimg.com/vi/Zd3lZBFYV9Q/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDtc1KPAHlN8x32j_eKpAqo-xxf-w"
+      },
+      {
+        "id": "1PqTVcCa2LU",
+        "title": "Spryker User Group January '24: Restructuring Spryker Documentation",
+        "thumbnail": "https://i.ytimg.com/vi/1PqTVcCa2LU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCW7Z1oh90Uuqzss1SmgQK_qCtSqg"
+      },
+      {
+        "id": "vstyx-XLf0g",
+        "title": "RSVP for our January User Group! #Spryker #community",
+        "thumbnail": "https://i.ytimg.com/vi/vstyx-XLf0g/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhyIEsoPjAP&rs=AOn4CLDKOWgzayzzp8FPor7G8oXbqEh1Zw"
+      },
+      {
+        "id": "XqklIySSnCE",
+        "title": "Spryker User Groups #b2becommerce",
+        "thumbnail": "https://i.ytimg.com/vi/XqklIySSnCE/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIFUoRjAP&rs=AOn4CLBpQlZ1LWzx1UkuIW0yAUl4nv076g"
+      },
+      {
+        "id": "OfvjLzshfHw",
+        "title": "Spryker User Group November '23: The rise of Spryker Safari",
+        "thumbnail": "https://i.ytimg.com/vi/OfvjLzshfHw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAtHJLRN8jUGPsGTZSCjoftfppLLw"
+      },
+      {
+        "id": "xxIyHtbBuFQ",
+        "title": "Spryker User Group November '23: Spryker Fall Release",
+        "thumbnail": "https://i.ytimg.com/vi/xxIyHtbBuFQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA6ww-LJj3URMFxggLcALY20-2w4A"
+      },
+      {
+        "id": "Z-4pm6F6gDY",
+        "title": "Spryker User Group October '23: Configurable OMS Process",
+        "thumbnail": "https://i.ytimg.com/vi/Z-4pm6F6gDY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD9EIwqSfsWd7I0oQKCTamsIGETyw"
+      },
+      {
+        "id": "xlj8PyusT00",
+        "title": "Spryker User Group October '23: NOS Decorators - Fast and easy development of Web-Components in Yves",
+        "thumbnail": "https://i.ytimg.com/vi/xlj8PyusT00/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBe0n8h2LCbCBe9J9zN39I5mQGkvg"
+      },
+      {
+        "id": "L4V5Jve4-Fc",
+        "title": "Spryker User Group September '23: Properly Setting Up Multi-Stores",
+        "thumbnail": "https://i.ytimg.com/vi/L4V5Jve4-Fc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGFXj0_k3iiAnUkXSokYGrxjziuA"
+      },
+      {
+        "id": "p6QosU16Xpk",
+        "title": "Spryker User Group September '23: Innovate & Differentiate Using Unified Commerce",
+        "thumbnail": "https://i.ytimg.com/vi/p6QosU16Xpk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDsRsjJ4z0NfTr8a76b_EYrZgKmtQ"
+      },
+      {
+        "id": "3MQnKrTRNj0",
+        "title": "Spryker User Group August '23: Product Discovery Case Study: Discovery for our Marketplace Roadmap",
+        "thumbnail": "https://i.ytimg.com/vi/3MQnKrTRNj0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA5SbVub6YilzInIU7ftAnbbnCwXw"
+      },
+      {
+        "id": "kFH_-SIUf0I",
+        "title": "Spryker User Group August '23: Marketplace - Persistence ACL",
+        "thumbnail": "https://i.ytimg.com/vi/kFH_-SIUf0I/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAsbKNxm7ClesA-KdgwclOK99f4uQ"
+      },
+      {
+        "id": "xFaOTxVFF6w",
+        "title": "Spryker User Group August '23: Keep your project up-to-date with Spryker Code Upgrader",
+        "thumbnail": "https://i.ytimg.com/vi/xFaOTxVFF6w/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCzdSRpHvvYLdhaWWbTEZb4tgZKZg"
+      },
+      {
+        "id": "IbnKi1UGWIg",
+        "title": "Spryker User Group May '23: Deep Dive into the Message Queue",
+        "thumbnail": "https://i.ytimg.com/vi/IbnKi1UGWIg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD7gOYf_lP72AxZu7KeuDLRYcXu6w"
+      },
+      {
+        "id": "oM6CDyWz92o",
+        "title": "Spryker User Group March '23: The Gacela Project",
+        "thumbnail": "https://i.ytimg.com/vi/oM6CDyWz92o/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDsBGdmao8dB8VECMckc4VYQJVufA"
+      },
+      {
+        "id": "6pxvrJlI0lk",
+        "title": "Spryker User Group March '23: The Product field - by Product Innovation",
+        "thumbnail": "https://i.ytimg.com/vi/6pxvrJlI0lk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCcyyzU6NKzSWuKvg4Gj1_L9gKfIw"
+      },
+      {
+        "id": "IQ_duhgT2EA",
+        "title": "Spryker User Group April '23: Non-Functional Requirements (NFRs) and their dependencies",
+        "thumbnail": "https://i.ytimg.com/vi/IQ_duhgT2EA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPlNin1axD11j9yPavEHcWPCIqCw"
+      },
+      {
+        "id": "zSZrNK_Vfmw",
+        "title": "Spryker User Group April '23: The future of certification with Spryker",
+        "thumbnail": "https://i.ytimg.com/vi/zSZrNK_Vfmw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCGamSGXanRDKqMixXz_E9cQrrmBQ"
+      },
+      {
+        "id": "SU2pNrhWlMw",
+        "title": "Spryker User Group April '23: Use case - Digital self-service portal",
+        "thumbnail": "https://i.ytimg.com/vi/SU2pNrhWlMw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDzhz_wcQAq93OXidhmRVMgYBmUmw"
+      }
+    ]
+  },
+  {
+    "name": "AI & Development",
+    "videos": [
+      {
+        "id": "V3Z8CedHFBY",
+        "title": "Spryker + Symfony: DI, API Platform & Messenger Explained",
+        "thumbnail": "https://i.ytimg.com/vi/V3Z8CedHFBY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDsY13EVHgxP90NDSUAVPsT00CrLA"
+      },
+      {
+        "id": "-UK2K-5DIkI",
+        "title": "How to Build AI Features Fast with Spryker AI Foundation and AI Dev SDK",
+        "thumbnail": "https://i.ytimg.com/vi/-UK2K-5DIkI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDFVwNVrPC9IVpUNazz4T0RTsvyVA"
+      },
+      {
+        "id": "JIk-mBDruog",
+        "title": "AI Generated Code ⚡️ Trust? #aicoding #spryker",
+        "thumbnail": "https://i.ytimg.com/vi/JIk-mBDruog/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhyIE8oQjAP&rs=AOn4CLCJcA_Nan8O4EDEuMwpt9hvnehlNg"
+      },
+      {
+        "id": "Q9c-QZ3zHT0",
+        "title": "Running an AI LAB 🧪 #aicoding #spryker",
+        "thumbnail": "https://i.ytimg.com/vi/Q9c-QZ3zHT0/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIEkoPzAP&rs=AOn4CLCO9gj3g9sSGup1WuCT0stjIgX_CA"
+      },
+      {
+        "id": "bMPXjoiM1R0",
+        "title": "Trust in AI? | AI in B2B/B2C Commerce | Efficiency Gains for Developers",
+        "thumbnail": "https://i.ytimg.com/vi/bMPXjoiM1R0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB79Cjr8gRkISJnIlcYAsQJrSoJhg"
+      },
+      {
+        "id": "UZYfHN-ZTBI",
+        "title": "Data Science ⚗️ is not UNIQUE knowledge anymore #aicoding #spryker",
+        "thumbnail": "https://i.ytimg.com/vi/UZYfHN-ZTBI/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIEEoRzAP&rs=AOn4CLCNkfMnFZI2qviO7x4oZIU4e5oAWA"
+      },
+      {
+        "id": "1rLC7T05cV4",
+        "title": "Junior vs Senior Developer using AI #aicoding #spryker",
+        "thumbnail": "https://i.ytimg.com/vi/1rLC7T05cV4/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIFooYDAP&rs=AOn4CLBEt2LCUPgmIQY3TL7yMloyp5ynaQ"
+      },
+      {
+        "id": "b9c2VtRGEFc",
+        "title": "AI's HIDDEN value in testing #aicoding #aidevelopment #spryker",
+        "thumbnail": "https://i.ytimg.com/vi/b9c2VtRGEFc/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIFQoWzAP&rs=AOn4CLB9gBKmhi671tD8wIzNdnlbwi_dIA"
+      },
+      {
+        "id": "smM5QLV3tzU",
+        "title": "Cloud changed EVERYTHING, so will AI #aicoding #spryker",
+        "thumbnail": "https://i.ytimg.com/vi/smM5QLV3tzU/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIFkoYDAP&rs=AOn4CLDP1Yso_p_LsRUoBZrNejhOqh9zXQ"
+      },
+      {
+        "id": "KYqQUgXh0ek",
+        "title": "No-AI LoFi Focus Beats for Developers 2025 | 4h Spryker Coding Session",
+        "thumbnail": "https://i.ytimg.com/vi/KYqQUgXh0ek/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBJ-sHrDC9Z9mW9th9PCLBbG-A9Xg"
+      },
+      {
+        "id": "Rt3g_0MNsEo",
+        "title": "AI does NOT look into the FUTURE 🔭 #aicoding",
+        "thumbnail": "https://i.ytimg.com/vi/Rt3g_0MNsEo/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIEYoTTAP&rs=AOn4CLDeGnHFeNVFrWXPu3v29_J21nrxzQ"
+      },
+      {
+        "id": "GpD3yvXCyuQ",
+        "title": "Vibe Coding = Better Prototypes? #aicoding #spryker",
+        "thumbnail": "https://i.ytimg.com/vi/GpD3yvXCyuQ/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIFMoWjAP&rs=AOn4CLB4n0Wdd9TnYoyLFlhPFBI1yfCeZA"
+      },
+      {
+        "id": "vzOxCdtB53U",
+        "title": "Vibe Coding & AI: What It Means for Developers & the Future of Coding",
+        "thumbnail": "https://i.ytimg.com/vi/vzOxCdtB53U/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAOBxOvkm8rBRbls2tBsKShvqslWw"
+      },
+      {
+        "id": "Qt9Bb7dcbD8",
+        "title": "Now available: Stripe Payments #B2B #B2C",
+        "thumbnail": "https://i.ytimg.com/vi/Qt9Bb7dcbD8/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhyIEYoRzAP&rs=AOn4CLCfIdBlYY8wSigX2jB0IrZue_eqxA"
+      },
+      {
+        "id": "OpUm-t-FjjQ",
+        "title": "100+ new connectors are now available to Spryker!",
+        "thumbnail": "https://i.ytimg.com/vi/OpUm-t-FjjQ/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIGEoTzAP&rs=AOn4CLCDmGGrD6JK8n2jR9BlN-noMrl4uQ"
+      },
+      {
+        "id": "DPUb_bx8y9U",
+        "title": "OpenTelemetry integration now available!",
+        "thumbnail": "https://i.ytimg.com/vi/DPUb_bx8y9U/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhTIC8ofzAP&rs=AOn4CLDtha7NEvTWZgFCQmPR8WeIwaVAQg"
+      }
+    ]
+  },
+  {
+    "name": "Community & Other",
+    "videos": [
+      {
+        "id": "F9C3q3lFHMk",
+        "title": "Community Contribution Showcase - Antonio Mansilla | Spryker",
+        "thumbnail": "https://i.ytimg.com/vi/F9C3q3lFHMk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA98N32G3cGXV4cBPcinskr6TOlHQ"
+      },
+      {
+        "id": "GvJib7e8Uac",
+        "title": "From Coding to Leading: A Developer's Journey",
+        "thumbnail": "https://i.ytimg.com/vi/GvJib7e8Uac/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCwKZiBuxKysPR3kDVx9gseznaRPQ"
+      },
+      {
+        "id": "K1CrDERGl50",
+        "title": "Open Platform: Spryker’s Community-Driven Development",
+        "thumbnail": "https://i.ytimg.com/vi/K1CrDERGl50/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDD0zQQg64vpe4V8q1N0pdY-4DUpQ"
+      },
+      {
+        "id": "cwQEHgu_OF4",
+        "title": "Innovation Unleashed: New Community Contributions program",
+        "thumbnail": "https://i.ytimg.com/vi/cwQEHgu_OF4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBY81macDO3zIMrYVpfoKSvmaKEBQ"
+      },
+      {
+        "id": "SR8Qu3XpFaU",
+        "title": "Open Platform: Spryker’s Community-Driven Development",
+        "thumbnail": "https://i.ytimg.com/vi/SR8Qu3XpFaU/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARheIF4oXjAP&rs=AOn4CLALTQYFZgNVHIfKycKym3OZmxVSiw"
+      },
+      {
+        "id": "bh_nvIsPFZ8",
+        "title": "Search upgrade for Documentation Portal",
+        "thumbnail": "https://i.ytimg.com/vi/bh_nvIsPFZ8/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIFQoUDAP&rs=AOn4CLDI3b-YumlniP7arusj4MwPr2PWvw"
+      },
+      {
+        "id": "TiubGXYF8_E",
+        "title": "Unlocking the Power of AWS: Supercharge Your Software Vendor Journey",
+        "thumbnail": "https://i.ytimg.com/vi/TiubGXYF8_E/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIFUoRTAP&rs=AOn4CLBIpecC00-zhkmlBJ8Rko0BHonL4Q"
+      },
+      {
+        "id": "HMTem17XnXg",
+        "title": "Complying with Global Laws and Regulations: GDPR and Beyond",
+        "thumbnail": "https://i.ytimg.com/vi/HMTem17XnXg/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhNIF8oZTAP&rs=AOn4CLBMhHDKVeV24LXbl5fbCvqUWqb4Kg"
+      },
+      {
+        "id": "MXkm-pbD8dk",
+        "title": "Cool Youtube channel for Agency-life!  #b2b",
+        "thumbnail": "https://i.ytimg.com/vi/MXkm-pbD8dk/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARg3ID0ofzAP&rs=AOn4CLDhlA5Xq9S6q4djIMjWX880fGr9cA"
+      },
+      {
+        "id": "DV70B0S_xcM",
+        "title": "New Spryker Jobs section! #work",
+        "thumbnail": "https://i.ytimg.com/vi/DV70B0S_xcM/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhRIEkoZTAP&rs=AOn4CLD2KQFfC-3EedV2gww4QrMPo2b07w"
+      },
+      {
+        "id": "Fr1vqwpf3eg",
+        "title": "Spryker Documentation Updates",
+        "thumbnail": "https://i.ytimg.com/vi/Fr1vqwpf3eg/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhVIDIofzAP&rs=AOn4CLAxYMs04MIDB2I88fEg9IZSzRuFgA"
+      },
+      {
+        "id": "Vjf_5tYWi8E",
+        "title": "Spryker Product Fall Release",
+        "thumbnail": "https://i.ytimg.com/vi/Vjf_5tYWi8E/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIFAoOzAP&rs=AOn4CLDYujh-fnzwxrS4GBkfItb_i2A9WA"
+      },
+      {
+        "id": "k_uYOpw-dAQ",
+        "title": "AMA with the Spryker Documentation Team",
+        "thumbnail": "https://i.ytimg.com/vi/k_uYOpw-dAQ/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBtgiAAoAPigIMCAAQARg2IBMofzAP&rs=AOn4CLAoJL-MPXXm1zFg9nc2cG_QSGomrg"
+      },
+      {
+        "id": "QAPlCFH7_aw",
+        "title": "Ask Me Anything: All about Documentation (November '23)",
+        "thumbnail": "https://i.ytimg.com/vi/QAPlCFH7_aw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCg-pgWTcOVKkspSWS6vKsmzT3fbw"
+      },
+      {
+        "id": "JHUTMwIWEGk",
+        "title": "Ask Me Anything: Project Tech Lead Edition (October '23)",
+        "thumbnail": "https://i.ytimg.com/vi/JHUTMwIWEGk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCfgRvKoyQ_gKz9AQUOHS49ifjafQ"
+      },
+      {
+        "id": "2GJFX5EudBI",
+        "title": "Make Image Backgrounds Transparent - Oryx in 90",
+        "thumbnail": "https://i.ytimg.com/vi/2GJFX5EudBI/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIE0oNDAP&rs=AOn4CLCufMf-CFtSal82QpBNstgLfkA13w"
+      },
+      {
+        "id": "TQCRNiyAq3Q",
+        "title": "Replace Logo in Storefront Header - Oryx in 90",
+        "thumbnail": "https://i.ytimg.com/vi/TQCRNiyAq3Q/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAqQFigIMCAAQARhNIGQoZTAP&rs=AOn4CLDn6PXkg4rSetfLNnYxFuzVvbywZg"
+      },
+      {
+        "id": "CdGs6sL-kh8",
+        "title": "Installing Oryx",
+        "thumbnail": "https://i.ytimg.com/vi/CdGs6sL-kh8/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhOIGUoZTAP&rs=AOn4CLBTTDDXKLPFMlC1DbaWpRRfreEqZg"
+      },
+      {
+        "id": "HAqolc2Msjc",
+        "title": "Customize Product List Component - Oryx in 90",
+        "thumbnail": "https://i.ytimg.com/vi/HAqolc2Msjc/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARg5IGUoWTAP&rs=AOn4CLCYVxqm0hHCQJjgFLZDR8qWDapr3w"
+      },
+      {
+        "id": "nh9CVEahD3I",
+        "title": "Create a Custom Component - Oryx in 90",
+        "thumbnail": "https://i.ytimg.com/vi/nh9CVEahD3I/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhfIF8oXzAP&rs=AOn4CLA33qnxFT7jerxWjEKh1SBZRhiLQQ"
+      },
+      {
+        "id": "t5JXGSiwO1U",
+        "title": "Change Theme Color - Oryx in 90",
+        "thumbnail": "https://i.ytimg.com/vi/t5JXGSiwO1U/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFUoRDAP&rs=AOn4CLBgcYBOilEFQ_1c1lbQmHbK_lkv9g"
+      },
+      {
+        "id": "pCotCKZO7DA",
+        "title": "valantic x Spryker: Replatforming a B2B Healthcare Business with 12,000 Customers",
+        "thumbnail": "https://i.ytimg.com/vi/pCotCKZO7DA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAPjsBkn9Y0PPOkAUr3FDJHfMNg2A"
+      },
+      {
+        "id": "dK7SeH7t5MQ",
+        "title": "Why Spryker is Great for Developers",
+        "thumbnail": "https://i.ytimg.com/vi/dK7SeH7t5MQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC0-kUwy6dKC6NkFKJUWZw8UZkGgA"
+      }
+    ]
+  }
+]
