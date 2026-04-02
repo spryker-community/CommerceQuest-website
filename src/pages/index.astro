@@ -18,12 +18,21 @@ import cteam from "@images/community-2.jpg";
 import maher from "@images/blog/maher.jpg";
 import VanillaForumPosts from '../components/VanillaForumPosts.astro';
 import VanillaEvents from '../components/VanillaEvents';
+import SimpleAnnouncementBanner from "@components/ui/banners/SimpleAnnouncementBanner.astro";
 ---
 <MainLayout>
 
   <section>
     <VanillaForumPosts />
   </section>
+
+  <SimpleAnnouncementBanner
+    url="https://www.youtube.com/watch?v=KYqQUgXh0ek&ab_channel=Spryker"
+    title="No-AI LoFi Focus Beats for Developers 2025 | 4h Spryker Coding Session"
+    image="https://now.spryker.com/hubfs/01-email/11-community/Lofi%20Launch%20Assets_CommerceQuest%20Launch%20-728x90.jpg"
+    width={728}
+    height={90}
+  />
 
   <HeroSection
     title=`Connect, <span
