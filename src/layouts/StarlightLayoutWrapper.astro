@@ -32,9 +32,10 @@ const pageTitle: string | undefined = starlightRoute.entry.data.title
   ? `${starlightRoute.entry.data.title} — ${SITE.title}`
   : undefined;
 
+const entryId: string = (starlightRoute.entry.id ?? starlightRoute.entry.slug ?? '').replace(/\.[^.]+$/, '');
 const pagefindEnabled =
-  starlightRoute.entry.slug !== '404' &&
-  !starlightRoute.entry.slug.endsWith('/404') &&
+  entryId !== '404' &&
+  !entryId.endsWith('/404') &&
   starlightRoute.entry.data.pagefind !== false;
 
 const htmlDataAttributes: DOMStringMap = { 'data-theme': 'dark' };
