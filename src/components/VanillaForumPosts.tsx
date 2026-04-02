@@ -1,137 +1,32 @@
-import { useState, useEffect } from 'react';
-import { getDiscussions, getPopularDiscussions } from '../utils/vanillaApi';
-import type { FormattedDiscussion } from '../utils/vanillaApi';
+const VanillaForumPosts = () => (
+  <div className="flex justify-center">
+    <a
+      href="https://sprykercommunity.slack.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group bg-neutral-100 dark:bg-[#0A1628] rounded-xl shadow-md overflow-hidden mb-10 p-10 flex flex-col items-center gap-6 max-w-lg w-full hover:shadow-lg transition-shadow duration-300"
+    >
+      {/* Slack logo */}
+      <svg viewBox="0 0 124 124" className="w-16 h-16 shrink-0" aria-hidden="true">
+        <path d="M26.3 78.8a13.2 13.2 0 0 1-13.1 13.1A13.2 13.2 0 0 1 0 78.8a13.2 13.2 0 0 1 13.1-13.2h13.2v13.2zm6.6 0a13.2 13.2 0 0 1 13.2-13.2 13.2 13.2 0 0 1 13.1 13.2v33a13.2 13.2 0 0 1-13.1 13.2 13.2 13.2 0 0 1-13.2-13.2v-33z" fill="#E01E5A"/>
+        <path d="M46.1 26.3a13.2 13.2 0 0 1-13.2-13.2A13.2 13.2 0 0 1 46.1 0a13.2 13.2 0 0 1 13.1 13.1v13.2H46.1zm0 6.7a13.2 13.2 0 0 1 13.1 13.1 13.2 13.2 0 0 1-13.1 13.2H13a13.2 13.2 0 0 1-13.1-13.2A13.2 13.2 0 0 1 13 33H46.1z" fill="#36C5F0"/>
+        <path d="M97.7 46.1a13.2 13.2 0 0 1 13.2-13.2A13.2 13.2 0 0 1 124 46.1a13.2 13.2 0 0 1-13.1 13.2H97.7V46.1zm-6.6 0a13.2 13.2 0 0 1-13.2 13.2 13.2 13.2 0 0 1-13.1-13.2V13a13.2 13.2 0 0 1 13.1-13.1A13.2 13.2 0 0 1 91.1 13v33.1z" fill="#2EB67D"/>
+        <path d="M77.9 97.7a13.2 13.2 0 0 1 13.2 13.2A13.2 13.2 0 0 1 77.9 124a13.2 13.2 0 0 1-13.2-13.1V97.7h13.2zm0-6.6a13.2 13.2 0 0 1-13.2-13.2 13.2 13.2 0 0 1 13.2-13.1H111a13.2 13.2 0 0 1 13.1 13.1A13.2 13.2 0 0 1 111 91.1H77.9z" fill="#ECB22E"/>
+      </svg>
 
-// Component to display a single discussion
-const DiscussionCard = ({ discussion }: { discussion: FormattedDiscussion }) => (
-  <div className="mb-8 pb-8 border-b border-gray-700/20 last:border-b-0 last:mb-0 last:pb-0">
-    <div className="flex gap-4">
-      <div className="shrink-0">
-        <div className="block">
-          <img src={discussion.author.photoUrl} alt={discussion.author.name} className="w-12 h-12 rounded-full" />
-        </div>
-      </div>
-      <div className="flex-grow min-w-0">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight">
-          <a href={discussion.url} className="hover:underline">{discussion.name}</a>
-        </h3>
-        
-        <p className="text-gray-600 dark:text-gray-300 text-base mt-2 leading-relaxed">
-          <a href={discussion.url} className="hover:underline">{discussion.description}</a>
+      <div className="text-center">
+        <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-2">Our community posts and discussions have moved to</p>
+        <p className="text-2xl font-bold text-neutral-800 dark:text-neutral-100 group-hover:text-pink-500 dark:group-hover:text-pink-400 transition-colors duration-200">
+          Spryker Community
         </p>
-
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3 text-sm text-gray-500 dark:text-gray-400">
-          <span>Started by {discussion.author.name}</span>
-          <span className="text-gray-300 dark:text-gray-600">•</span>
-          <a href={discussion.url} className="hover:underline">{discussion.commentCount} comments</a>
-          <span className="text-gray-300 dark:text-gray-600">•</span>
-          <a href={discussion.url} className="hover:underline">{discussion.viewCount} views</a>
-        </div>
+        <p className="text-base text-neutral-500 dark:text-neutral-400 mt-1">on Slack</p>
       </div>
-    </div>
+
+      <span className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-pink-400 hover:bg-pink-500 text-white font-medium transition-colors duration-200">
+        Join the Slack community →
+      </span>
+    </a>
   </div>
 );
-
-// Main component
-const VanillaForumPosts = () => {
-  // State management
-  const [recentDiscussions, setRecentDiscussions] = useState<FormattedDiscussion[]>([]);
-  const [popularDiscussions, setPopularDiscussions] = useState<FormattedDiscussion[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  // Fetch data on component mount
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Use our existing API utility functions
-        const [recent, popular] = await Promise.all([
-          getDiscussions(),
-          getPopularDiscussions()
-        ]);
-
-        setRecentDiscussions(recent);
-        setPopularDiscussions(popular);
-        setIsLoading(false);
-      } catch (err) {
-        console.error('Error fetching discussions:', err);
-        setError('Failed to fetch forum posts');
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []); // Empty dependency array means this runs once on mount
-
-  return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {/* Recent Discussions */}
-      <div className="bg-neutral-100 dark:bg-[#0A1628] rounded-xl shadow-md overflow-hidden mb-10 p-8">
-        <div className="flex flex-col h-full">
-          <div className="flex-grow">
-            <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl mb-5">
-              <span className="text-blue-500 dark:text-blue-400">Latest</span> Posts
-            </h2>
-
-            {isLoading && (
-              <div className="flex justify-center items-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-gray-400"></div>
-              </div>
-            )}
-
-            {error && (
-              <div className="text-red-500 font-bold p-4 rounded-sm bg-red-100">
-                <p>Error: {error}</p>
-              </div>
-            )}
-
-            {!isLoading && !error && recentDiscussions.slice(0, 3).map((discussion) => (
-              <DiscussionCard key={discussion.id} discussion={discussion} />
-            ))}
-          </div>
-          
-          <div className="mt-6 text-right">
-            <span className="text-blue-500 dark:text-blue-400 font-medium">
-              View more posts →
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Popular Discussions */}
-      <div className="bg-neutral-100 dark:bg-[#0A1628] rounded-xl shadow-md overflow-hidden mb-10 p-8">
-        <div className="flex flex-col h-full">
-          <div className="flex-grow">
-            <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl mb-5">
-              <span className="text-pink-500 dark:text-pink-400">Recent Popular</span> Posts
-            </h2>
-
-            {isLoading && (
-              <div className="flex justify-center items-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-gray-400"></div>
-              </div>
-            )}
-
-            {error && (
-              <div className="text-red-500 font-bold p-4 rounded-sm bg-red-100">
-                <p>Error: {error}</p>
-              </div>
-            )}
-
-            {!isLoading && !error && popularDiscussions.slice(0, 3).map((discussion) => (
-              <DiscussionCard key={discussion.id} discussion={discussion} />
-            ))}
-          </div>
-          
-          <div className="mt-6 text-right">
-            <span className="text-pink-500 dark:text-pink-400 font-medium">
-              View more popular posts →
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 export default VanillaForumPosts;
