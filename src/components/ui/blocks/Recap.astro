@@ -89,10 +89,6 @@ interface Props {
   >
     {description}
   </p>
-      <!-- Conditional rendering of the photo image -->
-  {photoExists ?  <p
-    class="mb-4 max-w-prose text-pretty underline font-light text-neutral-600 dark:text-neutral-200 sm:text-lg"
-  ><a href={photoURL} target="_blank" rel="noopener noreferrer">Check out the photos</a></p> : null}
     <!-- Conditional rendering of GitHub & YouTube links -->
     {githubExists ? <PrimaryCTA title="View team repositories" url={github} /> : null}
     {youtubeExists ? <SecondaryCTA title="View team presentations" url={youtube} /> : null}
