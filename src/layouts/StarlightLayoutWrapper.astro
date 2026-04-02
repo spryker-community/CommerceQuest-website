@@ -32,7 +32,7 @@ const pageTitle: string | undefined = starlightRoute.entry.data.title
   ? `${starlightRoute.entry.data.title} — ${SITE.title}`
   : undefined;
 
-const entryId: string = (starlightRoute.entry.id ?? starlightRoute.entry.slug ?? '').replace(/\.[^.]+$/, '');
+const entryId: string = (starlightRoute.entry.id ?? '').replace(/\.[^.]+$/, '');
 const pagefindEnabled =
   entryId !== '404' &&
   !entryId.endsWith('/404') &&
