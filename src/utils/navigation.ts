@@ -77,6 +77,10 @@ const mainNavigation: NavEntry[] = [
     ]
   },
   {
+    label: "Videos",
+    href: "/videos",
+  },
+  {
     label: "Guides",
     href: "/guides/intro",
   },
