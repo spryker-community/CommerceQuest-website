@@ -136,14 +136,20 @@ const EventCard = ({ event, isUpcoming }: { event: FormattedEvent, isUpcoming: b
               </div>
             )}
 
-            {/* RSVP Link */}
-            {isUpcoming && (
+            {/* RSVP Link for upcoming, Recording Link for past */}
+            {isUpcoming ? (
               <div className="text-right mt-1">
                 <a href={rsvpLink} className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 font-medium">
                   RSVP / More Info →
                 </a>
               </div>
-            )}
+            ) : event.recordingUrl ? (
+              <div className="text-right mt-1">
+                <a href={event.recordingUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 font-medium">
+                  Watch Recording →
+                </a>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

@@ -64,6 +64,7 @@ interface Event {
   ctaLabel?: string;
   location?: string;
   locationUrl?: string;
+  recordingUrl?: string;
 }
 
 export interface FormattedDiscussion {
@@ -95,6 +96,7 @@ export interface FormattedEvent {
   ctaLabel?: string;
   location?: string;
   locationUrl?: string;
+  recordingUrl?: string;
 }
 
 export async function getDiscussions(): Promise<FormattedDiscussion[]> {
@@ -221,7 +223,8 @@ function formatEvent(event: Event): FormattedEvent {
     ctaUrl: event.ctaUrl,
     ctaLabel: event.ctaLabel,
     location: event.location,
-    locationUrl: event.locationUrl
+    locationUrl: event.locationUrl,
+    recordingUrl: event.recordingUrl
   };
 }
 
