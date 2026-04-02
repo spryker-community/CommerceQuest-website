@@ -9,7 +9,6 @@ const footerLinks = [
     section: "Platforms",
     links: [
       { name: "Spryker", url: "/spryker" },
-      { name: "Oryx", url: "/oryx" },
       { name: "Propel", url: "/propel" },
     ],
   },
