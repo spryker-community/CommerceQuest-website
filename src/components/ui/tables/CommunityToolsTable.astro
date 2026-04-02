@@ -306,7 +306,9 @@ const processedTools = tools.map((tool) => ({
         const creatorHtml = creators
           .map(
             (creator) =>
-              `<a href=${creator.url}  target="_blank" class="cursor-pointer mb-2 last:mb-0 inline-block underline transition-colors duration-200 dark:hover:text-gray-500 dark:text-gray-300 hover:text-gray-500 focus:outline-hidden">${creator.name}</a>`
+              creator.url
+                ? `<a href="${creator.url}" target="_blank" class="cursor-pointer mb-2 last:mb-0 inline-block underline transition-colors duration-200 dark:hover:text-gray-500 dark:text-gray-300 hover:text-gray-500 focus:outline-hidden">${creator.name}</a>`
+                : `<span class="mb-2 last:mb-0 inline-block dark:text-gray-300">${creator.name}</span>`
           )
           .join('');
         return `<div>${creatorHtml}</div>`;
