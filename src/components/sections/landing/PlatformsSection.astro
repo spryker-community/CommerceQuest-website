@@ -9,7 +9,6 @@ interface Props {
 }
 import { Image } from 'astro:assets';
 import spryker from '/src/images/homepage/spryker_horizontal_grey.png';
-import oryx from '/src/images/homepage/oryx_horizontal_grey.png';
 import propel from '/src/images/homepage/propel_horizontal_grey.png';
 
 ---
@@ -40,9 +39,6 @@ import propel from '/src/images/homepage/propel_horizontal_grey.png';
     <a href="/spryker"><Image src={spryker} alt="Spryker" width="150" height="80" loading="eager"/></a>
 
     <!-- Second -->
-    <Image src={oryx} alt="Oryx" width="120" height="58" loading="eager"/>
-  
-    <!-- Third -->
     <a href="/propel"><Image src={propel} alt="Propel" width="130" height="30" loading="eager"/></a>
 
   </div>

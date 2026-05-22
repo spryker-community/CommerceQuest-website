@@ -1,0 +1,147 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+
+const pageTitle = `Spryker User Group: Deep Dive into the April Release — ${SITE.title}`;
+
+const event = {
+  title: "Spryker User Group: Deep Dive into the April Release",
+  subtitle: "BO Config, Storefront Design, AI, Stripe & More!",
+  date: "Tuesday, May 26, 2026",
+  time: "4:00 PM – 5:00 PM CEST",
+  location: "Google Meet (Online)",
+  meetingUrl: "https://meet.google.com/xge-hbuy-irb",
+  agenda: [
+    {
+      title: "Back Office Configuration Framework (Now GA)",
+      description: "We'll explore how to safely manage environment and feature configs via the Back Office UI, including audit logging, CLI workflows, and how Spryker resolves conflicts between code-level and database configurations."
+    },
+    {
+      title: "New Storefront Design System & Basic Shop Theming",
+      description: "A developer's look at the modernized frontend. We will discuss the new token/component structure and how you can extend the design system without breaking future upgrade paths."
+    },
+    {
+      title: "AI Back Office Assistant & Audit Logging",
+      description: "We'll demo the new AI tooling for business operators and show developers how to utilize the new AI Audit Logs to inspect prompts, responses, and state machine transitions in a single place."
+    },
+    {
+      title: "Stripe Integration Deep Dive",
+      description: "A technical walkthrough of the Stripe integration architecture and how it connects seamlessly with the Spryker Order Management System (OMS)."
+    },
+    {
+      title: "Import Export Module",
+      description: "A review of the latest updates and best practices for moving data in and out of Spryker efficiently."
+    }
+  ]
+};
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": event.title,
+    "startDate": "2026-05-26T14:00:00+00:00",
+    "endDate": "2026-05-26T15:00:00+00:00",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": event.meetingUrl
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "CommerceQuest",
+      "url": "https://commercequest.space/"
+    }
+  }}
+>
+  <section class="mx-auto mt-10 max-w-[85rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Back link -->
+      <a href="/#events" class="text-sm text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 mb-6 inline-block">
+        &larr; Back to Events
+      </a>
+
+      <!-- Title -->
+      <h1 class="mb-2 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
+        {event.title}
+      </h1>
+      <p class="text-lg text-blue-500 dark:text-blue-400 font-medium mb-8">
+        {event.subtitle}
+      </p>
+
+      <!-- Event meta -->
+      <div class="bg-neutral-100 dark:bg-[#0A1628] rounded-xl p-6 mb-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">Date</p>
+          <p class="text-neutral-800 dark:text-neutral-200 font-semibold">{event.date}</p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">Time</p>
+          <p class="text-neutral-800 dark:text-neutral-200 font-semibold">{event.time}</p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">Location</p>
+          <p class="text-neutral-800 dark:text-neutral-200 font-semibold">{event.location}</p>
+        </div>
+      </div>
+
+      <!-- Join button -->
+      <div class="mb-10">
+        <a
+          href={event.meetingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors"
+        >
+          Join Meeting
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Description -->
+      <div class="mb-10">
+        <p class="text-neutral-600 dark:text-neutral-400 text-lg leading-relaxed">
+          This session is designed for backend developers, frontend engineers, and architects looking to get hands-on with the latest platform updates. Whether you are building custom frontends, debugging AI, or integrating complex payments, this session will have something valuable for you.
+        </p>
+      </div>
+
+      <!-- Agenda -->
+      <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 mb-6">Agenda</h2>
+      <div class="space-y-6 mb-10">
+        {event.agenda.map((item, index) => (
+          <div class="border-l-4 border-blue-500 dark:border-blue-400 pl-5">
+            <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-200 mb-1">
+              {index + 1}. {item.title}
+            </h3>
+            <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="bg-neutral-100 dark:bg-[#0A1628] rounded-xl p-8 text-center">
+        <p class="text-neutral-600 dark:text-neutral-400 mb-4">Ready to join?</p>
+        <a
+          href={event.meetingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors"
+        >
+          Join Google Meet
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</MainLayout>

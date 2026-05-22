@@ -89,6 +89,10 @@ const mainNavigation: NavEntry[] = [
     href: "https://www.youtube.com/@SprykerSystems/playlists",
   },
   {
+    label: "Contribute",
+    href: "/guides/contributing/types",
+  },
+  {
     label: "Community Repos",
     href: "https://github.com/spryker-community",
   },

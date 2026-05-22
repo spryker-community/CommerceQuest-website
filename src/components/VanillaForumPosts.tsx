@@ -1,10 +1,10 @@
 const VanillaForumPosts = () => (
-  <div className="flex justify-center mt-10">
+  <div className="flex">
     <a
       href="https://sprykercommunity.slack.com/"
       target="_blank"
       rel="noopener noreferrer"
-      className="group bg-neutral-100 dark:bg-[#0A1628] rounded-xl shadow-md overflow-hidden mb-10 p-10 flex flex-col items-center gap-6 max-w-lg w-full hover:shadow-lg transition-shadow duration-300"
+      className="group bg-neutral-100 dark:bg-[#0A1628] rounded-xl shadow-md overflow-hidden p-10 flex flex-col items-center justify-center gap-6 w-full hover:shadow-lg transition-shadow duration-300"
     >
       {/* Slack logo */}
       <svg viewBox="0 0 124 124" className="w-16 h-16 shrink-0" aria-hidden="true">

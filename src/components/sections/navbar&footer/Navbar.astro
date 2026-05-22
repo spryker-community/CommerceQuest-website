@@ -96,11 +96,6 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
         <div
           class="mt-5 flex flex-col gap-x-0 gap-y-4 lg:mt-0 lg:flex-row lg:items-center justify-start lg:justify-end lg:gap-x-4 lg:gap-y-0 lg:ps-[16px]"
         >
-          {/* Add mobile auth navigation at the top */}
-          <div class="lg:hidden border-b border-neutral-200 dark:border-neutral-700 pb-4 mb-4">
-            <AuthNavigation className="flex items-center space-x-3" client:load />
-          </div>
-          
           {/* Navigation links component */}
           {
             navigation.getMainNavEntries(Astro.url.pathname, Astro.props.locale).map((navEntry) => (
@@ -111,8 +106,6 @@ import AuthNavigation from "@components/AuthNavigation.tsx";
       </div>
       {/* ThemeIcon component specifically for larger screens */}
       <div class="hidden lg:flex lg:flex-row lg:gap-2 items-center ml-auto">
-        {/* Add the dynamic authentication component */}
-        <AuthNavigation client:load />
       </div>
     </div>
   </nav>

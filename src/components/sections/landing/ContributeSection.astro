@@ -1,0 +1,142 @@
+---
+interface Props {
+  title: string;
+  subTitle?: string;
+}
+
+const { title, subTitle } = Astro.props;
+---
+
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+  <div class="mx-auto mb-10 max-w-2xl text-center">
+    <h2 class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl">
+      <Fragment set:html={title} />
+    </h2>
+    {subTitle && (
+      <p class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400">
+        {subTitle}
+      </p>
+    )}
+  </div>
+
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+    <!-- Report a Bug -->
+    <a href="https://github.com/spryker/spryker-core/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer"
+      class="group flex flex-col rounded-xl bg-neutral-100 dark:bg-[#0A1628] p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-red-500/10 dark:bg-red-400/10 text-red-500 dark:text-red-400">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+        </svg>
+      </div>
+      <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200 group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors">
+        Report a Bug
+      </h3>
+      <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+        Found something broken? Open an issue on the Spryker Core repository with steps to reproduce and help us fix it.
+      </p>
+      <span class="mt-auto pt-4 text-sm font-semibold text-red-500 dark:text-red-400 group-hover:underline">
+        Open an Issue &rarr;
+      </span>
+    </a>
+
+    <!-- Submit a Pull Request -->
+    <a href="https://github.com/spryker/spryker-core/pulls" target="_blank" rel="noopener noreferrer"
+      class="group flex flex-col rounded-xl bg-neutral-100 dark:bg-[#0A1628] p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-green-500/10 dark:bg-green-400/10 text-green-500 dark:text-green-400">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6v6s0 3 7 3 7-3 7-3V6" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6s0 3 7 3 7-3 7-3-7-3-7-3-7 3-7 3z" />
+          <line x1="11" y1="12" x2="11" y2="21" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 9v9a2 2 0 01-2 2H9" />
+        </svg>
+      </div>
+      <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200 group-hover:text-green-500 dark:group-hover:text-green-400 transition-colors">
+        Submit a Pull Request
+      </h3>
+      <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+        Contribute code directly to Spryker Core. Fix bugs, add features, or improve documentation — PRs get fast reviews from the core team.
+      </p>
+      <span class="mt-auto pt-4 text-sm font-semibold text-green-500 dark:text-green-400 group-hover:underline">
+        View Pull Requests &rarr;
+      </span>
+    </a>
+
+    <!-- Request a Feature -->
+    <a href="https://github.com/spryker/spryker-core/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer"
+      class="group flex flex-col rounded-xl bg-neutral-100 dark:bg-[#0A1628] p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10 dark:bg-blue-400/10 text-blue-500 dark:text-blue-400">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      </div>
+      <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
+        Request a Feature
+      </h3>
+      <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+        Have an idea that would improve Spryker? Submit a feature request and start a discussion with the team and community.
+      </p>
+      <span class="mt-auto pt-4 text-sm font-semibold text-blue-500 dark:text-blue-400 group-hover:underline">
+        Request Feature &rarr;
+      </span>
+    </a>
+
+    <!-- Community Extensions -->
+    <a href="/community-tools"
+      class="group flex flex-col rounded-xl bg-neutral-100 dark:bg-[#0A1628] p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/10 dark:bg-purple-400/10 text-purple-500 dark:text-purple-400">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        </svg>
+      </div>
+      <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200 group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors">
+        Community Extensions
+      </h3>
+      <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+        Build and share your own Spryker modules. Publish MIT-licensed packages that the entire ecosystem can use.
+      </p>
+      <span class="mt-auto pt-4 text-sm font-semibold text-purple-500 dark:text-purple-400 group-hover:underline">
+        Browse Extensions &rarr;
+      </span>
+    </a>
+
+    <!-- Contribution Guide -->
+    <a href="/guides/contributing/types"
+      class="group flex flex-col rounded-xl bg-neutral-100 dark:bg-[#0A1628] p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-pink-500/10 dark:bg-pink-400/10 text-pink-500 dark:text-pink-400">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+      </div>
+      <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200 group-hover:text-pink-500 dark:group-hover:text-pink-400 transition-colors">
+        Contribution Guide
+      </h3>
+      <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+        New to contributing? Read our guide to understand the different ways you can contribute to the Spryker ecosystem.
+      </p>
+      <span class="mt-auto pt-4 text-sm font-semibold text-pink-500 dark:text-pink-400 group-hover:underline">
+        Read the Guide &rarr;
+      </span>
+    </a>
+
+    <!-- GitHub Repos -->
+    <a href="https://github.com/spryker-community" target="_blank" rel="noopener noreferrer"
+      class="group flex flex-col rounded-xl bg-neutral-100 dark:bg-[#0A1628] p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-neutral-500/10 dark:bg-neutral-400/10 text-neutral-700 dark:text-neutral-300">
+        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </div>
+      <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
+        Community Repositories
+      </h3>
+      <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+        Explore community-maintained repositories, hackathon projects, and open source tools on GitHub.
+      </p>
+      <span class="mt-auto pt-4 text-sm font-semibold text-neutral-700 dark:text-neutral-300 group-hover:underline">
+        View on GitHub &rarr;
+      </span>
+    </a>
+
+  </div>
+</section>

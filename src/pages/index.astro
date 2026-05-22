@@ -5,6 +5,7 @@ import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import PartnersSection from "@components/sections/landing/PartnersSection.astro";
 import PlatformsSection from "@components/sections/landing/PlatformsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
+import ContributeSection from "@components/sections/landing/ContributeSection.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
@@ -19,11 +20,22 @@ import maher from "@images/blog/maher.jpg";
 import VanillaForumPosts from '../components/VanillaForumPosts.astro';
 import VanillaEvents from '../components/VanillaEvents';
 import SimpleAnnouncementBanner from "@components/ui/banners/SimpleAnnouncementBanner.astro";
+import UpcomingEventBanner from "@components/ui/banners/UpcomingEventBanner.astro";
 ---
 <MainLayout>
 
-  <section>
-    <VanillaForumPosts />
+  <section class="relative z-0 mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8 mt-10 mb-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+      <UpcomingEventBanner
+        title="Spryker User Group: Deep Dive into the April Release"
+        date="2026-05-26"
+        time="4:00 – 5:00 PM CEST"
+        location="Online (Google Meet)"
+        url="/events/spryker-user-group-april-release"
+        topics={["BO Config", "Storefront Design", "AI Assistant", "Stripe", "Import/Export"]}
+      />
+      <VanillaForumPosts />
+    </div>
   </section>
 
   <SimpleAnnouncementBanner
@@ -63,12 +75,9 @@ import SimpleAnnouncementBanner from "@components/ui/banners/SimpleAnnouncementB
     <VanillaEvents client:load />
   </section>
 
-  <FeaturesGeneral
-    title="Igniting Community. Celebrating Contributors."
-    subTitle="We're excited to kickstart a new era of collaborative development with our wider community! Follow our contributions process, send in your PRs and you'll get a fast reply from our core team."
-    src={featureImage}
-    alt="Products in floating boxes"
-    features={features}
+  <ContributeSection
+    title="Contribute to <span class='text-pink-500 dark:text-pink-400'>Spryker</span>"
+    subTitle="Open issues, submit pull requests, or build extensions — every contribution makes the ecosystem stronger. Our core team reviews PRs fast."
   />
 
   <FeaturesNavs
