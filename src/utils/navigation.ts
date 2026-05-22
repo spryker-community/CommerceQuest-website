@@ -90,7 +90,7 @@ const mainNavigation: NavEntry[] = [
   },
   {
     label: "Contribute",
-    href: "/guides/contributing/types",
+    href: "/contributing/types",
   },
   {
     label: "Community Repos",
