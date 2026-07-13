@@ -3,7 +3,7 @@ import type { APIRoute } from 'astro';
 const upcomingEvents = [
   {
     eventID: 48,
-    name: "Spryker User Group: Release 202606.0",
+    name: "[CANCELED] Spryker User Group: Release 202606.0",
     body: "Join us for a packed session covering the AI Dev SDK, Search Statistics & Back Office Analytics, and the new AI Assistant for Spryker Docs.",
     dateInserted: "2026-07-08T00:00:00+00:00",
     dateStarts: "2026-07-14T10:00:00+00:00",

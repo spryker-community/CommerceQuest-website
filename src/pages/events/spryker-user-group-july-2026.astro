@@ -5,7 +5,7 @@ import { SITE } from "@data/constants";
 const pageTitle = `Spryker User Group: Release 202606.0 — ${SITE.title}`;
 
 const event = {
-  title: "Spryker User Group: Release 202606.0",
+  title: "[CANCELED] Spryker User Group: Release 202606.0",
   subtitle: "AI Dev SDK, Search Statistics, AI Assistant & Q&A",
   date: "Tuesday, July 14, 2026",
   time: "11:00 AM CET",
@@ -86,22 +86,19 @@ const event = {
 
       <!-- Join button -->
       <div class="mb-10">
-        <a
-          href={event.meetingUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors"
-        >
-          Join Meeting
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-        </a>
+        <span class="inline-flex items-center gap-2 bg-neutral-400 text-white font-bold py-3 px-6 rounded-lg text-lg cursor-not-allowed">
+          Event Canceled
+        </span>
       </div>
 
       <!-- Description -->
       <div class="mb-10">
-        <p class="text-neutral-600 dark:text-neutral-400 text-lg leading-relaxed">
+        <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-4 mb-6">
+          <p class="text-red-700 dark:text-red-400 font-medium">
+            This event has been canceled as we didn't reach enough confirmation. See you all on the next user group in September!
+          </p>
+        </div>
+        <p class="text-neutral-600 dark:text-neutral-400 text-lg leading-relaxed line-through opacity-70">
           The next Spryker User Group is happening in less than a week! Join us to explore Release 202606.0, including the AI Dev SDK, Search Statistics & Back Office Analytics, and our new AI Assistant for Spryker Docs. If you’re joining us, be sure to confirm your attendance so we can ensure there’s enough interest to run the session.
         </p>
       </div>
@@ -123,19 +120,10 @@ const event = {
 
       <!-- Bottom CTA -->
       <div class="bg-neutral-100 dark:bg-[#0A1628] rounded-xl p-8 text-center">
-        <p class="text-neutral-600 dark:text-neutral-400 mb-4">Ready to join?</p>
-        <a
-          href={event.meetingUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors"
-        >
-          Join Google Meet
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-          </svg>
-        </a>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-4">Event Canceled</p>
+        <span class="inline-flex items-center gap-2 bg-neutral-400 text-white font-bold py-3 px-6 rounded-lg text-lg cursor-not-allowed">
+          Registration Closed
+        </span>
       </div>
 
     </div>
