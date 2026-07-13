@@ -326,62 +326,22 @@
         "id": "L4V5Jve4-Fc",
         "title": "Spryker User Group September '23: Properly Setting Up Multi-Stores",
         "thumbnail": "https://i.ytimg.com/vi/L4V5Jve4-Fc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGFXj0_k3iiAnUkXSokYGrxjziuA"
-      },
-      {
-        "id": "p6QosU16Xpk",
-        "title": "Spryker User Group September '23: Innovate & Differentiate Using Unified Commerce",
-        "thumbnail": "https://i.ytimg.com/vi/p6QosU16Xpk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDsRsjJ4z0NfTr8a76b_EYrZgKmtQ"
-      },
-      {
-        "id": "3MQnKrTRNj0",
-        "title": "Spryker User Group August '23: Product Discovery Case Study: Discovery for our Marketplace Roadmap",
-        "thumbnail": "https://i.ytimg.com/vi/3MQnKrTRNj0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA5SbVub6YilzInIU7ftAnbbnCwXw"
-      },
-      {
-        "id": "kFH_-SIUf0I",
-        "title": "Spryker User Group August '23: Marketplace - Persistence ACL",
-        "thumbnail": "https://i.ytimg.com/vi/kFH_-SIUf0I/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAsbKNxm7ClesA-KdgwclOK99f4uQ"
-      },
-      {
-        "id": "xFaOTxVFF6w",
-        "title": "Spryker User Group August '23: Keep your project up-to-date with Spryker Code Upgrader",
-        "thumbnail": "https://i.ytimg.com/vi/xFaOTxVFF6w/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCzdSRpHvvYLdhaWWbTEZb4tgZKZg"
-      },
-      {
-        "id": "IbnKi1UGWIg",
-        "title": "Spryker User Group May '23: Deep Dive into the Message Queue",
-        "thumbnail": "https://i.ytimg.com/vi/IbnKi1UGWIg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD7gOYf_lP72AxZu7KeuDLRYcXu6w"
-      },
-      {
-        "id": "oM6CDyWz92o",
-        "title": "Spryker User Group March '23: The Gacela Project",
-        "thumbnail": "https://i.ytimg.com/vi/oM6CDyWz92o/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDsBGdmao8dB8VECMckc4VYQJVufA"
-      },
-      {
-        "id": "6pxvrJlI0lk",
-        "title": "Spryker User Group March '23: The Product field - by Product Innovation",
-        "thumbnail": "https://i.ytimg.com/vi/6pxvrJlI0lk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCcyyzU6NKzSWuKvg4Gj1_L9gKfIw"
-      },
-      {
-        "id": "IQ_duhgT2EA",
-        "title": "Spryker User Group April '23: Non-Functional Requirements (NFRs) and their dependencies",
-        "thumbnail": "https://i.ytimg.com/vi/IQ_duhgT2EA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPlNin1axD11j9yPavEHcWPCIqCw"
-      },
-      {
-        "id": "zSZrNK_Vfmw",
-        "title": "Spryker User Group April '23: The future of certification with Spryker",
-        "thumbnail": "https://i.ytimg.com/vi/zSZrNK_Vfmw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCGamSGXanRDKqMixXz_E9cQrrmBQ"
-      },
-      {
-        "id": "SU2pNrhWlMw",
-        "title": "Spryker User Group April '23: Use case - Digital self-service portal",
-        "thumbnail": "https://i.ytimg.com/vi/SU2pNrhWlMw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDzhz_wcQAq93OXidhmRVMgYBmUmw"
       }
     ]
   },
   {
     "name": "AI & Development",
     "videos": [
+      {
+        "id": "fudvdQ2a6dM",
+        "title": "Spryker 2026.04 | AI Back Office Assistant — Navigate, Fill Forms & Manage Orders with AI",
+        "thumbnail": "https://i.ytimg.com/vi/fudvdQ2a6dM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC5SjdOOG1hpYw2WWudbHAzLOquEw"
+      },
+      {
+        "id": "SvAv6zIxYUQ",
+        "title": "Spryker 2026.04 Release | Back Office Config, AI Assistant, Stripe Integration & Import/Export",
+        "thumbnail": "https://i.ytimg.com/vi/SvAv6zIxYUQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLARar-pfYZjQBOItWtlclMWqdbXXw"
+      },
       {
         "id": "V3Z8CedHFBY",
         "title": "Spryker + Symfony: DI, API Platform & Messenger Explained",
@@ -468,6 +428,26 @@
     "name": "Community & Other",
     "videos": [
       {
+        "id": "nc5hl36ddMM",
+        "title": "Spryker 2026.04 | New Import & Export Module — Bulk Product Import with CSV from the Back Office",
+        "thumbnail": "https://i.ytimg.com/vi/nc5hl36ddMM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBEXNvhZQ_A6gWElO6ROXgyEEtXng"
+      },
+      {
+        "id": "2cg5FVf19-Y",
+        "title": "Spryker 2026.04 | Native Stripe Integration — Payments, Marketplace Payouts & Partial Refunds",
+        "thumbnail": "https://i.ytimg.com/vi/2cg5FVf19-Y/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCde1_NzERs5dMe_EFOA5vhQ0Ik3w"
+      },
+      {
+        "id": "JI2CBVtb11g",
+        "title": "Spryker 2026.04 | New Storefront Design System & Live Shop Theming with Design Tokens",
+        "thumbnail": "https://i.ytimg.com/vi/JI2CBVtb11g/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhGIEsocjAP&rs=AOn4CLBR6t-7bTUgWhZDvarVA4xP8aaF4A"
+      },
+      {
+        "id": "hjEqhAZP0sY",
+        "title": "Spryker 2026.04 | Back Office Configuration Framework — No More Redeployments!",
+        "thumbnail": "https://i.ytimg.com/vi/hjEqhAZP0sY/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhDIEMoZTAP&rs=AOn4CLBfTfQC8uqEEI5C3lpBPurhI0voOA"
+      },
+      {
         "id": "F9C3q3lFHMk",
         "title": "Community Contribution Showcase - Antonio Mansilla | Spryker",
         "thumbnail": "https://i.ytimg.com/vi/F9C3q3lFHMk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA98N32G3cGXV4cBPcinskr6TOlHQ"
@@ -536,51 +516,6 @@
         "id": "QAPlCFH7_aw",
         "title": "Ask Me Anything: All about Documentation (November '23)",
         "thumbnail": "https://i.ytimg.com/vi/QAPlCFH7_aw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCg-pgWTcOVKkspSWS6vKsmzT3fbw"
-      },
-      {
-        "id": "JHUTMwIWEGk",
-        "title": "Ask Me Anything: Project Tech Lead Edition (October '23)",
-        "thumbnail": "https://i.ytimg.com/vi/JHUTMwIWEGk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCfgRvKoyQ_gKz9AQUOHS49ifjafQ"
-      },
-      {
-        "id": "2GJFX5EudBI",
-        "title": "Make Image Backgrounds Transparent - Oryx in 90",
-        "thumbnail": "https://i.ytimg.com/vi/2GJFX5EudBI/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIE0oNDAP&rs=AOn4CLCufMf-CFtSal82QpBNstgLfkA13w"
-      },
-      {
-        "id": "TQCRNiyAq3Q",
-        "title": "Replace Logo in Storefront Header - Oryx in 90",
-        "thumbnail": "https://i.ytimg.com/vi/TQCRNiyAq3Q/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAqQFigIMCAAQARhNIGQoZTAP&rs=AOn4CLDn6PXkg4rSetfLNnYxFuzVvbywZg"
-      },
-      {
-        "id": "CdGs6sL-kh8",
-        "title": "Installing Oryx",
-        "thumbnail": "https://i.ytimg.com/vi/CdGs6sL-kh8/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhOIGUoZTAP&rs=AOn4CLBTTDDXKLPFMlC1DbaWpRRfreEqZg"
-      },
-      {
-        "id": "HAqolc2Msjc",
-        "title": "Customize Product List Component - Oryx in 90",
-        "thumbnail": "https://i.ytimg.com/vi/HAqolc2Msjc/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARg5IGUoWTAP&rs=AOn4CLCYVxqm0hHCQJjgFLZDR8qWDapr3w"
-      },
-      {
-        "id": "nh9CVEahD3I",
-        "title": "Create a Custom Component - Oryx in 90",
-        "thumbnail": "https://i.ytimg.com/vi/nh9CVEahD3I/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhfIF8oXzAP&rs=AOn4CLA33qnxFT7jerxWjEKh1SBZRhiLQQ"
-      },
-      {
-        "id": "t5JXGSiwO1U",
-        "title": "Change Theme Color - Oryx in 90",
-        "thumbnail": "https://i.ytimg.com/vi/t5JXGSiwO1U/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFUoRDAP&rs=AOn4CLBgcYBOilEFQ_1c1lbQmHbK_lkv9g"
-      },
-      {
-        "id": "pCotCKZO7DA",
-        "title": "valantic x Spryker: Replatforming a B2B Healthcare Business with 12,000 Customers",
-        "thumbnail": "https://i.ytimg.com/vi/pCotCKZO7DA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAPjsBkn9Y0PPOkAUr3FDJHfMNg2A"
-      },
-      {
-        "id": "dK7SeH7t5MQ",
-        "title": "Why Spryker is Great for Developers",
-        "thumbnail": "https://i.ytimg.com/vi/dK7SeH7t5MQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC0-kUwy6dKC6NkFKJUWZw8UZkGgA"
       }
     ]
   }
