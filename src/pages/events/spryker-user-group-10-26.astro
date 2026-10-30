@@ -1,0 +1,265 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+
+const pageTitle = `Spryker 202610.0 Community Walkthrough — ${SITE.title}`;
+
+const event = {
+  title: "Spryker 202610.0 Community Walkthrough",
+  subtitle: "B2B Business-Ready Commerce, Workflows, BO Tooling & AI-Enabled Development",
+  date: "Thursday, November 12, 2026",
+  time: "11:00 AM – 12:00 PM CET",
+  duration: "1 hour",
+  timezone: "Europe/Rome",
+  location: "Online — Google Meet (Link provided via email after registration)",
+  formUrl: "https://forms.gle/WQLS4smwVktqZxkJ6",
+  embeddedFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLScP64C6g5_B-z_TTukNS-pb3EHGa1xNlsyZrM1Xk_bCmET52w/viewform?embedded=true",
+  status: "Planning",
+  release: "202610.0",
+  owner: "Hidran Arias",
+  agenda: [
+    {
+      session: "B2B Business-Ready Commerce",
+      duration: "25 min",
+      priority: "P1, P2",
+      availability: "General Availability",
+      topics: [
+        "B2B Customer Groups (Phase 1)",
+        "Display of Invoices & Credit Notes",
+        "Recurring Orders Improvements",
+        "Service Points BO UI"
+      ],
+      description: "A deep dive into new B2B capabilities including Customer Groups Phase 1, streamlined display of invoices and credit notes, recurring orders improvements, and Back Office UI for Service Points."
+    },
+    {
+      session: "Commerce Operations and Workflows",
+      duration: "15 min",
+      priority: "P1, P2",
+      availability: "GA, Early Access",
+      topics: [
+        "Unified Order Intake (incl. EDI)",
+        "[Phase 2] Workflows"
+      ],
+      description: "Explore unified order intake mechanisms including EDI integration, alongside Phase 2 enhancements to business workflows."
+    },
+    {
+      session: "Back Office Tooling and APIs",
+      duration: "15 min",
+      priority: "P2",
+      availability: "General Availability",
+      topics: [
+        "Back Office Frontend Tooling",
+        "BO API for Customers & B2B Company Accounts",
+        "BO API for Core Commerce Part 1"
+      ],
+      description: "Overview of modern Back Office frontend tooling and newly introduced Back Office APIs covering Customers, B2B Company Accounts, and Core Commerce (Part 1)."
+    },
+    {
+      session: "AI-Enabled Development",
+      duration: "20 min",
+      priority: "P1, P2",
+      availability: "GA, Early Access",
+      topics: [
+        "AI DevSDK: GitHub Copilot Support",
+        "Automated AaC (Architecture-as-Code) Generation"
+      ],
+      description: "Discover developer productivity boosts with AI DevSDK integrations for GitHub Copilot and automated Architecture-as-Code generation."
+    },
+    {
+      session: "Open Q&A",
+      duration: "15 min",
+      priority: "n/a",
+      availability: "n/a",
+      topics: [
+        "Questions, use cases, and community feedback"
+      ],
+      description: "Open floor for all participants to ask questions, share implementation use cases, and provide feedback directly to the team."
+    }
+  ]
+};
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": event.title,
+    "startDate": "2026-11-12T10:00:00+01:00",
+    "endDate": "2026-11-12T11:00:00+01:00",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://commercequest.space/events/spryker-user-group-10-26"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "CommerceQuest",
+      "url": "https://commercequest.space/"
+    }
+  }}
+>
+  <section class="mx-auto mt-10 max-w-[85rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Back link -->
+      <a href="/#events" class="text-sm text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 mb-6 inline-block">
+        &larr; Back to Events
+      </a>
+
+      <!-- Status Tag -->
+      <div class="mb-3">
+        <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 border border-amber-200 dark:border-amber-800">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+          Status: In Planning &bull; Release {event.release}
+        </span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="mb-2 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
+        {event.title}
+      </h1>
+      <p class="text-lg text-blue-500 dark:text-blue-400 font-medium mb-8">
+        {event.subtitle}
+      </p>
+
+      <!-- Event meta -->
+      <div class="bg-neutral-100 dark:bg-[#0A1628] rounded-xl p-6 mb-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">Date</p>
+          <p class="text-neutral-800 dark:text-neutral-200 font-semibold">{event.date}</p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">Time & Duration</p>
+          <p class="text-neutral-800 dark:text-neutral-200 font-semibold">{event.time} <span class="text-xs text-neutral-500 font-normal">({event.duration})</span></p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">Location</p>
+          <p class="text-neutral-800 dark:text-neutral-200 font-semibold">{event.location}</p>
+        </div>
+      </div>
+
+      <!-- Notice Box: Provisional Playlist -->
+      <div class="rounded-xl border border-blue-200/90 border-l-4 border-l-blue-600 bg-blue-50/70 p-4 sm:p-5 mb-8 shadow-sm dark:border-blue-900/60 dark:border-l-blue-400 dark:bg-blue-950/30">
+        <div class="flex items-start gap-3.5">
+          <div class="flex-shrink-0 p-2 rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-300">
+            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100">
+              Provisional Agenda / Playlist
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mt-1 leading-relaxed">
+              <span class="font-medium text-neutral-900 dark:text-neutral-100">Please note:</span> The exact playlist and timing below are provisional while we finalize the session arrangements. However, the core topics and featured release themes listed here represent the main focus of this walkthrough.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="mb-10">
+        <p class="text-neutral-600 dark:text-neutral-400 text-lg leading-relaxed">
+          Join us for the <strong>Spryker 202610.0 Community Walkthrough</strong>! This session gathers developers, architects, and technical leaders across the Spryker ecosystem to walk through key capabilities shipped in Release 202610.0 — from business-ready B2B enhancements and workflow orchestration to new Back Office APIs and AI-driven developer SDK features.
+        </p>
+      </div>
+
+      <!-- Agenda -->
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">Agenda & Main Topics</h2>
+        <span class="text-sm text-neutral-500 dark:text-neutral-400 font-medium">Total: ~90 min</span>
+      </div>
+
+      <div class="space-y-6 mb-12">
+        {event.agenda.map((item, index) => (
+          <div class="border-l-4 border-blue-500 dark:border-blue-400 pl-5 py-1 bg-neutral-50/50 dark:bg-[#0A1628]/40 rounded-r-lg">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+              <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+                {index + 1}. {item.session}
+              </h3>
+              <div class="flex items-center gap-2">
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-medium">
+                  {item.duration}
+                </span>
+                {item.availability !== "n/a" && (
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">
+                    {item.availability}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed text-sm">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+
+      <!-- RSVP Form Embed -->
+      <div id="rsvp" class="mb-12">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">Register & RSVP</h2>
+            <p class="text-neutral-600 dark:text-neutral-400 text-sm mt-1">
+              Please fill out the form below to register. You will receive an email upon registration with the calendar invite and joining details.
+            </p>
+          </div>
+          <a
+            href={event.formUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 self-start sm:self-auto text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+          >
+            Open in new tab
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="bg-white dark:bg-[#0A1628] rounded-xl border border-neutral-200 dark:border-neutral-800 overflow-hidden shadow-sm p-2 sm:p-4">
+          <iframe
+            src={event.embeddedFormUrl}
+            width="100%"
+            height="820"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            class="w-full border-0 rounded-lg min-h-[700px]"
+            title="Spryker User Group RSVP Form"
+          >
+            Loading…
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Bottom CTA / RSVP -->
+      <div class="bg-neutral-100 dark:bg-[#0A1628] rounded-xl p-8 text-center">
+        <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2">Join the Community Walkthrough</h3>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-6 max-w-lg mx-auto">
+          Reserve your spot by filling out the registration form. You'll receive a confirmation email containing the calendar invite and meeting link.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href={event.formUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-base transition-colors shadow-sm"
+          >
+            Open Registration Form
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</MainLayout>
