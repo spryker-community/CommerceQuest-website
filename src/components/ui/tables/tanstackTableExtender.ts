@@ -27,17 +27,8 @@ export function createVanillaTable<TData extends RowData>(
 
   // Compose in the generic options to the user options
   const resolvedOptions: TableOptionsResolved<TData> = {
-    state: {}, // Dummy state
     renderFallbackValue: null,
     ...options,
-    onStateChange: (updater) => {
-      if (typeof updater === 'function') {
-        table.options.state = updater(table.getState())
-      } else {
-        table.options.state = updater
-      }
-      options.onStateChange?.(updater)
-    },
   }
 
   // Create the table
