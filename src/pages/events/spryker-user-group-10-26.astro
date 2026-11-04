@@ -4,17 +4,29 @@ import { SITE } from "@data/constants";
 
 const pageTitle = `Spryker 202610.0 Community Walkthrough — ${SITE.title}`;
 
+// LinkedIn profiles for presenters (presenter label -> profile URL).
+// Presenters not listed here are shown without a link.
+const presenterProfiles: Record<string, string> = {
+  "@Victor Clar": "https://es.linkedin.com/in/victorclar",
+  "@Andrii Kaidash": "https://www.linkedin.com/in/andreykaydash",
+  "@Stanislav Matveyev": "https://ua.linkedin.com/in/stanislav-matveyev",
+  "@Stanislav Pivovarov": "https://es.linkedin.com/in/stanislav-pivovarov-19b98b101",
+  "@o.livitchuk": "https://www.linkedin.com/in/olga-kikinchuk",
+  "@andriy.netseplyayev": "https://de.linkedin.com/in/andriy-netseplyayev-47564857",
+};
+
 const event = {
   title: "Spryker 202610.0 Community Walkthrough",
-  subtitle: "B2B Business-Ready Commerce, Workflows, BO Tooling & AI-Enabled Development",
+  subtitle: "B2B Business-Ready Commerce, Workflows, BO Tooling, APIs & Architecture as Code",
   date: "Thursday, November 12, 2026",
-  time: "11:00 AM – 12:00 PM CET",
-  duration: "1 hour",
-  timezone: "Europe/Rome",
-  location: "Online — Google Meet (Link provided via email after registration)",
+  time: "11:00 AM – 12:30 PM CET",
+  duration: "90 min",
+  timezone: "Europe/Rome (CET)",
+  location: "Online — Google Meet",
+  locationDetails: "Link and calendar invite sent via email upon registration",
   formUrl: "https://forms.gle/WQLS4smwVktqZxkJ6",
   embeddedFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLScP64C6g5_B-z_TTukNS-pb3EHGa1xNlsyZrM1Xk_bCmET52w/viewform?embedded=true",
-  status: "Planning",
+  status: "Confirmed Lineup",
   release: "202610.0",
   owner: "Hidran Arias",
   agenda: [
@@ -23,11 +35,24 @@ const event = {
       duration: "25 min",
       priority: "P1, P2",
       availability: "General Availability",
+      category: "B2B Commerce",
       topics: [
-        "B2B Customer Groups (Phase 1)",
-        "Display of Invoices & Credit Notes",
-        "Recurring Orders Improvements",
-        "Service Points BO UI"
+        {
+          title: "B2B Customer Groups Phase 1",
+          presenter: "@Victor Clar"
+        },
+        {
+          title: "Display of Invoices & Credit Notes",
+          presenter: "@Victor Clar"
+        },
+        {
+          title: "Recurring Orders Improvements",
+          presenter: "@Andrii Kaidash"
+        },
+        {
+          title: "Service Points BO UI",
+          presenter: "@Andrii Kaidash"
+        }
       ],
       description: "A deep dive into new B2B capabilities including Customer Groups Phase 1, streamlined display of invoices and credit notes, recurring orders improvements, and Back Office UI for Service Points."
     },
@@ -36,44 +61,57 @@ const event = {
       duration: "15 min",
       priority: "P1, P2",
       availability: "GA, Early Access",
+      category: "Operations",
       topics: [
-        "Unified Order Intake (incl. EDI)",
-        "[Phase 2] Workflows"
+        {
+          title: "Unified Order Intake (incl. EDI)",
+          presenter: "@Stanislav Matveyev"
+        },
+        {
+          title: "[Phase 2] Workflows",
+          presenter: "@Stanislav Pivovarov"
+        }
       ],
       description: "Explore unified order intake mechanisms including EDI integration, alongside Phase 2 enhancements to business workflows."
     },
     {
       session: "Back Office Tooling and APIs",
-      duration: "15 min",
+      duration: "20 min",
       priority: "P2",
       availability: "General Availability",
+      category: "Tooling & Architecture",
       topics: [
-        "Back Office Frontend Tooling",
-        "BO API for Customers & B2B Company Accounts",
-        "BO API for Core Commerce Part 1"
+        {
+          title: "Back Office Frontend Tooling",
+          note: "Nothing to show. All needed info about “Moving oryx-for-zed into GUI module” is in the documentation"
+        },
+        {
+          title: "BO API for Customers & B2B Company Accounts",
+          presenter: "@o.livitchuk"
+        },
+        {
+          title: "BO API for Core Commerce Part 1",
+          presenter: "@o.livitchuk"
+        },
+        {
+          title: "Architecture as a Code",
+          presenter: "@andriy.netseplyayev"
+        }
       ],
-      description: "Overview of modern Back Office frontend tooling and newly introduced Back Office APIs covering Customers, B2B Company Accounts, and Core Commerce (Part 1)."
+      description: "Overview of Back Office frontend tooling and newly introduced Back Office APIs covering Customers, B2B Company Accounts, Core Commerce (Part 1), as well as Architecture as Code."
     },
     {
-      session: "AI-Enabled Development",
-      duration: "20 min",
-      priority: "P1, P2",
-      availability: "GA, Early Access",
-      topics: [
-        "AI DevSDK: GitHub Copilot Support",
-        "Automated AaC (Architecture-as-Code) Generation"
-      ],
-      description: "Discover developer productivity boosts with AI DevSDK integrations for GitHub Copilot and automated Architecture-as-Code generation."
-    },
-    {
-      session: "Open Q&A",
+      session: "Open Q&A & Community Discussion",
       duration: "15 min",
       priority: "n/a",
-      availability: "n/a",
+      availability: "Interactive",
+      category: "Community",
       topics: [
-        "Questions, use cases, and community feedback"
+        {
+          title: "Questions, architecture discussions, and community feedback"
+        }
       ],
-      description: "Open floor for all participants to ask questions, share implementation use cases, and provide feedback directly to the team."
+      description: "Open floor for all participants to ask questions, share implementation use cases, and engage directly with the presenters and community team."
     }
   ]
 };
@@ -85,8 +123,8 @@ const event = {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": event.title,
-    "startDate": "2026-11-12T10:00:00+01:00",
-    "endDate": "2026-11-12T11:00:00+01:00",
+    "startDate": "2026-11-12T11:00:00+01:00",
+    "endDate": "2026-11-12T12:30:00+01:00",
     "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -100,166 +138,267 @@ const event = {
     }
   }}
 >
-  <section class="mx-auto mt-10 max-w-[85rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full">
-    <div class="max-w-3xl mx-auto">
+  <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 text-neutral-900 dark:text-neutral-100">
 
-      <!-- Back link -->
-      <a href="/#events" class="text-sm text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 mb-6 inline-block">
-        &larr; Back to Events
-      </a>
+    <!-- Breadcrumbs -->
+    <nav class="mb-6 flex flex-wrap items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
+      <a href="/" class="hover:text-blue-500 dark:hover:text-blue-400 underline-offset-2 hover:underline">Home</a>
+      <span>/</span>
+      <a href="/#events" class="hover:text-blue-500 dark:hover:text-blue-400 underline-offset-2 hover:underline">Events</a>
+      <span>/</span>
+      <span class="font-medium text-neutral-900 dark:text-white">Spryker 202610.0 Walkthrough</span>
+    </nav>
 
-      <!-- Status Tag -->
-      <div class="mb-3">
-        <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 border border-amber-200 dark:border-amber-800">
-          <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-          Status: In Planning &bull; Release {event.release}
+    <!-- Hero Header -->
+    <header class="rounded-2xl bg-white dark:bg-cqDarkPrimary-300 border border-neutral-300 dark:border-cqDarkPrimary-100 p-6 sm:p-10 shadow-sm mb-8">
+      <div class="flex flex-wrap items-center gap-2.5 mb-5">
+        <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold bg-green-500/15 text-neutral-900 dark:text-green-500 border border-green-500/50">
+          <span class="w-2 h-2 rounded-full bg-green-500"></span>
+          Confirmed Lineup
+        </span>
+        <span class="inline-flex items-center py-1 px-3 rounded-full text-xs font-medium bg-blue-500/15 text-neutral-900 dark:text-blue-100 border border-blue-500/50">
+          Release {event.release}
+        </span>
+        <span class="inline-flex items-center py-1 px-3 rounded-full text-xs font-medium bg-neutral-100 text-neutral-900 dark:bg-cqDarkPrimary-100 dark:text-white border border-neutral-300 dark:border-cqDarkPrimary-100">
+          Free Online Event
         </span>
       </div>
 
-      <!-- Title -->
-      <h1 class="mb-2 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white leading-tight mb-4">
         {event.title}
       </h1>
-      <p class="text-lg text-blue-500 dark:text-blue-400 font-medium mb-8">
+
+      <p class="text-lg sm:text-xl text-neutral-700 dark:text-neutral-200 leading-relaxed max-w-3xl mb-8">
         {event.subtitle}
       </p>
 
-      <!-- Event meta -->
-      <div class="bg-neutral-100 dark:bg-[#0A1628] rounded-xl p-6 mb-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div>
-          <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">Date</p>
-          <p class="text-neutral-800 dark:text-neutral-200 font-semibold">{event.date}</p>
-        </div>
-        <div>
-          <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">Time & Duration</p>
-          <p class="text-neutral-800 dark:text-neutral-200 font-semibold">{event.time} <span class="text-xs text-neutral-500 font-normal">({event.duration})</span></p>
-        </div>
-        <div>
-          <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">Location</p>
-          <p class="text-neutral-800 dark:text-neutral-200 font-semibold">{event.location}</p>
-        </div>
+      <div class="flex flex-wrap items-center gap-4">
+        <a
+          href="#rsvp"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-500 hover:bg-blue-400 text-white font-semibold text-base shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+        >
+          <span>Register Now (Free)</span>
+        </a>
+        <a
+          href={event.formUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white dark:bg-cqDarkPrimary-100 hover:bg-neutral-100 dark:hover:bg-cqDarkPrimary-500 text-neutral-900 dark:text-white font-medium text-base transition-colors border border-neutral-400 dark:border-neutral-500"
+        >
+          <span>Open Form in New Tab</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Quick Info -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+      <div class="rounded-xl bg-white dark:bg-cqDarkPrimary-300 border border-neutral-300 dark:border-cqDarkPrimary-100 p-5 shadow-sm">
+        <span class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 mb-2">
+          <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>
+          Date
+        </span>
+        <p class="text-base font-semibold text-neutral-900 dark:text-white">{event.date}</p>
       </div>
 
-      <!-- Notice Box: Provisional Playlist -->
-      <div class="rounded-xl border border-blue-200/90 border-l-4 border-l-blue-600 bg-blue-50/70 p-4 sm:p-5 mb-8 shadow-sm dark:border-blue-900/60 dark:border-l-blue-400 dark:bg-blue-950/30">
-        <div class="flex items-start gap-3.5">
-          <div class="flex-shrink-0 p-2 rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-300">
-            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100">
-              Provisional Agenda / Playlist
-            </h3>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300 mt-1 leading-relaxed">
-              <span class="font-medium text-neutral-900 dark:text-neutral-100">Please note:</span> The exact playlist and timing below are provisional while we finalize the session arrangements. However, the core topics and featured release themes listed here represent the main focus of this walkthrough.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Description -->
-      <div class="mb-10">
-        <p class="text-neutral-600 dark:text-neutral-400 text-lg leading-relaxed">
-          Join us for the <strong>Spryker 202610.0 Community Walkthrough</strong>! This session gathers developers, architects, and technical leaders across the Spryker ecosystem to walk through key capabilities shipped in Release 202610.0 — from business-ready B2B enhancements and workflow orchestration to new Back Office APIs and AI-driven developer SDK features.
+      <div class="rounded-xl bg-white dark:bg-cqDarkPrimary-300 border border-neutral-300 dark:border-cqDarkPrimary-100 p-5 shadow-sm">
+        <span class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 mb-2">
+          <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+          Time & Duration
+        </span>
+        <p class="text-base font-semibold text-neutral-900 dark:text-white">
+          {event.time}
+          <span class="block text-sm font-normal text-neutral-700 dark:text-neutral-300 mt-1">Duration: ~{event.duration}</span>
         </p>
       </div>
 
-      <!-- Agenda -->
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">Agenda & Main Topics</h2>
-        <span class="text-sm text-neutral-500 dark:text-neutral-400 font-medium">Total: ~90 min</span>
+      <div class="rounded-xl bg-white dark:bg-cqDarkPrimary-300 border border-neutral-300 dark:border-cqDarkPrimary-100 p-5 shadow-sm">
+        <span class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 mb-2">
+          <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
+          Location
+        </span>
+        <p class="text-base font-semibold text-neutral-900 dark:text-white">
+          {event.location}
+          <span class="block text-sm font-normal text-neutral-700 dark:text-neutral-300 mt-1">Google Meet link sent via email</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="bg-white dark:bg-cqDarkPrimary-300 rounded-2xl border border-neutral-300 dark:border-cqDarkPrimary-100 p-6 sm:p-8 mb-10 shadow-sm">
+      <h2 class="text-xl font-bold text-neutral-900 dark:text-white mb-3">About This Walkthrough</h2>
+      <p class="text-neutral-800 dark:text-neutral-200 text-base sm:text-lg leading-relaxed">
+        Join us for the <strong class="text-neutral-900 dark:text-white">Spryker 202610.0 Community Walkthrough</strong>! This session brings together developers, architects, and technical leaders across the Spryker ecosystem to walk through key capabilities shipped in Release 202610.0 — from business-ready B2B enhancements and workflow orchestration to new Back Office APIs and Architecture as Code.
+      </p>
+    </div>
+
+    <!-- Agenda -->
+    <section class="mb-12">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+            Agenda & Confirmed Sessions
+          </h2>
+          <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 mt-1">
+            Detailed breakdown of presentations, topics, and confirmed speakers.
+          </p>
+        </div>
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-neutral-100 text-neutral-900 dark:bg-cqDarkPrimary-100 dark:text-white border border-neutral-300 dark:border-cqDarkPrimary-100 self-start sm:self-auto">
+          <svg class="inline w-4 h-4 mr-1 -mt-0.5 text-blue-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+          Total Duration: ~90 min
+        </span>
       </div>
 
-      <div class="space-y-6 mb-12">
+      <div class="space-y-6">
         {event.agenda.map((item, index) => (
-          <div class="border-l-4 border-blue-500 dark:border-blue-400 pl-5 py-1 bg-neutral-50/50 dark:bg-[#0A1628]/40 rounded-r-lg">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-              <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-                {index + 1}. {item.session}
-              </h3>
-              <div class="flex items-center gap-2">
-                <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-medium">
-                  {item.duration}
-                </span>
-                {item.availability !== "n/a" && (
-                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">
-                    {item.availability}
+          <div class="rounded-2xl bg-white dark:bg-cqDarkPrimary-300 border border-neutral-300 dark:border-cqDarkPrimary-100 overflow-hidden shadow-sm">
+
+            <!-- Session Header -->
+            <div class="p-6 sm:p-7 border-b border-neutral-200 dark:border-cqDarkPrimary-100 bg-neutral-50 dark:bg-cqDarkPrimary-500">
+              <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+                <div class="flex items-center gap-3">
+                  <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-500 text-white font-bold text-sm">
+                    {index + 1}
                   </span>
-                )}
+                  <h3 class="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white">
+                    {item.session}
+                  </h3>
+                </div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="inline-flex items-center text-sm px-2.5 py-1 rounded-md bg-blue-500/15 text-neutral-900 dark:text-blue-100 font-semibold border border-blue-500/50">
+                    {item.duration}
+                  </span>
+                  {item.availability && item.availability !== "n/a" && (
+                    <span class="text-sm px-2.5 py-1 rounded-md bg-white dark:bg-cqDarkPrimary-100 text-neutral-900 dark:text-white font-medium border border-neutral-300 dark:border-neutral-500">
+                      {item.availability}
+                    </span>
+                  )}
+                </div>
               </div>
+
+              <p class="text-neutral-800 dark:text-neutral-200 text-sm sm:text-base leading-relaxed">
+                {item.description}
+              </p>
             </div>
 
-            <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed text-sm">
-              {item.description}
-            </p>
+            <!-- Topics & Presenters -->
+            {item.topics && item.topics.length > 0 && (
+              <div class="p-6 sm:p-7">
+                <h4 class="text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 mb-4">
+                  Topics & Speakers in this Session
+                </h4>
+
+                <div class="grid grid-cols-1 gap-3">
+                  {item.topics.map((topic) => {
+                    const profileUrl = topic.presenter ? presenterProfiles[topic.presenter] : "";
+                    return (
+                      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-neutral-50 dark:bg-cqDarkPrimary-500 border border-neutral-300 dark:border-cqDarkPrimary-100">
+                        <div class="flex items-start gap-3">
+                          <span class="mt-2 w-2 h-2 rounded-full bg-blue-500 dark:bg-blue-400 flex-shrink-0"></span>
+                          <div>
+                            <span class="text-base font-semibold text-neutral-900 dark:text-white">
+                              {topic.title}
+                            </span>
+                            {topic.note && (
+                              <p class="text-sm text-neutral-700 dark:text-neutral-300 mt-1 italic leading-normal">
+                                ℹ️ {topic.note}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+
+                        {topic.presenter && (
+                          <div class="self-start sm:self-auto flex-shrink-0">
+                            {profileUrl ? (
+                              <a
+                                href={profileUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-1.5 text-sm font-semibold px-3 py-1.5 rounded-lg bg-white dark:bg-cqDarkPrimary-100 text-blue-500 dark:text-blue-100 border border-blue-500/60 hover:border-blue-500 hover:underline"
+                              >
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                  <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+                                </svg>
+                                {topic.presenter}
+                              </a>
+                            ) : (
+                              <span class="inline-flex items-center text-sm font-semibold px-3 py-1.5 rounded-lg bg-white dark:bg-cqDarkPrimary-100 text-neutral-900 dark:text-white border border-neutral-300 dark:border-neutral-500">
+                                {topic.presenter}
+                              </span>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
+    </section>
 
+    <!-- Registration -->
+    <section id="rsvp" class="mb-12 scroll-mt-10">
+      <div class="rounded-2xl bg-white dark:bg-cqDarkPrimary-300 border border-neutral-300 dark:border-cqDarkPrimary-100 p-6 sm:p-8 shadow-sm">
 
-      <!-- RSVP Form Embed -->
-      <div id="rsvp" class="mb-12">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-neutral-200 dark:border-cqDarkPrimary-100 mb-6">
           <div>
-            <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">Register & RSVP</h2>
-            <p class="text-neutral-600 dark:text-neutral-400 text-sm mt-1">
-              Please fill out the form below to register. You will receive an email upon registration with the calendar invite and joining details.
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+              Register & Reserve Your Spot
+            </h2>
+            <p class="text-neutral-800 dark:text-neutral-200 text-sm sm:text-base mt-1">
+              Fill out the quick form below. You will receive an email confirmation with the calendar invite and Google Meet link.
             </p>
           </div>
           <a
             href={event.formUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 self-start sm:self-auto text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-500 hover:bg-blue-400 text-white text-sm font-semibold shadow-sm transition-colors whitespace-nowrap self-start sm:self-auto"
           >
-            Open in new tab
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-            </svg>
+            <span>Open in Google Forms</span>
           </a>
         </div>
 
-        <div class="bg-white dark:bg-[#0A1628] rounded-xl border border-neutral-200 dark:border-neutral-800 overflow-hidden shadow-sm p-2 sm:p-4">
+        <div class="rounded-xl overflow-hidden border border-neutral-300 dark:border-cqDarkPrimary-100 bg-white">
           <iframe
             src={event.embeddedFormUrl}
             width="100%"
-            height="820"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            class="w-full border-0 rounded-lg min-h-[700px]"
-            title="Spryker User Group RSVP Form"
+            height="800"
+            class="w-full border-0 min-h-[680px]"
+            title="Spryker User Group Registration Form"
           >
-            Loading…
+            Loading registration form…
           </iframe>
         </div>
-      </div>
 
-      <!-- Bottom CTA / RSVP -->
-      <div class="bg-neutral-100 dark:bg-[#0A1628] rounded-xl p-8 text-center">
-        <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2">Join the Community Walkthrough</h3>
-        <p class="text-neutral-600 dark:text-neutral-400 mb-6 max-w-lg mx-auto">
-          Reserve your spot by filling out the registration form. You'll receive a confirmation email containing the calendar invite and meeting link.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a
-            href={event.formUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-base transition-colors shadow-sm"
-          >
-            Open Registration Form
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-            </svg>
-          </a>
-        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- Footer Card -->
+    <footer class="rounded-2xl bg-cqDarkPrimary-500 border border-cqDarkPrimary-100 text-white p-8 sm:p-10 text-center shadow-md">
+      <h3 class="text-2xl font-extrabold mb-3 text-white">Join the Community Walkthrough</h3>
+      <p class="text-neutral-100 text-base max-w-xl mx-auto mb-6 leading-relaxed">
+        Questions or topic requests before the event? Drop by our community forum or reach out to the organizing team. We look forward to seeing you online!
+      </p>
+      <div class="flex flex-wrap justify-center items-center gap-4">
+        <a
+          href={event.formUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-3 px-6 rounded-xl text-base transition-colors shadow-sm"
+        >
+          <span>Register for Free</span>
+        </a>
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 bg-cqDarkPrimary-300 hover:bg-cqDarkPrimary-100 text-white font-medium py-3 px-6 rounded-xl text-base transition-colors border border-cqDarkPrimary-100"
+        >
+          Back to Home
+        </a>
+      </div>
+    </footer>
+
+  </div>
 </MainLayout>

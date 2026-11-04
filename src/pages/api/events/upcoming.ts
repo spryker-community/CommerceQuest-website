@@ -3,12 +3,12 @@ import type { APIRoute } from 'astro';
 const upcomingEvents = [
   {
     eventID: 49,
-    name: "Spryker 10.26 Community Walkthrough",
-    body: "Join us for the Spryker 10.26 Community Walkthrough covering B2B Business-Ready Commerce, Workflows, Back Office Tooling & APIs, and AI-Enabled Development.",
+    name: "Spryker 202610.0 Community Walkthrough",
+    body: "Join us for the Spryker 10.26 Community Walkthrough covering B2B Business-Ready Commerce, Workflows, Back Office Tooling & APIs, and Architecture as Code.",
     dateInserted: "2026-10-29T00:00:00+00:00",
     dateStarts: "2026-11-12T10:00:00+00:00",
     dateEnds: "2026-11-12T11:00:00+00:00",
-    excerpt: "B2B Customer Groups, Workflows, BO APIs & AI DevSDK!",
+    excerpt: "B2B Customer Groups, Workflows, BO APIs & Architecture as Code!",
     url: "/events/spryker-user-group-10-26",
     ctaUrl: "/events/spryker-user-group-10-26",
     ctaLabel: "More Info",
