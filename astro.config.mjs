@@ -68,29 +68,19 @@ export default defineConfig({
       // https://starlight.astro.build/guides/sidebar/
       sidebar: [{
         label: "Community Guides",
-        autogenerate: {
-          directory: "guides"
-        }
+        items: [{ autogenerate: { directory: "guides" } }]
       }, {
         label: "Community Projects",
-        autogenerate: {
-          directory: "tools"
-        }
+        items: [{ autogenerate: { directory: "tools" } }]
       }, {
         label: "Contributing",
-        autogenerate: {
-          directory: "contributing"
-        }
+        items: [{ autogenerate: { directory: "contributing" } }]
       }, {
         label: "Event Blueprints",
-        autogenerate: {
-          directory: "events"
-        }
+        items: [{ autogenerate: { directory: "events" } }]
       }, {
         label: "Other Resources",
-        autogenerate: {
-          directory: "other"
-        }
+        items: [{ autogenerate: { directory: "other" } }]
       }],
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/spryker-community' },

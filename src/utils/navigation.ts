@@ -1,7 +1,8 @@
 // An array of links for navigation bar
 import type { NavEntry } from "../types";
-import { type SidebarEntry } from '../../node_modules/@astrojs/starlight/utils/routing/types.ts';
-import { getSidebar as getStarlightSubmenu } from '../../node_modules/@astrojs/starlight/utils/navigation.ts';
+
+import type { SidebarEntry } from '../../node_modules/@astrojs/starlight/dist/utils/routing/types.js';
+import { getSidebar as getStarlightSubmenu } from '../../node_modules/@astrojs/starlight/dist/utils/navigation.js';
 
 // An array of links for footer
 const footerLinks = [
@@ -17,7 +18,6 @@ const footerLinks = [
     links: [
       { name: "Forum", url: "/" },
       { name: "Extensions & Tools", url: "/community-tools" },
-      { name: "Jobs", url: "/jobs" },
       { name: "Event Recaps", url: "/event-recap" },
       { name: "Guides", url: "/guides/intro" },
     ],
@@ -52,10 +52,6 @@ const mainNavigation: NavEntry[] = [
   {
     label: "Extensions & Tools",
     href: "/community-tools",
-  },
-  {
-    label: "Jobs",
-    href: "/jobs",
   },
   {
     label: "Events",

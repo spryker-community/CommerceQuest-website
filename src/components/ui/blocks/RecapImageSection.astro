@@ -24,22 +24,39 @@ interface Props {
 <!-- Conditionally render one or two images based on whether imgTwo is defined -->
 {!imgTwo ? (
   <div class="mt-8">
-    <!-- Single image -->
-    <!-- Link to photo album -->
-    <a href={photoURL} target="_blank" rel="noopener noreferrer">
+    <!-- Single image, linked to the photo album when one is available -->
+    {photoURL ? (
+      <a href={photoURL} target="_blank" rel="noopener noreferrer">
+        <Image
+          class="w-full rounded-lg"
+          src={imgOne}
+          alt={imgOneAlt}
+          format={"avif"}
+        />
+      </a>
+    ) : (
       <Image
         class="w-full rounded-lg"
         src={imgOne}
         alt={imgOneAlt}
         format={"avif"}
       />
-    </a>
+    )}
   </div>
 ) : (
   <div class="mt-8 grid grid-cols-2 gap-4">
     <!-- First image in a two-image layout -->
-    <!-- Link to photo album -->
-    <a href={photoURL} target="_blank" rel="noopener noreferrer">
+    {photoURL ? (
+      <a href={photoURL} target="_blank" rel="noopener noreferrer">
+        <Image
+          class="w-full rounded-xl"
+          src={imgOne}
+          alt={imgOneAlt}
+          draggable={"false"}
+          format={"avif"}
+        />
+      </a>
+    ) : (
       <Image
         class="w-full rounded-xl"
         src={imgOne}
@@ -47,10 +64,19 @@ interface Props {
         draggable={"false"}
         format={"avif"}
       />
-    </a>
+    )}
     <!-- Second image in a two-image layout -->
-    <!-- Link to photo album -->
-    <a href={photoURL} target="_blank" rel="noopener noreferrer">
+    {photoURL ? (
+      <a href={photoURL} target="_blank" rel="noopener noreferrer">
+        <Image
+          class="mt-4 w-full rounded-xl lg:mt-10"
+          src={imgTwo}
+          alt={imgTwoAlt}
+          draggable={"false"}
+          format={"avif"}
+        />
+      </a>
+    ) : (
       <Image
         class="mt-4 w-full rounded-xl lg:mt-10"
         src={imgTwo}
@@ -58,6 +84,6 @@ interface Props {
         draggable={"false"}
         format={"avif"}
       />
-    </a>
+    )}
   </div>
 )}

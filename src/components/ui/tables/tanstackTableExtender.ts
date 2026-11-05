@@ -1,18 +1,49 @@
 import type {
+  CellData,
   RowData,
-  Table,
+  TableFeatures,
   TableOptions,
-  TableOptionsResolved
 } from "@tanstack/table-core";
-import { createTable } from "@tanstack/table-core";
-import '@tanstack/table-core'
+import {
+  columnFilteringFeature,
+  columnVisibilityFeature,
+  constructTable,
+  coreFeatures,
+  createCoreRowModel,
+  createFilteredRowModel,
+  createPaginatedRowModel,
+  createSortedRowModel,
+  filterFn_arrIncludesSome,
+  globalFilteringFeature,
+  rowPaginationFeature,
+  rowSortingFeature,
+  sortFn_alphanumeric,
+  tableFeatures,
+} from "@tanstack/table-core";
+import { storeReactivityBindings } from "@tanstack/table-core/store-reactivity-bindings";
 
 declare module '@tanstack/table-core' {
-  interface ColumnMeta<TData extends RowData, TValue> {
+  interface ColumnMeta<TFeatures extends TableFeatures, TData extends RowData, TValue extends CellData = CellData> {
     thClassList?: string[],
     tdClassList?: string[]
   }
 }
+
+export const communityToolsFeatures = tableFeatures({
+  ...coreFeatures,
+  coreReactivityFeature: storeReactivityBindings(),
+  coreRowModel: createCoreRowModel(),
+  columnFilteringFeature,
+  globalFilteringFeature,
+  rowSortingFeature,
+  columnVisibilityFeature,
+  rowPaginationFeature,
+  filteredRowModel: createFilteredRowModel(),
+  sortedRowModel: createSortedRowModel(),
+  paginatedRowModel: createPaginatedRowModel(),
+  filterFns: { arrIncludesSome: filterFn_arrIncludesSome },
+  sortFns: { alphanumeric: sortFn_alphanumeric },
+});
 
 export function flexRender<TProps extends object>(comp: any, props: TProps) {
   if (typeof comp === 'function') {
@@ -22,17 +53,11 @@ export function flexRender<TProps extends object>(comp: any, props: TProps) {
 }
 
 export function createVanillaTable<TData extends RowData>(
-  options: TableOptions<TData>
-): Table<TData> {
-
-  // Compose in the generic options to the user options
-  const resolvedOptions: TableOptionsResolved<TData> = {
+  options: Omit<TableOptions<typeof communityToolsFeatures, TData>, 'features'>
+) {
+  return constructTable<typeof communityToolsFeatures, TData>({
+    features: communityToolsFeatures,
     renderFallbackValue: null,
     ...options,
-  }
-
-  // Create the table
-  const table = createTable<TData>(resolvedOptions)
-
-  return table
+  });
 }

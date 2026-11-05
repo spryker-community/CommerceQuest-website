@@ -44,7 +44,7 @@ const freelancerImage: ImageMetadata | undefined = imageFiles[freelancer.photo];
 </style>
 
 <div class="bg-neutral-100 dark:bg-white/[.075] rounded-xl shadow-md overflow-hidden mb-10">
-  <a href={`/jobs/${freelancerSlug}`}>
+  <a href={`/jobs-eb8c8af57fca/${freelancerSlug}`}>
     {freelancerImage ? (
       <Image 
         src={freelancerImage}
@@ -60,7 +60,7 @@ const freelancerImage: ImageMetadata | undefined = imageFiles[freelancer.photo];
     )}
   </a>
   <div class="p-6">
-    <a href={`/jobs/${freelancerSlug}`} class="group"> <!-- Added group for hover effect -->
+    <a href={`/jobs-eb8c8af57fca/${freelancerSlug}`} class="group"> <!-- Added group for hover effect -->
       <h2 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">
         {`${freelancer.firstName} ${freelancer.lastName}`}
       </h2>
@@ -106,7 +106,7 @@ const freelancerImage: ImageMetadata | undefined = imageFiles[freelancer.photo];
       </div>
     )}
     <div class="mt-0 grid w-full gap-3 sm:inline-flex">
-      <SecondaryCTA title={`View ${freelancer.firstName}'s job profile`} url={`/jobs/${freelancerSlug}`}  />
+      <SecondaryCTA title={`View ${freelancer.firstName}'s job profile`} url={`/jobs-eb8c8af57fca/${freelancerSlug}`}  />
     </div>
   </div>
 </div>

@@ -98,9 +98,6 @@ const processedTools = tools.map((tool) => ({
   } from "@/types";
   import {
     createColumnHelper,
-    getCoreRowModel,
-    getSortedRowModel,
-    getFilteredRowModel,
     type ColumnDef,
     type RowData,
     type Table,
@@ -225,9 +222,7 @@ const processedTools = tools.map((tool) => ({
       meta: {
         thClassList: ['min-w-72'],
       },
-      sortingFn: (rowA, rowB) => {
-        return compareAlphanumeric(rowA.original.title.toLowerCase(), rowB.original.title.toLowerCase());
-      },
+      sortingFn: 'alphanumeric',
       cell: (props) => {
         const { title, subtitle } = props.row.original;
 
@@ -334,11 +329,7 @@ const processedTools = tools.map((tool) => ({
     data: communityTools,
     debugTable: false,
     columns: columns,
-    getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
     initialState: {
-      columnPinning: {},
       columnVisibility: {
         tags: false,
       },
@@ -353,9 +344,14 @@ const processedTools = tools.map((tool) => ({
         },
       ],
     },
-    onStateChange: () => {
-      renderTable(tableContainer, table);
-    },
+  });
+
+  // v9 keeps table state in its own store. Passing an on<Slice>Change callback
+  // without the matching state slice marks that slice as externally controlled,
+  // so the table would never apply the change itself. Subscribe to the store
+  // instead and re-render on every state update.
+  table.store.subscribe(() => {
+    renderTable(tableContainer, table);
   });
 
   renderTable(tableContainer, table);
