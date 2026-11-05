@@ -106,13 +106,14 @@ const processedTools = tools.map((tool) => ({
     compareAlphanumeric
   } from '@utils/sorting'
   import {
+    communityToolsFeatures,
     createVanillaTable,
     flexRender,
   } from '@components/ui/tables/tanstackTableExtender'
 
-  function renderTable<TData extends RowData>(
+  function renderTable(
     tableContainer: HTMLElement,
-    table: Table<TData>,
+    table: Table<typeof communityToolsFeatures, CommunityTool>,
   ): void {
     // Create table elements
     const tableElement = document.createElement('table')
@@ -214,15 +215,15 @@ const processedTools = tools.map((tool) => ({
   ) as HTMLDivElement;
 
   const communityTools = JSON.parse(tableContainer.dataset.communityTools || '[]') as CommunityToolCollection;
-  const columnHelper = createColumnHelper<CommunityTool>();
+  const columnHelper = createColumnHelper<typeof communityToolsFeatures, CommunityTool>();
 
-  const columns: ColumnDef<CommunityTool, any>[] = [
+  const columns: ColumnDef<typeof communityToolsFeatures, CommunityTool, any>[] = [
     columnHelper.accessor('title', {
       header: () => 'Name',
       meta: {
         thClassList: ['min-w-72'],
       },
-      sortingFn: 'alphanumeric',
+      sortFn: 'alphanumeric',
       cell: (props) => {
         const { title, subtitle } = props.row.original;
 

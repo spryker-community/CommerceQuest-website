@@ -54,30 +54,28 @@ interface Props {
       {mainTitle}
     </h2>
     <!-- description -->
-    {description &&
+    {description && (
       <p
         class="mb-5 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-xl"
       >
         {description}
       </p>
-      }
+    )}
     <!-- Subtitle -->
-    {title1 &&
-    <h3
-      class="mb-5 max-w-prose text-pretty font-bold text-neutral-700 dark:text-neutral-300 sm:text-xl"
-    >
-      {title1}
-    </h3>
-    }
+    {title1 && (
+      <h3
+        class="mb-5 max-w-prose text-pretty font-bold text-neutral-700 dark:text-neutral-300 sm:text-xl"
+      >
+        {title1}
+      </h3>
+    )}
     <!-- Content -->
-    {content1 &&
+    {content1 && (
       <p
         class="mb-5 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-xl"
       >
         {content1}
       </p>
-      }
-
-    </div>
+    )}
   </div>
 </section>

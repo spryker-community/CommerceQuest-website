@@ -87,9 +87,17 @@ const communityToolCollection = defineCollection({
   loader: glob({ pattern: '*.yaml', base: "./src/content/community-tools" }),
 });
 
+// Starlight reads UI translations from this collection. The site is English
+// only, so the file exists to keep the collection defined; add keys there to
+// override Starlight's built-in strings.
+const i18nCollection = defineCollection({
+  loader: glob({ pattern: '*.json', base: "./src/content/i18n" }),
+});
+
 export const collections = {
   'docs': docs,
   'products': productsCollection,
   'blog': blogCollection,
   'community-tools': communityToolCollection,
+  'i18n': i18nCollection,
 };
