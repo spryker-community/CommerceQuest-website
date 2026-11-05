@@ -3,7 +3,9 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "22"
+  # Astro 7 requires Node >= 22.23.4 and aborts the build below that, so the
+  # Netlify build must run on a current LTS line.
+  NODE_VERSION = "24"
 
 [dev]
   port = 4322
